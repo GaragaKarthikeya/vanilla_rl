@@ -20,6 +20,8 @@ def bake_layout(
     output_path: Optional[str] = None,
     aspect_ratio: Optional[float] = None,
     template_name: str = DEFAULT_TEMPLATE,
+    block_names: Optional[list[str]] = None,
+    constraints_output_path: Optional[str] = None,
 ) -> Union[Path, int]:
     """
     Render DSP/BRAM placements into a VTR architecture XML via Jinja2.
@@ -67,5 +69,28 @@ def bake_layout(
     print(f"  Size   : {width}x{height}" if width and height else "  Size   : auto_layout")
     print(f"  DSPs   : {dsps}")
     print(f"  BRAMs  : {mems}")
+
+    if block_names is not None and constraints_output_path is not None:
+        all_coords = list(dsps) + list(mems)
+        if len(block_names) != len(all_coords):
+            print(
+                f"Warning: block_names length ({len(block_names)}) != placed blocks "
+                f"({len(all_coords)}). Skipping constraints.",
+                file=sys.stderr,
+            )
+        else:
+            cpath = Path(constraints_output_path).resolve()
+            cpath.parent.mkdir(parents=True, exist_ok=True)
+            lines = ['<vpr_constraints tool_name="vpr">', "  <partition_list>"]
+            for i, (name, (x, y)) in enumerate(zip(block_names, all_coords)):
+                lines += [
+                    f'    <partition name="forced_{i}">',
+                    f'      <add_atom name_pattern="{name}"/>',
+                    f'      <add_region x_low="{x}" y_low="{y}" x_high="{x}" y_high="{y}" layer_low="0" layer_high="0"/>',
+                    f"    </partition>",
+                ]
+            lines += ["  </partition_list>", "</vpr_constraints>"]
+            cpath.write_text("\n".join(lines) + "\n")
+            print(f"  Constraints → {cpath}")
 
     return dest

@@ -62,6 +62,8 @@ class FPGAEnv(gym.Env):
         ar_weight: float = 0.00,
         net_count_data: Optional[dict] = None,
         use_net_count_sort: bool = True,
+        dsp_block_names: Optional[list[str]] = None,
+        bram_block_names: Optional[list[str]] = None,
     ) -> None:
         super().__init__()
 
@@ -87,6 +89,12 @@ class FPGAEnv(gym.Env):
         self.pw_weight = pw_weight
         self.dl_weight = dl_weight
         self.ar_weight = ar_weight
+
+        # Named netlist block names for forced placement via VPR constraints.
+        # Order must match the agent's placement sequence (DSPs first, then BRAMs).
+        # When None, VPR's SA placer assigns blocks freely (original behaviour).
+        self._dsp_block_names: list[str] = dsp_block_names or []
+        self._bram_block_names: list[str] = bram_block_names or []
 
         # Store net count data for observation and debugging
         self._net_count_data = net_count_data or {}
@@ -301,8 +309,11 @@ class FPGAEnv(gym.Env):
         # Bake + run VTR
         worker = uuid.uuid4().hex[:8]
         temp_arch = PROJECT_ROOT / f"temp_arch_{worker}.xml"
+        temp_constraints = PROJECT_ROOT / f"temp_constraints_{worker}.xml"
         temp_run_dir = PROJECT_ROOT / "runs" / f"temp_run_{worker}"
         benchmark_file = PROJECT_ROOT / "benchmarks" / f"{self.benchmark_name}.v"
+
+        all_block_names = self._dsp_block_names + self._bram_block_names
 
         try:
             from src.layout.baker import bake_layout
@@ -314,6 +325,8 @@ class FPGAEnv(gym.Env):
                 height=self.height + 2,
                 output_path=str(temp_arch),
                 aspect_ratio=aspect_ratio,
+                block_names=all_block_names if all_block_names else None,
+                constraints_output_path=str(temp_constraints) if all_block_names else None,
             )
             if result == -1:
                 self._cache.put(cache_key, LayoutCache.failure_row())
@@ -328,7 +341,11 @@ class FPGAEnv(gym.Env):
             return -10.0, info
 
         temp_run_dir.mkdir(parents=True, exist_ok=True)
-        rc = self._vtr.run(benchmark_file, temp_arch, temp_run_dir, silent=True)
+        rc = self._vtr.run(
+            benchmark_file, temp_arch, temp_run_dir,
+            silent=True,
+            constraints_file=temp_constraints if all_block_names else None,
+        )
 
         vpr_out = temp_run_dir / "vpr.out"
         crit_path = temp_run_dir / "vpr.crit_path.out"
@@ -352,12 +369,12 @@ class FPGAEnv(gym.Env):
                 )
                 self._cache.put(cache_key, row)
                 self._fill_success_info(info, row)
-                self._cleanup(temp_arch, temp_run_dir)
+                self._cleanup(temp_arch, temp_run_dir, temp_constraints)
                 return self._compute_reward(metrics.wirelength, metrics.power_w, metrics.delay_ns, metrics.routing_area), info
 
         self._cache.put(cache_key, LayoutCache.failure_row())
         info["error"] = f"VTR failed (rc={rc})"
-        self._cleanup(temp_arch, temp_run_dir)
+        self._cleanup(temp_arch, temp_run_dir, temp_constraints)
         return -10.0, info
 
     # ------------------------------------------------------------------
@@ -470,10 +487,12 @@ class FPGAEnv(gym.Env):
         }
 
     @staticmethod
-    def _cleanup(arch_file: Path, run_dir: Path) -> None:
+    def _cleanup(arch_file: Path, run_dir: Path, constraints_file: Optional[Path] = None) -> None:
         try:
             if arch_file.is_file():
                 arch_file.unlink()
+            if constraints_file is not None and constraints_file.is_file():
+                constraints_file.unlink()
             if run_dir.exists():
                 shutil.rmtree(run_dir)
         except Exception:

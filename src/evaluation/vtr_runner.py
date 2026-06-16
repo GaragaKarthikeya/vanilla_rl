@@ -62,6 +62,7 @@ class VTRRunner:
         enable_power: bool = True,
         timeout: int = 1200,
         silent: bool = False,
+        constraints_file: Optional[Path] = None,
     ) -> int:
         """Run the VTR flow and return its exit code."""
         if not self.paths.is_flow_available:
@@ -72,7 +73,7 @@ class VTRRunner:
             shutil.rmtree(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
 
-        cmd = self._build_cmd(benchmark_file, arch_file, output_dir, enable_power)
+        cmd = self._build_cmd(benchmark_file, arch_file, output_dir, enable_power, constraints_file)
 
         if not silent:
             print("Executing VTR flow:")
@@ -186,6 +187,7 @@ class VTRRunner:
         arch_file: Path,
         output_dir: Path,
         enable_power: bool,
+        constraints_file: Optional[Path] = None,
     ) -> list:
         cmd = [
             str(self.paths.python),
@@ -197,4 +199,6 @@ class VTRRunner:
         ]
         if enable_power and self.paths.has_power_tech:
             cmd.extend(["-cmos_tech", str(self.paths.power_tech_file)])
+        if constraints_file is not None and constraints_file.is_file():
+            cmd.extend(["-read_vpr_constraints", str(constraints_file)])
         return cmd
