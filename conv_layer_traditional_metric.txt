@@ -1,0 +1,6 @@
+{
+    "delay_ns": 7.9871,
+    "wirelength": 265664.0,
+    "power_w": Infinity,
+    "routing_area": 17560400.0
+}
