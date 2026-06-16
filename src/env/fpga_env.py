@@ -31,13 +31,14 @@ class FPGAEnv(gym.Env):
     Episode structure
     -----------------
     Step 0          : select an aspect ratio from ASPECT_RATIOS
-    Steps 1 … N     : place each DSP then each BRAM onto the W×H core grid
+    Steps 1 … N     : place each BRAM (sorted by nets) then each DSP (sorted by nets)
     Terminal step   : VTR evaluates the layout; reward is returned
 
-    Observation space : Box(W, H, 3) float32
+    Observation space : Box(W, H, 4) float32
         ch0 — occupancy grid  (-1 = occupied tail, 0 = empty, 1 = DSP head, 2 = BRAM head)
         ch1 — block-type hint for the current step (3 during aspect-ratio step, 0 after done)
         ch2 — chosen aspect ratio value
+        ch3 — net count for current block (normalized to [0, 1], -1.0 during aspect-ratio step)
 
     Action space : Discrete(W * H)
         Step 0 maps action index → ASPECT_RATIOS index.
@@ -59,6 +60,8 @@ class FPGAEnv(gym.Env):
         pw_weight: float = 0.30,
         dl_weight: float = 0.60,
         ar_weight: float = 0.00,
+        net_count_data: Optional[dict] = None,
+        use_net_count_sort: bool = True,
     ) -> None:
         super().__init__()
 
@@ -85,13 +88,30 @@ class FPGAEnv(gym.Env):
         self.dl_weight = dl_weight
         self.ar_weight = ar_weight
 
-        # Placement sequence: DSPs first, then BRAMs.  1=DSP, 2=BRAM
-        self._blocks_to_place: list[int] = [1] * req_dsp + [2] * req_bram
+        # Store net count data for observation and debugging
+        self._net_count_data = net_count_data or {}
+
+        # Build placement sequence with optional net-count sorting
+        # If net_count_data provided and use_net_count_sort=True:
+        #   - BRAMs first, sorted by net count (highest first)
+        #   - DSPs second, sorted by net count (highest first)
+        # Otherwise: DSPs first, then BRAMs (original behavior)
+        if use_net_count_sort and net_count_data:
+            self._blocks_to_place, self._block_id_map = self._build_sorted_placement(
+                req_dsp, req_bram, net_count_data
+            )
+        else:
+            # Original order: DSPs first, then BRAMs. 1=DSP, 2=BRAM
+            self._blocks_to_place = [1] * req_dsp + [2] * req_bram
+            # Map: step_index -> actual instance_id (identity mapping)
+            self._block_id_map = {i: i % req_dsp if i < req_dsp else i - req_dsp for i in range(req_dsp + req_bram)}
+
         self._total_blocks = len(self._blocks_to_place)
 
         self.action_space = spaces.Discrete(width * height)
+        # Observation space now has 4 channels: occupancy, block_type, aspect_ratio, net_count
         self.observation_space = spaces.Box(
-            low=-1.0, high=4.0, shape=(width, height, 3), dtype=np.float32
+            low=-1.0, high=4.0, shape=(width, height, 4), dtype=np.float32
         )
 
         # Mutable episode state (initialised by reset)
@@ -100,6 +120,62 @@ class FPGAEnv(gym.Env):
         self._placed_brams: list[tuple[int, int]] = []
         self._current_step: int = 0
         self._chosen_aspect_ratio: float = 1.0
+
+    # ------------------------------------------------------------------
+    # Block placement ordering
+    # ------------------------------------------------------------------
+
+    def _build_sorted_placement(
+        self, req_dsp: int, req_bram: int, net_count_data: dict
+    ) -> tuple[list[int], dict[int, int]]:
+        """
+        Build placement sequence with blocks sorted by net count (highest first).
+
+        Order: BRAMs (sorted by nets) → DSPs (sorted by nets)
+
+        Args:
+            req_dsp: Number of DSPs required
+            req_bram: Number of BRAMs required
+            net_count_data: Dict mapping ('TYPE', id) -> net_count
+
+        Returns:
+            (blocks_to_place, block_id_map) where:
+            - blocks_to_place: list of block types (1=DSP, 2=BRAM) in order
+            - block_id_map: maps step_index -> actual instance_id
+        """
+        # Extract and sort BRAMs by net count (descending)
+        bram_blocks = []
+        for i in range(req_bram):
+            # Try both tuple and string key formats
+            net_count = net_count_data.get(("BRAM", i), 0)
+            if not net_count:
+                net_count = net_count_data.get((f"('BRAM', {i})",), 0)
+            bram_blocks.append((i, net_count))
+        bram_blocks.sort(key=lambda x: x[1], reverse=True)
+
+        # Extract and sort DSPs by net count (descending)
+        dsp_blocks = []
+        for i in range(req_dsp):
+            # Try both tuple and string key formats
+            net_count = net_count_data.get(("DSP", i), 0)
+            if not net_count:
+                net_count = net_count_data.get((f"('DSP', {i})",), 0)
+            dsp_blocks.append((i, net_count))
+        dsp_blocks.sort(key=lambda x: x[1], reverse=True)
+
+        # Build placement sequence: BRAMs first, then DSPs
+        blocks_to_place = [2] * req_bram + [1] * req_dsp
+        block_id_map = {}
+
+        # Map BRAM placement steps
+        for step_idx, (actual_id, _) in enumerate(bram_blocks):
+            block_id_map[step_idx] = actual_id
+
+        # Map DSP placement steps
+        for step_idx, (actual_id, _) in enumerate(dsp_blocks, start=req_bram):
+            block_id_map[step_idx] = actual_id
+
+        return blocks_to_place, block_id_map
 
     # ------------------------------------------------------------------
     # Gymnasium API
@@ -288,15 +364,50 @@ class FPGAEnv(gym.Env):
     # Helpers
     # ------------------------------------------------------------------
 
+    def _get_current_block_net_count(self) -> float:
+        """
+        Get the net count for the block about to be placed (normalized to [0, 1]).
+
+        Returns normalized net count in range [0, 1], or 0 if no data available.
+        """
+        if self._current_step == 0 or self._current_step > self._total_blocks:
+            return 0.0
+
+        step_idx = self._current_step - 1
+        if step_idx >= len(self._blocks_to_place):
+            return 0.0
+
+        # Get the actual instance ID for this step
+        actual_id = self._block_id_map.get(step_idx, step_idx)
+        block_type = self._blocks_to_place[step_idx]
+        block_type_str = "DSP" if block_type == 1 else "BRAM"
+
+        # Try to find net count in the data dict
+        # Try tuple format first (for parsed data)
+        net_count = self._net_count_data.get((block_type_str, actual_id), 0)
+
+        # If not found, try string key format
+        if not net_count:
+            for key, value in self._net_count_data.items():
+                key_str = str(key)
+                if f"{block_type_str}" in key_str and f", {actual_id})" in key_str:
+                    net_count = value
+                    break
+
+        # Normalize to [0, 1] using 200 as ceiling
+        return min(float(net_count) / 200.0, 1.0) if net_count else 0.0
+
     def _obs(self) -> np.ndarray:
-        obs = np.zeros((self.width, self.height, 3), dtype=np.float32)
+        obs = np.zeros((self.width, self.height, 4), dtype=np.float32)
         obs[:, :, 0] = self._grid
         if self._current_step == 0:
             obs[:, :, 1] = 3  # aspect-ratio selection phase
             obs[:, :, 2] = -1.0
+            obs[:, :, 3] = -1.0  # net count placeholder
         elif self._current_step <= self._total_blocks:
             obs[:, :, 1] = self._blocks_to_place[self._current_step - 1]
             obs[:, :, 2] = self._chosen_aspect_ratio
+            obs[:, :, 3] = self._get_current_block_net_count()
         return obs
 
     def _cache_key(self, aspect_ratio: float) -> str:

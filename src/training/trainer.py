@@ -31,10 +31,10 @@ class TrainConfig:
     gamma: float = 0.99
     seed: int = 42
     max_episodes: int = 256
-    wl_weight: float = 0.00
-    pw_weight: float = 0.34
-    dl_weight: float = 0.33
-    ar_weight: float = 0.33
+    ar_weight: float = 1.0
+    dl_weight: float = 1.0
+    pw_weight: float = 1.0
+    wl_weight: float = 0.0
     cache_db_path: Optional[str] = None
     save_path: Optional[str] = None
     load_path: Optional[str] = None
@@ -68,6 +68,28 @@ def train(cfg: TrainConfig) -> None:
     req_dsp = reqs.get("dsp", 0)
     req_bram = reqs.get("bram", 0)
 
+    # Load net count data if available
+    net_count_data = {}
+    net_count_file = PROJECT_ROOT / f"{benchmark_name}_netlist_info.json"
+    if net_count_file.is_file():
+        try:
+            nc_data = json.loads(net_count_file.read_text())
+            # Convert string keys like "('DSP', 0)" to tuples ("DSP", 0)
+            for k, v in nc_data.items():
+                if k.startswith("('") and k.endswith("')"):
+                    # Parse string representation: "('DSP', 0)" -> ("DSP", 0)
+                    try:
+                        key_tuple = eval(k)
+                        # eval gives ('DSP', 0), we keep it as is
+                        net_count_data[key_tuple] = v
+                    except:
+                        net_count_data[k] = v
+                else:
+                    net_count_data[k] = v
+            print(f"Loaded net count data from {net_count_file.name}")
+        except Exception as e:
+            print(f"Warning: Failed to load net count data: {e}", file=sys.stderr)
+
     print("=" * 60)
     print(f"Benchmark          : {benchmark_name}")
     print(f"Core grid          : {width}×{height}  ({width+2}×{height+2} with IO ring)")
@@ -76,6 +98,8 @@ def train(cfg: TrainConfig) -> None:
     print(f"Baseline delay (ns): {metric_data.get('delay_ns')}")
     print(f"Baseline power (W) : {metric_data.get('power_w')}")
     print(f"Reward weights     : wl={cfg.wl_weight} pw={cfg.pw_weight} dl={cfg.dl_weight} ar={cfg.ar_weight}")
+    if net_count_data:
+        print(f"Net count data     : {len(net_count_data)} blocks loaded")
     print("=" * 60)
 
     n_envs = cfg.n_envs or min(8, os.cpu_count() or 1)
@@ -95,6 +119,8 @@ def train(cfg: TrainConfig) -> None:
         "pw_weight": cfg.pw_weight,
         "dl_weight": cfg.dl_weight,
         "ar_weight": cfg.ar_weight,
+        "net_count_data": net_count_data,
+        "use_net_count_sort": True,
     }
 
     env = make_vec_env(FPGAEnv, n_envs=n_envs, seed=cfg.seed, vec_env_cls=SubprocVecEnv, env_kwargs=env_kwargs)

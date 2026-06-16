@@ -110,8 +110,21 @@ class BestLayoutCallback(BaseCallback):
 
     def _write_jsonl(self, record: dict) -> None:
         log_path = PROJECT_ROOT / f"all_layouts_{self.benchmark_name}_seed_{self.seed_val}{self.log_suffix}.jsonl"
+        # Convert numpy int64 to Python int for JSON serialization
+        def convert_to_serializable(obj):
+            if isinstance(obj, list):
+                return [convert_to_serializable(item) for item in obj]
+            elif isinstance(obj, tuple):
+                return tuple(convert_to_serializable(item) for item in obj)
+            elif isinstance(obj, dict):
+                return {k: convert_to_serializable(v) for k, v in obj.items()}
+            elif hasattr(obj, 'item'):  # numpy types
+                return obj.item()
+            return obj
+
+        serializable_record = convert_to_serializable(record)
         with open(log_path, "a") as fh:
-            fh.write(json.dumps(record) + "\n")
+            fh.write(json.dumps(serializable_record) + "\n")
 
     def _check_convergence(self) -> None:
         recent = self.episode_rewards[-100:]
@@ -222,6 +235,16 @@ class BestLayoutCallback(BaseCallback):
                 aspect_ratio=info.get("aspect_ratio"),
             )
 
+            # Helper to convert numpy types to Python types for JSON serialization
+            def make_serializable(obj):
+                if isinstance(obj, list):
+                    return [make_serializable(item) for item in obj]
+                elif isinstance(obj, tuple):
+                    return [make_serializable(item) for item in obj]  # JSON doesn't have tuples
+                elif hasattr(obj, 'item'):  # numpy types
+                    return obj.item()
+                return obj
+
             coords_dest = PROJECT_ROOT / f"best_layout_coordinates_{self.benchmark_name}.txt"
             coords_dest.write_text(
                 json.dumps(
@@ -231,8 +254,8 @@ class BestLayoutCallback(BaseCallback):
                         "delay_ns": info.get("delay_ns"),
                         "power_w": info.get("power_w"),
                         "routing_area": info.get("routing_area"),
-                        "dsps": info["placed_dsps"],
-                        "brams": info["placed_brams"],
+                        "dsps": make_serializable(info["placed_dsps"]),
+                        "brams": make_serializable(info["placed_brams"]),
                         "aspect_ratio": info.get("aspect_ratio"),
                         "grid_W": info.get("grid_W"),
                         "grid_H": info.get("grid_H"),
