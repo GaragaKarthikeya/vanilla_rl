@@ -45,8 +45,8 @@ def train(cfg: TrainConfig) -> None:
     """Entry point for a full training run."""
     benchmark_name = cfg.benchmark_name.removesuffix(".v")
 
-    res_file = PROJECT_ROOT / f"{benchmark_name}_traditional_resources.txt"
-    metric_file = PROJECT_ROOT / f"{benchmark_name}_traditional_metric.txt"
+    res_file = PROJECT_ROOT / "baselines" / f"{benchmark_name}_traditional_resources.txt"
+    metric_file = PROJECT_ROOT / "baselines" / f"{benchmark_name}_traditional_metric.txt"
 
     if not res_file.is_file() or not metric_file.is_file():
         print(
@@ -74,21 +74,58 @@ def train(cfg: TrainConfig) -> None:
     if net_count_file.is_file():
         try:
             nc_data = json.loads(net_count_file.read_text())
-            # Convert string keys like "('DSP', 0)" to tuples ("DSP", 0)
+            # Convert string keys like "('DSP', 0)" to tuples ("DSP", 0).
+            # Keys end with a digit + ')' not '), so only check the prefix.
             for k, v in nc_data.items():
-                if k.startswith("('") and k.endswith("')"):
-                    # Parse string representation: "('DSP', 0)" -> ("DSP", 0)
+                if k.startswith("('"):
                     try:
                         key_tuple = eval(k)
-                        # eval gives ('DSP', 0), we keep it as is
                         net_count_data[key_tuple] = v
-                    except:
+                    except Exception:
                         net_count_data[k] = v
                 else:
                     net_count_data[k] = v
             print(f"Loaded net count data from {net_count_file.name}")
         except Exception as e:
             print(f"Warning: Failed to load net count data: {e}", file=sys.stderr)
+
+    # Extract VPR block names from the traditional .net file for placement constraints.
+    # Sort order must match FPGAEnv._build_sorted_placement: BRAMs then DSPs, each
+    # sorted by net count descending.  This lets the agent's placement sequence bind
+    # to the correct physical block name in the VPR constraints XML.
+    dsp_block_names: list[str] = []
+    bram_block_names: list[str] = []
+    net_file = PROJECT_ROOT / "runs" / f"{benchmark_name}_traditional" / f"{benchmark_name}.net"
+    if net_file.is_file():
+        try:
+            from src.netlist.parser import parse_net_file
+            parsed_blocks = parse_net_file(net_file)
+            # Use atom_name (e.g. "$mul~6[0]") not instance_name ("mult_36[1]"):
+            # VPR's <add_atom name_pattern=...> matches atom-level names from the .place file,
+            # not the packed-block instance names.
+            dsp_parsed = [(b.atom_name, b.unique_nets) for b in parsed_blocks if b.block_type == "dsp"]
+            bram_parsed = [(b.atom_name, b.unique_nets) for b in parsed_blocks if b.block_type == "bram"]
+            dsp_block_names = [n for n, _ in sorted(dsp_parsed, key=lambda x: x[1], reverse=True)]
+            bram_block_names = [n for n, _ in sorted(bram_parsed, key=lambda x: x[1], reverse=True)]
+            # Only use constraints when counts match what the env expects
+            if req_dsp and len(dsp_block_names) != req_dsp:
+                print(
+                    f"Warning: netlist has {len(dsp_block_names)} DSPs but resources require {req_dsp}. "
+                    "Disabling DSP constraints.",
+                    file=sys.stderr,
+                )
+                dsp_block_names = []
+            if req_bram and len(bram_block_names) != req_bram:
+                print(
+                    f"Warning: netlist has {len(bram_block_names)} BRAMs but resources require {req_bram}. "
+                    "Disabling BRAM constraints.",
+                    file=sys.stderr,
+                )
+                bram_block_names = []
+        except Exception as e:
+            print(f"Warning: Failed to extract block names from {net_file.name}: {e}", file=sys.stderr)
+    else:
+        print(f"Note: No .net file found at {net_file} — VPR placement constraints disabled.")
 
     print("=" * 60)
     print(f"Benchmark          : {benchmark_name}")
@@ -100,6 +137,10 @@ def train(cfg: TrainConfig) -> None:
     print(f"Reward weights     : wl={cfg.wl_weight} pw={cfg.pw_weight} dl={cfg.dl_weight} ar={cfg.ar_weight}")
     if net_count_data:
         print(f"Net count data     : {len(net_count_data)} blocks loaded")
+    if dsp_block_names:
+        print(f"DSP constraints    : {dsp_block_names}")
+    if bram_block_names:
+        print(f"BRAM constraints   : {bram_block_names}")
     print("=" * 60)
 
     n_envs = cfg.n_envs or min(8, os.cpu_count() or 1)
@@ -121,6 +162,8 @@ def train(cfg: TrainConfig) -> None:
         "ar_weight": cfg.ar_weight,
         "net_count_data": net_count_data,
         "use_net_count_sort": True,
+        "dsp_block_names": dsp_block_names or None,
+        "bram_block_names": bram_block_names or None,
     }
 
     env = make_vec_env(FPGAEnv, n_envs=n_envs, seed=cfg.seed, vec_env_cls=SubprocVecEnv, env_kwargs=env_kwargs)
@@ -133,6 +176,8 @@ def train(cfg: TrainConfig) -> None:
         trad_metrics=metric_data,
         max_episodes=cfg.max_episodes,
         log_suffix=cfg.log_suffix,
+        dsp_block_names=dsp_block_names or None,
+        bram_block_names=bram_block_names or None,
     )
 
     checkpoint_cb = CheckpointCallback(

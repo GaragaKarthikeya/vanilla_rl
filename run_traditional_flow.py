@@ -60,8 +60,10 @@ def main() -> int:
     crit_path = output_dir / "vpr.crit_path.out"
     power_file = output_dir / f"{benchmark_name}.power"
 
-    metric_dest = PROJECT_ROOT / f"{benchmark_name}_traditional_metric.txt"
-    resource_dest = PROJECT_ROOT / f"{benchmark_name}_traditional_resources.txt"
+    baselines_dir = PROJECT_ROOT / "baselines"
+    baselines_dir.mkdir(exist_ok=True)
+    metric_dest = baselines_dir / f"{benchmark_name}_traditional_metric.txt"
+    resource_dest = baselines_dir / f"{benchmark_name}_traditional_resources.txt"
 
     metrics = runner.parse_metrics(vpr_out, crit_path, power_file, dest=metric_dest)
     resources = runner.parse_resources(vpr_out, dest=resource_dest)

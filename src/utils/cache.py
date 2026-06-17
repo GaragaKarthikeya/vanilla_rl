@@ -90,10 +90,10 @@ class LayoutCache:
                         row.delay_ns,
                         row.wirelength,
                         row.power_w,
-                        row.success,
+                        row.routing_area,
                         row.grid_w,
                         row.grid_h,
-                        row.routing_area,
+                        row.success,
                     ),
                 )
         except Exception:

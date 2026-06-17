@@ -38,7 +38,8 @@ class BlockNetInfo:
 
     block_type: str  # 'dsp', 'bram', 'clb', 'io', etc.
     instance_id: int  # Extracted from instance name, e.g., mult_36[5] -> 5
-    instance_name: str  # Full instance name as it appears in .net file
+    instance_name: str  # Packed-block instance name, e.g., mult_36[1]
+    atom_name: str      # VPR atom name (name= attribute), e.g., $mul~6[0] — use this in VPR constraints
     unique_nets: int  # Count of unique nets connected to this block
     net_names: set[str]  # Set of all connected net names (for debugging)
 
@@ -207,11 +208,13 @@ def parse_net_file(net_path: Path) -> list[BlockNetInfo]:
         nets = _parse_nets_from_ports(elem)
 
         # Create block info
+        atom_name = elem.get("name", instance)  # name= is the VPR atom/block name used in .place and constraints
         if block_type in ["dsp", "bram", "clb", "io", "lut", "ble"] or nets:
             info = BlockNetInfo(
                 block_type=block_type,
                 instance_id=block_id,
                 instance_name=instance,
+                atom_name=atom_name,
                 unique_nets=len(nets),
                 net_names=nets,
             )

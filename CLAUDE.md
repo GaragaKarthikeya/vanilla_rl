@@ -8,7 +8,7 @@ This is a clean RL training pipeline for FPGA placement optimization using VTR (
 
 **Essential environment setup:**
 - `.env` file contains paths to VTR toolchain (venv, flow script, power tech file)
-- Pre-computed baseline metric and resource files required before training: `{benchmark}_traditional_metric.txt`, `{benchmark}_traditional_resources.txt`
+- Pre-computed baseline metric and resource files required before training: `baselines/{benchmark}_traditional_metric.txt`, `baselines/{benchmark}_traditional_resources.txt`
 
 ## Commands
 

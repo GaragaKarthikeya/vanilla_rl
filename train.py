@@ -29,6 +29,7 @@ def parse_args() -> TrainConfig:
     p.add_argument("--ent_coef",     type=float, default=0.0,   help="Entropy coefficient")
     p.add_argument("--batch_size",   type=int,   default=64,    help="Minibatch size")
     p.add_argument("--n_steps",      type=int,   default=80,    help="Steps per env per rollout")
+    p.add_argument("--n_epochs",     type=int,   default=10,    help="PPO epochs per rollout")
     p.add_argument("--seed",         type=int,   default=42,    help="Random seed")
     p.add_argument("--max_episodes", type=int,   default=256,   help="Episode budget")
     p.add_argument("--ar_weight",    type=float, default=1.0,   help="Routing-area reward weight")
@@ -49,6 +50,7 @@ def parse_args() -> TrainConfig:
         ent_coef=args.ent_coef,
         batch_size=args.batch_size,
         n_steps=args.n_steps,
+        n_epochs=args.n_epochs,
         seed=args.seed,
         max_episodes=args.max_episodes,
         wl_weight=args.wl_weight,

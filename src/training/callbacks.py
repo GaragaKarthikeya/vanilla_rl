@@ -34,6 +34,8 @@ class BestLayoutCallback(BaseCallback):
         max_episodes: int = 256,
         log_suffix: str = "",
         verbose: int = 0,
+        dsp_block_names: Optional[list[str]] = None,
+        bram_block_names: Optional[list[str]] = None,
     ) -> None:
         super().__init__(verbose)
         self.benchmark_name = benchmark_name
@@ -43,6 +45,9 @@ class BestLayoutCallback(BaseCallback):
         self.trad_metrics = trad_metrics
         self.max_episodes = max_episodes
         self.log_suffix = log_suffix
+
+        self._dsp_block_names = dsp_block_names or []
+        self._bram_block_names = bram_block_names or []
 
         self.best_reward = -float("inf")
         self.best_info: dict = {}
@@ -72,10 +77,15 @@ class BestLayoutCallback(BaseCallback):
                 self.episode_rewards.append(ep_rew)
                 self.interval_rewards.append(ep_rew)
 
+                def _to_py(obj):
+                    if isinstance(obj, (list, tuple)):
+                        return [_to_py(i) for i in obj]
+                    return obj.item() if hasattr(obj, "item") else obj
+
                 layout_record = {
                     "aspect_ratio": float(info.get("aspect_ratio", 1.0)),
-                    "dsps": info.get("placed_dsps", []),
-                    "brams": info.get("placed_brams", []),
+                    "dsps": _to_py(info.get("placed_dsps", [])),
+                    "brams": _to_py(info.get("placed_brams", [])),
                     "reward": ep_rew,
                     "wirelength": float(info.get("wirelength", float("inf"))),
                     "delay_ns": float(info.get("delay_ns", float("inf"))),
@@ -225,6 +235,10 @@ class BestLayoutCallback(BaseCallback):
             from src.layout.baker import bake_layout
 
             arch_dest = PROJECT_ROOT / f"best_baked_layout_{self.benchmark_name}.xml"
+            constraints_dest = PROJECT_ROOT / f"best_layout_constraints_{self.benchmark_name}.xml"
+            
+            all_block_names = self._dsp_block_names + self._bram_block_names
+            
             bake_layout(
                 benchmark_name=self.benchmark_name,
                 dsps=info["placed_dsps"],
@@ -233,6 +247,8 @@ class BestLayoutCallback(BaseCallback):
                 height=self.height + 2,
                 output_path=str(arch_dest),
                 aspect_ratio=info.get("aspect_ratio"),
+                block_names=all_block_names if all_block_names else None,
+                constraints_output_path=str(constraints_dest) if all_block_names else None,
             )
 
             # Helper to convert numpy types to Python types for JSON serialization
@@ -266,15 +282,17 @@ class BestLayoutCallback(BaseCallback):
             )
             print(f"Saved best arch → {arch_dest.name}")
             print(f"Saved best coords → {coords_dest.name}")
+            if all_block_names:
+                print(f"Saved best constraints → {constraints_dest.name}")
 
             # Launch background VTR run for the best layout
-            self._launch_best_vtr_run(info, arch_dest)
+            self._launch_best_vtr_run(info, arch_dest, constraints_dest if all_block_names else None)
 
         except Exception as exc:
             import sys
             print(f"Error saving best layout: {exc}", file=sys.stderr)
 
-    def _launch_best_vtr_run(self, info: dict, arch_path: Path) -> None:
+    def _launch_best_vtr_run(self, info: dict, arch_path: Path, constraints_path: Optional[Path] = None) -> None:
         paths = VTRPaths()
         if not paths.is_flow_available:
             return
@@ -287,6 +305,8 @@ class BestLayoutCallback(BaseCallback):
         benchmark_file = PROJECT_ROOT / "benchmarks" / f"{self.benchmark_name}.v"
         cmd = [str(paths.python), str(paths.flow_script), str(benchmark_file), str(arch_path),
                "-temp_dir", str(best_run_dir)]
+        if constraints_path and constraints_path.is_file():
+            cmd += ["-read_vpr_constraints", str(constraints_path)]
         if paths.has_power_tech:
             cmd += ["-cmos_tech", str(paths.power_tech_file)]
 
