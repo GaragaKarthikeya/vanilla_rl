@@ -29,26 +29,38 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-# ── Palette ───────────────────────────────────────────────────────────────────
+plt.rcParams.update({
+    "font.family": "DejaVu Sans",
+    "axes.linewidth": 0,
+    "svg.fonttype": "none",
+})
+
+# ── Palette (light, professional) ───────────────────────────────────────────
 C = {
     # Background fabric
-    "void":        "#0d1117",
-    "io_empty":    "#1c2128",
-    "clb_empty":   "#21262d",
-    "dsp_empty":   "#0e2a45",   # dark blue — unoccupied DSP slot
-    "bram_empty":  "#1a2e1a",   # dark green — unoccupied BRAM slot
+    "void":        "#ffffff",
+    "io_empty":    "#eef1f5",
+    "clb_empty":   "#f6f8fa",
+    "dsp_empty":   "#e3ecfa",   # pale blue  — unoccupied DSP slot
+    "bram_empty":  "#fbeaea",   # pale red   — unoccupied BRAM slot
 
     # Placed / active tiles
-    "io_used":     "#e3b341",   # amber   — I/O pad in use
-    "clb_used":    "#2ea043",   # green   — logic block in use
-    "dsp_used":    "#1f6feb",   # blue    — DSP in use
-    "bram_used":   "#da3633",   # red     — BRAM in use
+    "io_used":     "#d97706",   # amber   — I/O pad in use
+    "clb_used":    "#15803d",   # green   — logic block in use
+    "dsp_used":    "#1d4ed8",   # blue    — DSP in use
+    "bram_used":   "#b91c1c",   # red     — BRAM in use
+
+    # Edge colors (darker shade of each fill, for crisp definition)
+    "io_edge":     "#92400e",
+    "clb_edge":    "#14532d",
+    "dsp_edge":    "#1e3a8a",
+    "bram_edge":   "#7f1d1d",
 
     # Annotation
-    "grid_line":   "#30363d",
-    "bbox":        "#d2a8ff",   # purple  — active-logic bounding box
-    "text":        "#e6edf3",
-    "subtext":     "#8b949e",
+    "grid_line":   "#d0d7de",
+    "bbox":        "#7c3aed",   # purple  — active-logic bounding box
+    "text":        "#1f2328",
+    "subtext":     "#57606a",
 }
 
 DSP_HEIGHT  = 4
@@ -190,7 +202,7 @@ def draw_panel(ax, gw: int, gh: int, grid: list[list[str]],
     ax.set_xlim(0, gw)
     ax.set_ylim(0, gh)
     ax.set_aspect("equal")
-    ax.set_title(title, color=C["text"], fontsize=12, fontweight="bold", pad=8)
+    ax.set_title(title, color=C["text"], fontsize=13, fontweight="bold", pad=10)
 
     # ── Background fabric ────────────────────────────────────────────────────
     for x in range(gw):
@@ -212,13 +224,13 @@ def draw_panel(ax, gw: int, gh: int, grid: list[list[str]],
         h = _block_height(kind)
 
         if kind == "dsp":
-            fc, ec, lw = C["dsp_used"],  "#58a6ff", 1.5
+            fc, ec, lw = C["dsp_used"],  C["dsp_edge"],  1.5
         elif kind == "bram":
-            fc, ec, lw = C["bram_used"], "#ff7b72", 1.5
+            fc, ec, lw = C["bram_used"], C["bram_edge"], 1.5
         elif grid[x][y] == "io_empty":
-            fc, ec, lw = C["io_used"],   "#f0c040", 1.0
+            fc, ec, lw = C["io_used"],   C["io_edge"],   1.0
         else:
-            fc, ec, lw = C["clb_used"],  "#3fb950", 0.6
+            fc, ec, lw = C["clb_used"],  C["clb_edge"],  0.6
 
         pad = 0.12
         ax.add_patch(mpatches.FancyBboxPatch(
@@ -286,49 +298,44 @@ def main():
     ap.add_argument("--place",   required=True,  help=".place file (layout 1)")
     ap.add_argument("--arch",    default=None,   help="arch XML  (layout 1)")
     ap.add_argument("--title",   default="FPGA Layout")
-    ap.add_argument("--compare", action="store_true", help="Side-by-side comparison mode")
+    ap.add_argument("--compare", action="store_true", help="Side-by-side comparison mode (2 or 3 panels)")
     ap.add_argument("--place2",  default=None,   help=".place file (layout 2)")
     ap.add_argument("--arch2",   default=None,   help="arch XML  (layout 2)")
     ap.add_argument("--title2",  default="FPGA Layout 2")
+    ap.add_argument("--place3",  default=None,   help=".place file (layout 3, optional — enables 3-panel mode)")
+    ap.add_argument("--arch3",   default=None,   help="arch XML  (layout 3)")
+    ap.add_argument("--title3",  default="FPGA Layout 3")
     ap.add_argument("--out",     required=True,  help="Output PNG path")
     args = ap.parse_args()
 
-    plt.style.use("dark_background")
+    plt.style.use("default")
 
+    panels = [(args.place, args.arch, args.title)]
     if args.compare:
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(22, 11), dpi=180)
-        fig.patch.set_facecolor(C["void"])
+        panels.append((args.place2, args.arch2, args.title2))
+        if args.place3:
+            panels.append((args.place3, args.arch3, args.title3))
 
-        gw1, gh1, blk1 = parse_place(Path(args.place))
-        grid1 = parse_arch(Path(args.arch) if args.arch else None, gw1, gh1)
-        draw_panel(ax1, gw1, gh1, grid1, blk1, args.title)
+    n = len(panels)
+    fig, axes = plt.subplots(1, n, figsize=(11 * n, 11), dpi=300)
+    fig.patch.set_facecolor(C["void"])
+    if n == 1:
+        axes = [axes]
 
-        gw2, gh2, blk2 = parse_place(Path(args.place2))
-        grid2 = parse_arch(Path(args.arch2) if args.arch2 else None, gw2, gh2)
-        draw_panel(ax2, gw2, gh2, grid2, blk2, args.title2)
+    for ax, (place, arch, title) in zip(axes, panels):
+        gw, gh, blks = parse_place(Path(place))
+        grid = parse_arch(Path(arch) if arch else None, gw, gh)
+        draw_panel(ax, gw, gh, grid, blks, title)
 
-        fig.legend(handles=make_legend(), loc="lower center", ncol=5,
-                   fontsize=9, frameon=True, facecolor=C["void"],
-                   edgecolor=C["grid_line"], labelcolor=C["text"],
-                   bbox_to_anchor=(0.5, 0.01))
-        plt.tight_layout(rect=[0, 0.07, 1, 1])
-    else:
-        fig, ax = plt.subplots(figsize=(11, 11), dpi=180)
-        fig.patch.set_facecolor(C["void"])
-
-        gw, gh, blks = parse_place(Path(args.place))
-        grid = parse_arch(Path(args.arch) if args.arch else None, gw, gh)
-        draw_panel(ax, gw, gh, grid, blks, args.title)
-
-        fig.legend(handles=make_legend(), loc="lower center", ncol=3,
-                   fontsize=9, frameon=True, facecolor=C["void"],
-                   edgecolor=C["grid_line"], labelcolor=C["text"],
-                   bbox_to_anchor=(0.5, 0.0))
-        plt.tight_layout(rect=[0, 0.1, 1, 1])
+    fig.legend(handles=make_legend(), loc="lower center", ncol=3 if n == 1 else 5,
+               fontsize=9.5, frameon=True, facecolor=C["void"],
+               edgecolor=C["grid_line"], labelcolor=C["text"],
+               bbox_to_anchor=(0.5, 0.0 if n == 1 else 0.01))
+    plt.tight_layout(rect=[0, 0.1 if n == 1 else 0.07, 1, 1])
 
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    plt.savefig(out, facecolor=C["void"], bbox_inches="tight")
+    plt.savefig(out, facecolor=C["void"], bbox_inches="tight", dpi=300)
     plt.close()
     print(f"Saved → {out}")
 

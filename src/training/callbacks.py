@@ -234,8 +234,8 @@ class BestLayoutCallback(BaseCallback):
         try:
             from src.layout.baker import bake_layout
 
-            arch_dest = PROJECT_ROOT / f"best_baked_layout_{self.benchmark_name}.xml"
-            constraints_dest = PROJECT_ROOT / f"best_layout_constraints_{self.benchmark_name}.xml"
+            arch_dest = PROJECT_ROOT / f"best_baked_layout_{self.benchmark_name}{self.log_suffix}.xml"
+            constraints_dest = PROJECT_ROOT / f"best_layout_constraints_{self.benchmark_name}{self.log_suffix}.xml"
             
             all_block_names = self._dsp_block_names + self._bram_block_names
             
@@ -261,7 +261,7 @@ class BestLayoutCallback(BaseCallback):
                     return obj.item()
                 return obj
 
-            coords_dest = PROJECT_ROOT / f"best_layout_coordinates_{self.benchmark_name}.txt"
+            coords_dest = PROJECT_ROOT / f"best_layout_coordinates_{self.benchmark_name}{self.log_suffix}.txt"
             coords_dest.write_text(
                 json.dumps(
                     {
@@ -297,7 +297,7 @@ class BestLayoutCallback(BaseCallback):
         if not paths.is_flow_available:
             return
 
-        best_run_dir = PROJECT_ROOT / "runs" / f"best_run_{self.benchmark_name}"
+        best_run_dir = PROJECT_ROOT / "runs" / f"best_run_{self.benchmark_name}{self.log_suffix}"
         if best_run_dir.exists():
             shutil.rmtree(best_run_dir)
         best_run_dir.mkdir(parents=True, exist_ok=True)

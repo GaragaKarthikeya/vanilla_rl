@@ -1,0 +1,75 @@
+{
+  "target": "diffeq1",
+  "baseline_metric": {
+    "delay_ns": 22.3395,
+    "wirelength": 12608.0,
+    "power_w": 0.007714,
+    "routing_area": 694168.0
+  },
+  "random": {
+    "avg_reward": -1.018689284387604,
+    "best_reward": 0.30868165942010717,
+    "best_info": {
+      "wirelength": 10618.0,
+      "delay_ns": 22.1378,
+      "power_w": 0.006892,
+      "routing_area": 575810.0,
+      "placed_dsps": [
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          3
+        ]
+      ],
+      "aspect_ratio": 0.6
+    }
+  },
+  "rl_zero_shot": {
+    "reward": 0.6904132311577991,
+    "success": true,
+    "info": {
+      "wirelength": 8929.0,
+      "delay_ns": 21.5744,
+      "power_w": 0.006178,
+      "routing_area": 449975.0,
+      "placed_dsps": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "aspect_ratio": 1.0
+    }
+  }
+}
