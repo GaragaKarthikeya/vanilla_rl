@@ -2,6 +2,20 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Research Motivation
+
+This pipeline exists to support **eFPGA-based logic masking**: embedding a small, custom reconfigurable fabric into an ASIC to implement one critical IP block, so the function isn't visible from the silicon layout/GDSII without the bitstream (a known hardware-security technique against reverse engineering and IP theft). A generic/traditional FPGA architecture is built for arbitrary circuits and is therefore over-provisioned — extra LUTs, routing, DSP/BRAM slots — for any one fixed design that will only ever run a single bitstream. Because the target use case is **one known application on a small embedded fabric** (not general-purpose reconfigurability), a custom-tailored architecture and placement, sized and arranged specifically for that one netlist, is viable and can recover most of the area/delay/power overhead a generic FPGA would otherwise cost.
+
+**This is why Area × Delay × Power (ADP) is the central optimization target throughout this codebase**: it's the size of the "masking tax" — the PPA overhead of implementing the IP on reconfigurable fabric instead of hardening it directly into standard cells. Minimizing ADP is minimizing the cost of the security technique.
+
+**Research lineage:** this work continues the direction of two prior papers using the *same* benchmarks (diffeq1, diffeq2, etc.) and the *same* VTR-based evaluation methodology, but with Genetic Algorithm / NSGA-II search instead of RL:
+- *GOLDS: Genetic Algorithm-based Optimization of Custom FPGA Architecture Layout Design for Secure Silicon* (Nandi, Mishra, Rao — GLSVLSI '24) — GA search over DSP/BRAM/CLB placement, fitness = Area×Delay, reports up to ~35% ADP gain over traditional layout on diffeq1.
+- *Meta-Heuristic Optimization of Custom Heterogeneous Blocks defined eFPGA Design* (Bhargav, Pradyumna, Rao — VLSID '25) — NSGA-II, multi-objective (delay, power), additionally co-evolves CLB LUT size and custom DSP/BRAM sizing (not just placement), reports up to ~44.6% improvement.
+
+**What this RL-based approach adds that per-instance evolutionary search structurally cannot:** a *learned policy* amortizes across deployments. A GA/NSGA-II run starts its population from scratch for every new IP; our zero-shot transfer experiment (diffeq2-trained policy applied directly to diffeq1, no training) already beat GOLDS' published GA result on diffeq1 (computed on their exact Area×Delay metric) with zero benchmark-specific optimization, and fine-tuning from a pretrained policy converged ~2.4x faster in wall-clock than training from scratch. That amortization — fast, strong layouts for a *new* critical IP without re-running search from zero — is the practical case for RL over evolutionary search in this setting, more than raw single-instance ADP beaten head-to-head. Full experimental results, including the GOLDS comparison numbers, are in `EXPERIMENTS.md`.
+
+**Known gaps before any of this is publication-ready** (tracked here so they aren't re-discovered from scratch next session): every run so far uses a single seed (no error bars on any headline number); only diffeq1/diffeq2 have been used for training (GOLDS/NSGA-II also report on sha, spree, boundtop, ch_intrinsics, raygentop, and the Koios DL suite — running on these would give more directly comparable points); the traditional-FPGA baseline architecture assumptions haven't been matched against GOLDS' setup, so the comparison is suggestive, not yet rigorous; and the action space only covers DSP/BRAM placement + aspect ratio, not the CLB LUT-size / custom arithmetic-block sizing that the NSGA-II follow-up also co-optimizes.
+
 ## Quick Start
 
 This is a clean RL training pipeline for FPGA placement optimization using VTR (Verilog-to-Routing). All commands must use `/home/digital-2/.venv/bin/python3` since the system Python doesn't have required packages.
