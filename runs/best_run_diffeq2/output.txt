@@ -1,5 +1,0 @@
-vpr_status=success
-vpr_seconds=4
-rundir=/home/digital-2/rl_gnn/vanilla_rl
-hostname=localhost.localdomain
-error=

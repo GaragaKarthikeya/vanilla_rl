@@ -20,10 +20,7 @@ best_layout_constraints_*.xml
 *_netlist_graph.json
 
 # ── VTR / VPR run artifacts ───────────────────────────────────────────────────
-runs/temp_run_*/
-runs/vtr_layout_cache_*.db
-runs/tb_logs/
-runs/checkpoints_*/
+runs/
 temp_arch_*.xml
 temp_constraints_*.xml
 
