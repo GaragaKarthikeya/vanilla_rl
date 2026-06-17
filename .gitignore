@@ -37,8 +37,6 @@ chany_occupancy.txt
 *.power
 packing_pin_util.rpt
 
-# ── Visualizations (generated images) ────────────────────────────────────────
-visualizations/
 
 # ── IDE / OS ──────────────────────────────────────────────────────────────────
 .vscode/

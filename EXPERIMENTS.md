@@ -117,3 +117,4 @@ Given the zero-shot result, the next question was whether *actually training* on
 | VTR layout caches (reusable across future runs on the same benchmark) | `runs/vtr_layout_cache_diffeq2.db`, `runs/vtr_layout_cache_diffeq1_scratch.db`, `runs/vtr_layout_cache_diffeq1_finetuned.db` |
 | TensorBoard logs (required by `plot_training_analysis.py` for the entropy plot) | `runs/tb_logs/MaskablePPO_{3,4,5,6}` (diffeq2 120/update, diffeq2 24/update, diffeq1 scratch, diffeq1 fine-tuned, respectively) |
 | Training analysis plots | `src/visualization/plot_training_analysis.py` → `visualizations/analysis/` |
+| Layout-evolution animations (one "new best" milestone per frame, crossfaded, grid recentered per frame so only its size changes) | `src/visualization/animate_best_layouts.py` → `visualizations/animations/{run}.gif` for all four training runs |
