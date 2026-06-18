@@ -153,6 +153,7 @@ def parse_net_file(net_path: Path) -> list[BlockNetInfo]:
     TOP_LEVEL_PREFIXES = {
         "mult_36",  # DSP
         "bram",
+        "memory",  # BRAM — VTR's actual top-level instance name for memory blocks
         "clb",
         "io",
         "lut",

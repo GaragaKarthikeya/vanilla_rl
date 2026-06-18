@@ -3,16 +3,19 @@
 import json
 import os
 import sys
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Optional
 
+import wandb
 from stable_baselines3.common.callbacks import CallbackList, CheckpointCallback
 from stable_baselines3.common.env_util import make_vec_env
 from stable_baselines3.common.vec_env import SubprocVecEnv
+from wandb.integration.sb3 import WandbCallback
 
-from src.env.fpga_env import FPGAEnv
+from src.env.fpga_env import FPGAEnv, build_benchmark_configs, compute_max_dims
 from src.training.callbacks import BestLayoutCallback
+from src.training.gnn_extractor import GNNFeaturesExtractor
 from src.training.ppo import CustomMaskablePPO
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -20,7 +23,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 @dataclass
 class TrainConfig:
-    benchmark_name: str = "diffeq1"
+    benchmark_names: list[str] = field(default_factory=lambda: ["diffeq1"])
     n_envs: Optional[int] = None
     timesteps: int = 10_000
     lr: float = 3e-4
@@ -35,163 +38,122 @@ class TrainConfig:
     dl_weight: float = 1.0
     pw_weight: float = 1.0
     wl_weight: float = 0.0
-    cache_db_path: Optional[str] = None
     save_path: Optional[str] = None
     load_path: Optional[str] = None
     log_suffix: str = ""
+    universe_benchmark_names: Optional[list[str]] = None
+    vtr_timeout: int = 300
+    use_wandb: bool = True
+    wandb_project: str = "fpga-placement-gnn"
+    wandb_entity: Optional[str] = None
+
+
+def _run_name(benchmark_names: list[str], cfg: TrainConfig) -> str:
+    bench_label = "-".join(benchmark_names) if len(benchmark_names) <= 3 else f"multi{len(benchmark_names)}"
+    return f"{bench_label}_seed{cfg.seed}{cfg.log_suffix}"
 
 
 def train(cfg: TrainConfig) -> None:
-    """Entry point for a full training run."""
-    benchmark_name = cfg.benchmark_name.removesuffix(".v")
+    """Entry point for a full training run across a mix of benchmarks."""
+    benchmark_names = [b.removesuffix(".v") for b in cfg.benchmark_names]
+    universe_names = (
+        [b.removesuffix(".v") for b in cfg.universe_benchmark_names]
+        if cfg.universe_benchmark_names
+        else benchmark_names
+    )
 
-    res_file = PROJECT_ROOT / "baselines" / f"{benchmark_name}_traditional_resources.txt"
-    metric_file = PROJECT_ROOT / "baselines" / f"{benchmark_name}_traditional_metric.txt"
-
-    if not res_file.is_file() or not metric_file.is_file():
-        print(
-            f"Error: Traditional baseline files not found for '{benchmark_name}' in {PROJECT_ROOT}",
-            file=sys.stderr,
-        )
+    try:
+        max_width, max_height, max_nodes, max_edges = compute_max_dims(universe_names)
+        configs = build_benchmark_configs(benchmark_names, max_width, max_height, max_nodes, max_edges)
+    except (FileNotFoundError, ValueError) as exc:
+        print(f"Error loading benchmark configs: {exc}", file=sys.stderr)
         sys.exit(1)
-
-    res_data = json.loads(res_file.read_text())
-    metric_data = json.loads(metric_file.read_text())
-
-    fpga_size = res_data.get("fpga_size", [0, 0])
-    if len(fpga_size) != 2 or not all(fpga_size):
-        print(f"Error: Invalid 'fpga_size' in {res_file}", file=sys.stderr)
-        sys.exit(1)
-
-    width, height = int(fpga_size[0]), int(fpga_size[1])
-    reqs = res_data.get("requirements", {})
-    req_dsp = reqs.get("dsp", 0)
-    req_bram = reqs.get("bram", 0)
-
-    # Load net count data if available
-    net_count_data = {}
-    net_count_file = PROJECT_ROOT / f"{benchmark_name}_netlist_info.json"
-    if net_count_file.is_file():
-        try:
-            nc_data = json.loads(net_count_file.read_text())
-            # Convert string keys like "('DSP', 0)" to tuples ("DSP", 0).
-            # Keys end with a digit + ')' not '), so only check the prefix.
-            for k, v in nc_data.items():
-                if k.startswith("('"):
-                    try:
-                        key_tuple = eval(k)
-                        net_count_data[key_tuple] = v
-                    except Exception:
-                        net_count_data[k] = v
-                else:
-                    net_count_data[k] = v
-            print(f"Loaded net count data from {net_count_file.name}")
-        except Exception as e:
-            print(f"Warning: Failed to load net count data: {e}", file=sys.stderr)
-
-    # Extract VPR block names from the traditional .net file for placement constraints.
-    # Sort order must match FPGAEnv._build_sorted_placement: BRAMs then DSPs, each
-    # sorted by net count descending.  This lets the agent's placement sequence bind
-    # to the correct physical block name in the VPR constraints XML.
-    dsp_block_names: list[str] = []
-    bram_block_names: list[str] = []
-    net_file = PROJECT_ROOT / "runs" / f"{benchmark_name}_traditional" / f"{benchmark_name}.net"
-    if net_file.is_file():
-        try:
-            from src.netlist.parser import parse_net_file
-            parsed_blocks = parse_net_file(net_file)
-            # Use atom_name (e.g. "$mul~6[0]") not instance_name ("mult_36[1]"):
-            # VPR's <add_atom name_pattern=...> matches atom-level names from the .place file,
-            # not the packed-block instance names.
-            dsp_parsed = [(b.atom_name, b.unique_nets) for b in parsed_blocks if b.block_type == "dsp"]
-            bram_parsed = [(b.atom_name, b.unique_nets) for b in parsed_blocks if b.block_type == "bram"]
-            dsp_block_names = [n for n, _ in sorted(dsp_parsed, key=lambda x: x[1], reverse=True)]
-            bram_block_names = [n for n, _ in sorted(bram_parsed, key=lambda x: x[1], reverse=True)]
-            # Only use constraints when counts match what the env expects
-            if req_dsp and len(dsp_block_names) != req_dsp:
-                print(
-                    f"Warning: netlist has {len(dsp_block_names)} DSPs but resources require {req_dsp}. "
-                    "Disabling DSP constraints.",
-                    file=sys.stderr,
-                )
-                dsp_block_names = []
-            if req_bram and len(bram_block_names) != req_bram:
-                print(
-                    f"Warning: netlist has {len(bram_block_names)} BRAMs but resources require {req_bram}. "
-                    "Disabling BRAM constraints.",
-                    file=sys.stderr,
-                )
-                bram_block_names = []
-        except Exception as e:
-            print(f"Warning: Failed to extract block names from {net_file.name}: {e}", file=sys.stderr)
-    else:
-        print(f"Note: No .net file found at {net_file} — VPR placement constraints disabled.")
 
     print("=" * 60)
-    print(f"Benchmark          : {benchmark_name}")
-    print(f"Core grid          : {width}×{height}  ({width+2}×{height+2} with IO ring)")
-    print(f"Required DSPs/BRAMs: {req_dsp} / {req_bram}")
-    print(f"Baseline wirelength: {metric_data.get('wirelength')}")
-    print(f"Baseline delay (ns): {metric_data.get('delay_ns')}")
-    print(f"Baseline power (W) : {metric_data.get('power_w')}")
+    print(f"Benchmarks (train) : {', '.join(benchmark_names)}")
+    if universe_names != benchmark_names:
+        print(f"Universe (sizing)  : {', '.join(universe_names)}")
+    print(f"Shared canvas      : {max_width}x{max_height}  (+2 IO ring per benchmark when baked)")
+    print(f"Reduced graph caps : MAX_NODES={max_nodes}  MAX_EDGES={max_edges}")
+    for c in configs:
+        print(
+            f"  {c.name:<16} grid={c.width}x{c.height}  dsp={c.req_dsp} bram={c.req_bram}  "
+            f"baseline wl={c.traditional_metrics.get('wirelength')} "
+            f"dl={c.traditional_metrics.get('delay_ns')} pw={c.traditional_metrics.get('power_w')}"
+        )
     print(f"Reward weights     : wl={cfg.wl_weight} pw={cfg.pw_weight} dl={cfg.dl_weight} ar={cfg.ar_weight}")
-    if net_count_data:
-        print(f"Net count data     : {len(net_count_data)} blocks loaded")
-    if dsp_block_names:
-        print(f"DSP constraints    : {dsp_block_names}")
-    if bram_block_names:
-        print(f"BRAM constraints   : {bram_block_names}")
     print("=" * 60)
 
     n_envs = cfg.n_envs or min(8, os.cpu_count() or 1)
     print(f"Parallel workers   : {n_envs}")
 
-    db_path = cfg.cache_db_path or str(PROJECT_ROOT / "runs" / f"vtr_layout_cache_{benchmark_name}.db")
+    run_name = _run_name(benchmark_names, cfg)
+    wandb_run = None
+    if cfg.use_wandb:
+        wandb_run = wandb.init(
+            project=cfg.wandb_project,
+            entity=cfg.wandb_entity,
+            name=run_name,
+            group="-".join(benchmark_names),
+            tags=benchmark_names,
+            config={
+                **{k: v for k, v in asdict(cfg).items() if k not in ("wandb_project", "wandb_entity")},
+                "n_envs": n_envs,
+                "max_width": max_width,
+                "max_height": max_height,
+                "max_nodes": max_nodes,
+                "max_edges": max_edges,
+            },
+            dir=str(PROJECT_ROOT / "runs"),
+        )
+        print(f"W&B run            : {wandb_run.url}")
+        print("=" * 60)
 
     env_kwargs = {
-        "benchmark_name": benchmark_name,
-        "width": width,
-        "height": height,
-        "req_dsp": req_dsp,
-        "req_bram": req_bram,
-        "traditional_metrics": metric_data,
-        "cache_db_path": db_path,
+        "benchmark_configs": configs,
+        "max_width": max_width,
+        "max_height": max_height,
+        "max_nodes": max_nodes,
+        "max_edges": max_edges,
         "wl_weight": cfg.wl_weight,
         "pw_weight": cfg.pw_weight,
         "dl_weight": cfg.dl_weight,
         "ar_weight": cfg.ar_weight,
-        "net_count_data": net_count_data,
-        "use_net_count_sort": True,
-        "dsp_block_names": dsp_block_names or None,
-        "bram_block_names": bram_block_names or None,
+        "vtr_timeout": cfg.vtr_timeout,
     }
 
     env = make_vec_env(FPGAEnv, n_envs=n_envs, seed=cfg.seed, vec_env_cls=SubprocVecEnv, env_kwargs=env_kwargs)
 
     best_layout_cb = BestLayoutCallback(
-        benchmark_name=benchmark_name,
-        width=width,
-        height=height,
+        benchmark_configs=configs,
         seed_val=cfg.seed,
-        trad_metrics=metric_data,
         max_episodes=cfg.max_episodes,
         log_suffix=cfg.log_suffix,
-        dsp_block_names=dsp_block_names or None,
-        bram_block_names=bram_block_names or None,
     )
 
     checkpoint_cb = CheckpointCallback(
         save_freq=max(1, cfg.n_steps * 5),
         save_path=str(PROJECT_ROOT / "runs" / f"checkpoints_seed_{cfg.seed}"),
-        name_prefix=f"{benchmark_name}_model",
+        name_prefix="multi_model",
     )
 
-    try:
-        import tensorboard  # noqa: F401
-        tb_log = str(PROJECT_ROOT / "runs" / "tb_logs")
-    except ImportError:
-        tb_log = None
-        print("Warning: TensorBoard not installed — logging disabled.")
+    callbacks = [best_layout_cb, checkpoint_cb]
+    if wandb_run is not None:
+        # No gradient/parameter histogram logging (log=None, gradient_save_freq=0) —
+        # per-step histograms add real overhead over a long run and we already log
+        # the 7 PPO stability metrics directly via wandb.log() in ppo.py. Model
+        # snapshots are saved sparsely (a handful over the whole run) rather than
+        # every few rollouts; the local CheckpointCallback above stays frequent
+        # since that's cheap disk-only I/O.
+        callbacks.append(
+            WandbCallback(
+                verbose=1,
+                model_save_path=str(PROJECT_ROOT / "runs" / f"wandb_models_seed_{cfg.seed}"),
+                model_save_freq=max(1, cfg.timesteps // 5),
+                gradient_save_freq=0,
+                log=None,
+            )
+        )
 
     ppo_kwargs = dict(
         learning_rate=cfg.lr,
@@ -202,21 +164,21 @@ def train(cfg: TrainConfig) -> None:
         ent_coef=cfg.ent_coef,
         seed=cfg.seed,
         verbose=1,
-        tensorboard_log=tb_log,
+        policy_kwargs={"features_extractor_class": GNNFeaturesExtractor},
     )
 
     if cfg.load_path and os.path.exists(cfg.load_path):
         print(f"Loading model from {cfg.load_path}")
         model = CustomMaskablePPO.load(cfg.load_path, env=env, **ppo_kwargs)
     else:
-        model = CustomMaskablePPO("MlpPolicy", env, **ppo_kwargs)
+        model = CustomMaskablePPO("MultiInputPolicy", env, **ppo_kwargs)
 
     print(f"\nStarting training — target timesteps: {cfg.timesteps}")
     print(f"Rollout buffer size: {n_envs * cfg.n_steps} steps per update")
     print("=" * 60)
 
     try:
-        model.learn(total_timesteps=cfg.timesteps, callback=CallbackList([best_layout_cb, checkpoint_cb]))
+        model.learn(total_timesteps=cfg.timesteps, callback=CallbackList(callbacks))
         print("\nTraining complete.")
     except KeyboardInterrupt:
         print("\nInterrupted by user.")
@@ -225,13 +187,15 @@ def train(cfg: TrainConfig) -> None:
             model.save(cfg.save_path)
             print(f"Model saved to {cfg.save_path}")
 
-        _save_all_layouts(best_layout_cb, benchmark_name, cfg)
+        _save_all_layouts(best_layout_cb, cfg)
         env.close()
+        if wandb_run is not None:
+            wandb.finish()
 
 
-def _save_all_layouts(callback: BestLayoutCallback, benchmark_name: str, cfg: TrainConfig) -> None:
+def _save_all_layouts(callback: BestLayoutCallback, cfg: TrainConfig) -> None:
     layouts = callback.all_completed_layouts[: cfg.max_episodes]
-    dest = PROJECT_ROOT / f"layouts_{benchmark_name}_seed_{cfg.seed}{cfg.log_suffix}.json"
+    dest = PROJECT_ROOT / f"layouts_multi_seed_{cfg.seed}{cfg.log_suffix}.json"
     try:
         dest.write_text(json.dumps(layouts, indent=4))
         print(f"Saved {len(layouts)} layouts → {dest.name}")

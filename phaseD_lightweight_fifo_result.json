@@ -1,0 +1,21 @@
+{
+  "fifo": {
+    "benchmark": "fifo",
+    "reward": 0.001041471657088294,
+    "success": true,
+    "status": null,
+    "wirelength": 687.0,
+    "delay_ns": 1.9194,
+    "power_w": 0.01124,
+    "routing_area": 57149.1,
+    "baseline": {
+      "delay_ns": 1.93748,
+      "wirelength": 597.0,
+      "power_w": 0.0116,
+      "routing_area": 94183.3
+    },
+    "adp": 1232.9378837496,
+    "baseline_adp": 2116.7478169744,
+    "adp_reduction_pct": 41.75319923032139
+  }
+}

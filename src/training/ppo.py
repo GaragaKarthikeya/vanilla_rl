@@ -6,6 +6,7 @@ import gymnasium as gym
 import numpy as np
 import torch as th
 import torch.nn.functional as F
+import wandb
 from sb3_contrib import MaskablePPO
 
 
@@ -46,7 +47,13 @@ class CustomMaskablePPO(MaskablePPO):
         clip_range_val = self.clip_range(self._current_progress_remaining)
 
         for env_idx in range(self.n_envs):
-            obs_i = th.as_tensor(self.rollout_buffer.observations[:, env_idx]).to(self.device)
+            if isinstance(self.rollout_buffer.observations, dict):
+                obs_i = {
+                    k: th.as_tensor(v[:, env_idx]).to(self.device)
+                    for k, v in self.rollout_buffer.observations.items()
+                }
+            else:
+                obs_i = th.as_tensor(self.rollout_buffer.observations[:, env_idx]).to(self.device)
             actions_i = th.as_tensor(self.rollout_buffer.actions[:, env_idx]).to(self.device)
             advantages_i = th.as_tensor(self.rollout_buffer.advantages[:, env_idx]).to(self.device)
             returns_i = th.as_tensor(self.rollout_buffer.returns[:, env_idx]).to(self.device)
@@ -129,9 +136,11 @@ class CustomMaskablePPO(MaskablePPO):
             "explained_variance": explained_var,
         }
 
-        # Log to SB3 logger and console
-        for k, v in self.latest_metrics.items():
-            self.logger.record(f"train/{k}", v)
+        if wandb.run is not None:
+            wandb.log(
+                {f"train/{k}": v for k, v in self.latest_metrics.items()},
+                step=self.num_timesteps,
+            )
 
         print(f"\n[Stability Report — update #{self._n_updates + 1}]")
         for k, v in self.latest_metrics.items():

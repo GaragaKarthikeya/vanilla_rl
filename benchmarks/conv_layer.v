@@ -175,7 +175,7 @@ assign pe_reset = ~pe_resetn;
   wire [`MAT_MUL_SIZE*`DWIDTH-1:0] c_data_3;
   wire [`MAT_MUL_SIZE*`DWIDTH-1:0] a_data_in_3_NC;
   assign a_data_in_3_NC = 0;
-  wire [`MAT_MUL_SIZE*`DWIDTH-1:0] b_data_in_3_NC;+
+  wire [`MAT_MUL_SIZE*`DWIDTH-1:0] b_data_in_3_NC;
   assign b_data_in_3_NC = 0;
   wire [`MAT_MUL_SIZE*`DWIDTH-1:0] c_data_in_3_NC;
   assign c_data_in_3_NC = 0;

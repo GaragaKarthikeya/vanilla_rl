@@ -1,0 +1,21 @@
+{
+  "arm_core": {
+    "benchmark": "arm_core",
+    "reward": 0.04040606526121702,
+    "success": true,
+    "status": null,
+    "wirelength": 174969.0,
+    "delay_ns": 18.8963,
+    "power_w": 0.05944,
+    "routing_area": 8961070.0,
+    "baseline": {
+      "delay_ns": 19.8096,
+      "wirelength": 181252.0,
+      "power_w": 0.06116,
+      "routing_area": 9465940.0
+    },
+    "adp": 10065038.62491704,
+    "baseline_adp": 11468508.224067839,
+    "adp_reduction_pct": 12.237595088483038
+  }
+}

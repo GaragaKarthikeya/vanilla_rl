@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 
 import json
-import os
 import shutil
 import subprocess
 import time
 from pathlib import Path
 from typing import Optional
 
+import wandb
 from stable_baselines3.common.callbacks import BaseCallback
 
+from src.env.fpga_env import BenchmarkConfig
 from src.utils.config import VTRPaths
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -17,40 +18,32 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 class BestLayoutCallback(BaseCallback):
     """
-    Tracks and saves the best FPGA layout found during training.
+    Tracks and saves the best FPGA layout found during training, per
+    benchmark (a single training run mixes episodes across all benchmarks
+    in `benchmark_configs`, so "best" is tracked separately for each one
+    rather than as one global best across incomparable benchmarks).
 
-    Logs every completed episode to a .jsonl file, saves the best-ever
-    layout as a baked architecture XML, and prints 2-minute progress reports
-    including PPO stability metrics.
+    Logs every completed episode to a .jsonl file, saves each benchmark's
+    best-ever layout as a baked architecture XML, and prints 2-minute
+    progress reports including PPO stability metrics.
     """
 
     def __init__(
         self,
-        benchmark_name: str,
-        width: int,
-        height: int,
+        benchmark_configs: list[BenchmarkConfig],
         seed_val: int,
-        trad_metrics: dict,
         max_episodes: int = 256,
         log_suffix: str = "",
         verbose: int = 0,
-        dsp_block_names: Optional[list[str]] = None,
-        bram_block_names: Optional[list[str]] = None,
     ) -> None:
         super().__init__(verbose)
-        self.benchmark_name = benchmark_name
-        self.width = width
-        self.height = height
+        self._configs_by_name = {cfg.name: cfg for cfg in benchmark_configs}
         self.seed_val = seed_val
-        self.trad_metrics = trad_metrics
         self.max_episodes = max_episodes
         self.log_suffix = log_suffix
 
-        self._dsp_block_names = dsp_block_names or []
-        self._bram_block_names = bram_block_names or []
-
-        self.best_reward = -float("inf")
-        self.best_info: dict = {}
+        self.best_reward: dict[str, float] = {}
+        self.best_info: dict[str, dict] = {}
         self.start_time = time.time()
 
         self.episode_rewards: list[float] = []
@@ -72,6 +65,8 @@ class BestLayoutCallback(BaseCallback):
         rewards = self.locals.get("rewards", [])
 
         for idx, info in enumerate(infos):
+            bname = info.get("benchmark_name")
+
             if "episode" in info:
                 ep_rew = float(info["episode"]["r"])
                 self.episode_rewards.append(ep_rew)
@@ -83,6 +78,7 @@ class BestLayoutCallback(BaseCallback):
                     return obj.item() if hasattr(obj, "item") else obj
 
                 layout_record = {
+                    "benchmark_name": bname,
                     "aspect_ratio": float(info.get("aspect_ratio", 1.0)),
                     "dsps": _to_py(info.get("placed_dsps", [])),
                     "brams": _to_py(info.get("placed_brams", [])),
@@ -96,11 +92,18 @@ class BestLayoutCallback(BaseCallback):
                 self.all_completed_layouts.append(layout_record)
                 self._write_jsonl(layout_record)
 
-            if info.get("success") and rewards[idx] > self.best_reward:
-                self.best_reward = rewards[idx]
-                self.best_info = info
-                self._print_new_best(rewards[idx], info)
-                self._save_best_layout(info)
+                if wandb.run is not None:
+                    log_dict = {"episode/reward": ep_rew, "episode/success": int(info.get("success", False))}
+                    if bname:
+                        log_dict[f"episode_reward/{bname}"] = ep_rew
+                    wandb.log(log_dict, step=self.num_timesteps)
+
+            if info.get("success") and bname and rewards[idx] > self.best_reward.get(bname, -float("inf")):
+                self.best_reward[bname] = rewards[idx]
+                self.best_info[bname] = info
+                self._print_new_best(bname, rewards[idx], info)
+                self._save_best_layout(bname, info)
+                self._log_best_to_wandb(bname, rewards[idx], info)
 
         if len(self.episode_rewards) >= self.max_episodes:
             print(f"\n[INFO] Reached {len(self.episode_rewards)} episodes. Stopping.")
@@ -119,8 +122,8 @@ class BestLayoutCallback(BaseCallback):
     # ------------------------------------------------------------------
 
     def _write_jsonl(self, record: dict) -> None:
-        log_path = PROJECT_ROOT / f"all_layouts_{self.benchmark_name}_seed_{self.seed_val}{self.log_suffix}.jsonl"
-        # Convert numpy int64 to Python int for JSON serialization
+        log_path = PROJECT_ROOT / f"all_layouts_multi_seed_{self.seed_val}{self.log_suffix}.jsonl"
+
         def convert_to_serializable(obj):
             if isinstance(obj, list):
                 return [convert_to_serializable(item) for item in obj]
@@ -153,13 +156,16 @@ class BestLayoutCallback(BaseCallback):
 
         self._episodes_checked = len(self.episode_rewards)
 
+        if wandb.run is not None:
+            wandb.log({"convergence/avg_reward_last100": current_avg}, step=self.num_timesteps)
+
         if self._stagnant_count >= self._patience:
             print(f"\n[INFO] Early stopping at {len(self.episode_rewards)} episodes.")
             return  # caller checks return value; can't stop here directly
 
-    def _print_new_best(self, reward: float, info: dict) -> None:
+    def _print_new_best(self, bname: str, reward: float, info: dict) -> None:
         print("\n" + "=" * 50)
-        print(f"[NEW BEST — SEED {self.seed_val}]")
+        print(f"[NEW BEST — {bname} — SEED {self.seed_val}]")
         print(f"  Reward       : {reward:.5f}")
         print(f"  Wirelength   : {info.get('wirelength')}")
         print(f"  Delay (ns)   : {info.get('delay_ns')}")
@@ -212,60 +218,74 @@ class BestLayoutCallback(BaseCallback):
             print("  PPO stability metrics not yet available.")
 
     def _print_best_vs_baseline(self) -> None:
-        if self.best_reward == -float("inf"):
+        if not self.best_reward:
             print("  No successful layout yet.")
             return
 
-        tm = self.trad_metrics
-        bi = self.best_info
-        print(f"  Best reward  : {self.best_reward:.5f}")
-        for metric, label, key in [
-            ("wirelength", "Wirelength", "wirelength"),
-            ("delay_ns",   "Delay (ns)", "delay_ns"),
-            ("power_w",    "Power (W)",  "power_w"),
-        ]:
-            best_val = bi.get(metric)
-            base_val = tm.get(key)
-            if best_val is not None and base_val:
-                imp = (base_val - best_val) / base_val * 100.0
-                print(f"    {label:<12}: {best_val}  (baseline {base_val}, {imp:+.2f}%)")
+        for bname, reward in self.best_reward.items():
+            tm = self._configs_by_name[bname].traditional_metrics
+            bi = self.best_info[bname]
+            print(f"  [{bname}] best reward: {reward:.5f}")
+            for metric, label, key in [
+                ("wirelength", "Wirelength", "wirelength"),
+                ("delay_ns",   "Delay (ns)", "delay_ns"),
+                ("power_w",    "Power (W)",  "power_w"),
+            ]:
+                best_val = bi.get(metric)
+                base_val = tm.get(key)
+                if best_val is not None and base_val:
+                    imp = (base_val - best_val) / base_val * 100.0
+                    print(f"    {label:<12}: {best_val}  (baseline {base_val}, {imp:+.2f}%)")
 
-    def _save_best_layout(self, info: dict) -> None:
+    def _log_best_to_wandb(self, bname: str, reward: float, info: dict) -> None:
+        if wandb.run is None:
+            return
+        tm = self._configs_by_name[bname].traditional_metrics
+        log_dict = {f"best_reward/{bname}": reward}
+        for metric, key in [("wirelength", "wirelength"), ("delay_ns", "delay_ns"), ("power_w", "power_w")]:
+            val = info.get(metric)
+            base_val = tm.get(key)
+            if val is not None and base_val:
+                log_dict[f"best_{metric}/{bname}"] = val
+                log_dict[f"best_{metric}_improvement_pct/{bname}"] = (base_val - val) / base_val * 100.0
+        wandb.log(log_dict, step=self.num_timesteps)
+
+    def _save_best_layout(self, bname: str, info: dict) -> None:
         try:
             from src.layout.baker import bake_layout
 
-            arch_dest = PROJECT_ROOT / f"best_baked_layout_{self.benchmark_name}{self.log_suffix}.xml"
-            constraints_dest = PROJECT_ROOT / f"best_layout_constraints_{self.benchmark_name}{self.log_suffix}.xml"
-            
-            all_block_names = self._dsp_block_names + self._bram_block_names
-            
+            cfg = self._configs_by_name[bname]
+            arch_dest = PROJECT_ROOT / f"best_baked_layout_{bname}{self.log_suffix}.xml"
+            constraints_dest = PROJECT_ROOT / f"best_layout_constraints_{bname}{self.log_suffix}.xml"
+
+            all_block_names = cfg.dsp_block_names + cfg.bram_block_names
+
             bake_layout(
-                benchmark_name=self.benchmark_name,
+                benchmark_name=bname,
                 dsps=info["placed_dsps"],
                 mems=info["placed_brams"],
-                width=self.width + 2,
-                height=self.height + 2,
+                width=cfg.width + 2,
+                height=cfg.height + 2,
                 output_path=str(arch_dest),
                 aspect_ratio=info.get("aspect_ratio"),
                 block_names=all_block_names if all_block_names else None,
                 constraints_output_path=str(constraints_dest) if all_block_names else None,
             )
 
-            # Helper to convert numpy types to Python types for JSON serialization
             def make_serializable(obj):
                 if isinstance(obj, list):
                     return [make_serializable(item) for item in obj]
                 elif isinstance(obj, tuple):
-                    return [make_serializable(item) for item in obj]  # JSON doesn't have tuples
-                elif hasattr(obj, 'item'):  # numpy types
+                    return [make_serializable(item) for item in obj]
+                elif hasattr(obj, 'item'):
                     return obj.item()
                 return obj
 
-            coords_dest = PROJECT_ROOT / f"best_layout_coordinates_{self.benchmark_name}{self.log_suffix}.txt"
+            coords_dest = PROJECT_ROOT / f"best_layout_coordinates_{bname}{self.log_suffix}.txt"
             coords_dest.write_text(
                 json.dumps(
                     {
-                        "reward": self.best_reward,
+                        "reward": self.best_reward[bname],
                         "wirelength": info.get("wirelength"),
                         "delay_ns": info.get("delay_ns"),
                         "power_w": info.get("power_w"),
@@ -285,24 +305,23 @@ class BestLayoutCallback(BaseCallback):
             if all_block_names:
                 print(f"Saved best constraints → {constraints_dest.name}")
 
-            # Launch background VTR run for the best layout
-            self._launch_best_vtr_run(info, arch_dest, constraints_dest if all_block_names else None)
+            self._launch_best_vtr_run(bname, info, arch_dest, constraints_dest if all_block_names else None)
 
         except Exception as exc:
             import sys
-            print(f"Error saving best layout: {exc}", file=sys.stderr)
+            print(f"Error saving best layout for {bname}: {exc}", file=sys.stderr)
 
-    def _launch_best_vtr_run(self, info: dict, arch_path: Path, constraints_path: Optional[Path] = None) -> None:
+    def _launch_best_vtr_run(self, bname: str, info: dict, arch_path: Path, constraints_path: Optional[Path] = None) -> None:
         paths = VTRPaths()
         if not paths.is_flow_available:
             return
 
-        best_run_dir = PROJECT_ROOT / "runs" / f"best_run_{self.benchmark_name}{self.log_suffix}"
+        best_run_dir = PROJECT_ROOT / "runs" / f"best_run_{bname}{self.log_suffix}"
         if best_run_dir.exists():
             shutil.rmtree(best_run_dir)
         best_run_dir.mkdir(parents=True, exist_ok=True)
 
-        benchmark_file = PROJECT_ROOT / "benchmarks" / f"{self.benchmark_name}.v"
+        benchmark_file = PROJECT_ROOT / "benchmarks" / f"{bname}.v"
         cmd = [str(paths.python), str(paths.flow_script), str(benchmark_file), str(arch_path),
                "-temp_dir", str(best_run_dir)]
         if constraints_path and constraints_path.is_file():

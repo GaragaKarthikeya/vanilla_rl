@@ -5,7 +5,7 @@
     ],
     "requirements": {
         "io": 156,
-        "clb": 1284,
+        "clb": 1281,
         "dsp": 84,
         "bram": 56
     },

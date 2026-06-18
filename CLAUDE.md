@@ -89,7 +89,7 @@ This is a clean RL training pipeline for FPGA placement optimization using VTR (
 
 **`src/training/`**
 - `ppo.py`: `CustomMaskablePPO` — extends `sb3_contrib.MaskablePPO` with per-environment gradient variance diagnostics (batch_reward_variance, gradient_variance_norm, avg_cosine_similarity, global_grad_norm, policy_entropy, value_loss, explained_variance)
-- `trainer.py`: `TrainConfig` (dataclass for all hyperparameters), `train()` (orchestrates env creation, model training, callbacks, tensorboard logging)
+- `trainer.py`: `TrainConfig` (dataclass for all hyperparameters), `train()` (orchestrates env creation, model training, callbacks, W&B logging)
 - `callbacks.py`: custom callbacks (e.g., `BestLayoutCallback`)
 
 ### Data flow for a training step
@@ -154,7 +154,7 @@ The `CustomMaskablePPO` class computes 7 diagnostics at each train step:
 6. value_loss
 7. explained_variance
 
-These are logged to TensorBoard under `runs/tb_logs/` for inspection.
+These are logged to Weights & Biases (`train/{metric}`) for inspection — pass `--no_wandb` to disable, `--wandb_project`/`--wandb_entity` to target a specific project. (Older runs predating the W&B migration logged to `runs/tb_logs/` instead; `src/visualization/plot_training_analysis.py` reads that historical format.)
 
 ### Architecture templates
 Three pre-defined template XMLs in `template/`:

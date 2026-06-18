@@ -1,0 +1,56 @@
+{
+  "softmax": {
+    "benchmark": "softmax",
+    "reward": 0.005710784961583875,
+    "success": true,
+    "status": null,
+    "wirelength": 142705.0,
+    "delay_ns": 6.39716,
+    "power_w": 0.07084,
+    "routing_area": 7429280.0,
+    "baseline": {
+      "delay_ns": 6.53536,
+      "wirelength": 141720.0,
+      "power_w": 0.06934,
+      "routing_area": 7896790.0
+    },
+    "adp": 3366762.585125632,
+    "baseline_adp": 3578524.063381696,
+    "adp_reduction_pct": 5.917564741927428
+  },
+  "reduction_layer": {
+    "benchmark": "reduction_layer",
+    "reward": 0.04086544347275283,
+    "success": true,
+    "status": null,
+    "wirelength": 157569.0,
+    "delay_ns": 6.93462,
+    "power_w": 0.1442,
+    "routing_area": 9099780.0,
+    "baseline": {
+      "delay_ns": 7.50631,
+      "wirelength": 145283.0,
+      "power_w": 0.1449,
+      "routing_area": 10687300.0
+    },
+    "adp": 9099527.06251512,
+    "baseline_adp": 11624194.8764487,
+    "adp_reduction_pct": 21.719076811493466
+  },
+  "robot_rl": {
+    "benchmark": "robot_rl",
+    "reward": -10.0,
+    "success": false,
+    "status": null,
+    "wirelength": null,
+    "delay_ns": null,
+    "power_w": null,
+    "routing_area": "?",
+    "baseline": {
+      "delay_ns": 9.42158,
+      "wirelength": 187068.0,
+      "power_w": 0.2244,
+      "routing_area": 12094400.0
+    }
+  }
+}

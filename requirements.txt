@@ -4,7 +4,7 @@ stable-baselines3
 sb3-contrib
 torch
 jinja2
-tensorboard
+wandb
 matplotlib
 pandas
 seaborn

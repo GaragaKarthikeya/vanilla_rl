@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
+import json
 import uuid
 import shutil
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
@@ -12,6 +14,7 @@ from gymnasium import spaces
 from src.utils.cache import CacheRow, LayoutCache
 from src.utils.config import VTRPaths
 from src.evaluation.vtr_runner import VTRRunner
+from src.netlist.graph_reduction import ReducedGraph, reduce_netlist_graph, pad_graph
 
 # Project root is two levels above this file (src/env/fpga_env.py → /)
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -23,10 +26,132 @@ _BLOCK_HEIGHT = {1: 4, 2: 6}
 # Predefined aspect ratios offered as the first action
 ASPECT_RATIOS = [round(0.1 * i, 1) for i in range(1, 21)]  # 0.1 … 2.0
 
+# Sentinel value marking grid cells outside the active benchmark's real
+# footprint within the shared padded canvas (distinct from occupancy values
+# -1/0/1/2 already in use for occupied-tail/empty/dsp-head/bram-head).
+_OUT_OF_CANVAS = -2.0
+
+
+@dataclass
+class BenchmarkConfig:
+    """Everything FPGAEnv needs to run episodes for one benchmark, pre-loaded
+    and pre-padded to the shared MAX_NODES/MAX_EDGES so reset() is cheap."""
+
+    name: str
+    width: int  # core grid width (without +2 IO ring)
+    height: int
+    req_dsp: int
+    req_bram: int
+    traditional_metrics: dict
+    dsp_block_names: list[str]
+    bram_block_names: list[str]
+    reduced_graph: ReducedGraph
+    padded_node_features: np.ndarray
+    padded_edge_index: np.ndarray
+    padded_edge_weight: np.ndarray
+    cache_db_path: str
+
+
+def _load_raw_benchmark(benchmark_name: str) -> tuple[dict, dict, list[str], list[str], ReducedGraph]:
+    """Load baseline metrics/resources, VPR block-name constraints, and the
+    reduced netlist graph for one benchmark. Raises if prerequisite files
+    are missing (baselines/, runs/{name}_traditional/{name}.net,
+    {name}_netlist_graph.json — the latter two from
+    `extract_netlist_info.py --benchmark {name} --include-graph`)."""
+    res_file = PROJECT_ROOT / "baselines" / f"{benchmark_name}_traditional_resources.txt"
+    metric_file = PROJECT_ROOT / "baselines" / f"{benchmark_name}_traditional_metric.txt"
+    res_data = json.loads(res_file.read_text())
+    metric_data = json.loads(metric_file.read_text())
+
+    width, height = res_data["fpga_size"]
+    reqs = res_data.get("requirements", {})
+    req_dsp, req_bram = reqs.get("dsp", 0), reqs.get("bram", 0)
+
+    graph_file = PROJECT_ROOT / f"{benchmark_name}_netlist_graph.json"
+    reduced_graph = reduce_netlist_graph(graph_file)
+    if reduced_graph.req_dsp != req_dsp or reduced_graph.req_bram != req_bram:
+        raise ValueError(
+            f"{benchmark_name}: netlist graph has {reduced_graph.req_dsp} DSP / "
+            f"{reduced_graph.req_bram} BRAM but resources require {req_dsp} / {req_bram}"
+        )
+
+    dsp_block_names, bram_block_names = [], []
+    net_file = PROJECT_ROOT / "runs" / f"{benchmark_name}_traditional" / f"{benchmark_name}.net"
+    if net_file.is_file():
+        from src.netlist.parser import parse_net_file
+        parsed = parse_net_file(net_file)
+        dsp_parsed = [(b.atom_name, b.unique_nets) for b in parsed if b.block_type == "dsp"]
+        bram_parsed = [(b.atom_name, b.unique_nets) for b in parsed if b.block_type == "bram"]
+        dsp_block_names = [n for n, _ in sorted(dsp_parsed, key=lambda x: x[1], reverse=True)]
+        bram_block_names = [n for n, _ in sorted(bram_parsed, key=lambda x: x[1], reverse=True)]
+        if req_dsp and len(dsp_block_names) != req_dsp:
+            dsp_block_names = []
+        if req_bram and len(bram_block_names) != req_bram:
+            bram_block_names = []
+
+    return res_data, metric_data, dsp_block_names, bram_block_names, reduced_graph
+
+
+def compute_max_dims(benchmark_names: list[str]) -> tuple[int, int, int, int]:
+    """Compute MAX_WIDTH/MAX_HEIGHT/MAX_NODES/MAX_EDGES across a benchmark
+    universe. Call this once over the full set of benchmarks a trained model
+    must ever be loadable against (including ones never actually sampled
+    during training) — see `build_benchmark_configs`."""
+    raw = {name: _load_raw_benchmark(name) for name in benchmark_names}
+
+    max_width = max(res["fpga_size"][0] for res, _, _, _, _ in raw.values())
+    max_height = max(res["fpga_size"][1] for res, _, _, _, _ in raw.values())
+    max_nodes = max(g.num_nodes for *_, g in raw.values())
+    max_edges = max(g.num_edges for *_, g in raw.values())
+    return max_width, max_height, max_nodes, max_edges
+
+
+def build_benchmark_configs(
+    benchmark_names: list[str],
+    max_width: int,
+    max_height: int,
+    max_nodes: int,
+    max_edges: int,
+) -> list[BenchmarkConfig]:
+    """Load benchmarks and pad them to the given shared MAX_WIDTH/MAX_HEIGHT/
+    MAX_NODES/MAX_EDGES. These dims are NOT recomputed from `benchmark_names`
+    here — pass dims from `compute_max_dims()` run over the full benchmark
+    universe (which may be a superset of `benchmark_names`, e.g. when a
+    training run only samples a subset but the model must stay loadable
+    against held-out benchmarks too)."""
+    configs = []
+    for name in benchmark_names:
+        res_data, metric_data, dsp_names, bram_names, graph = _load_raw_benchmark(name)
+        width, height = int(res_data["fpga_size"][0]), int(res_data["fpga_size"][1])
+        if width > max_width or height > max_height:
+            raise ValueError(
+                f"{name}: grid {width}x{height} exceeds max canvas {max_width}x{max_height}"
+            )
+        node_features, edge_index, edge_weight = pad_graph(graph, max_nodes, max_edges)
+        configs.append(
+            BenchmarkConfig(
+                name=name,
+                width=width,
+                height=height,
+                req_dsp=graph.req_dsp,
+                req_bram=graph.req_bram,
+                traditional_metrics=metric_data,
+                dsp_block_names=dsp_names,
+                bram_block_names=bram_names,
+                reduced_graph=graph,
+                padded_node_features=node_features,
+                padded_edge_index=edge_index.astype(np.float32),
+                padded_edge_weight=edge_weight,
+                cache_db_path=str(PROJECT_ROOT / "runs" / f"vtr_layout_cache_{name}.db"),
+            )
+        )
+    return configs
+
 
 class FPGAEnv(gym.Env):
     """
-    Gymnasium environment for heterogeneous FPGA block placement.
+    Gymnasium environment for heterogeneous FPGA block placement across a
+    mix of benchmarks of different grid sizes and DSP/BRAM counts.
 
     Episode structure
     -----------------
@@ -34,153 +159,121 @@ class FPGAEnv(gym.Env):
     Steps 1 … N     : place each BRAM (sorted by nets) then each DSP (sorted by nets)
     Terminal step   : VTR evaluates the layout; reward is returned
 
-    Observation space : Box(W, H, 4) float32
-        ch0 — occupancy grid  (-1 = occupied tail, 0 = empty, 1 = DSP head, 2 = BRAM head)
-        ch1 — block-type hint for the current step (3 during aspect-ratio step, 0 after done)
-        ch2 — chosen aspect ratio value
-        ch3 — net count for current block (normalized to [0, 1], -1.0 during aspect-ratio step)
+    `reset()` samples one BenchmarkConfig uniformly from `benchmark_configs`
+    for the episode. Observation/action spaces are fixed across all
+    benchmarks (sized to MAX_WIDTH/MAX_HEIGHT/MAX_NODES/MAX_EDGES, the max
+    over the whole mix); action masking and the `valid_wh` observation key
+    are what tell the policy which subset of the shared canvas is real for
+    the active benchmark this episode.
 
-    Action space : Discrete(W * H)
+    Observation space : Dict
+        grid               — Box(MAX_W, MAX_H, 4): occupancy / block-type hint /
+                              aspect ratio / net count, as in the single-benchmark
+                              env, with cells outside the active benchmark's real
+                              footprint marked with the _OUT_OF_CANVAS sentinel.
+        node_features      — Box(MAX_NODES, 4): reduced netlist graph node features
+                              (is_dsp, is_bram, is_fabric, net_count_normalized).
+        edge_index         — Box(MAX_EDGES, 2): reduced graph edges, -1-padded.
+        edge_weight        — Box(MAX_EDGES,): reduced graph edge weights.
+        current_block_idx  — Box(1,): reduced-graph node id of the block being
+                              placed this step (fabric node id during the
+                              aspect-ratio step / after termination).
+        valid_wh           — Box(2,): active benchmark's (width, height) normalized
+                              by (MAX_WIDTH, MAX_HEIGHT).
+
+    Action space : Discrete(MAX_WIDTH * MAX_HEIGHT), fixed across benchmarks.
         Step 0 maps action index → ASPECT_RATIOS index.
-        Other steps decode action as  x = 1 + action // H,  y = 1 + action % H  (1-indexed).
+        Other steps decode as x = 1 + action // MAX_HEIGHT, y = 1 + action % MAX_HEIGHT
+        — using the fixed MAX_HEIGHT, not the active benchmark's real height, so
+        the same action index always means the same (x, y) regardless of which
+        benchmark is active. Masking (bounds + overlap, keyed off the active
+        benchmark's real width/height) is what restricts validity per benchmark.
     """
 
     metadata = {"render_modes": []}
 
     def __init__(
         self,
-        benchmark_name: str = "diffeq1",
-        width: int = 14,
-        height: int = 14,
-        req_dsp: int = 5,
-        req_bram: int = 0,
-        traditional_metrics: Optional[dict] = None,
-        cache_db_path: Optional[str] = None,
+        benchmark_configs: list[BenchmarkConfig],
+        max_width: int,
+        max_height: int,
+        max_nodes: int,
+        max_edges: int,
         wl_weight: float = 0.10,
         pw_weight: float = 0.30,
         dl_weight: float = 0.60,
         ar_weight: float = 0.00,
-        net_count_data: Optional[dict] = None,
-        use_net_count_sort: bool = True,
-        dsp_block_names: Optional[list[str]] = None,
-        bram_block_names: Optional[list[str]] = None,
+        vtr_timeout: int = 1200,
     ) -> None:
         super().__init__()
 
-        self.benchmark_name = benchmark_name
-        self.width = width
-        self.height = height
-        self.req_dsp = req_dsp
-        self.req_bram = req_bram
+        self.benchmark_configs = benchmark_configs
+        self.MAX_WIDTH = max_width
+        self.MAX_HEIGHT = max_height
+        self.MAX_NODES = max_nodes
+        self.MAX_EDGES = max_edges
+        # A bad aspect-ratio choice (more likely during early random exploration)
+        # can make VPR's auto-layout device-size estimate badly mismatch the
+        # actual placement coordinates, causing a single VTR call to thrash for
+        # a long time. Since SubprocVecEnv.step() is synchronous, one such call
+        # stalls every other parallel worker too — keep this short relative to
+        # the benchmark mix's normal eval time so a degenerate episode
+        # self-recovers fast instead of eating the full default 1200s.
+        self.vtr_timeout = vtr_timeout
 
-        self.traditional_metrics: dict = traditional_metrics or {
-            "delay_ns": 22.1348,
-            "wirelength": 11437.0,
-            "power_w": 0.007986,
-            "routing_area": 835850.0,
+        self._caches: dict[str, LayoutCache] = {
+            cfg.name: LayoutCache(cfg.cache_db_path) for cfg in benchmark_configs
         }
-
-        db_path = cache_db_path or str(PROJECT_ROOT / "runs" / "vtr_layout_cache.db")
-        self._cache = LayoutCache(db_path)
-
         self._vtr = VTRRunner(VTRPaths())
 
-        self.wl_weight = wl_weight
-        self.pw_weight = pw_weight
-        self.dl_weight = dl_weight
-        self.ar_weight = ar_weight
-
-        # Named netlist block names for forced placement via VPR constraints.
-        # Order must match the agent's placement sequence (DSPs first, then BRAMs).
-        # When None, VPR's SA placer assigns blocks freely (original behaviour).
-        self._dsp_block_names: list[str] = dsp_block_names or []
-        self._bram_block_names: list[str] = bram_block_names or []
-
-        # Store net count data for observation and debugging
-        self._net_count_data = net_count_data or {}
-
-        # Build placement sequence with optional net-count sorting
-        # If net_count_data provided and use_net_count_sort=True:
-        #   - BRAMs first, sorted by net count (highest first)
-        #   - DSPs second, sorted by net count (highest first)
-        # Otherwise: DSPs first, then BRAMs (original behavior)
-        if use_net_count_sort and net_count_data:
-            self._blocks_to_place, self._block_id_map = self._build_sorted_placement(
-                req_dsp, req_bram, net_count_data
-            )
-        else:
-            # Original order: DSPs first, then BRAMs. 1=DSP, 2=BRAM
-            self._blocks_to_place = [1] * req_dsp + [2] * req_bram
-            # Map: step_index -> actual instance_id (identity mapping)
-            self._block_id_map = {i: i % req_dsp if i < req_dsp else i - req_dsp for i in range(req_dsp + req_bram)}
-
-        self._total_blocks = len(self._blocks_to_place)
-
-        self.action_space = spaces.Discrete(width * height)
-        # Observation space now has 4 channels: occupancy, block_type, aspect_ratio, net_count
-        self.observation_space = spaces.Box(
-            low=-1.0, high=4.0, shape=(width, height, 4), dtype=np.float32
+        self.wl_weight, self.pw_weight, self.dl_weight, self.ar_weight = (
+            wl_weight, pw_weight, dl_weight, ar_weight,
         )
 
+        self.action_space = spaces.Discrete(max_width * max_height)
+        self.observation_space = spaces.Dict({
+            "grid": spaces.Box(low=_OUT_OF_CANVAS, high=4.0, shape=(max_width, max_height, 4), dtype=np.float32),
+            "node_features": spaces.Box(low=-1.0, high=1.0, shape=(max_nodes, 4), dtype=np.float32),
+            "edge_index": spaces.Box(low=-1.0, high=float(max_nodes), shape=(max_edges, 2), dtype=np.float32),
+            "edge_weight": spaces.Box(low=0.0, high=1.0, shape=(max_edges,), dtype=np.float32),
+            "current_block_idx": spaces.Box(low=0.0, high=float(max_nodes), shape=(1,), dtype=np.float32),
+            "valid_wh": spaces.Box(low=0.0, high=1.0, shape=(2,), dtype=np.float32),
+        })
+
         # Mutable episode state (initialised by reset)
-        self._grid = np.zeros((width, height), dtype=np.int8)
+        self._active_config: BenchmarkConfig = benchmark_configs[0]
+        self._grid = np.zeros((self.MAX_WIDTH, self.MAX_HEIGHT), dtype=np.int8)
         self._placed_dsps: list[tuple[int, int]] = []
         self._placed_brams: list[tuple[int, int]] = []
         self._current_step: int = 0
         self._chosen_aspect_ratio: float = 1.0
+        self._blocks_to_place: list[int] = []
+        self._block_id_map: dict[int, int] = {}
+        self._total_blocks: int = 0
 
     # ------------------------------------------------------------------
     # Block placement ordering
     # ------------------------------------------------------------------
 
-    def _build_sorted_placement(
-        self, req_dsp: int, req_bram: int, net_count_data: dict
-    ) -> tuple[list[int], dict[int, int]]:
-        """
-        Build placement sequence with blocks sorted by net count (highest first).
+    def _build_sorted_placement(self, cfg: BenchmarkConfig) -> tuple[list[int], dict[int, int]]:
+        """Order: BRAMs (sorted by net count, descending) → DSPs (sorted by
+        net count, descending). Net counts come straight from the reduced
+        netlist graph already loaded for this benchmark."""
+        graph = cfg.reduced_graph
+        bram_blocks = sorted(
+            ((i, graph.net_count_normalized_for("bram", i)) for i in graph.bram_instance_ids),
+            key=lambda x: x[1], reverse=True,
+        )
+        dsp_blocks = sorted(
+            ((i, graph.net_count_normalized_for("dsp", i)) for i in graph.dsp_instance_ids),
+            key=lambda x: x[1], reverse=True,
+        )
 
-        Order: BRAMs (sorted by nets) → DSPs (sorted by nets)
-
-        Args:
-            req_dsp: Number of DSPs required
-            req_bram: Number of BRAMs required
-            net_count_data: Dict mapping ('TYPE', id) -> net_count
-
-        Returns:
-            (blocks_to_place, block_id_map) where:
-            - blocks_to_place: list of block types (1=DSP, 2=BRAM) in order
-            - block_id_map: maps step_index -> actual instance_id
-        """
-        # Extract and sort BRAMs by net count (descending)
-        bram_blocks = []
-        for i in range(req_bram):
-            # Try both tuple and string key formats
-            net_count = net_count_data.get(("BRAM", i), 0)
-            if not net_count:
-                net_count = net_count_data.get((f"('BRAM', {i})",), 0)
-            bram_blocks.append((i, net_count))
-        bram_blocks.sort(key=lambda x: x[1], reverse=True)
-
-        # Extract and sort DSPs by net count (descending)
-        dsp_blocks = []
-        for i in range(req_dsp):
-            # Try both tuple and string key formats
-            net_count = net_count_data.get(("DSP", i), 0)
-            if not net_count:
-                net_count = net_count_data.get((f"('DSP', {i})",), 0)
-            dsp_blocks.append((i, net_count))
-        dsp_blocks.sort(key=lambda x: x[1], reverse=True)
-
-        # Build placement sequence: BRAMs first, then DSPs
-        blocks_to_place = [2] * req_bram + [1] * req_dsp
+        blocks_to_place = [2] * cfg.req_bram + [1] * cfg.req_dsp
         block_id_map = {}
-
-        # Map BRAM placement steps
         for step_idx, (actual_id, _) in enumerate(bram_blocks):
             block_id_map[step_idx] = actual_id
-
-        # Map DSP placement steps
-        for step_idx, (actual_id, _) in enumerate(dsp_blocks, start=req_bram):
+        for step_idx, (actual_id, _) in enumerate(dsp_blocks, start=cfg.req_bram):
             block_id_map[step_idx] = actual_id
 
         return blocks_to_place, block_id_map
@@ -191,6 +284,14 @@ class FPGAEnv(gym.Env):
 
     def reset(self, seed=None, options=None):
         super().reset(seed=seed)
+
+        idx = int(self.np_random.integers(0, len(self.benchmark_configs)))
+        self._active_config = self.benchmark_configs[idx]
+        cfg = self._active_config
+
+        self._blocks_to_place, self._block_id_map = self._build_sorted_placement(cfg)
+        self._total_blocks = len(self._blocks_to_place)
+
         self._grid[:] = 0
         self._placed_dsps = []
         self._placed_brams = []
@@ -199,6 +300,8 @@ class FPGAEnv(gym.Env):
         return self._obs(), {}
 
     def step(self, action: int):
+        cfg = self._active_config
+
         if self._current_step > self._total_blocks:
             return self._obs(), 0.0, True, False, self._terminal_info(success=False, status="already_completed")
 
@@ -214,10 +317,10 @@ class FPGAEnv(gym.Env):
         block_type = self._blocks_to_place[self._current_step - 1]
         bh = _BLOCK_HEIGHT[block_type]
 
-        x = 1 + (action // self.height)
-        y = 1 + (action % self.height)
+        x = 1 + (action // self.MAX_HEIGHT)
+        y = 1 + (action % self.MAX_HEIGHT)
 
-        if not (1 <= x <= self.width) or not (1 <= y) or (y + bh - 1) > self.height:
+        if not (1 <= x <= cfg.width) or not (1 <= y) or (y + bh - 1) > cfg.height:
             return self._obs(), -10.0, True, False, {"status": "out_of_bounds", **self._empty_eval_info()}
 
         if any(self._grid[x - 1, y - 1 + dy] != 0 for dy in range(bh)):
@@ -245,19 +348,20 @@ class FPGAEnv(gym.Env):
     # ------------------------------------------------------------------
 
     def get_action_mask(self) -> np.ndarray:
-        mask = np.zeros(self.width * self.height, dtype=np.int8)
+        cfg = self._active_config
+        mask = np.zeros(self.MAX_WIDTH * self.MAX_HEIGHT, dtype=np.int8)
 
         if self._current_step == 0:
             mask[: len(ASPECT_RATIOS)] = 1
         elif self._current_step <= self._total_blocks:
             block_type = self._blocks_to_place[self._current_step - 1]
             bh = _BLOCK_HEIGHT[block_type]
-            for act in range(self.width * self.height):
-                x = 1 + (act // self.height)
-                y = 1 + (act % self.height)
-                if not (1 <= x <= self.width):
+            for act in range(self.MAX_WIDTH * self.MAX_HEIGHT):
+                x = 1 + (act // self.MAX_HEIGHT)
+                y = 1 + (act % self.MAX_HEIGHT)
+                if not (1 <= x <= cfg.width):
                     continue
-                if y < 1 or (y + bh - 1) > self.height:
+                if y < 1 or (y + bh - 1) > cfg.height:
                     continue
                 if any(self._grid[x - 1, y - 1 + dy] != 0 for dy in range(bh)):
                     continue
@@ -274,7 +378,7 @@ class FPGAEnv(gym.Env):
 
     def _compute_reward(self, wl: float, pw: float, dl: float, routing_area: float) -> float:
         """Weighted log-ratio reward. Positive = better than baseline."""
-        tm = self.traditional_metrics
+        tm = self._active_config.traditional_metrics
         area_norm = max(routing_area, 1e-9) / max(tm.get("routing_area", 1.0), 1e-9)
         delay_norm = max(dl, 1e-9) / max(tm["delay_ns"], 1e-9)
         power_norm = max(pw, 1e-9) / max(tm["power_w"], 1e-9)
@@ -294,10 +398,12 @@ class FPGAEnv(gym.Env):
     # ------------------------------------------------------------------
 
     def _evaluate_layout(self, aspect_ratio: float) -> tuple[float, dict]:
+        cfg = self._active_config
         info = self._base_eval_info(aspect_ratio)
         cache_key = self._cache_key(aspect_ratio)
+        cache = self._caches[cfg.name]
 
-        cached = self._cache.get(cache_key)
+        cached = cache.get(cache_key)
         if cached is not None:
             info["cached"] = True
             info["success"] = cached.success
@@ -306,30 +412,29 @@ class FPGAEnv(gym.Env):
                 return self._compute_reward(cached.wirelength, cached.power_w, cached.delay_ns, cached.routing_area), info
             return -10.0, info
 
-        # Bake + run VTR
         worker = uuid.uuid4().hex[:8]
         temp_arch = PROJECT_ROOT / f"temp_arch_{worker}.xml"
         temp_constraints = PROJECT_ROOT / f"temp_constraints_{worker}.xml"
         temp_run_dir = PROJECT_ROOT / "runs" / f"temp_run_{worker}"
-        benchmark_file = PROJECT_ROOT / "benchmarks" / f"{self.benchmark_name}.v"
+        benchmark_file = PROJECT_ROOT / "benchmarks" / f"{cfg.name}.v"
 
-        all_block_names = self._dsp_block_names + self._bram_block_names
+        all_block_names = cfg.dsp_block_names + cfg.bram_block_names
 
         try:
             from src.layout.baker import bake_layout
             result = bake_layout(
-                benchmark_name=self.benchmark_name,
+                benchmark_name=cfg.name,
                 dsps=self._placed_dsps,
                 mems=self._placed_brams,
-                width=self.width + 2,
-                height=self.height + 2,
+                width=cfg.width + 2,
+                height=cfg.height + 2,
                 output_path=str(temp_arch),
                 aspect_ratio=aspect_ratio,
                 block_names=all_block_names if all_block_names else None,
                 constraints_output_path=str(temp_constraints) if all_block_names else None,
             )
             if result == -1:
-                self._cache.put(cache_key, LayoutCache.failure_row())
+                cache.put(cache_key, LayoutCache.failure_row())
                 info["error"] = "bake_layout: invalid placement"
                 return -10.0, info
         except Exception as exc:
@@ -345,11 +450,12 @@ class FPGAEnv(gym.Env):
             benchmark_file, temp_arch, temp_run_dir,
             silent=True,
             constraints_file=temp_constraints if all_block_names else None,
+            timeout=self.vtr_timeout,
         )
 
         vpr_out = temp_run_dir / "vpr.out"
         crit_path = temp_run_dir / "vpr.crit_path.out"
-        power_file = temp_run_dir / f"{self.benchmark_name}.power"
+        power_file = temp_run_dir / f"{cfg.name}.power"
 
         if rc == 0 and vpr_out.is_file():
             metrics = VTRRunner.parse_metrics(vpr_out, crit_path, power_file)
@@ -367,12 +473,12 @@ class FPGAEnv(gym.Env):
                     grid_h=grid_h,
                     success=True,
                 )
-                self._cache.put(cache_key, row)
+                cache.put(cache_key, row)
                 self._fill_success_info(info, row)
                 self._cleanup(temp_arch, temp_run_dir, temp_constraints)
                 return self._compute_reward(metrics.wirelength, metrics.power_w, metrics.delay_ns, metrics.routing_area), info
 
-        self._cache.put(cache_key, LayoutCache.failure_row())
+        cache.put(cache_key, LayoutCache.failure_row())
         info["error"] = f"VTR failed (rc={rc})"
         self._cleanup(temp_arch, temp_run_dir, temp_constraints)
         return -10.0, info
@@ -382,50 +488,50 @@ class FPGAEnv(gym.Env):
     # ------------------------------------------------------------------
 
     def _get_current_block_net_count(self) -> float:
-        """
-        Get the net count for the block about to be placed (normalized to [0, 1]).
-
-        Returns normalized net count in range [0, 1], or 0 if no data available.
-        """
         if self._current_step == 0 or self._current_step > self._total_blocks:
             return 0.0
-
         step_idx = self._current_step - 1
-        if step_idx >= len(self._blocks_to_place):
-            return 0.0
-
-        # Get the actual instance ID for this step
-        actual_id = self._block_id_map.get(step_idx, step_idx)
         block_type = self._blocks_to_place[step_idx]
-        block_type_str = "DSP" if block_type == 1 else "BRAM"
+        block_type_str = "dsp" if block_type == 1 else "bram"
+        actual_id = self._block_id_map.get(step_idx, step_idx)
+        return self._active_config.reduced_graph.net_count_normalized_for(block_type_str, actual_id)
 
-        # Try to find net count in the data dict
-        # Try tuple format first (for parsed data)
-        net_count = self._net_count_data.get((block_type_str, actual_id), 0)
+    def _current_reduced_node_id(self) -> int:
+        cfg = self._active_config
+        if self._current_step == 0 or self._current_step > self._total_blocks:
+            return cfg.reduced_graph.fabric_node_id
+        step_idx = self._current_step - 1
+        block_type = self._blocks_to_place[step_idx]
+        block_type_str = "dsp" if block_type == 1 else "bram"
+        actual_id = self._block_id_map.get(step_idx, step_idx)
+        return cfg.reduced_graph.node_id_for(block_type_str, actual_id)
 
-        # If not found, try string key format
-        if not net_count:
-            for key, value in self._net_count_data.items():
-                key_str = str(key)
-                if f"{block_type_str}" in key_str and f", {actual_id})" in key_str:
-                    net_count = value
-                    break
+    def _obs(self) -> dict:
+        cfg = self._active_config
 
-        # Normalize to [0, 1] using 200 as ceiling
-        return min(float(net_count) / 200.0, 1.0) if net_count else 0.0
+        grid = np.full((self.MAX_WIDTH, self.MAX_HEIGHT, 4), _OUT_OF_CANVAS, dtype=np.float32)
+        grid[: cfg.width, : cfg.height, 0] = self._grid[: cfg.width, : cfg.height]
+        grid[: cfg.width, : cfg.height, 1:4] = 0.0
 
-    def _obs(self) -> np.ndarray:
-        obs = np.zeros((self.width, self.height, 4), dtype=np.float32)
-        obs[:, :, 0] = self._grid
         if self._current_step == 0:
-            obs[:, :, 1] = 3  # aspect-ratio selection phase
-            obs[:, :, 2] = -1.0
-            obs[:, :, 3] = -1.0  # net count placeholder
+            grid[: cfg.width, : cfg.height, 1] = 3
+            grid[: cfg.width, : cfg.height, 2] = -1.0
+            grid[: cfg.width, : cfg.height, 3] = -1.0
         elif self._current_step <= self._total_blocks:
-            obs[:, :, 1] = self._blocks_to_place[self._current_step - 1]
-            obs[:, :, 2] = self._chosen_aspect_ratio
-            obs[:, :, 3] = self._get_current_block_net_count()
-        return obs
+            grid[: cfg.width, : cfg.height, 1] = self._blocks_to_place[self._current_step - 1]
+            grid[: cfg.width, : cfg.height, 2] = self._chosen_aspect_ratio
+            grid[: cfg.width, : cfg.height, 3] = self._get_current_block_net_count()
+
+        return {
+            "grid": grid,
+            "node_features": cfg.padded_node_features,
+            "edge_index": cfg.padded_edge_index,
+            "edge_weight": cfg.padded_edge_weight,
+            "current_block_idx": np.array([self._current_reduced_node_id()], dtype=np.float32),
+            "valid_wh": np.array(
+                [cfg.width / self.MAX_WIDTH, cfg.height / self.MAX_HEIGHT], dtype=np.float32
+            ),
+        }
 
     def _cache_key(self, aspect_ratio: float) -> str:
         return (
@@ -438,6 +544,7 @@ class FPGAEnv(gym.Env):
         return {
             "success": False,
             "cached": False,
+            "benchmark_name": self._active_config.name,
             "placed_dsps": list(self._placed_dsps),
             "placed_brams": list(self._placed_brams),
             "aspect_ratio": aspect_ratio,
@@ -465,6 +572,7 @@ class FPGAEnv(gym.Env):
     def _terminal_info(self, success: bool, status: str) -> dict:
         return {
             "status": status,
+            "benchmark_name": self._active_config.name,
             "placed_dsps": list(self._placed_dsps),
             "placed_brams": list(self._placed_brams),
             "success": success,
