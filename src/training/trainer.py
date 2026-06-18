@@ -41,6 +41,7 @@ class TrainConfig:
     save_path: Optional[str] = None
     load_path: Optional[str] = None
     log_suffix: str = ""
+    cache_suffix: str = ""
     universe_benchmark_names: Optional[list[str]] = None
     vtr_timeout: int = 300
     use_wandb: bool = True
@@ -64,7 +65,9 @@ def train(cfg: TrainConfig) -> None:
 
     try:
         max_width, max_height, max_nodes, max_edges = compute_max_dims(universe_names)
-        configs = build_benchmark_configs(benchmark_names, max_width, max_height, max_nodes, max_edges)
+        configs = build_benchmark_configs(
+            benchmark_names, max_width, max_height, max_nodes, max_edges, cache_suffix=cfg.cache_suffix
+        )
     except (FileNotFoundError, ValueError) as exc:
         print(f"Error loading benchmark configs: {exc}", file=sys.stderr)
         sys.exit(1)

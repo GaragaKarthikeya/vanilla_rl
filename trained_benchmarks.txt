@@ -1,0 +1,28 @@
+1)fifo
+2)diifeq2
+3)boundtop
+4)diffeq1
+5)ch_intrinsics
+6)spree
+7)mkSMAdapter4B
+8)or1200
+9)mmc_core
+10)mkPktMerge
+
+optional 11) raygentop
+
+13,000 episodes ,1,152 episodes per rollout ,5.4 steps on average per rollout
+
+inferring benchmarks:
+1)softmax,
+2)reduction_layer,
+3)lightweight_cipher
+4)custom_macbuf
+5)mkDelayWorker32B
+6)arm_core
+ 
+changes to be made:
+
+1)the normalized net count should be changed from /50.0 .
+
+

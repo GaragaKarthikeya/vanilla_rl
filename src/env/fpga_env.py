@@ -112,13 +112,18 @@ def build_benchmark_configs(
     max_height: int,
     max_nodes: int,
     max_edges: int,
+    cache_suffix: str = "",
 ) -> list[BenchmarkConfig]:
     """Load benchmarks and pad them to the given shared MAX_WIDTH/MAX_HEIGHT/
     MAX_NODES/MAX_EDGES. These dims are NOT recomputed from `benchmark_names`
     here — pass dims from `compute_max_dims()` run over the full benchmark
     universe (which may be a superset of `benchmark_names`, e.g. when a
     training run only samples a subset but the model must stay loadable
-    against held-out benchmarks too)."""
+    against held-out benchmarks too).
+
+    `cache_suffix` isolates the VTR layout cache DB (e.g. for side-by-side
+    scratch-vs-fine-tuned runs on the same benchmark, so cache hits from one
+    run don't leak into the other's apparent convergence speed)."""
     configs = []
     for name in benchmark_names:
         res_data, metric_data, dsp_names, bram_names, graph = _load_raw_benchmark(name)
@@ -142,7 +147,7 @@ def build_benchmark_configs(
                 padded_node_features=node_features,
                 padded_edge_index=edge_index.astype(np.float32),
                 padded_edge_weight=edge_weight,
-                cache_db_path=str(PROJECT_ROOT / "runs" / f"vtr_layout_cache_{name}.db"),
+                cache_db_path=str(PROJECT_ROOT / "runs" / f"vtr_layout_cache_{name}{cache_suffix}.db"),
             )
         )
     return configs
@@ -534,9 +539,15 @@ class FPGAEnv(gym.Env):
         }
 
     def _cache_key(self, aspect_ratio: float) -> str:
+        # Order matters here, not just the set of occupied cells: position j
+        # is pinned to the j-th highest-net-count instance (see
+        # _build_sorted_placement / the block_names<->coords zip in
+        # bake_layout), so two placements using the same cells in a
+        # different order are different VPR constraint files and must not
+        # collide in the cache.
         return (
-            f"dsps:{sorted(self._placed_dsps)}"
-            f"|brams:{sorted(self._placed_brams)}"
+            f"dsps:{list(self._placed_dsps)}"
+            f"|brams:{list(self._placed_brams)}"
             f"|ratio:{aspect_ratio}"
         )
 
