@@ -1,0 +1,6 @@
+{
+    "delay_ns": 10.7123,
+    "wirelength": 26539.0,
+    "power_w": 0.01563,
+    "routing_area": 1410850.0
+}

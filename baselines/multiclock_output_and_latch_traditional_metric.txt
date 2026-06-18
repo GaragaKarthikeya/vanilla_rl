@@ -1,0 +1,6 @@
+{
+    "delay_ns": Infinity,
+    "wirelength": Infinity,
+    "power_w": Infinity,
+    "routing_area": Infinity
+}
