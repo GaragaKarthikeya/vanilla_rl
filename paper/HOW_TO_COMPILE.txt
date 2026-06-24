@@ -1,0 +1,60 @@
+How to compile this paper
+==========================
+
+Directory: /home/digital-2/rl_gnn/vanilla_rl/paper/
+
+Files in this folder:
+  aspdac2027_draft.tex       - the paper source (write here)
+  references.bib             - bibliography entries (Phase 4 of PAPER_PLAN.md)
+  acmart.cls                 - official ACM template class file (v2.18), local copy
+  ACM-Reference-Format.bst   - bibliography style file that acmart needs
+  acm-jdslogo.png            - logo asset acmart.cls pulls in automatically
+
+These three support files (acmart.cls, ACM-Reference-Format.bst,
+acm-jdslogo.png) must stay in this same folder as the .tex file — pdflatex
+looks for them relative to the working directory.
+
+Compile (no bibliography changes, just text/tables/equations):
+-----------------------------------------------------------------
+cd /home/digital-2/rl_gnn/vanilla_rl/paper
+pdflatex -interaction=nonstopmode aspdac2027_draft.tex
+
+Run it twice if you've added/changed any \ref, \label, \cite, or the table
+of contents — the first pass writes the .aux file, the second pass resolves
+the cross-references against it. One pass is enough while just editing prose.
+
+Full compile with bibliography (once references.bib has real entries and
+you start using \cite{...} that need to actually resolve):
+-----------------------------------------------------------------
+cd /home/digital-2/rl_gnn/vanilla_rl/paper
+pdflatex -interaction=nonstopmode aspdac2027_draft.tex
+bibtex aspdac2027_draft
+pdflatex -interaction=nonstopmode aspdac2027_draft.tex
+pdflatex -interaction=nonstopmode aspdac2027_draft.tex
+
+(bibtex reads the .aux file's \citation entries, looks them up in
+references.bib, and writes a .bbl file; the two pdflatex passes after that
+pull in the formatted bibliography and fix up references to it.)
+
+Checking for real errors vs. just warnings:
+-----------------------------------------------------------------
+After compiling, grep the log for actual errors (lines starting with "!"):
+  grep -i "^!" aspdac2027_draft.log
+
+"Undefined references", "rerun to get cross-references right", and
+"Label(s) may have changed" are normal warnings that another pdflatex pass
+fixes — not errors. Undefined \cite{} warnings are expected until
+references.bib has real entries.
+
+Cleaning up build artifacts:
+-----------------------------------------------------------------
+cd /home/digital-2/rl_gnn/vanilla_rl/paper
+rm -f *.aux *.out *.log *.bbl *.blg
+
+This removes everything except the .tex source, .bib file, the three acmart
+support files, and the final aspdac2027_draft.pdf. Safe to run any time —
+none of the deleted files are source, they're all regenerated on next compile.
+
+Quick one-liner for "just show me the PDF is still building":
+-----------------------------------------------------------------
+cd /home/digital-2/rl_gnn/vanilla_rl/paper && pdflatex -interaction=nonstopmode aspdac2027_draft.tex > /tmp/compile.log 2>&1 && grep -i "^!" /tmp/compile.log; tail -5 /tmp/compile.log; rm -f *.aux *.out *.log *.bbl *.blg
