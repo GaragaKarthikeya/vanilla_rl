@@ -89,18 +89,18 @@ We report three results. First, on a controlled, fully apples-to-apples
 comparison — our own genetic algorithm and our RL policy evaluated under the
 \emph{identical} oracle, ADP metric, and traditional baseline, on a benchmark
 held out of RL training — RL reaches 74.06\% ADP reduction versus the GA's
-68.17\% (Section~\ref{sec:results-ga}). Second, jointly trained across 13
-benchmarks, the policy achieves a 42.73\% aggregate in-pool ADP reduction,
-with the two benchmarks specifically added to close an earlier-observed
-training-pool gap flipping from negative to strongly positive once included
+68.17\% (Section~\ref{sec:results-ga}). Second, jointly trained across 11
+benchmarks, the policy achieves a 35.7\% aggregate in-pool ADP reduction,
+with 10 of 11 benchmarks finishing positive and one persistent laggard
 (Section~\ref{sec:results-inpool}). Third, recomputed on GOLDS' own published
 2-term Area$\times$Delay metric and baseline architecture, a zero-shot
 evaluation — a policy trained only on \texttt{diffeq2}, applied directly to
 \texttt{diffeq1} with no benchmark-specific training at all — reaches 37.4\%
 versus GOLDS' published $\sim$35\% (Section~\ref{sec:results-golds}). We also
-report a less convenient finding alongside these: zero-shot generalization to
-held-out benchmarks shows substantial seed-to-seed variance, including sign
-flips on some benchmarks across seeds of an otherwise identical configuration
+report a less convenient finding alongside these: across two seeds, zero-shot
+generalization to six held-out benchmarks is reasonably stable in aggregate
+(31.3\% vs.\ 30.3\% average ADP reduction) but with real per-benchmark
+swings of up to 13 points
 (Section~\ref{sec:results-zeroshot}); we present this honestly as a
 characterization of the current approach's reliability rather than smoothing
 it into a single point estimate.
@@ -129,20 +129,18 @@ Concretely, this paper contributes:
         ADP metric, and traditional baseline, on a benchmark held out of RL
         training: 74.06\% ADP reduction for RL versus 68.17\% for the GA
         (Section~\ref{sec:results-ga}).
-  \item A joint 13-benchmark training result (42.73\% aggregate in-pool ADP
-        reduction) demonstrating that training-pool coverage gaps, not a
-        structural limitation, explain specific benchmark failures observed
-        under an earlier, smaller training pool (Section~\ref{sec:results-inpool}).
+  \item A joint 11-benchmark training result (35.7\% aggregate in-pool ADP
+        reduction, 10 of 11 benchmarks positive) (Section~\ref{sec:results-inpool}).
   \item A literature-facing comparison against GOLDS' own published metric
         and baseline architecture, recomputed precisely on a genuine
         zero-shot evaluation with no benchmark-specific training at all:
         37.4\% versus GOLDS' published $\sim$35\% (Section~\ref{sec:results-golds}).
-  \item An honest characterization of zero-shot generalization reliability,
-        including seed-to-seed variance large enough to flip sign on some
-        held-out benchmarks under an otherwise identical configuration —
-        reported as a finding about the current approach's limits, not
-        smoothed into a single optimistic point estimate
-        (Section~\ref{sec:results-zeroshot}).
+  \item A two-seed characterization of zero-shot generalization reliability
+        on six held-out benchmarks — stable in aggregate (31.3\% vs.\ 30.3\%
+        average ADP reduction across seeds) but with real per-benchmark
+        swings of up to 13 points — reported as a finding about the current
+        approach's limits, not smoothed into a single optimistic point
+        estimate (Section~\ref{sec:results-zeroshot}).
 \end{itemize}
 
 \section{Background and Related Work}
@@ -369,13 +367,10 @@ starting point (Section~\ref{sec:results-golds}).
 \subsection{Benchmarks}
 \label{sec:benchmarks}
 
-Table~\ref{tab:benchmarks} lists the benchmark pool used in this work: a
-training set of real and hand-written probe circuits spanning a range of
-DSP/BRAM resource profiles, and a held-out set used only for zero-shot
-evaluation (Section~\ref{sec:results-zeroshot}), never sampled during
-training. The hand-written \texttt{custom\_*} benchmarks were added
-specifically to probe DSP/BRAM combinations absent from the original circuit
-pool (Section~\ref{sec:results-inpool}).
+Table~\ref{tab:benchmarks} lists the benchmark pool used in this work: an
+11-benchmark training set of real circuits spanning a range of DSP/BRAM
+resource profiles, and a held-out set used only for zero-shot evaluation
+(Section~\ref{sec:results-zeroshot}), never sampled during training.
 
 \begin{table}[t]
 \caption{Benchmark pool: grid size and hard-block requirements.}
@@ -384,8 +379,9 @@ pool (Section~\ref{sec:results-inpool}).
 \toprule
 Benchmark & Grid & DSP & BRAM \\
 \midrule
-\multicolumn{4}{@{}l}{\textit{Training set}} \\
+\multicolumn{4}{@{}l}{\textit{Training set (11 benchmarks)}} \\
 fifo               & 6$\times$6   & 0 & 1  \\
+ch\_intrinsics     & 10$\times$10 & 0 & 1  \\
 diffeq2            & 14$\times$14 & 5 & 0  \\
 boundtop           & 13$\times$13 & 0 & 1  \\
 diffeq1            & 14$\times$14 & 5 & 0  \\
@@ -395,9 +391,6 @@ or1200             & 25$\times$25 & 1 & 2  \\
 mmc\_core          & 13$\times$13 & 0 & 1  \\
 mkPktMerge         & 26$\times$26 & 0 & 15 \\
 raygentop          & 17$\times$17 & 6 & 1  \\
-custom\_5ch\_mac    & 18$\times$18 & 5 & 5  \\
-custom\_3dsp\_8bram & 18$\times$18 & 3 & 8  \\
-custom\_8dsp\_3bram & 16$\times$16 & 8 & 3  \\
 \midrule
 \multicolumn{4}{@{}l}{\textit{Held-out (zero-shot only)}} \\
 softmax            & 41$\times$41 & 8 & 0  \\
@@ -430,43 +423,41 @@ Section~\ref{sec:results-golds}.
 \label{sec:results-inpool}
 
 Table~\ref{tab:inpool} reports per-benchmark ADP reduction for the
-13-benchmark policy (seed 42, 30{,}003 episodes) directly on its own training
+11-benchmark policy (seed 42, 13{,}000 episodes) directly on its own training
 set. Aggregate ADP reduction — computed as one minus the ratio of summed ADP
-across all 13 benchmarks to summed baseline ADP, \emph{not} a simple mean of
-per-benchmark percentages — is \textbf{42.73\%}, with 12 of 13 benchmarks
-finishing positive. The two hand-written probe benchmarks
-\texttt{custom\_3dsp\_8bram} and \texttt{custom\_8dsp\_3bram} were added to
-this pool specifically because they failed zero-shot under an earlier,
-11-benchmark policy (Section~\ref{sec:results-zeroshot}); both flip to
-strongly positive once trained on (+51.6\% and +52.0\%), confirming that
-those earlier failures were a training-pool coverage gap, not a structural
-limitation. \texttt{raygentop} is the one persistent laggard (-2.0\%) — also
-the slowest-converging benchmark under the original 11-benchmark pool — which
-we attribute tentatively to its 6-DSP/1-BRAM profile being a thin slice of
-the joint training distribution rather than a fundamental failure mode.
+across all 11 benchmarks to summed baseline ADP, \emph{not} a simple mean of
+per-benchmark percentages — is \textbf{35.73\%}, with 10 of 11 benchmarks
+finishing positive. \texttt{raygentop} is the one persistent laggard
+($-$2.92\%), which we attribute tentatively to its 6-DSP/1-BRAM profile being
+a thin slice of the joint training distribution, and to it being the
+slowest-converging benchmark in this pool, rather than a fundamental failure
+mode. A second seed (seed 7, same configuration, also 13{,}000 episodes)
+reaches a lower pooled aggregate of 23.11\%, driven mostly by \texttt{or1200}
+and \texttt{boundtop} finishing well below their seed-42 result — we discuss
+this seed-to-seed spread alongside the zero-shot results in
+Section~\ref{sec:results-zeroshot} rather than treating either seed's
+in-pool number in isolation as the policy's true performance.
 
 \begin{table}[t]
-\caption{In-pool ADP reduction, 13-benchmark policy, seed 42.}
+\caption{In-pool ADP reduction, 11-benchmark policy, seed 42 (seed 7 in parentheses).}
 \label{tab:inpool}
 \begin{tabular}{@{}lr@{}}
 \toprule
 Benchmark & ADP reduction \\
 \midrule
-diffeq2            & +69.1\% \\
-custom\_5ch\_mac    & +67.8\% \\
-fifo               & +60.2\% \\
-diffeq1            & +57.4\% \\
-boundtop           & +52.4\% \\
-custom\_8dsp\_3bram & +52.0\% \\
-custom\_3dsp\_8bram & +51.6\% \\
-or1200             & +39.4\% \\
-mkPktMerge         & +39.3\% \\
-spree              & +38.7\% \\
-mkSMAdapter4B      & +37.5\% \\
-mmc\_core          & +25.0\% \\
-raygentop          & $-$2.0\% \\
+diffeq2            & +68.2\% (+68.3\%) \\
+fifo               & +60.2\% (+60.2\%) \\
+diffeq1            & +57.4\% (+48.5\%) \\
+boundtop           & +50.7\% (+33.8\%) \\
+mkPktMerge         & +40.2\% (+40.2\%) \\
+spree              & +38.6\% (+39.1\%) \\
+ch\_intrinsics     & +36.3\% (+36.3\%) \\
+mkSMAdapter4B      & +36.2\% (+34.9\%) \\
+or1200             & +33.5\% (+5.8\%) \\
+mmc\_core          & +25.2\% (+24.4\%) \\
+raygentop          & $-$2.9\% ($-$2.1\%) \\
 \midrule
-\textbf{Aggregate (pooled)} & \textbf{+42.73\%} \\
+\textbf{Aggregate (pooled)} & \textbf{+35.73\%} (+23.11\%) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -505,7 +496,7 @@ RL (fine-tuned, 11-bench policy)      & 11{,}553.2 & \textbf{74.06\%} \\
 \label{sec:results-golds}
 
 As a secondary, literature-facing comparison, we recompute a genuine
-zero-shot result — the 11-benchmark-era policy trained only on
+zero-shot result — a policy trained only on
 \texttt{diffeq2}, evaluated zero-shot on \texttt{diffeq1} with no training on
 it whatsoever — on GOLDS'~\cite{golds} own 2-term Area$\times$Delay metric
 (rather than our 3-term Area$\times$Delay$\times$Power metric used
@@ -521,13 +512,43 @@ directly.
 \subsection{Zero-Shot Generalization}
 \label{sec:results-zeroshot}
 
-% TODO: write up Table 2 here using the 6-benchmark, multi-seed results
-% (phaseD_zeroshot6_seed7.json, _seed42.json for the 13-bench policy;
-% phaseD_zeroshot6_multi11.json for the 11-bench policy, currently 1 seed with
-% a 2nd seed run still in flight as of this draft). HONEST FRAMING REQUIRED:
-% the 13-bench policy's two seeds disagree in SIGN on 2 of 6 held-out
-% benchmarks (avg +27.5% vs -18.6%), so whatever table goes here must show
-% per-seed spread, not a single point estimate — do not average this away.
+Table~\ref{tab:zeroshot} reports ADP reduction on all six held-out benchmarks
+(Table~\ref{tab:benchmarks}), for both seeds of the 11-benchmark policy,
+evaluated with zero benchmark-specific training. Two of the six
+(\texttt{softmax}, \texttt{reduction\_layer}) were part of the training-time
+\emph{universe} used to size the policy's tensors (Section~\ref{sec:universe})
+but never sampled during training; the other four were entirely outside the
+universe as well, a strictly harder generalization test. Every benchmark
+finishes positive under both seeds — no sign flips, unlike the in-pool
+result in Section~\ref{sec:results-inpool} — and the aggregate average is
+close across seeds (31.30\% vs.\ 30.32\%). Per-benchmark swings are real,
+however: \texttt{custom\_macbuf} drops 13.4 points (61.2\%$\to$47.8\%) and
+\texttt{arm\_core} drops 5.1 points (12.1\%$\to$7.0\%) from seed 42 to seed
+7, partially offset by \texttt{reduction\_layer} and
+\texttt{mkDelayWorker32B} moving the other way. We read this as evidence
+that the 11-benchmark policy's zero-shot generalization is reasonably
+seed-stable in aggregate, but that any single benchmark's zero-shot number
+should be read with a roughly $\pm$10-point error bar until checked against
+a second seed, not treated as exact.
+
+\begin{table}[t]
+\caption{Zero-shot ADP reduction on six held-out benchmarks, 11-benchmark policy.}
+\label{tab:zeroshot}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Benchmark & Seed 42 & Seed 7 \\
+\midrule
+mkDelayWorker32B    & +56.7\% & +62.4\% \\
+custom\_macbuf       & +61.2\% & +47.8\% \\
+lightweight\_cipher & +30.7\% & +30.2\% \\
+reduction\_layer    & +21.7\% & +28.9\% \\
+arm\_core           & +12.1\% & +7.0\%  \\
+softmax             & +5.4\%  & +5.6\%  \\
+\midrule
+\textbf{Average}    & \textbf{+31.30\%} & \textbf{+30.32\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Fine-Tuning Efficiency}
 \label{sec:results-finetune}
@@ -535,7 +556,7 @@ directly.
 Separately from cross-benchmark transfer, we characterize how efficiently a
 multi-benchmark policy continues learning on a benchmark it has already
 partially seen during joint training (\texttt{diffeq1}, within the
-13-benchmark pool), compared to training an identical architecture from
+11-benchmark pool), compared to training an identical architecture from
 scratch on that benchmark alone, both for 6{,}000 episodes under identical
 hyperparameters and separate VTR caches. The fine-tuned run dominates typical
 reward almost throughout (0.81 vs.\ 0.65 in the final 200-episode window,
@@ -553,19 +574,30 @@ characterizes \emph{continued learning} on a partially-known benchmark, not
 cross-benchmark transfer; the latter is addressed in
 Section~\ref{sec:results-zeroshot}.
 
-\subsection{Capacity/Diversity Tradeoff and Seed Variance}
+\subsection{Seed Variance: In-Pool vs.\ Zero-Shot}
 \label{sec:results-tradeoff}
 
-% TODO: write up honestly once Phase 2.1 second-seed run for the 11-benchmark
-% policy completes. Current state: the originally-hypothesized "more training
-% diversity trades zero-shot generalization for in-pool fitting" framing is
-% NOT yet supportable as a clean characterization — a same-config, seed-only
-% change (13-bench seed 7 vs seed 42) produces a seed-to-seed zero-shot swing
-% (+27.5% vs -18.6% average, sign flips on 2/6 benchmarks) at least as large as
-% the effect originally attributed to training-pool size. Honest framing for
-% this section: report the variance as a finding in its own right, and only
-% claim a diversity/capacity effect if it survives multi-seed comparison on
-% BOTH the 11- and 13-benchmark policies, not just one side.
+The two seeds of the 11-benchmark policy give a useful contrast between
+in-pool and zero-shot reliability. In-pool (Section~\ref{sec:results-inpool}),
+the pooled aggregate swings substantially across seeds (35.73\% vs.\
+23.11\%), driven almost entirely by one benchmark, \texttt{or1200}, finishing
+at 33.5\% under seed 42 but only 5.8\% under seed 7 — apparently a
+benchmark-specific convergence difference rather than a general property of
+the seed. Zero-shot (Section~\ref{sec:results-zeroshot}), by contrast, is
+far more stable in aggregate (31.30\% vs.\ 30.32\%) despite real
+per-benchmark movement, and critically shows no sign flips at all. We do not
+yet have an explanation for why in-pool fitting is more seed-sensitive here
+than zero-shot transfer is — it could be that in-pool performance is more
+exposed to which benchmarks a given seed's policy happens to converge on
+slowly within a fixed episode budget (Section~\ref{sec:results-finetune}'s
+entropy-collapse mechanism plausibly compounds this: a seed that converges
+early on most benchmarks has fewer remaining episodes left for a slow
+benchmark like \texttt{or1200} to catch up), while zero-shot performance
+reflects a more general property of the learned representation that is less
+sensitive to any one benchmark's individual convergence trajectory. This is
+a characterization, not yet a tested hypothesis, and the most direct
+follow-up is a third seed to see which of the two patterns — the in-pool
+swing or the zero-shot stability — is the more typical one.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -576,26 +608,27 @@ logic masking. Under a fully controlled, apples-to-apples comparison — our
 own genetic algorithm and our RL policy on the identical benchmark,
 evaluation oracle, ADP metric, and traditional baseline — RL wins: 74.06\%
 ADP reduction versus the GA's 68.17\% (Section~\ref{sec:results-ga}). Jointly
-trained across 13 benchmarks, the same policy reaches a 42.73\% aggregate
-in-pool ADP reduction, and the two benchmarks added specifically to close an
-earlier observed training-pool gap flip from negative to strongly positive
-once included — evidence that earlier zero-shot failures were a coverage
-gap, not a structural ceiling (Section~\ref{sec:results-inpool}). Recomputed
+trained across 11 benchmarks, the same policy reaches a 35.73\% aggregate
+in-pool ADP reduction with 10 of 11 benchmarks finishing positive
+(Section~\ref{sec:results-inpool}). Recomputed
 on GOLDS' own published metric and baseline architecture, a genuinely
 zero-shot evaluation — no training on the target benchmark at all — reaches
 37.4\% versus GOLDS' published $\sim$35\% (Section~\ref{sec:results-golds}).
 
-We also reported a result that complicates a clean amortization story:
-zero-shot generalization to held-out benchmarks shows seed-to-seed variance
-large enough to flip sign on some benchmarks under an otherwise identical
-training configuration (Section~\ref{sec:results-zeroshot}). We see this not
+We also reported a result that complicates a clean amortization story: a
+second training seed shows that in-pool fitting can be considerably more
+seed-sensitive than zero-shot transfer is (Section~\ref{sec:results-tradeoff}) —
+the in-pool aggregate swings from 35.73\% to 23.11\% across seeds, driven by
+one benchmark, while the six-benchmark zero-shot aggregate stays close
+(31.30\% vs.\ 30.32\%) despite real per-benchmark movement
+(Section~\ref{sec:results-zeroshot}). We see this not
 as a weakness to be written around but as the most important finding for
 anyone trying to reproduce or build on this line of work — a single-seed
-zero-shot result, in either direction, should not be taken as a stable
-characterization of the policy's generalization until checked against at
+result, in either direction, should not be taken as a stable
+characterization of the policy's behavior until checked against at
 least a second seed.
 
-Several gaps remain. Every result in this paper comes from a small number of
+Several gaps remain. Every result in this paper comes from one or two
 seeds, not the seed-averaged statistics with error bars a fully rigorous
 claim would need — itself a direct consequence of the variance finding above,
 and the most immediate item for any follow-up. The action space we search

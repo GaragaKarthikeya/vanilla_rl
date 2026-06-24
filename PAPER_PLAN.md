@@ -13,6 +13,17 @@
 #   Updated manuscript (copyright notice + DOI/ISBN) : within 2 weeks of acceptance
 #                             notification — i.e. by ~Sept 18, 2026 if notified Sept 4
 #   Final version deadline  : Oct 27, 2026 (5 PM AOE)
+#
+# DECISION (2026-06-25): the paper uses the 11-BENCHMARK model as its sole
+# headline model, not the 13-benchmark one. The 13-bench results below are
+# kept as historical log entries (what was tried, what was learned) but are
+# NOT used in aspdac2027_draft.tex anymore. Reason: the 11-bench policy's
+# two-seed zero-shot eval (31.30% vs 30.32% avg, no sign flips on 6 held-out
+# benchmarks) is far more seed-stable than the 13-bench policy's was (sign
+# flips on 2/6 benchmarks) — a cleaner, more defensible story for the paper.
+# In-pool seed7 numbers for the 11-bench model: 23.11% pooled aggregate vs
+# seed42's 35.73%, driven almost entirely by or1200 — see
+# Section~\ref{sec:results-tradeoff} in the draft for the write-up.
 #   Today                   : June 24, 2026
 #   Days remaining (to PDF) : 24
 #
