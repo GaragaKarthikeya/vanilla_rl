@@ -43,22 +43,47 @@ tax: GOLDS~\cite{golds} uses a genetic algorithm with an Area$\times$Delay
 fitness function and reports up to $\sim$35\% ADP improvement on the
 \texttt{diffeq1} benchmark; a follow-up applies NSGA-II to a larger,
 multi-objective search space that additionally co-evolves CLB LUT size and
-custom arithmetic-block sizing~\cite{nsgaii}. Both, however, are
-\emph{per-instance} searches: a fresh evolutionary run starts its population
-from scratch for every new protected IP block, with no way to carry anything
-learned from one design over to the next.
+custom arithmetic-block sizing~\cite{nsgaii}. Both, however, are \emph{testbench-specific}: the genetic algorithm's
+population is re-initialized and re-evolved from scratch for every new
+protected IP block, and every generation of every run requires its own full,
+expensive VTR evaluation. Nothing learned while optimizing one netlist's
+layout carries over to the next netlist — each new target benchmark pays the
+full search cost again, with no way to amortize the work already done on
+previous designs.
 
-This paper asks whether a \emph{learned policy} can do better than restarting
-search from zero each time. We train a single reinforcement-learning policy,
-conditioned on a graph-neural-network encoding of the target netlist, to
-place DSP/BRAM hard blocks and choose a fabric aspect ratio, evaluated
-directly against the real VTR (Yosys + VPR) synthesis-to-routing flow rather
-than a learned or analytic proxy. Because the same checkpoint can be applied
-to a netlist it has never seen, without re-running any search, this amortizes
-the cost of finding a good layout across deployments — the practical
-advantage we are after is not necessarily winning every single-instance
-ADP comparison outright, but being fast and strong on a genuinely new
-protected IP block.
+This paper asks whether a \emph{learned policy} can replace that
+per-instance search loop, rather than just compete with it once per
+benchmark. RL placing blocks onto an \emph{already-fixed} FPGA fabric is not
+new; what we ask is whether the same RL machinery can instead be used to
+\emph{construct} the custom fabric layout itself — choosing DSP/BRAM
+placement and aspect ratio for a small, embedded FPGA built around one
+specific netlist, exactly the regime in which a per-instance, testbench-fixed
+GA has so far been the only approach. Concretely, we pose two research
+questions:
+\begin{itemize}
+  \item \textbf{RQ1.} Reinforcement learning has been used to lay out blocks
+        on a \emph{fixed} FPGA fabric; can the same RL formulation instead be
+        used to determine the fabric's custom layout itself, for a given
+        netlist — the embedded-FPGA logic-masking setting where a
+        purpose-built, netlist-specific architecture is viable in the first
+        place?
+  \item \textbf{RQ2.} Can such an RL agent be \emph{benchmark-agnostic} —
+        pretrained across a diverse pool of netlists so that the same
+        checkpoint speeds up layout construction for a genuinely new,
+        previously unseen custom benchmark, either directly (zero-shot) or
+        after a short fine-tuning pass, rather than requiring a fresh search
+        from scratch for every new protected IP block the way GOLDS and the
+        NSGA-II follow-up do?
+\end{itemize}
+We train a single reinforcement-learning policy, conditioned on a
+graph-neural-network encoding of the target netlist, to place DSP/BRAM hard
+blocks and choose a fabric aspect ratio, evaluated directly against the real
+VTR (Yosys + VPR) synthesis-to-routing flow rather than a learned or analytic
+proxy. Because the same checkpoint can be applied to a netlist it has never
+seen, without re-running any search, this amortizes the cost of finding a
+good layout across deployments — the practical advantage we are after is not
+necessarily winning every single-instance ADP comparison outright, but being
+fast and strong on a genuinely new protected IP block.
 
 We report three results. First, on a controlled, fully apples-to-apples
 comparison — our own genetic algorithm and our RL policy evaluated under the
