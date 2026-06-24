@@ -1,0 +1,116 @@
+{
+  "softmax": {
+    "benchmark": "softmax",
+    "reward": -0.0028516200338419145,
+    "success": true,
+    "status": null,
+    "wirelength": 133846.0,
+    "delay_ns": 6.50936,
+    "power_w": 0.07192,
+    "routing_area": 7858960.0,
+    "baseline": {
+      "delay_ns": 6.53536,
+      "wirelength": 141720.0,
+      "power_w": 0.06934,
+      "routing_area": 7896790.0
+    },
+    "adp": 3679197.046333952,
+    "baseline_adp": 3578524.063381696,
+    "adp_reduction_pct": -2.813254324105901
+  },
+  "reduction_layer": {
+    "benchmark": "reduction_layer",
+    "reward": -0.03979021861501661,
+    "success": true,
+    "status": null,
+    "wirelength": 161511.0,
+    "delay_ns": 7.35174,
+    "power_w": 0.1665,
+    "routing_area": 15852000.0,
+    "baseline": {
+      "delay_ns": 7.50631,
+      "wirelength": 145283.0,
+      "power_w": 0.1449,
+      "routing_area": 10687300.0
+    },
+    "adp": 19403873.782920003,
+    "baseline_adp": 11624194.8764487,
+    "adp_reduction_pct": -66.92660428666237
+  },
+  "lightweight_cipher": {
+    "benchmark": "lightweight_cipher",
+    "reward": 0.04720165929839782,
+    "success": true,
+    "status": null,
+    "wirelength": 5517.0,
+    "delay_ns": 3.47671,
+    "power_w": 0.02127,
+    "routing_area": 352462.0,
+    "baseline": {
+      "delay_ns": 3.55966,
+      "wirelength": 6618.0,
+      "power_w": 0.02235,
+      "routing_area": 447080.0
+    },
+    "adp": 26064.431563625403,
+    "baseline_adp": 35568.969919079995,
+    "adp_reduction_pct": 26.72143269000361
+  },
+  "custom_macbuf": {
+    "benchmark": "custom_macbuf",
+    "reward": 0.055617515398333844,
+    "success": true,
+    "status": null,
+    "wirelength": 4749.0,
+    "delay_ns": 13.7835,
+    "power_w": 0.005689,
+    "routing_area": 331310.0,
+    "baseline": {
+      "delay_ns": 14.3481,
+      "wirelength": 4672.0,
+      "power_w": 0.006354,
+      "routing_area": 488146.0
+    },
+    "adp": 25979.452169264998,
+    "baseline_adp": 44503.210274000405,
+    "adp_reduction_pct": 41.62341995259908
+  },
+  "mkDelayWorker32B": {
+    "benchmark": "mkDelayWorker32B",
+    "reward": -0.08044619861336366,
+    "success": true,
+    "status": null,
+    "wirelength": 25833.0,
+    "delay_ns": 7.77536,
+    "power_w": 0.2008,
+    "routing_area": 12075300.0,
+    "baseline": {
+      "delay_ns": 7.95916,
+      "wirelength": 21796.0,
+      "power_w": 0.1551,
+      "routing_area": 6865840.0
+    },
+    "adp": 18853072.7652864,
+    "baseline_adp": 8475644.09154144,
+    "adp_reduction_pct": -122.43823079005256
+  },
+  "arm_core": {
+    "benchmark": "arm_core",
+    "reward": 0.03905618311819161,
+    "success": true,
+    "status": null,
+    "wirelength": 177719.0,
+    "delay_ns": 18.8897,
+    "power_w": 0.05944,
+    "routing_area": 8960410.0,
+    "baseline": {
+      "delay_ns": 19.8096,
+      "wirelength": 181252.0,
+      "power_w": 0.06116,
+      "routing_area": 9465940.0
+    },
+    "adp": 10060782.110824881,
+    "baseline_adp": 11468508.224067839,
+    "adp_reduction_pct": 12.274709890242747
+  }
+}

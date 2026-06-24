@@ -1,15 +1,18 @@
 1)fifo
-2)diifeq2
+2)diffeq2
 3)boundtop
 4)diffeq1
-5)ch_intrinsics
-6)spree
-7)mkSMAdapter4B
-8)or1200
-9)mmc_core
-10)mkPktMerge
+5)spree
+6)mkSMAdapter4B
+7)or1200
+8)mmc_core
+9)mkPktMerge
 
-optional 11) raygentop
+10) raygentop
+
+11)custom_5ch_mac
+12)custom_3dsp_8bram
+13)custom_8dsp_3bram
 
 13,000 episodes ,1,152 episodes per rollout ,5.4 steps on average per rollout
 
@@ -21,8 +24,6 @@ inferring benchmarks:
 5)mkDelayWorker32B
 6)arm_core
  
-changes to be made:
 
-1)the normalized net count should be changed from /50.0 .
 
 

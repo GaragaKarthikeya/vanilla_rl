@@ -1,0 +1,21 @@
+{
+  "custom_8dsp_3bram": {
+    "benchmark": "custom_8dsp_3bram",
+    "reward": 0.009918798015419745,
+    "success": true,
+    "status": null,
+    "wirelength": 14585.0,
+    "delay_ns": 19.6771,
+    "power_w": 0.01261,
+    "routing_area": 1056500.0,
+    "baseline": {
+      "delay_ns": 19.8424,
+      "wirelength": 15281.0,
+      "power_w": 0.01262,
+      "routing_area": 949534.0
+    },
+    "adp": 262147.47605149995,
+    "baseline_adp": 237773.84203299202,
+    "adp_reduction_pct": -10.250763418764121
+  }
+}

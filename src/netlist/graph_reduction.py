@@ -29,10 +29,32 @@ import numpy as np
 # Node feature layout: [is_dsp, is_bram, is_fabric, net_count_normalized]
 NUM_NODE_FEATURES = 4
 
-# Edge weights are raw shared-net counts between two blocks (or, for
-# DSP/BRAM-to-fabric edges, the sum of such counts across all fabric
-# members) — normalize into [0, 1] with this ceiling.
-EDGE_WEIGHT_CEILING = 50.0
+# Edge weights are log-compressed into [0, 1] separately by edge kind, since
+# direct DSP/BRAM<->DSP/BRAM weights (raw shared-net count between two
+# specific blocks) and DSP/BRAM<->fabric weights (summed shared-net count
+# across every individual CLB/IO member a block touches) are different
+# quantities on different scales (~1-76 vs ~9-1200 observed) — a single
+# shared ceiling either saturates the fabric edges or crushes the direct
+# edges near zero. Each ceiling is the observed max across the current
+# benchmark set with a small margin; see _check_ceiling for the runtime
+# guard against a future benchmark silently exceeding it.
+DIRECT_EDGE_CEILING = 80.0
+FABRIC_EDGE_CEILING = 1300.0
+
+
+def _check_ceiling(w: float, ceiling: float, kind: str, benchmark_name: str) -> None:
+    """Both ceilings are calibrated to the max observed across the current
+    benchmark set, not a structural bound — warn loudly if a benchmark's raw
+    weight exceeds it, since past this point the edge silently saturates to
+    1.0 again (the exact bug this normalization was introduced to fix)."""
+    if w > ceiling:
+        import sys
+        print(
+            f"[Warning] {benchmark_name}: {kind} edge weight {w} exceeds "
+            f"ceiling {ceiling} — this edge will saturate to 1.0, losing "
+            f"resolution. Consider raising the ceiling.",
+            file=sys.stderr,
+        )
 
 
 @dataclass
@@ -142,7 +164,10 @@ def reduce_netlist_graph(graph_json_path: Path) -> ReducedGraph:
     edge_index_list: list[tuple[int, int]] = []
     edge_weight_list: list[float] = []
     for (a, b), w in pair_weight.items():
-        w_norm = min(w / EDGE_WEIGHT_CEILING, 1.0)
+        is_fabric_edge = fabric_id in (a, b)
+        ceiling = FABRIC_EDGE_CEILING if is_fabric_edge else DIRECT_EDGE_CEILING
+        _check_ceiling(w, ceiling, "fabric" if is_fabric_edge else "direct", benchmark_name)
+        w_norm = min(np.log1p(w) / np.log1p(ceiling), 1.0)
         edge_index_list.append((a, b))
         edge_weight_list.append(w_norm)
         edge_index_list.append((b, a))

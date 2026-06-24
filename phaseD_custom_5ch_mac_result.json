@@ -1,0 +1,21 @@
+{
+  "custom_5ch_mac": {
+    "benchmark": "custom_5ch_mac",
+    "reward": -0.009734290965550813,
+    "success": true,
+    "status": null,
+    "wirelength": 12243.0,
+    "delay_ns": 16.4877,
+    "power_w": 0.01446,
+    "routing_area": 885357.0,
+    "baseline": {
+      "delay_ns": 16.3243,
+      "wirelength": 10396.0,
+      "power_w": 0.01508,
+      "routing_area": 1045780.0
+    },
+    "adp": 211079.858804694,
+    "baseline_adp": 257440.12692632,
+    "adp_reduction_pct": 18.008174823070384
+  }
+}

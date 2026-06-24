@@ -1,0 +1,21 @@
+{
+  "stereovision1": {
+    "benchmark": "stereovision1",
+    "reward": -0.08929356793678761,
+    "success": true,
+    "status": null,
+    "wirelength": 144765.0,
+    "delay_ns": 5.73388,
+    "power_w": 0.1206,
+    "routing_area": 11142000.0,
+    "baseline": {
+      "delay_ns": 5.59724,
+      "wirelength": 129243.0,
+      "power_w": 0.0976,
+      "routing_area": 7772740.0
+    },
+    "adp": 7704759.049776,
+    "baseline_adp": 4246174.98478976,
+    "adp_reduction_pct": -81.45175545933098
+  }
+}

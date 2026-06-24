@@ -1,0 +1,21 @@
+{
+  "custom_2dsp_4bram": {
+    "benchmark": "custom_2dsp_4bram",
+    "reward": 0.03717548563706128,
+    "success": true,
+    "status": null,
+    "wirelength": 6977.0,
+    "delay_ns": 14.5036,
+    "power_w": 0.009298,
+    "routing_area": 398465.0,
+    "baseline": {
+      "delay_ns": 14.3469,
+      "wirelength": 7785.0,
+      "power_w": 0.01037,
+      "routing_area": 506366.0
+    },
+    "adp": 53734.78750425201,
+    "baseline_adp": 75335.793129198,
+    "adp_reduction_pct": 28.67296503788192
+  }
+}

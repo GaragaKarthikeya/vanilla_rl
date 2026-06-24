@@ -1,0 +1,21 @@
+{
+  "mkDelayWorker32B": {
+    "benchmark": "mkDelayWorker32B",
+    "reward": 0.11656116070196881,
+    "success": true,
+    "status": null,
+    "wirelength": 25164.0,
+    "delay_ns": 6.2961,
+    "power_w": 0.1602,
+    "routing_area": 3634500.0,
+    "baseline": {
+      "delay_ns": 7.95916,
+      "wirelength": 21796.0,
+      "power_w": 0.1551,
+      "routing_area": 6865840.0
+    },
+    "adp": 3665884.70709,
+    "baseline_adp": 8475644.09154144,
+    "adp_reduction_pct": 56.748010328223955
+  }
+}

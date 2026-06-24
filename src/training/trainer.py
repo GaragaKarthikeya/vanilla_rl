@@ -49,9 +49,15 @@ class TrainConfig:
     wandb_entity: Optional[str] = None
 
 
+def _bench_label(benchmark_names: list[str]) -> str:
+    # W&B's GroupName has a 128-char limit; joining many/long benchmark
+    # names (e.g. 13 names -> 137 chars) can exceed it, so collapse to
+    # "multiN" beyond a small count instead of listing every name.
+    return "-".join(benchmark_names) if len(benchmark_names) <= 3 else f"multi{len(benchmark_names)}"
+
+
 def _run_name(benchmark_names: list[str], cfg: TrainConfig) -> str:
-    bench_label = "-".join(benchmark_names) if len(benchmark_names) <= 3 else f"multi{len(benchmark_names)}"
-    return f"{bench_label}_seed{cfg.seed}{cfg.log_suffix}"
+    return f"{_bench_label(benchmark_names)}_seed{cfg.seed}{cfg.log_suffix}"
 
 
 def train(cfg: TrainConfig) -> None:
@@ -97,7 +103,7 @@ def train(cfg: TrainConfig) -> None:
             project=cfg.wandb_project,
             entity=cfg.wandb_entity,
             name=run_name,
-            group="-".join(benchmark_names),
+            group=_bench_label(benchmark_names),
             tags=benchmark_names,
             config={
                 **{k: v for k, v in asdict(cfg).items() if k not in ("wandb_project", "wandb_entity")},
