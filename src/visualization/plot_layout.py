@@ -28,11 +28,20 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+from matplotlib.font_manager import FontManager
 
+# serif to match the other paper figures (Fig 1, Fig 3) and the acmart body
+_avail = {f.name for f in FontManager().ttflist}
+for _f in ("Times New Roman", "Nimbus Roman", "STIX Two Text", "DejaVu Serif"):
+    if _f in _avail:
+        plt.rcParams["font.serif"] = [_f]
+        break
 plt.rcParams.update({
-    "font.family": "DejaVu Sans",
+    "font.family": "serif",
+    "mathtext.fontset": "stix",
     "axes.linewidth": 0,
     "svg.fonttype": "none",
+    "pdf.fonttype": 42,
 })
 
 # ── Palette (light, professional) ───────────────────────────────────────────

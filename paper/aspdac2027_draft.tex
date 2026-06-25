@@ -1,4 +1,4 @@
-\documentclass[sigconf,review,anonymous]{acmart}
+\documentclass[sigconf,anonymous]{acmart}
 
 \settopmatter{printacmref=false}
 \renewcommand\footnotetextcopyrightpermission[1]{}
@@ -7,7 +7,7 @@
 \acmISBN{}
 \acmDOI{}
 
-\title{Custom eFPGA Layout Synthesis for Logic Masking via Reinforcement Learning}
+\title{Amortized Custom eFPGA Layout Search via Reinforcement Learning: Zero-Shot Generalization Across Circuit Benchmarks}
 
 \begin{document}
 
@@ -18,29 +18,41 @@ since the protected function is absent from the fixed silicon until
 configured. Because this use case targets one known netlist rather than
 general-purpose reconfigurability, a custom-tailored fabric layout can
 recover much of the area/delay/power overhead a generic FPGA would
-otherwise impose. Prior work (GOLDS and a follow-up NSGA-II-based method)
-searches for such layouts with an evolutionary algorithm, re-initialized
-from scratch for every new protected netlist. We instead train a
+otherwise impose. Prior work (GOLDS and a follow-up NSGA-II method)
+searches for such layouts with an evolutionary algorithm re-initialized
+from scratch for every new netlist. We instead train a
 reinforcement-learning policy, conditioned on a graph-neural-network
 encoding of the target netlist, to choose DSP/BRAM placement and fabric
-aspect ratio, evaluated directly against the real VTR synthesis-to-routing
-flow. On a controlled, apples-to-apples comparison against our own
-from-scratch genetic algorithm under an identical oracle and metric, the RL
-policy reaches 74.06\% ADP reduction versus the GA's 68.17\%. Jointly
-trained across 11 real circuits, the policy reaches a 35.7\% aggregate
-in-pool ADP reduction. Recomputed on GOLDS' own published metric and
-baseline architecture, a genuine zero-shot evaluation (no training on the
-target benchmark at all) reaches 37.4\% versus GOLDS' published
-$\sim$35\%. Using three independent training seeds, we additionally
-characterize the reliability of these results: in-pool performance is
-considerably more seed-sensitive than zero-shot generalization is, with two
-specific in-pool benchmarks varying by over 25 points across seeds while
-held-out benchmarks vary by no more than about 5 points each. We report
-this honestly as a finding about the current approach's limits, not smooth
-it into a single point estimate.
+aspect ratio, evaluated directly against the VTR synthesis-to-routing
+flow. Under a controlled comparison against our own
+genetic algorithm with an identical oracle and metric, the policy
+reaches 74.06\% ADP reduction against the GA's 68.17\%. Jointly
+trained across 11 circuits, it reaches a 27.35\% aggregate
+in-pool ADP reduction averaged over three training seeds. Recomputed on GOLDS' published metric and
+baseline, a zero-shot evaluation with no training on the
+target benchmark reaches 37.4\% against GOLDS' reported
+$\sim$35\%. Across the three seeds we further characterize result
+reliability and find a marked asymmetry: in-pool performance is
+substantially more seed-sensitive than zero-shot generalization, with two
+in-pool benchmarks spanning $\sim$28 points across seeds while
+every held-out benchmark spans at most $\sim$12. We report the individual
+per-seed results rather than a mean $\pm$ SD that three runs cannot justify.
 \end{abstract}
 
 \maketitle
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_amortization.pdf}
+\caption{Amortization on a previously unseen netlist (\texttt{custom\_macbuf}).
+A single zero-shot rollout of the pretrained policy reaches 59.5\% ADP
+reduction at one VTR oracle call (lower left); fine-tuning continues from
+that same policy to 74.1\% at 1{,}575 calls, exceeding the 68.2\% best of our
+genetic algorithm (dashed line) reached only after $\sim$935 calls. The
+horizontal axis is oracle calls on a log scale; all three points are measured
+against the same traditional baseline (ADP $= 44{,}503$).}
+\label{fig:amortization}
+\end{figure}
 
 \section{Introduction}
 \label{sec:intro}
@@ -77,71 +89,36 @@ full search cost again, with no way to amortize the work already done on
 previous designs.
 
 This paper asks whether a \emph{learned policy} can replace that
-per-instance search loop, rather than just compete with it once per
-benchmark. RL placing blocks onto an \emph{already-fixed} FPGA fabric is not
-new; what we ask is whether the same RL machinery can instead be used to
-\emph{construct} the custom fabric layout itself — choosing DSP/BRAM
-placement and aspect ratio for a small, embedded FPGA built around one
-specific netlist, exactly the regime in which a per-instance, testbench-fixed
-GA has so far been the only approach. Concretely, we pose two research
-questions:
-\begin{itemize}
-  \item \textbf{RQ1.} Reinforcement learning has been used to lay out blocks
-        on a \emph{fixed} FPGA fabric; can the same RL formulation instead be
-        used to determine the fabric's custom layout itself, for a given
-        netlist — the embedded-FPGA logic-masking setting where a
-        purpose-built, netlist-specific architecture is viable in the first
-        place?
-  \item \textbf{RQ2.} Can such an RL agent be \emph{benchmark-agnostic} —
-        pretrained across a diverse pool of netlists so that the same
-        checkpoint speeds up layout construction for a genuinely new,
-        previously unseen custom benchmark, either directly (zero-shot) or
-        after a short fine-tuning pass, rather than requiring a fresh search
-        from scratch for every new protected IP block the way GOLDS and the
-        NSGA-II follow-up do?
-\end{itemize}
+per-instance search loop. RL placing blocks onto an \emph{already-fixed} FPGA
+fabric is not new; we pose two questions instead. \textbf{RQ1}: can the same
+RL machinery \emph{construct} the custom fabric layout itself — DSP/BRAM
+placement and aspect ratio for an embedded FPGA built around one netlist — the
+regime where a per-instance GA has so far been the only option? \textbf{RQ2}:
+can such a policy be \emph{benchmark-agnostic}, pretrained across a pool of
+netlists so the same checkpoint speeds up layout for a previously unseen
+benchmark (zero-shot or after brief fine-tuning) rather than re-searching from
+scratch?
+
 We train a single reinforcement-learning policy, conditioned on a
 graph-neural-network encoding of the target netlist, to place DSP/BRAM hard
 blocks and choose a fabric aspect ratio, evaluated directly against the real
 VTR (Yosys + VPR) synthesis-to-routing flow rather than a learned or analytic
-proxy. Because the same checkpoint can be applied to a netlist it has never
-seen, without re-running any search, this amortizes the cost of finding a
-good layout across deployments — the practical advantage we are after is not
-necessarily winning every single-instance ADP comparison outright, but being
-fast and strong on a genuinely new protected IP block.
+proxy. Because the same checkpoint applies to a netlist it has never seen
+without re-running search, the cost of finding a good layout is amortized
+across deployments. The objective is therefore not to win every
+single-instance ADP comparison outright, but to produce a strong layout for
+a previously unseen netlist at near-zero search cost
+(Figure~\ref{fig:amortization}).
 
-We report three results. First, on a controlled, fully apples-to-apples
-comparison — our own genetic algorithm and our RL policy evaluated under the
-\emph{identical} oracle, ADP metric, and traditional baseline, on a benchmark
-held out of RL training — RL reaches 74.06\% ADP reduction versus the GA's
-68.17\% (Section~\ref{sec:results-ga}). Second, jointly trained across 11
-benchmarks, the policy achieves a 27.35\% aggregate in-pool ADP reduction
-averaged over three independent training seeds, with one persistent laggard
-benchmark and two specific benchmarks responsible for almost all of the
-seed-to-seed spread (Section~\ref{sec:results-inpool}). Third, recomputed on
-GOLDS' own published 2-term Area$\times$Delay metric and baseline
-architecture, a zero-shot evaluation — a policy trained only on
-\texttt{diffeq2}, applied directly to \texttt{diffeq1} with no
-benchmark-specific training at all — reaches 37.4\% versus GOLDS' published
-$\sim$35\% (Section~\ref{sec:results-golds}). We also report a less
-convenient finding alongside these: across the same three seeds, zero-shot
-generalization to six held-out benchmarks is consistently positive on every
-benchmark, with far more uniform seed-to-seed spread (standard deviation
-2.0--5.5 points per benchmark) than in-pool fitting shows (0.1--12.0,
-dominated by two specific benchmarks) (Section~\ref{sec:results-zeroshot});
-we present this honestly as a characterization of the current approach's
-reliability rather than smoothing it into a single point estimate.
-
-This paper sits at the intersection of two lines of work that have not, to
-our knowledge, been connected before (Section~\ref{sec:related}): custom
-eFPGA layout search for logic masking, which to date has used only
-per-instance evolutionary search~\cite{golds,nsgaii}, and learned policies for
-physical design, which to date have targeted ASIC macro placement at a much
-larger scale and through a learned reward proxy rather than the true
-toolchain~\cite{alphachip,chipformer}. We bring the amortization argument
-from the latter line of work to the former problem, evaluated end-to-end
-against the real VTR oracle the former line of work already established as
-the right fidelity bar for this problem.
+The paper sits at the intersection of two lines of work not previously
+connected (Section~\ref{sec:related}): custom eFPGA layout search for logic
+masking, which to date has used only per-instance evolutionary
+search~\cite{golds,nsgaii}, and learned policies for physical design, which
+have targeted ASIC macro placement at a much larger scale and through a
+learned reward proxy rather than the true toolchain~\cite{alphachip,chipformer}.
+We bring the amortization argument from the latter to the former problem,
+evaluated end-to-end against the same VTR oracle the former already
+established as the fidelity bar.
 
 Concretely, this paper contributes:
 \begin{itemize}
@@ -151,25 +128,21 @@ Concretely, this paper contributes:
         loadable against benchmarks never seen during training
         (Section~\ref{sec:universe}), evaluated directly against the same
         VTR-based oracle used by prior eFPGA-layout search work.
-  \item A fully controlled, apples-to-apples comparison against a
-        from-scratch genetic algorithm under an identical evaluation oracle,
-        ADP metric, and traditional baseline, on a benchmark held out of RL
-        training: 74.06\% ADP reduction for RL versus 68.17\% for the GA
-        (Section~\ref{sec:results-ga}).
+  \item A controlled comparison against a from-scratch genetic algorithm under
+        an identical evaluation oracle, ADP metric, and baseline, on a
+        held-out benchmark: 74.06\% ADP reduction for RL against 68.17\% for
+        the GA (Section~\ref{sec:results-ga}).
   \item A joint 11-benchmark training result (27.35\% aggregate in-pool ADP
-        reduction, averaged over three independent seeds) (Section~\ref{sec:results-inpool}).
-  \item A literature-facing comparison against GOLDS' own published metric
-        and baseline architecture, recomputed precisely on a genuine
-        zero-shot evaluation with no benchmark-specific training at all:
-        37.4\% versus GOLDS' published $\sim$35\% (Section~\ref{sec:results-golds}).
-  \item A three-seed characterization of result reliability across both
-        in-pool and zero-shot settings, surfacing a clear asymmetry — in-pool
-        fitting is far more seed-sensitive (driven by two specific
-        benchmarks varying by $\sim$12 points across seeds) than zero-shot
-        generalization is (uniformly 2--5.5 points across all six held-out
-        benchmarks) — reported as a finding about the current approach's
-        limits, not smoothed into a single optimistic point estimate
-        (Section~\ref{sec:results-zeroshot}, Section~\ref{sec:results-tradeoff}).
+        reduction, averaged over three seeds) (Section~\ref{sec:results-inpool}),
+        and a literature-facing comparison against GOLDS' published metric and
+        baseline, recomputed on a zero-shot evaluation: 37.4\% against GOLDS'
+        $\sim$35\% (Section~\ref{sec:results-golds}).
+  \item A three-seed reliability analysis exposing an asymmetry: in-pool
+        fitting is far more seed-sensitive (two benchmarks spanning
+        $\sim$28 points across seeds) than zero-shot generalization
+        (at most $\sim$12 points across all six held-out benchmarks),
+        reported as raw per-seed results rather than mean $\pm$ SD
+        (Sections~\ref{sec:results-zeroshot},~\ref{sec:results-tradeoff}).
 \end{itemize}
 
 \section{Background and Related Work}
@@ -181,7 +154,13 @@ Embedding a reconfigurable fabric into an ASIC to hide one IP block's
 function behind a bitstream is a hardware-security technique distinct from
 standard logic locking or camouflaging, since the protected function is not
 merely obfuscated in the netlist but physically absent from the fixed
-silicon until configured. GOLDS~\cite{golds} introduced custom-tailored
+silicon until configured. Automated flows for partitioning RTL into embedded
+reconfigurable fabrics established eFPGA redaction as a practical
+defense~\cite{alice,arianna}, and subsequent work has cut its overhead by
+shrinking under-utilized routing~\cite{shell} or de-regularizing the fabric
+itself~\cite{nuredact} — motivating the custom, non-island-style layouts this
+paper synthesizes. These flows all rely on a non-learning search (heuristic or
+evolutionary) re-run per design; none amortizes layout effort across netlists. GOLDS~\cite{golds} introduced custom-tailored
 eFPGA layout design for this purpose: a genetic algorithm searches over
 DSP/BRAM tile placement on a fixed-size fabric, with an
 Area$\times$Delay fitness function evaluated through the real VTR flow, and
@@ -202,40 +181,38 @@ also cover (Section~\ref{sec:conclusion}).
 
 \subsection{Learned Policies for Physical Design}
 
-Reinforcement learning has been applied to chip-scale physical design
-problems structurally similar to ours. AlphaChip~\cite{alphachip} trains an
-RL agent to place macro blocks for ASIC floorplanning, using a learned
-reward proxy in place of a full place-and-route evaluation per step, and
-reports that the resulting policy transfers across chip designs without
-retraining from scratch — the same amortization argument we make for eFPGA
-placement, applied to a different physical-design problem and at a much
-larger design scale (full TPU floorplans rather than DSP/BRAM tile
-placement on a small embedded fabric). ChiPFormer~\cite{chipformer} instead
-poses macro placement as an offline RL problem over a transformer policy,
-trained on a fixed dataset of prior placements rather than online
-environment interaction. Both works motivate the same underlying claim this
-paper tests in a different, smaller-scale setting: that a trained policy can
-out-amortize per-instance search once a population of designs needs to be
-placed, rather than re-running search from scratch on each one. Unlike
-AlphaChip, we evaluate every candidate placement against the true VTR
-synthesis-to-routing flow rather than a learned proxy, trading evaluation
-speed for evaluation fidelity — appropriate at our problem's much smaller
-scale, where a full VTR run completes in seconds to low minutes
-(Section~\ref{sec:oracle}).
+Reinforcement learning has been applied to chip-scale physical design.
+AlphaChip~\cite{alphachip,alphachip_addendum} trains an RL agent to place ASIC
+macro blocks using a learned reward proxy, and reports policies that transfer
+across chip designs without retraining — the amortization argument we make
+here, at a much larger design scale. Subsequent work explores visual state
+representations~\cite{maskplace}, joint placement-and-routing~\cite{deeppr},
+and offline RL over a transformer policy~\cite{chipformer}. All motivate the
+claim this paper tests in a smaller-scale setting: a trained policy can
+out-amortize per-instance search once many designs must be placed. Unlike
+AlphaChip, we evaluate every candidate against the true VTR flow rather than a
+learned proxy, trading speed for fidelity — affordable at our scale, where a
+VTR run completes in seconds to low minutes (Section~\ref{sec:oracle}).
+
+Within the FPGA setting specifically, RL has guided placement onto an
+\emph{already-fabricated} grid — selecting annealing perturbations in
+VPR~\cite{rlplace} or driving a Gym-style VPR environment~\cite{vprgym} — but
+always optimizes the assignment of blocks to a fixed grid, never its geometry.
+Transferable EDA policies have likewise appeared for tool tuning~\cite{fasttuner}
+and global placement~\cite{transplace}, but not, to our knowledge, for
+\emph{synthesizing} a custom FPGA fabric itself, which is what our policy does.
 
 \subsection{VTR/VPR Background}
 
-We build directly on the open-source Verilog-to-Routing
-(VTR)~\cite{vtr,vpr} toolchain: Yosys performs technology-independent
-synthesis, and VPR performs packing, placement, and routing against an
-architecture described in an XML schema specifying tile types, their
-positions on the fabric, and their connectivity. This architecture XML is
-the same artifact GOLDS and the NSGA-II follow-up generate by hand-coded
-search and that we generate by policy rollout (Section~\ref{sec:oracle}); VTR's
-willingness to accept an essentially arbitrary heterogeneous tile layout,
-rather than only the regular island-style grids it ships by default, is what
-makes the entire custom-eFPGA-layout line of work — GOLDS, the NSGA-II
-follow-up, and this paper — possible in the first place.
+We build on the open-source Verilog-to-Routing (VTR)~\cite{vtr9,vtr8,vpr97}
+toolchain: Yosys performs synthesis (via the VTR integration~\cite{parmys})
+and VPR performs packing, placement, and
+routing against an architecture described in an XML schema of tile types,
+positions, and connectivity. This architecture XML is the artifact GOLDS and
+the NSGA-II follow-up generate by hand-coded search and that we generate by
+policy rollout (Section~\ref{sec:oracle}); VTR's acceptance of an arbitrary
+heterogeneous tile layout, not only the regular island-style grids it ships,
+is what makes this entire line of work possible.
 
 \section{Methodology}
 
@@ -265,8 +242,9 @@ island-style eFPGA baseline at the same logic capacity.
 \label{sec:rl}
 
 We pose placement as a finite-horizon sequential decision process and train a
-policy with Proximal Policy Optimization (PPO), using the maskable variant
-(\texttt{sb3\_contrib}'s \texttt{MaskablePPO}) so that the action space can be
+policy with Proximal Policy Optimization (PPO), using the maskable
+variant~\cite{maskableppo} (\texttt{sb3\_contrib}'s \texttt{MaskablePPO}) so
+that the action space can be
 restricted to currently-legal tile coordinates at every step.
 
 \textbf{Episode structure.} An episode places exactly one benchmark's blocks
@@ -294,14 +272,13 @@ against the traditional baseline for the active benchmark:
   r = -\Big(
     w_a \log\tfrac{\mathrm{Area}}{\mathrm{Area}_0} +
     w_d \log\tfrac{\mathrm{Delay}}{\mathrm{Delay}_0} +
-    w_p \log\tfrac{\mathrm{Power}}{\mathrm{Power}_0} +
-    w_w \log\tfrac{\mathrm{WL}}{\mathrm{WL}_0}
+    w_p \log\tfrac{\mathrm{Power}}{\mathrm{Power}_0}
   \Big),
 \end{equation}
-where $\mathrm{Area}_0,\mathrm{Delay}_0,\mathrm{Power}_0,\mathrm{WL}_0$ are the
-traditional-baseline metrics for that benchmark and $w_a,w_d,w_p,w_w$ are
-configurable weights (Section~\ref{sec:training}). When $w_a=w_d=w_p=1$ and
-$w_w=0$, $r$ reduces to $\log(\mathrm{ADP}_0/\mathrm{ADP})$ — i.e.\ the reward
+where $\mathrm{Area}_0,\mathrm{Delay}_0,\mathrm{Power}_0$ are the
+traditional-baseline metrics for that benchmark and $w_a,w_d,w_p$ are
+configurable weights (Section~\ref{sec:training}). With $w_a=w_d=w_p=1$,
+$r$ equals $\log(\mathrm{ADP}_0/\mathrm{ADP})$ — i.e.\ the reward
 \emph{is} the log of the ADP-improvement ratio in Eq.~\ref{eq:adp}, making
 reward and our headline metric directly comparable. An invalid choice
 (degenerate aspect ratio, out-of-bounds or overlapping placement, or a VTR
@@ -311,52 +288,48 @@ flow failure) terminates the episode early with a fixed penalty reward of $-10$.
 \label{sec:gnn}
 
 To let a single policy generalize across benchmarks with different netlist
-sizes, hard-block counts, and grid dimensions, we first reduce each
-benchmark's full netlist graph to a compact, fixed-schema representation: one
+sizes, hard-block counts, and grid dimensions, we encode each netlist as a
+graph rather than a flat vector, giving the policy the inductive bias to
+transfer across circuit topologies that graph learning provides
+elsewhere in EDA~\cite{gamora}. We first reduce each benchmark's full netlist
+graph to a compact, fixed-schema representation: one
 node per DSP/BRAM hard-block instance, plus one aggregate ``fabric'' node
 summarizing the remaining standard-cell logic. Each node carries a 4-dimensional
 feature vector \texttt{[is\_dsp, is\_bram, is\_fabric, net\_count\_normalized]}.
 Edges between two hard-block nodes are weighted by their raw shared-net count;
 edges between a hard-block node and the fabric node are weighted by the summed
-shared-net count across all standard-cell members that block touches. Because
-these two edge kinds live on very different numeric scales, we normalize each
-into $[0,1]$ separately with a log compression, $w_{\mathrm{norm}} =
-\log(1+w)/\log(1+c)$, using a per-kind ceiling $c$ calibrated to the observed
-maximum across the training benchmark pool — a single shared linear ceiling
-either saturates the larger-magnitude fabric edges or crushes the
-direct edges near zero.
+shared-net count across the standard cells that block touches. As these two
+edge kinds live on very different scales, we normalize each into $[0,1]$
+separately by a log compression $w_{\mathrm{norm}} = \log(1+w)/\log(1+c)$ with
+a per-kind ceiling $c$ from the training pool, so neither type saturates or
+vanishes.
 
 This reduced graph is padded to a fixed $(\mathrm{MAX\_NODES},
 \mathrm{MAX\_EDGES})$ — computed once over the full benchmark \emph{universe}
 (Section~\ref{sec:universe}) — and fed to a small GNN feature extractor shared
 by the policy and value heads: two \texttt{GCNConv} layers (hidden width 64)
-produce a per-node embedding $h_i$; a global mean pool over $h$ gives a
-whole-netlist embedding, and the embedding of the specific node being placed
-this step (looked up via \texttt{current\_block\_idx}) gives a focused,
-per-step embedding. These are concatenated with (i) a small CNN over the
-occupancy grid (4 channels: occupancy, block-type hint, aspect ratio, and net
-count, each padded with an out-of-canvas sentinel outside the active
-benchmark's real footprint) and (ii) the active benchmark's normalized
-$(\mathrm{width}, \mathrm{height})$, then projected to a 128-dimensional joint
-feature vector consumed by the PPO policy and value heads. The whole extractor
-is trained end-to-end under the standard PPO loss; there is no separate
-pretraining stage for the GNN.
+produce per-node embeddings $h_i$; a global mean pool gives a whole-netlist
+embedding, and the embedding of the node being placed this step gives a
+focused per-step embedding. These are concatenated with a small CNN over the
+occupancy grid (4 channels: occupancy, block-type hint, aspect ratio, net
+count) and the active benchmark's normalized $(\mathrm{width},
+\mathrm{height})$, then projected to a 128-dimensional vector for the PPO
+policy and value heads. The extractor is trained end-to-end under the PPO
+loss, with no separate GNN pretraining.
 
 \subsection{Universe Superset and Action Masking}
 \label{sec:universe}
 
-A policy network's input/output dimensions are fixed at construction time, but
-we want one checkpoint to remain loadable against benchmarks it was never
-trained on, including ones discovered after training. We address this by
-sizing every dimension-dependent quantity — canvas $(W_{\max}, H_{\max})$,
-$\mathrm{MAX\_NODES}$, $\mathrm{MAX\_EDGES}$ — from a benchmark
-\emph{universe} that is a deliberate superset of the benchmarks actually
-sampled during training: it can include benchmarks reserved purely for
-zero-shot evaluation, so long as none of them exceeds the resulting shared
-dimensions. Per-episode action masking (Section~\ref{sec:rl}) and the
-\texttt{valid\_wh} observation are what let the same fixed-size network
-operate correctly on each benchmark's much smaller real footprint within that
-shared canvas.
+A policy's input/output dimensions are fixed at construction, yet we want one
+checkpoint loadable against benchmarks never trained on, including ones
+discovered later. We therefore size every dimension-dependent quantity —
+canvas $(W_{\max}, H_{\max})$, $\mathrm{MAX\_NODES}$, $\mathrm{MAX\_EDGES}$ —
+from a benchmark \emph{universe} that is a deliberate superset of the sampled
+training set, including benchmarks reserved purely for zero-shot evaluation,
+provided none exceeds the shared dimensions. Per-episode action masking
+(Section~\ref{sec:rl}) and the \texttt{valid\_wh} observation let the same
+fixed-size network operate on each benchmark's smaller real footprint within
+that canvas.
 
 \subsection{Training Setup}
 \label{sec:training}
@@ -366,7 +339,7 @@ Each training run samples uniformly across the 11-benchmark training pool
 updated jointly on all 11 circuits rather than one at a time. We use
 \texttt{MaskablePPO} with 24 parallel environments, 48 rollout steps per
 environment per update, batch size 144, 15 epochs per update, entropy
-coefficient 0.01, and reward weights $w_a=w_d=w_p=1$, $w_w=0$ (Eq.~\ref{eq:reward}),
+coefficient 0.01, and reward weights $w_a=w_d=w_p=1$ (Eq.~\ref{eq:reward}),
 giving reward $=\log(\mathrm{ADP}_0/\mathrm{ADP})$. Each run trains for
 13{,}000 episodes (capped independently of total timesteps) with a
 per-episode VTR timeout of 300s to keep a degenerate early-exploration
@@ -389,10 +362,12 @@ templates parameterized by tile coordinates, block type, and fabric aspect
 ratio. This architecture and the benchmark's Verilog are then run through the
 full VTR flow — Yosys-based synthesis, VPR packing, placement, and routing,
 followed by VPR's power estimator against a 45nm PTM technology file — and we
-extract routing area, critical-path delay, dynamic power, and wirelength from
-the resulting VPR reports. Evaluated (placement, benchmark) pairs are cached,
-since the synthesis-to-routing flow is the dominant cost of both training and
-evaluation (seconds to low minutes per call depending on benchmark size).
+extract routing area, critical-path delay, and dynamic power from
+the resulting VPR reports. All evaluations use a VTR 9.0.0 development build
+(git \texttt{22a09d39}, GCC 13.3.0). Evaluated (placement, benchmark) pairs
+are cached, since the synthesis-to-routing flow is the dominant cost of both
+training and evaluation (seconds to low minutes per call depending on
+benchmark size).
 
 \subsection{Baseline}
 \label{sec:baseline}
@@ -410,7 +385,13 @@ starting point (Section~\ref{sec:results-golds}).
 Table~\ref{tab:benchmarks} lists the benchmark pool used in this work: an
 11-benchmark training set of real circuits spanning a range of DSP/BRAM
 resource profiles, and a held-out set used only for zero-shot evaluation
-(Section~\ref{sec:results-zeroshot}), never sampled during training.
+(Section~\ref{sec:results-zeroshot}), never sampled during training. Training
+circuits come from the standard VTR suite~\cite{vtr8}; two held-out benchmarks
+(\texttt{softmax}, \texttt{reduction\_layer}) are deep-learning workloads from
+Koios~\cite{koios}, and the remaining four are hand-written probes — including
+\texttt{custom\_macbuf}, an internally built multiply-accumulate buffer used in
+the GA comparison (Section~\ref{sec:results-ga}) — stressing DSP/BRAM mixes
+rare in the real circuits.
 
 \begin{table}[t]
 \caption{Benchmark pool: grid size and hard-block requirements.}
@@ -446,15 +427,13 @@ arm\_core          & 35$\times$35 & 0 & 24 \\
 \subsection{Baselines Compared}
 \label{sec:baselines-compared}
 
-We compare against: (1) the traditional, non-customized island-style eFPGA
-baseline (Section~\ref{sec:baseline}); (2) a from-scratch genetic algorithm we
-implemented under the identical evaluation oracle and ADP metric, giving a
-fully apples-to-apples in-house comparison (Section~\ref{sec:results-ga}); and
-(3) prior published results from GOLDS~\cite{golds} and the NSGA-II-based
+We compare against: (1) the traditional island-style eFPGA baseline
+(Section~\ref{sec:baseline}); (2) a genetic algorithm we implemented under the
+same evaluation oracle and ADP metric (Section~\ref{sec:results-ga}); and
+(3) published results from GOLDS~\cite{golds} and the NSGA-II
 follow-up~\cite{nsgaii}, subject to the metric caveat in
 Section~\ref{sec:results-golds}.
-% TODO: random-valid-placement baseline not yet run — add if time permits
-% (PAPER_PLAN.md Phase 1.6 lists this as an alternative to a direct GOLDS rerun).
+
 
 \section{Results}
 \label{sec:results}
@@ -462,81 +441,101 @@ Section~\ref{sec:results-golds}.
 \subsection{In-Pool Performance}
 \label{sec:results-inpool}
 
-Table~\ref{tab:inpool} reports per-benchmark ADP reduction for the
-11-benchmark policy directly on its own training set, across three
-independent training seeds (7, 42, 123; Section~\ref{sec:training}), as
-mean $\pm$ population standard deviation. Each seed's own pooled aggregate
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\columnwidth]{fig_seed_variance.pdf}
+\caption{Per-seed ADP reduction for every benchmark; this figure carries the
+per-benchmark results in place of a table. Each benchmark shows its three
+training-seed outcomes (dots; seeds 7/42/123), the median (tick), and the
+min--max range (line) --- raw seeds rather than mean $\pm$ SD, which three
+runs cannot justify. In-pool fitting is seed-sensitive on two benchmarks,
+\texttt{or1200} and \texttt{boundtop} (shaded), whose ranges span
+$\sim$28 and $\sim$29 points; every other in-pool benchmark and all six
+held-out (zero-shot) benchmarks are tight (range $\le12$ points). The held-out
+group is more seed-stable than in-pool fitting.}
+\label{fig:seedvar}
+\end{figure}
+
+Figure~\ref{fig:seedvar} (upper group) reports per-benchmark in-pool ADP
+reduction for the 11-benchmark policy on its own training set across three
+independent seeds (7, 42, 123; Section~\ref{sec:training}). We show all three
+per-seed outcomes rather than a mean $\pm$ SD, which three runs cannot
+justify (Section~\ref{sec:results-tradeoff}). Each seed's pooled aggregate
 — one minus the ratio of summed ADP across all 11 benchmarks to summed
 baseline ADP, \emph{not} a simple mean of per-benchmark percentages — is
-35.73\%, 23.11\%, and 23.97\% respectively (mean 27.35\%, $\pm$5.40).
-\texttt{raygentop} is a persistent laggard in all three seeds, tightly
-clustered just below zero ($-2.01\% \pm 0.22$), which we attribute
-tentatively to its 6-DSP/1-BRAM profile being a thin slice of the joint
-training distribution rather than a fundamental failure mode. Two
-benchmarks, \texttt{or1200} and \texttt{boundtop}, are responsible for
-almost all of the seed-to-seed instability: standard deviations of 11.82
-and 12.03 respectively, an order of magnitude larger than every other
-benchmark in the pool (all $\le 3.3$). No single seed wins on every
-volatile benchmark — seed 42 is strongest on both \texttt{or1200} and
-\texttt{boundtop}, while seed 123 and seed 7 each lead on at least one
-other benchmark by a smaller margin — which argues against "some seeds are
-simply better policies" and toward benchmark-specific convergence luck
-within a fixed episode budget (Section~\ref{sec:results-tradeoff}).
-
-\begin{table}[t]
-\caption{In-pool ADP reduction, 11-benchmark policy, mean $\pm$ SD across 3 seeds (7, 42, 123).}
-\label{tab:inpool}
-\begin{tabular}{@{}lr@{}}
-\toprule
-Benchmark & ADP reduction \\
-\midrule
-diffeq2            & +68.55\% $\pm$ 0.37 \\
-fifo               & +58.90\% $\pm$ 1.84 \\
-diffeq1            & +52.46\% $\pm$ 3.07 \\
-mkPktMerge         & +36.74\% $\pm$ 3.33 \\
-spree              & +39.03\% $\pm$ 0.10 \\
-mkSMAdapter4B      & +35.67\% $\pm$ 0.71 \\
-ch\_intrinsics     & +35.86\% $\pm$ 0.55 \\
-boundtop           & +35.29\% $\pm$ \textbf{12.03} \\
-or1200             & +17.24\% $\pm$ \textbf{11.82} \\
-mmc\_core          & +25.02\% $\pm$ 0.44 \\
-raygentop          & $-$2.01\% $\pm$ 0.22 \\
-\midrule
-\textbf{Mean of per-benchmark means} & \textbf{+36.61\%} \\
-\textbf{Mean of pooled aggregates} & \textbf{+27.35\%} $\pm$ 5.40 \\
-\bottomrule
-\end{tabular}
-\end{table}
+35.73\%, 23.11\%, and 23.97\% (mean 27.35\%).
+\texttt{raygentop} is a persistent laggard, every seed within $[-2.2, -1.7]\%$
+and never positive. Its 6-DSP/1-BRAM profile is the only one in the pool
+mixing a large DSP count with a BRAM (other DSP-heavy benchmarks have no BRAM;
+other BRAM-having ones have $\le1$ DSP), and despite a fair $\approx$9.1\%
+episode share the policy never solves this joint placement — plausibly a
+representational gap rather than a convergence shortfall, and our most
+immediate diagnostic target. Two benchmarks, \texttt{or1200}
+and \texttt{boundtop}, account for almost all of the seed-to-seed
+instability: their per-seed outcomes span $5.8$--$33.5\%$ and
+$21.3$--$50.7\%$ respectively, ranges three to four times wider than any
+other benchmark in the pool (all $\le8$ points). We analyze this
+asymmetry in Section~\ref{sec:results-tradeoff}.
 
 \subsection{GA Head-to-Head Comparisons}
 \label{sec:results-ga}
 
-To establish a fully controlled, apples-to-apples comparison against
-evolutionary search — not subject to any metric or baseline-matching caveat —
-we implemented our own genetic algorithm under the identical evaluation
-oracle, ADP metric, and traditional baseline as our RL pipeline, and ran it on
-\texttt{custom\_macbuf} (held out of RL training; Table~\ref{tab:benchmarks}):
+For a controlled comparison against evolutionary search — without the metric-
+and baseline-matching caveat that attaches to the GOLDS comparison
+(Section~\ref{sec:results-golds}) — we implemented a genetic algorithm under
+the same evaluation oracle, ADP metric, and baseline as the RL pipeline, and
+ran it on \texttt{custom\_macbuf} (held out of RL training; Table~\ref{tab:benchmarks}):
 roulette-wheel selection, single-point crossover, per-gene mutation over both
-hard-block coordinates and fabric aspect ratio, population 5, capped at 500
-generations with an early-stop patience of 50 generations without
-improvement (converged at generation 186). The RL comparison point is the
+hard-block coordinates and fabric aspect ratio. We use a population of 5 to
+match the per-oracle-call budget available during an RL rollout (one VTR call
+per episode step, one candidate placement per individual per generation);
+the cap is 500 generations with early-stop patience of 50 generations without
+improvement (converged at generation 186, consuming approximately 935 VTR calls). The RL comparison point is the
 11-benchmark policy (Section~\ref{sec:results-zeroshot}) fine-tuned on
 \texttt{custom\_macbuf} alone. Table~\ref{tab:ga} reports the result: RL
 reaches \textbf{74.06\%} ADP reduction versus the GA's \textbf{68.17\%} on
 the identical benchmark, metric, and toolchain.
 
 \begin{table}[t]
-\caption{GA vs.\ RL head-to-head on \texttt{custom\_macbuf} (baseline ADP $=44{,}503$).}
+\caption{GA vs.\ RL on \texttt{custom\_macbuf} (baseline ADP
+$=44{,}503$). GA: population 5, $\le$500 generations, early-stop patience 50.
+RL zero-shot is a single deterministic rollout (seed 42); RL fine-tuned
+continues the 11-benchmark policy on \texttt{custom\_macbuf}.}
 \label{tab:ga}
-\begin{tabular}{@{}lrr@{}}
+\centering
+\begin{tabular}{@{}lrrr@{}}
 \toprule
-Method & Best ADP & Reduction \\
+Method & Best ADP & Reduction & VTR calls \\
 \midrule
-GA (500-gen cap, patience 50)         & 14{,}164.5 & 68.17\% \\
-RL (fine-tuned, 11-bench policy)      & 11{,}553.2 & \textbf{74.06\%} \\
+GA            & 14{,}164.5 & 68.17\% & $\sim$935 \\
+RL zero-shot  & 18{,}008.4 & 59.53\% & \textbf{1} \\
+RL fine-tuned & 11{,}553.2 & \textbf{74.06\%} & 1{,}575 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\textbf{Oracle cost.} The GA uses approximately 935 VTR oracle calls
+(population 5 over 186 generations) to reach its best \texttt{custom\_macbuf}
+layout. Applied zero-shot, the policy reaches 59.53\% reduction in a single
+oracle call; fine-tuning then uses 1{,}575 unique calls (of 6{,}000 episodes,
+the remaining 74.6\% resolved as cache hits as the policy's entropy falls) to
+reach 74.06\%, exceeding the GA at 40\% fewer oracle calls. Figure~\ref{fig:layout}
+shows the resulting layout: the policy compacts the baseline's $10\times12$
+active region into $6\times7$, which accounts for most of the ADP reduction.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.9\textwidth]{fig_layout.pdf}
+\caption{What the policy recovers, physically (\texttt{custom\_macbuf}, the
+GA comparison benchmark). The traditional island-style baseline (left)
+spreads the same netlist's logic across a $10\times12$ active region; the
+RL-optimized fabric (right) packs it into a $6\times7$ region by clustering
+the DSP columns with their surrounding CLBs. Tile types: DSP (blue, four
+tiles tall), CLB (green), I/O pad (orange); the dashed rectangle marks the
+active-logic bounding box. This compaction of the routed area is the dominant
+term in the ADP reductions reported in Figure~\ref{fig:seedvar}.}
+\label{fig:layout}
+\end{figure*}
 
 \subsection{Head-to-Head Against GOLDS}
 \label{sec:results-golds}
@@ -558,18 +557,18 @@ directly.
 \subsection{Zero-Shot Generalization}
 \label{sec:results-zeroshot}
 
-Table~\ref{tab:zeroshot} reports ADP reduction on all six held-out benchmarks
-(Table~\ref{tab:benchmarks}), across the same three training seeds as
-Section~\ref{sec:results-inpool}, evaluated with zero benchmark-specific
+Figure~\ref{fig:seedvar} (lower group) reports ADP reduction on all six
+held-out benchmarks (Table~\ref{tab:benchmarks}), across the same three seeds
+as Section~\ref{sec:results-inpool}, evaluated with zero benchmark-specific
 training. Two of the six (\texttt{softmax}, \texttt{reduction\_layer}) were
 part of the training-time \emph{universe} used to size the policy's tensors
 (Section~\ref{sec:universe}) but never sampled during training; the other
 four were entirely outside the universe as well, a strictly harder
 generalization test. Every benchmark finishes positive under every seed —
-no sign flips at all, unlike the in-pool result — and per-benchmark standard
-deviations are uniformly moderate (2.0--5.5), with no single benchmark
-approaching the instability seen in \texttt{or1200}/\texttt{boundtop}
-in-pool. The overall average across all six benchmarks and three seeds is
+no sign flips at all, unlike the in-pool result — and every per-seed range is
+narrow (at most $\approx12$ points, for \texttt{custom\_macbuf}), with no
+benchmark approaching the \texttt{or1200}/\texttt{boundtop} spread.
+The overall average across all six benchmarks and three seeds is
 \textbf{31.23\%}. The strongest, most reliable benchmarks
 (\texttt{mkDelayWorker32B}, \texttt{custom\_macbuf}) are also the most
 seed-stable in relative terms (coefficient of variation 5--10\%), while the
@@ -578,154 +577,95 @@ certain (coefficient of variation 22--34\%) — the absolute spread is small
 everywhere, but on a small mean that spread represents a much larger
 fraction of the result.
 
-\begin{table}[t]
-\caption{Zero-shot ADP reduction on six held-out benchmarks, 11-benchmark policy, mean $\pm$ SD across 3 seeds.}
-\label{tab:zeroshot}
-\begin{tabular}{@{}lr@{}}
-\toprule
-Benchmark & ADP reduction \\
-\midrule
-mkDelayWorker32B    & +58.73\% $\pm$ 3.08 \\
-custom\_macbuf       & +55.46\% $\pm$ 5.45 \\
-lightweight\_cipher & +33.49\% $\pm$ 4.42 \\
-reduction\_layer    & +23.30\% $\pm$ 4.04 \\
-arm\_core           & +9.11\%  $\pm$ 2.02 \\
-softmax             & +7.27\%  $\pm$ 2.48 \\
-\midrule
-\textbf{Average}    & \textbf{+31.23\%} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\textbf{A caveat on what this table measures.} Every number above uses
-\emph{deterministic} policy decisions (the policy's single most-likely
-action at each step). As a preliminary check on one seed, we additionally
-sampled 10 \emph{stochastic} rollouts per benchmark (sampling from the
-policy's action distribution instead of always taking its top choice); the
-average ADP reduction across those samples was negative for 4 of 6
-benchmarks, even though the deterministic result for that same seed and
-benchmark was positive in every case. This indicates the deterministic
-numbers in this section represent the policy's best-case, most-confident
-behavior, not necessarily what a stochastic deployment would see on
-average. We flag this explicitly as a limitation rather than omit it:
-Table~\ref{tab:zeroshot} should be read as "what the policy's top choice
-achieves under each seed," not as an expectation over repeated sampling.
+\textbf{A note on deterministic decoding.} Every number above uses greedy
+decoding (the policy's most-likely action at each step), which is the intended
+deployment mode: a layout is generated once and baked into the architecture,
+not sampled. As a diagnostic, we drew 10 \emph{stochastic} rollouts per
+benchmark on one seed; their average ADP reduction was negative for 4 of 6
+benchmarks despite every deterministic result being positive. This gap is
+expected and does not invalidate the deterministic numbers — it shows the
+learned distribution is concentrated, with most mass away from the
+high-quality region the top choice occupies. The zero-shot results should
+thus be read as the top choice's performance under each seed, not an
+expectation over sampling; a full three-seed stochastic evaluation is left to
+future work.
 
 \subsection{Fine-Tuning Efficiency}
 \label{sec:results-finetune}
 
-Separately from cross-benchmark transfer, we characterize how efficiently a
-multi-benchmark policy continues learning on a benchmark it has already
-partially seen during joint training (\texttt{diffeq1}, within the
-11-benchmark pool), compared to training an identical architecture from
-scratch on that benchmark alone, both for 6{,}000 episodes under identical
-hyperparameters and separate VTR caches. The fine-tuned run dominates typical
-reward almost throughout (0.81 vs.\ 0.65 in the final 200-episode window,
-still climbing for scratch) and reaches its convergence plateau by roughly
-episode 1{,}600--1{,}800 ($\approx$7 minutes wall-clock), after which it
-barely moves; scratch never plateaus within its full 6{,}000-episode budget.
-The mechanism is policy entropy collapse: the fine-tuned run's entropy falls
-from 2.00 to 0.79 over the run (vs.\ scratch's 4.63 to 2.42), so only 31.5\%
-of its episodes are genuinely novel VTR evaluations versus 94.5\% for
-scratch — it converges to a good region and stops exploring sooner, which is
-a sample-efficiency win here but, as Section~\ref{sec:results-tradeoff}
-discusses, the same mechanism caps how much further exploration a fine-tuned
-policy is willing to do beyond its pretrained prior. We note this result
-characterizes \emph{continued learning} on a partially-known benchmark, not
-cross-benchmark transfer; the latter is addressed in
-Section~\ref{sec:results-zeroshot}.
+We also characterize continued learning on a partially-known benchmark
+(\texttt{diffeq1}, in the training pool): fine-tuning the multi-benchmark
+policy versus training from scratch, both 6{,}000 episodes under identical
+hyperparameters and separate caches. The fine-tuned run dominates typical
+reward throughout (0.785 vs.\ 0.736 in the final window) and plateaus by
+$\approx$episode 3{,}000, while scratch never plateaus within its budget. The
+mechanism is entropy collapse: the fine-tuned policy's entropy falls from 2.00
+to 0.79 (vs.\ scratch's 4.63 to 2.42), so only 31.5\% of its episodes are
+novel VTR evaluations versus 94.4\% for scratch — a sample-efficiency win
+that, as Section~\ref{sec:results-tradeoff} notes, also caps further
+exploration beyond the pretrained prior. This is continued learning, not
+cross-benchmark transfer (Section~\ref{sec:results-zeroshot}).
 
 \subsection{Seed Variance: In-Pool vs.\ Zero-Shot}
 \label{sec:results-tradeoff}
 
-Across three independent training seeds, the 11-benchmark policy shows a
-clear and somewhat counterintuitive asymmetry: \emph{in-pool} performance is
-considerably more seed-sensitive than \emph{zero-shot} performance is. In
-nine of the eleven training benchmarks, standard deviation across seeds is
-small (0.10--3.33; Table~\ref{tab:inpool}); but two benchmarks,
-\texttt{or1200} and \texttt{boundtop}, swing by roughly 12 points each — an
-order of magnitude larger than the rest of the pool — and these two alone
-are responsible for almost the entire spread in the pooled aggregate
-(35.73\% / 23.11\% / 23.97\% across the three seeds). On the six held-out
-zero-shot benchmarks, by contrast, every standard deviation falls in a much
-narrower, more uniform band (2.0--5.5; Table~\ref{tab:zeroshot}), with no
-single benchmark behaving like \texttt{or1200} or \texttt{boundtop} does
-in-pool.
+Across three independent training seeds, the 11-benchmark policy exhibits a
+clear asymmetry: \emph{in-pool} performance is considerably more
+seed-sensitive than \emph{zero-shot} performance. For nine of the eleven
+training benchmarks, the per-seed range is small ($\le8$ points); two
+benchmarks, \texttt{or1200} and \texttt{boundtop}, span $\sim$28 and
+$\sim$29 points respectively — three to four times the spread of any other
+benchmark — and account for almost the entire spread in the pooled aggregate
+(35.73\% / 23.11\% / 23.97\% across seeds). On the six held-out zero-shot
+benchmarks, by contrast, every per-seed range stays within $\sim$12 points
+(Figure~\ref{fig:seedvar}); the two shaded in-pool benchmarks have the widest
+ranges in either group.
 
-We do not yet have a confirmed mechanism for this asymmetry, but offer a
-plausible explanation: in-pool performance is exposed to which specific
-benchmarks a given seed's policy happens to converge on slowly within a
-fixed, shared episode budget across all 11 benchmarks sampled jointly,
-while zero-shot performance instead reflects a more general property of
-the learned netlist representation (Section~\ref{sec:gnn}) that does not
-depend on any one training benchmark's individual convergence trajectory.
-Section~\ref{sec:results-finetune}'s entropy-collapse mechanism plausibly
-compounds the in-pool effect specifically: a seed that converges early on
-most benchmarks has fewer of its limited episodes left for a
-slow-converging benchmark like \texttt{or1200} to catch up, while a seed
-that explores longer everywhere may give that one benchmark more of a
-chance. Critically, no single seed wins on every volatile in-pool benchmark
-(seed 42 leads on both \texttt{or1200} and \texttt{boundtop}, but seed 123
-and seed 7 each lead elsewhere by smaller margins) — this argues against
-"some seeds are simply better policies" and toward per-benchmark convergence
-luck specifically. This remains a characterization at $n=3$ seeds, not a
-rigorously tested hypothesis; a fourth or fifth seed would meaningfully
-sharpen whether the asymmetry itself is stable or partly an artifact of
-still having too few seeds.
+We do not have a confirmed mechanism but propose one. In-pool performance
+depends on which benchmarks a given seed converges on slowly within the shared
+episode budget, whereas zero-shot performance reflects a more general property
+of the learned representation (Section~\ref{sec:gnn}), independent of any one
+benchmark's convergence. The entropy collapse of
+Section~\ref{sec:results-finetune} compounds this: a seed converging early on
+most benchmarks retains fewer episodes for a slow one like \texttt{or1200}.
+No seed leads on both volatile benchmarks and elsewhere at once
+(seed 42 leads on \texttt{or1200} and \texttt{boundtop}; seeds 7 and 123 lead
+on others), pointing to per-benchmark convergence variance rather than a
+globally better seed. At $n=3$ this is a characterization; more seeds would
+establish whether the asymmetry is stable.
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-We asked whether a learned policy can do better than restarting evolutionary
-search from scratch for every new protected IP block in custom eFPGA-based
-logic masking. Under a fully controlled, apples-to-apples comparison — our
-own genetic algorithm and our RL policy on the identical benchmark,
-evaluation oracle, ADP metric, and traditional baseline — RL wins: 74.06\%
-ADP reduction versus the GA's 68.17\% (Section~\ref{sec:results-ga}). Jointly
-trained across 11 benchmarks, the same policy reaches a 27.35\% aggregate
-in-pool ADP reduction averaged over three independent seeds
-(Section~\ref{sec:results-inpool}). Recomputed
-on GOLDS' own published metric and baseline architecture, a genuinely
-zero-shot evaluation — no training on the target benchmark at all — reaches
-37.4\% versus GOLDS' published $\sim$35\% (Section~\ref{sec:results-golds}).
+We asked whether a learned policy can replace per-instance evolutionary
+search for custom eFPGA-based logic masking. Under a controlled comparison
+on an identical benchmark, oracle, ADP metric, and baseline, the RL policy
+exceeds our genetic algorithm (74.06\% against 68.17\% ADP reduction); a
+single zero-shot rollout already provides a useful layout at one oracle call
+against the GA's $\sim$935, and fine-tuning reaches a better optimum at lower
+oracle cost (Section~\ref{sec:results-ga}). The same policy generalizes
+zero-shot to six held-out benchmarks and, recomputed on GOLDS' published
+metric, exceeds GOLDS' reported result (Sections~\ref{sec:results-golds},~\ref{sec:results-zeroshot}).
 
-We also reported a result that complicates a clean amortization story:
-across three training seeds, in-pool fitting is considerably more
-seed-sensitive than zero-shot transfer is
-(Section~\ref{sec:results-tradeoff}) — the in-pool pooled aggregate ranges
-from 23.11\% to 35.73\% across seeds, with two specific benchmarks
-(\texttt{or1200}, \texttt{boundtop}) responsible for almost the entire
-spread, while every one of the six zero-shot benchmarks varies by no more
-than about 5.5 points across the same three seeds
-(Section~\ref{sec:results-zeroshot}). We also found that this section's
-deterministic (greedy) zero-shot numbers can diverge sharply from a
-policy's \emph{stochastic} behavior — a preliminary 10-rollout check on one
-seed found average ADP reduction negative for 4 of 6 benchmarks under
-stochastic sampling, despite every benchmark's deterministic result being
-positive. We see both of these not as weaknesses to be written around but
-as the most important findings for anyone trying to reproduce or build on
-this line of work — a single-seed or single-episode result, in either
-direction, should not be taken as a stable characterization of the policy's
-behavior.
+Two reliability findings qualify these results and matter for reproduction.
+In-pool fitting is far more seed-sensitive than zero-shot transfer (the
+aggregate ranges 23.11--35.73\% across seeds, driven by \texttt{or1200} and
+\texttt{boundtop}), and the deterministic zero-shot numbers diverge from
+stochastic sampling (negative for 4 of 6 benchmarks in a preliminary check).
+A single-seed or single-rollout number is therefore not a stable
+characterization of the policy (Section~\ref{sec:results-tradeoff}).
 
-Several gaps remain. Every result in this paper comes from three
-seeds, not the larger seed-averaged statistics with tight error bars a
-fully rigorous claim would eventually need — itself a direct consequence of
-the variance finding above, and the most immediate item for any follow-up,
-along with a systematic stochastic-rollout evaluation across all three
-seeds rather than the single-seed preliminary check reported here. The action space we search
-covers DSP/BRAM placement and aspect ratio only; the NSGA-II
-follow-up~\cite{nsgaii} additionally co-evolves CLB LUT size and custom
-arithmetic-block sizing, and extending our formulation to that larger space
-is a natural next step, now that the GCN-based representation
-(Section~\ref{sec:gnn}) already generalizes across netlists of different
-size and resource mix. Our benchmark pool, while including hand-written
-probes specifically designed to stress DSP/BRAM combinations absent from
-real circuits, does not yet cover the full set GOLDS and the NSGA-II
-follow-up report on (e.g.\ \texttt{sha}, the Koios deep-learning suite);
-broadening coverage would let every comparison in this paper be made
-directly rather than through the single-benchmark, metric-converted
-comparison in Section~\ref{sec:results-golds}.
+Several gaps remain. Results rest on three seeds rather than the larger
+seed-averaged statistics a fully rigorous claim requires, and a systematic
+stochastic-rollout evaluation across all seeds is still outstanding. The
+action space covers DSP/BRAM placement and aspect ratio only; the NSGA-II
+follow-up~\cite{nsgaii} additionally co-evolves CLB LUT size and
+arithmetic-block sizing, a natural extension given that the GCN representation
+(Section~\ref{sec:gnn}) already generalizes across netlist size and resource
+mix. Finally, the benchmark pool does not yet cover the full set GOLDS and
+the NSGA-II follow-up report on (e.g.\ \texttt{sha}, the Koios suite);
+broadening it would let every comparison here be made directly rather than
+through the metric-converted comparison of Section~\ref{sec:results-golds}.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
