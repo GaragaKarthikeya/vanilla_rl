@@ -51,9 +51,8 @@ A custom eFPGA fabric, sized for one specific netlist, can recover much of
 that overhead. The product of routing area, critical-path delay, and dynamic
 power --- \textbf{ADP} throughout --- quantifies this overhead directly, and
 minimizing it benefits every eFPGA application~\cite{golds,nsgaii}.
-GOLDS~\cite{golds} uses the same abbreviation for the two-term
-Area$\times$Delay product; Section~\ref{sec:results-golds} recomputes
-on their exact metric to make the comparison direct.
+Note that GOLDS~\cite{golds} uses the same abbreviation for the two-term
+Area$\times$Delay product; our ADP is three-term throughout.
 
 Two prior papers show per-instance search substantially reduces eFPGA overhead:
 GOLDS~\cite{golds} uses a GA with Area$\times$Delay fitness and reports up
@@ -89,9 +88,7 @@ Concretely, this paper contributes:
         (${\sim}$6.6\,h), stagnating 50 generations past its best at
         generation~46 (Section~\ref{sec:results-ga}).
   \item 27.35\% aggregate in-pool ADP reduction across three seeds
-        (Section~\ref{sec:results-inpool}), and a zero-shot comparison against
-        GOLDS on their exact metric: 37.4\% vs.\ their $\sim$35\%
-        (Section~\ref{sec:results-golds}).
+        (Section~\ref{sec:results-inpool}).
   \item A three-seed reliability analysis: in-pool fitting is far more
         seed-sensitive (two benchmarks spanning $\sim$28 points) than
         zero-shot generalization ($\le12$ points across all six held-out
@@ -299,8 +296,7 @@ dominates cost (seconds to low minutes per call).
 The baseline is VTR's default island-style template
 (\texttt{k6\_frac\_N10\_mem32K\_40nm}: 6-input LUTs, cluster size 10,
 32K-bit BRAMs, 40nm) at matched logic capacity --- the same template
-GOLDS~\cite{golds} uses, enabling direct percentage comparison
-(Section~\ref{sec:results-golds}).
+GOLDS~\cite{golds} uses.
 
 \subsection{Benchmarks}
 \label{sec:benchmarks}
@@ -322,11 +318,8 @@ uses \texttt{softmax}, a Koios benchmark held out of RL training.
 \label{sec:baselines-compared}
 
 We compare against: (1) the traditional island-style eFPGA baseline
-(Section~\ref{sec:baseline}); (2) a genetic algorithm we implemented under the
-same evaluation oracle and ADP metric (Section~\ref{sec:results-ga}); and
-(3) published results from GOLDS~\cite{golds} and the NSGA-II
-follow-up~\cite{nsgaii}, subject to the metric caveat in
-Section~\ref{sec:results-golds}.
+(Section~\ref{sec:baseline}); and (2) a genetic algorithm implemented under
+the same evaluation oracle and ADP metric (Section~\ref{sec:results-ga}).
 
 
 \section{Results}
@@ -367,8 +360,7 @@ Section~\ref{sec:results-tradeoff}.
 \subsection{GA Head-to-Head Comparisons}
 \label{sec:results-ga}
 
-For a controlled cost comparison without the metric caveat of
-Section~\ref{sec:results-golds}, we implement a GA under the same oracle,
+For a controlled cost comparison, we implement a GA under the same oracle,
 ADP metric, and baseline on \texttt{softmax}: roulette-wheel selection,
 single-point crossover, per-gene mutation over hard-block coordinates and
 aspect ratio, population 8, capped at 500 generations with patience 50.
@@ -435,18 +427,6 @@ reduction. Gaps between tiles are routing channels.}
 \label{fig:layout}
 \end{figure*}
 
-\subsection{Head-to-Head Against GOLDS}
-\label{sec:results-golds}
-
-As a literature-facing comparison, we recompute a zero-shot result ---
-\texttt{diffeq2}-trained policy on \texttt{diffeq1} --- using GOLDS'
-exact two-term Area$\times$Delay metric and their baseline. Two differences
-apply: (1) we use the two-term product, not our three-term ADP; (2) GOLDS'
-area term is a logical utilization measure while ours is VPR's routing area
-(Section~\ref{sec:problem}); we recompute on their metric and baseline to
-match as closely as possible. This yields \textbf{37.4\%} versus GOLDS'
-\textbf{$\sim$35\%} --- a real margin, achieved with zero benchmark-specific
-training. Nowhere else do we compare two-term against three-term numbers.
 
 \subsection{Zero-Shot Generalization}
 \label{sec:results-zeroshot}
@@ -468,20 +448,6 @@ the greedy action occupies a high-quality mode, but most probability mass
 does not. Zero-shot results are top-choice performance per seed, not a
 sampling expectation.
 
-\subsection{Fine-Tuning Efficiency}
-\label{sec:results-finetune}
-
-We compare fine-tuning the multi-benchmark policy against training from
-scratch on \texttt{diffeq1}: 6{,}000 episodes each, identical hyperparameters,
-separate caches. The fine-tuned run dominates throughout (0.785 vs.\ 0.736
-final-window reward) and plateaus by $\approx$episode 3{,}000; scratch never
-plateaus. The mechanism is entropy collapse: fine-tuned entropy falls
-2.00$\to$0.79 (scratch: 4.63$\to$2.42), so only 31.5\% of its episodes are
-novel VTR evaluations vs.\ 94.4\% for scratch --- a sample-efficiency win that
-also caps exploration beyond the pretrained prior
-(Section~\ref{sec:results-tradeoff}). This is continued learning, not
-cross-benchmark transfer (Section~\ref{sec:results-zeroshot}).
-
 \subsection{Seed Variance: In-Pool vs.\ Zero-Shot}
 \label{sec:results-tradeoff}
 
@@ -496,9 +462,8 @@ within $\sim$12 points (Figure~\ref{fig:seedvar}).
 We propose a mechanism: in-pool performance depends on which benchmarks a
 seed converges on slowly within the shared budget, while zero-shot reflects
 a more general property of the learned representation (Section~\ref{sec:gnn}).
-Entropy collapse (Section~\ref{sec:results-finetune}) compounds this: early
-convergence on most benchmarks leaves fewer episodes for slow-to-converge
-ones like \texttt{or1200}. No seed leads on both high-variance benchmarks
+Entropy collapse compounds this: early convergence on most benchmarks
+leaves fewer episodes for slow-to-converge ones like \texttt{or1200}. No seed leads on both high-variance benchmarks
 and elsewhere (seed 42 leads on \texttt{or1200}/\texttt{boundtop}; seeds 7
 and 123 lead on others), pointing to per-benchmark convergence variance, not
 a globally better seed. At $n=3$ this is a characterization; more seeds would
@@ -513,8 +478,7 @@ under controlled comparison, the GA stagnates after generation~46, spending
 policy matches that quality and keeps improving; zero-shot, one call delivers
 an immediate positive result (Section~\ref{sec:results-ga}). The same policy
 generalizes zero-shot to six held-out benchmarks --- four larger than anything
-in training --- and exceeds GOLDS' result on their own metric
-(Sections~\ref{sec:results-golds},~\ref{sec:results-zeroshot}).
+in training (Section~\ref{sec:results-zeroshot}).
 
 Two findings qualify these results: in-pool fitting is far more seed-sensitive
 than zero-shot transfer (23.11--35.73\% across seeds, driven by \texttt{or1200}
@@ -526,8 +490,7 @@ Three gaps remain: results rest on three seeds with no systematic
 stochastic-rollout evaluation; the action space covers placement and aspect
 ratio only, where co-evolving CLB LUT size and block sizing~\cite{nsgaii} is
 a natural extension; and broadening to the full GOLDS/NSGA-II benchmark set
-would enable direct comparison without the metric conversion of
-Section~\ref{sec:results-golds}.
+would enable direct comparison against GOLDS/NSGA-II on shared benchmarks.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
