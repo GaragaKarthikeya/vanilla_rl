@@ -53,17 +53,17 @@ C = {
     "dsp_empty":   "#e3ecfa",   # pale blue  — unoccupied DSP slot
     "bram_empty":  "#fbeaea",   # pale red   — unoccupied BRAM slot
 
-    # Placed / active tiles
-    "io_used":     "#d97706",   # amber   — I/O pad in use
-    "clb_used":    "#15803d",   # green   — logic block in use
-    "dsp_used":    "#1d4ed8",   # blue    — DSP in use
-    "bram_used":   "#b91c1c",   # red     — BRAM in use
+    # Placed / active tiles (muted, aligned to the figure-family palette)
+    "io_used":     "#d99a4e",   # soft amber — I/O pad in use
+    "clb_used":    "#4f9d69",   # soft green — logic block in use
+    "dsp_used":    "#1f5fa8",   # family blue — DSP in use (matches Fig 1)
+    "bram_used":   "#c0504d",   # muted red  — BRAM in use
 
     # Edge colors (darker shade of each fill, for crisp definition)
-    "io_edge":     "#92400e",
-    "clb_edge":    "#14532d",
-    "dsp_edge":    "#1e3a8a",
-    "bram_edge":   "#7f1d1d",
+    "io_edge":     "#a9772f",
+    "clb_edge":    "#3a7a4f",
+    "dsp_edge":    "#184a82",
+    "bram_edge":   "#9a3f3c",
 
     # Annotation
     "grid_line":   "#d0d7de",
@@ -208,21 +208,23 @@ def draw_panel(ax, gw: int, gh: int, grid: list[list[str]],
                blocks: dict, title: str) -> None:
 
     ax.set_facecolor(C["void"])
-    ax.set_xlim(0, gw)
-    ax.set_ylim(0, gh)
+    ax.set_xlim(-0.5, gw + 0.5)
+    ax.set_ylim(-0.5, gh + 0.5)
     ax.set_aspect("equal")
-    ax.set_title(title, color=C["text"], fontsize=13, fontweight="bold", pad=10)
+    ax.set_title(title, color=C["text"], fontsize=10.5, fontweight="semibold", pad=7)
 
-    # ── Background fabric ────────────────────────────────────────────────────
+    # ── Background fabric (flat, hairline grid) ──────────────────────────────
+    # For large fabrics the per-tile grid lines become visual noise; fade them.
+    grid_lw = 0.12 if max(gw, gh) > 30 else 0.25
     for x in range(gw):
         for y in range(gh):
             color = C.get(grid[x][y], C["clb_empty"])
             ax.add_patch(mpatches.Rectangle(
                 (x, y), 1, 1,
-                facecolor=color, edgecolor=C["grid_line"], linewidth=0.3, zorder=1
+                facecolor=color, edgecolor=C["grid_line"], linewidth=grid_lw, zorder=1
             ))
 
-    # ── Placed blocks ────────────────────────────────────────────────────────
+    # ── Placed blocks (flat tiles, no glyphs) ────────────────────────────────
     bbox_xs, bbox_ys = [], []
 
     # Draw CLBs first so tall blocks render on top
@@ -233,27 +235,18 @@ def draw_panel(ax, gw: int, gh: int, grid: list[list[str]],
         h = _block_height(kind)
 
         if kind == "dsp":
-            fc, ec, lw = C["dsp_used"],  C["dsp_edge"],  1.5
+            fc, ec, lw = C["dsp_used"],  C["dsp_edge"],  0.5
         elif kind == "bram":
-            fc, ec, lw = C["bram_used"], C["bram_edge"], 1.5
+            fc, ec, lw = C["bram_used"], C["bram_edge"], 0.5
         elif grid[x][y] == "io_empty":
-            fc, ec, lw = C["io_used"],   C["io_edge"],   1.0
+            fc, ec, lw = C["io_used"],   C["io_edge"],   0.3
         else:
-            fc, ec, lw = C["clb_used"],  C["clb_edge"],  0.6
+            fc, ec, lw = C["clb_used"],  C["clb_edge"],  0.25
 
-        pad = 0.12
-        ax.add_patch(mpatches.FancyBboxPatch(
-            (x + pad, y + pad), 1 - 2*pad, h - 2*pad,
-            boxstyle="round,pad=0.04",
-            facecolor=fc, edgecolor=ec, linewidth=lw, alpha=0.92, zorder=2
+        ax.add_patch(mpatches.Rectangle(
+            (x, y), 1, h,
+            facecolor=fc, edgecolor=ec, linewidth=lw, zorder=2
         ))
-
-        # Label DSPs/BRAMs
-        if kind in ("dsp", "bram"):
-            label = "D" if kind == "dsp" else "B"
-            ax.text(x + 0.5, y + h / 2, label,
-                    color="white", ha="center", va="center",
-                    fontsize=7, fontweight="bold", zorder=3)
 
         # Bounding box only over core logic (not IO)
         if kind not in ("io",) and grid[x][y] != "io_empty":
@@ -264,40 +257,37 @@ def draw_panel(ax, gw: int, gh: int, grid: list[list[str]],
     if bbox_xs and bbox_ys:
         bx0, bx1 = min(bbox_xs), max(bbox_xs)
         by0, by1 = min(bbox_ys), max(bbox_ys)
-        pad = 0.25
+        pad = 0.3
         ax.add_patch(mpatches.Rectangle(
             (bx0 - pad, by0 - pad), (bx1 - bx0) + 2*pad, (by1 - by0) + 2*pad,
             facecolor="none", edgecolor=C["bbox"],
-            linewidth=1.8, linestyle="--", zorder=4
+            linewidth=1.1, linestyle=(0, (4, 3)), zorder=4
         ))
-        ax.text(bx0 - pad, by1 + pad + 0.15,
-                f"Active box  {int(bx1-bx0)} × {int(by1-by0)}",
-                color=C["bbox"], fontsize=8, fontweight="bold", zorder=4)
-
-    # Grid coordinates (sparse)
-    for x in range(0, gw, 2):
-        ax.text(x + 0.5, -0.35, str(x), ha="center", va="top",
-                color=C["subtext"], fontsize=6)
-    for y in range(0, gh, 2):
-        ax.text(-0.35, y + 0.5, str(y), ha="right", va="center",
-                color=C["subtext"], fontsize=6)
+        ax.text((bx0 + bx1) / 2, by1 + pad + 0.5,
+                f"{int(bx1-bx0)} × {int(by1-by0)} active",
+                color=C["bbox"], fontsize=8, fontweight="semibold",
+                ha="center", va="bottom", zorder=4)
 
     ax.axis("off")
 
 
 def make_legend():
+    """Essentials only — used tile types plus the bounding box."""
+    def sw(fc, ec):
+        return mpatches.Patch(facecolor=fc, edgecolor=ec, linewidth=0.4)
     return [
-        mpatches.Patch(facecolor=C["io_used"],   label="I/O pad (used)"),
-        mpatches.Patch(facecolor=C["clb_used"],  label="CLB (used)"),
-        mpatches.Patch(facecolor=C["dsp_used"],  label="DSP — height 4 (used)"),
-        mpatches.Patch(facecolor=C["bram_used"], label="BRAM — height 6 (used)"),
-        mpatches.Patch(facecolor=C["io_empty"],  label="I/O tile (empty)"),
-        mpatches.Patch(facecolor=C["clb_empty"], label="CLB tile (empty)"),
-        mpatches.Patch(facecolor=C["dsp_empty"], label="DSP slot (empty)"),
-        mpatches.Patch(facecolor=C["bram_empty"],label="BRAM slot (empty)"),
+        sw(C["clb_used"],  C["clb_edge"]),
+        sw(C["dsp_used"],  C["dsp_edge"]),
+        sw(C["bram_used"], C["bram_edge"]),
+        sw(C["io_used"],   C["io_edge"]),
+        mpatches.Patch(facecolor=C["clb_empty"], edgecolor=C["grid_line"], linewidth=0.4),
         mpatches.Patch(facecolor="none", edgecolor=C["bbox"],
-                       linestyle="--", linewidth=1.5, label="Active-logic bounding box"),
+                       linestyle=(0, (4, 3)), linewidth=1.1),
     ]
+
+
+LEGEND_LABELS = ["CLB", "DSP", "BRAM", "I/O pad", "unused tile",
+                 "active-logic box"]
 
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
@@ -326,7 +316,7 @@ def main():
             panels.append((args.place3, args.arch3, args.title3))
 
     n = len(panels)
-    fig, axes = plt.subplots(1, n, figsize=(11 * n, 11), dpi=300)
+    fig, axes = plt.subplots(1, n, figsize=(3.5 * n, 3.8), dpi=300)
     fig.patch.set_facecolor(C["void"])
     if n == 1:
         axes = [axes]
@@ -336,15 +326,15 @@ def main():
         grid = parse_arch(Path(arch) if arch else None, gw, gh)
         draw_panel(ax, gw, gh, grid, blks, title)
 
-    fig.legend(handles=make_legend(), loc="lower center", ncol=3 if n == 1 else 5,
-               fontsize=9.5, frameon=True, facecolor=C["void"],
-               edgecolor=C["grid_line"], labelcolor=C["text"],
-               bbox_to_anchor=(0.5, 0.0 if n == 1 else 0.01))
-    plt.tight_layout(rect=[0, 0.1 if n == 1 else 0.07, 1, 1])
+    fig.legend(handles=make_legend(), labels=LEGEND_LABELS,
+               loc="lower center", ncol=6, fontsize=8, frameon=False,
+               labelcolor=C["text"], handlelength=1.1, columnspacing=1.3,
+               handletextpad=0.5, bbox_to_anchor=(0.5, -0.01))
+    plt.tight_layout(rect=[0, 0.08, 1, 1])
 
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    plt.savefig(out, facecolor=C["void"], bbox_inches="tight", dpi=300)
+    plt.savefig(out, facecolor=C["void"], bbox_inches="tight")
     plt.close()
     print(f"Saved → {out}")
 

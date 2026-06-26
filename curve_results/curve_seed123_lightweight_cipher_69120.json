@@ -1,0 +1,21 @@
+{
+  "lightweight_cipher": {
+    "benchmark": "lightweight_cipher",
+    "reward": 0.04976629432999724,
+    "success": true,
+    "status": null,
+    "wirelength": 5502.0,
+    "delay_ns": 3.52189,
+    "power_w": 0.02057,
+    "routing_area": 324713.0,
+    "baseline": {
+      "delay_ns": 3.55966,
+      "wirelength": 6618.0,
+      "power_w": 0.02235,
+      "routing_area": 447080.0
+    },
+    "adp": 23523.923327914905,
+    "baseline_adp": 35568.969919079995,
+    "adp_reduction_pct": 33.86391739363769
+  }
+}

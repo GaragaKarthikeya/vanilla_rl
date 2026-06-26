@@ -1,0 +1,21 @@
+{
+  "custom_macbuf": {
+    "benchmark": "custom_macbuf",
+    "reward": 0.11533453890370625,
+    "success": true,
+    "status": null,
+    "wirelength": 4449.0,
+    "delay_ns": 12.9533,
+    "power_w": 0.005395,
+    "routing_area": 256755.0,
+    "baseline": {
+      "delay_ns": 14.3481,
+      "wirelength": 4672.0,
+      "power_w": 0.006354,
+      "routing_area": 488146.0
+    },
+    "adp": 17942.8234013925,
+    "baseline_adp": 44503.210274000405,
+    "adp_reduction_pct": 59.68195711967541
+  }
+}

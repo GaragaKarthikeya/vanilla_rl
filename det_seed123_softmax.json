@@ -1,0 +1,21 @@
+{
+  "softmax": {
+    "benchmark": "softmax",
+    "reward": 0.03386982970321103,
+    "success": true,
+    "status": null,
+    "wirelength": 135241.0,
+    "delay_ns": 6.10175,
+    "power_w": 0.07217,
+    "routing_area": 7251280.0,
+    "baseline": {
+      "delay_ns": 6.53536,
+      "wirelength": 141720.0,
+      "power_w": 0.06934,
+      "routing_area": 7896790.0
+    },
+    "adp": 3193197.5718958,
+    "baseline_adp": 3578524.063381696,
+    "adp_reduction_pct": 10.767749068082653
+  }
+}

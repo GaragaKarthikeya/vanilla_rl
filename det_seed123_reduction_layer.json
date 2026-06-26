@@ -1,0 +1,21 @@
+{
+  "reduction_layer": {
+    "benchmark": "reduction_layer",
+    "reward": 0.021435223391693778,
+    "success": true,
+    "status": null,
+    "wirelength": 152753.0,
+    "delay_ns": 7.37335,
+    "power_w": 0.1375,
+    "routing_area": 9230760.0,
+    "baseline": {
+      "delay_ns": 7.50631,
+      "wirelength": 145283.0,
+      "power_w": 0.1449,
+      "routing_area": 10687300.0
+    },
+    "adp": 9358473.333825001,
+    "baseline_adp": 11624194.8764487,
+    "adp_reduction_pct": 19.491427722139992
+  }
+}

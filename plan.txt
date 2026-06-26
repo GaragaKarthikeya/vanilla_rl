@@ -1,0 +1,8 @@
+let the traning for seed 42 and 123 be done
+run eval, get the variance
+next run GA on 8 benchmarks, get the aggregate ADP reduction 
+then what?
+what 8 benchmar what ever is in the traning pool of this 11 benchamrks universe
+then what about those 6 benchmarks(inference) we just show zero shot right, i see no [point in that]
+we should show that rl gives beeter output than ga?no, it is that it gives faster because of zero shot, not better good starting point
+ok

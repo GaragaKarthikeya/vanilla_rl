@@ -1,0 +1,21 @@
+{
+  "LU8PEEng": {
+    "benchmark": "LU8PEEng",
+    "reward": -0.017144647294905054,
+    "success": true,
+    "status": null,
+    "wirelength": 243019.0,
+    "delay_ns": 80.4768,
+    "power_w": 0.07395,
+    "routing_area": 13003500.0,
+    "baseline": {
+      "delay_ns": 80.3894,
+      "wirelength": 218592.0,
+      "power_w": 0.07251,
+      "routing_area": 11817700.0
+    },
+    "adp": 77387201.08776,
+    "baseline_adp": 68885791.5756738,
+    "adp_reduction_pct": -12.341310620996579
+  }
+}

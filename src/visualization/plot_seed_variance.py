@@ -14,16 +14,21 @@ reduction% = (1 - exp(-best_reward))*100 (reward = log(ADP0/ADP)); zero-shot
 values are the deterministic per-seed evals (det_seed{7,42,123}_*.json).
 Output: paper/fig_seed_variance.pdf (vector).
 """
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontManager
 from statistics import median as _median
+import palette as PAL
 
-RL_BLUE = "#1f5fa8"   # in-pool (trained)
-ZS_BLUE = "#5b9bd5"   # held-out (zero-shot)
-REF_GRAY = "#9a9a9a"
-HILITE   = "#f2e2c4"
+RL_BLUE  = PAL.TEAL    # in-pool (trained)
+ZS_BLUE  = PAL.TERRA   # held-out (zero-shot)
+REF_GRAY = PAL.ZERO
+HILITE   = "#ede0c6"   # volatile-benchmark shading (warm sand tint)
 
 _avail = {f.name for f in FontManager().ttflist}
 for _f in ("Times New Roman", "Nimbus Roman", "STIX Two Text", "DejaVu Serif"):
@@ -76,12 +81,13 @@ ax.axvline(0, color=REF_GRAY, lw=0.8, ls=(0, (4, 3)), alpha=0.7, zorder=1)
 
 for yy, name, vals, c in rows:
     lo, hi, med = min(vals), max(vals), _median(vals)
-    lwr = 1.6 if name in VOLATILE else 1.0
-    ax.plot([lo, hi], [yy, yy], color=c, lw=lwr, alpha=0.55, zorder=2,
+    lwr = 1.2 if name in VOLATILE else 0.8
+    ax.plot([lo, hi], [yy, yy], color=c, lw=lwr, alpha=0.45, zorder=2,
             solid_capstyle="round")
-    ax.scatter(vals, [yy] * 3, s=20, color=c, alpha=0.9, zorder=3,
-               edgecolor="white", linewidth=0.4)
-    ax.scatter([med], [yy], marker="|", s=95, color=c, linewidth=1.5, zorder=4)
+    ax.scatter(vals, [yy] * 3, s=11, color=c, alpha=0.85, zorder=3,
+               edgecolor="white", linewidth=0.3)
+    ax.plot([med, med], [yy - 0.26, yy + 0.26], color=c, lw=1.3, zorder=4,
+            solid_capstyle="butt")
 
 ax.set_yticks(ticks)
 ax.set_yticklabels(labels, fontsize=7.5)
@@ -98,15 +104,15 @@ ax.text(xr, zs_top / 2, "Held-out\n(zero-shot)",
 # legend-in-place: what the glyphs mean (one row, top-left empty space)
 ax.annotate("dots: 3 seeds (7/42/123)   |: median   line: min–max",
             xy=(0, 0), xytext=(-7, inpool_top + 0.6), fontsize=6.6,
-            color="#444444", va="bottom", ha="left", annotation_clip=False)
+            color=PAL.SUBINK, va="bottom", ha="left", annotation_clip=False)
 
 # punchline arrow at the volatile bars
 y_by = {name: yy for yy, name, vals, c in rows}
 ax.annotate("two benchmarks carry\nall in-pool seed spread",
             xy=(max(inpool["boundtop"]), y_by["boundtop"]),
             xytext=(54, y_by["mmc_core"]),
-            fontsize=7.2, color="#8a6d2b", va="center", ha="left",
-            arrowprops=dict(arrowstyle="-", color="#8a6d2b", lw=0.7, alpha=0.7,
+            fontsize=7.2, color="#7a5a2a", va="center", ha="left",
+            arrowprops=dict(arrowstyle="-", color="#7a5a2a", lw=0.7, alpha=0.7,
                             connectionstyle="arc3,rad=0.2"))
 
 ax.set_xlim(-8, 94)

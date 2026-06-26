@@ -41,7 +41,7 @@ def parse_args() -> TrainConfig:
     p.add_argument("--load_path",    default=None,              help="Load existing model (.zip)")
     p.add_argument("--log_suffix",   default="",                help="Suffix for output log files")
     p.add_argument("--cache_suffix", default="",                help="Suffix for the VTR layout cache DB filename (isolate cache across side-by-side runs on the same benchmark)")
-    p.add_argument("--vtr_timeout",  type=int, default=300,     help="Per-episode VTR subprocess timeout in seconds (lower bounds the stall a degenerate aspect-ratio/placement combo can cause across all parallel workers)")
+    p.add_argument("--vtr_timeout",  type=int, default=600,     help="Per-episode VTR subprocess timeout in seconds (lower bounds the stall a degenerate aspect-ratio/placement combo can cause across all parallel workers)")
     p.add_argument("--no_wandb",     action="store_true",       help="Disable W&B logging (on by default)")
     p.add_argument("--wandb_project", default="fpga-placement-gnn", help="W&B project name")
     p.add_argument("--wandb_entity", default=None,              help="W&B entity/team (default: your default entity)")

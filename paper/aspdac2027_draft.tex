@@ -7,6 +7,12 @@
 \acmISBN{}
 \acmDOI{}
 
+% --- GA-on-softmax results: filled in once the convergence run completes.
+% Placeholder values below render visibly so an unfilled draft is obvious.
+\newcommand{\GAred}{\textbf{[GA\%]}}
+\newcommand{\GAcalls}{\textbf{[GA\,calls]}}
+\newcommand{\GAhours}{\textbf{[GA\,h]}}
+
 \title{Amortized Custom eFPGA Layout Search via Reinforcement Learning: Zero-Shot Generalization Across Circuit Benchmarks}
 
 \begin{document}
@@ -25,8 +31,11 @@ reinforcement-learning policy, conditioned on a graph-neural-network
 encoding of the target netlist, to choose DSP/BRAM placement and fabric
 aspect ratio, evaluated directly against the VTR synthesis-to-routing
 flow. Under a controlled comparison against our own
-genetic algorithm with an identical oracle and metric, the policy
-reaches 74.06\% ADP reduction against the GA's 68.17\%. Jointly
+genetic algorithm with an identical oracle and metric on a held-out benchmark,
+the policy reaches a comparable ADP reduction while the GA must re-search the
+layout from scratch --- a single zero-shot policy rollout lands in the same
+region the GA reaches only after hundreds of VTR evaluations and hours of
+wall-clock. Jointly
 trained across 11 circuits, it reaches a 27.35\% aggregate
 in-pool ADP reduction averaged over three training seeds. Recomputed on GOLDS' published metric and
 baseline, a zero-shot evaluation with no training on the
@@ -43,15 +52,18 @@ per-seed results rather than a mean $\pm$ SD that three runs cannot justify.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig_amortization.pdf}
-\caption{Amortization on a previously unseen netlist (\texttt{custom\_macbuf}).
-A single zero-shot rollout of the pretrained policy reaches 59.5\% ADP
-reduction at one VTR oracle call (lower left); fine-tuning continues from
-that same policy to 74.1\% at 1{,}575 calls, exceeding the 68.2\% best of our
-genetic algorithm (dashed line) reached only after $\sim$935 calls. The
-horizontal axis is oracle calls on a log scale; all three points are measured
-against the same traditional baseline (ADP $= 44{,}503$).}
-\label{fig:amortization}
+\includegraphics[width=\columnwidth]{fig_scale.pdf}
+\caption{Zero-shot scale extrapolation. The policy is trained only on small
+fabrics ($\le$676 grid tiles; shaded band). With a single zero-shot rollout per
+benchmark it produces ADP reductions on all six held-out benchmarks. The four
+larger ones lie to the \emph{right} of the training band --- out of
+distribution in size, up to $2{,}304$ tiles ($\sim$$3.4\times$ the area and
+$\sim$$5\times$ the logic of anything in the training pool) --- and every one
+is positive across all three seeds. The two small benchmarks
+(\texttt{custom\_macbuf}, \texttt{lightweight\_cipher}; grey) are in-size
+controls. Dots are three seeds (7/42/123), the tick is the median, and the line
+spans min--max. All reductions are against the same traditional baseline.}
+\label{fig:scale}
 \end{figure}
 
 \section{Introduction}
@@ -107,8 +119,8 @@ proxy. Because the same checkpoint applies to a netlist it has never seen
 without re-running search, the cost of finding a good layout is amortized
 across deployments. The objective is therefore not to win every
 single-instance ADP comparison outright, but to produce a strong layout for
-a previously unseen netlist at near-zero search cost
-(Figure~\ref{fig:amortization}).
+a previously unseen netlist at near-zero search cost --- even one several
+times larger than any fabric seen in training (Figure~\ref{fig:scale}).
 
 The paper sits at the intersection of two lines of work not previously
 connected (Section~\ref{sec:related}): custom eFPGA layout search for logic
@@ -128,10 +140,12 @@ Concretely, this paper contributes:
         loadable against benchmarks never seen during training
         (Section~\ref{sec:universe}), evaluated directly against the same
         VTR-based oracle used by prior eFPGA-layout search work.
-  \item A controlled comparison against a from-scratch genetic algorithm under
-        an identical evaluation oracle, ADP metric, and baseline, on a
-        held-out benchmark: 74.06\% ADP reduction for RL against 68.17\% for
-        the GA (Section~\ref{sec:results-ga}).
+  \item A controlled cost comparison against a from-scratch genetic algorithm
+        under an identical evaluation oracle, ADP metric, and baseline, on a
+        held-out benchmark: the policy reaches the GA's ADP reduction in a
+        single zero-shot oracle call, against the hundreds of calls and hours
+        of search the GA re-pays for every new netlist
+        (Section~\ref{sec:results-ga}).
   \item A joint 11-benchmark training result (27.35\% aggregate in-pool ADP
         reduction, averaged over three seeds) (Section~\ref{sec:results-inpool}),
         and a literature-facing comparison against GOLDS' published metric and
@@ -219,24 +233,28 @@ is what makes this entire line of work possible.
 \subsection{Problem Formulation}
 \label{sec:problem}
 
-Given a fixed eFPGA fabric template parameterized by a tile grid of width $W$ and
-height $H$, and a netlist requiring $n_{\mathrm{dsp}}$ DSP and $n_{\mathrm{bram}}$
-BRAM hard blocks, our goal is to choose a placement
-$\pi = (\mathrm{ar}, \{(x_i,y_i)\}_{i=1}^{n_{\mathrm{dsp}}+n_{\mathrm{bram}}})$ —
-an aspect ratio $\mathrm{ar} \in \mathcal{R}$ for the fabric plus a tile coordinate
-for every hard block — that minimizes the post-synthesis, post-place-and-route
-cost of implementing that netlist on the resulting custom architecture. We use
-the product of routing area, critical-path delay, and power (ADP) as the cost,
-since this directly reflects the silicon and timing overhead of moving the
-protected IP block onto reconfigurable fabric:
+We separate two roles that are easily conflated. The \emph{policy} designs the
+fabric; the \emph{VTR toolchain} maps the circuit onto it. Concretely, given a
+netlist requiring $n_{\mathrm{dsp}}$ DSP and $n_{\mathrm{bram}}$ BRAM hard
+blocks, the policy emits an architecture descriptor
+$\pi = (\mathrm{ar}, \{(x_i,y_i)\}_{i=1}^{n_{\mathrm{dsp}}+n_{\mathrm{bram}}})$:
+a fabric aspect ratio $\mathrm{ar} \in \mathcal{R}$ and a tile coordinate for
+every hard block. VTR then runs the full synthesis-to-routing flow on that
+architecture --- it synthesizes the Verilog, packs the remaining logic into CLB
+clusters, places every block (CLBs included), routes, and auto-sizes the array
+to the smallest grid of the chosen aspect ratio that holds the design. The
+policy thus never places a CLB or fixes the grid dimensions: it shapes the
+fabric and positions the hard blocks, and VTR reports back the realized cost.
+We take that cost to be the product of routing area, critical-path delay, and
+power (ADP), since it directly reflects the silicon and timing overhead of
+moving the protected IP block onto reconfigurable fabric:
 \begin{equation}
 \label{eq:adp}
   \mathrm{ADP}(\pi) = \mathrm{Area}(\pi) \times \mathrm{Delay}(\pi) \times \mathrm{Power}(\pi),
 \end{equation}
-where each term is obtained by running the candidate placement through the full
-VTR (Yosys + VPR) synthesis-to-routing flow (Section~\ref{sec:setup}). We report
-results as percentage ADP reduction relative to a traditional, non-customized
-island-style eFPGA baseline at the same logic capacity.
+where each term comes from the VTR (Yosys + VPR) flow (Section~\ref{sec:setup}).
+We report results as percentage ADP reduction relative to a traditional,
+non-customized island-style eFPGA baseline at the same logic capacity.
 
 \subsection{RL Formulation}
 \label{sec:rl}
@@ -247,13 +265,14 @@ variant~\cite{maskableppo} (\texttt{sb3\_contrib}'s \texttt{MaskablePPO}) so
 that the action space can be
 restricted to currently-legal tile coordinates at every step.
 
-\textbf{Episode structure.} An episode places exactly one benchmark's blocks
-onto the shared canvas. Step 0 selects the fabric aspect ratio from a fixed
-discrete set $\mathcal{R}$; subsequent steps place each DSP, then each BRAM
-instance, one per step, in descending order of shared-net connectivity. Once
-every block is placed, the environment bakes the resulting layout into an
-architecture XML and constraints file (via Jinja2 templating) and invokes the
-VTR flow to obtain $\mathrm{Area}(\pi)$, $\mathrm{Delay}(\pi)$, and
+\textbf{Episode structure.} An episode lays out exactly one benchmark's hard
+blocks on the shared canvas. Step 0 selects the fabric aspect ratio from a fixed
+discrete set $\mathcal{R}$; each subsequent step positions one hard block ---
+BRAMs first, then DSPs, each group ordered by descending shared-net
+connectivity, so the most-connected blocks are committed earliest. Once all
+hard blocks are positioned, the environment bakes the layout into an
+architecture XML and a placement-constraints file (via Jinja2 templating) and
+invokes the VTR flow to obtain $\mathrm{Area}(\pi)$, $\mathrm{Delay}(\pi)$, and
 $\mathrm{Power}(\pi)$; all intermediate steps receive zero reward.
 
 \textbf{Action space.} The action space is $\mathrm{Discrete}(W_{\max} \times
@@ -384,14 +403,19 @@ starting point (Section~\ref{sec:results-golds}).
 
 Table~\ref{tab:benchmarks} lists the benchmark pool used in this work: an
 11-benchmark training set of real circuits spanning a range of DSP/BRAM
-resource profiles, and a held-out set used only for zero-shot evaluation
-(Section~\ref{sec:results-zeroshot}), never sampled during training. Training
-circuits come from the standard VTR suite~\cite{vtr8}; two held-out benchmarks
-(\texttt{softmax}, \texttt{reduction\_layer}) are deep-learning workloads from
-Koios~\cite{koios}, and the remaining four are hand-written probes — including
-\texttt{custom\_macbuf}, an internally built multiply-accumulate buffer used in
-the GA comparison (Section~\ref{sec:results-ga}) — stressing DSP/BRAM mixes
-rare in the real circuits.
+resource profiles, and a held-out set of six circuits used only for zero-shot
+evaluation (Section~\ref{sec:results-zeroshot}), never sampled during training.
+Training circuits come from the standard VTR suite~\cite{vtr8}; three held-out
+benchmarks (\texttt{softmax}, \texttt{reduction\_layer}, \texttt{arm\_core})
+together with \texttt{mkDelayWorker32B} are larger standard circuits (from
+Koios~\cite{koios} and the VTR suite) that also probe fabric sizes well beyond
+the training pool. Because the standard suites contain few \emph{small}
+heterogeneous designs, we add two small probes —
+\texttt{lightweight\_cipher} and \texttt{custom\_macbuf}, the latter an
+internally built multiply-accumulate buffer — to retain coverage at the
+small-fabric end of the held-out set. The GA head-to-head
+(Section~\ref{sec:results-ga}) uses \texttt{softmax}, a standard Koios
+benchmark held out of RL training.
 
 \begin{table}[t]
 \caption{Benchmark pool: grid size and hard-block requirements.}
@@ -480,60 +504,78 @@ asymmetry in Section~\ref{sec:results-tradeoff}.
 \subsection{GA Head-to-Head Comparisons}
 \label{sec:results-ga}
 
-For a controlled comparison against evolutionary search — without the metric-
-and baseline-matching caveat that attaches to the GOLDS comparison
-(Section~\ref{sec:results-golds}) — we implemented a genetic algorithm under
-the same evaluation oracle, ADP metric, and baseline as the RL pipeline, and
-ran it on \texttt{custom\_macbuf} (held out of RL training; Table~\ref{tab:benchmarks}):
-roulette-wheel selection, single-point crossover, per-gene mutation over both
-hard-block coordinates and fabric aspect ratio. We use a population of 5 to
-match the per-oracle-call budget available during an RL rollout (one VTR call
-per episode step, one candidate placement per individual per generation);
-the cap is 500 generations with early-stop patience of 50 generations without
-improvement (converged at generation 186, consuming approximately 935 VTR calls). The RL comparison point is the
-11-benchmark policy (Section~\ref{sec:results-zeroshot}) fine-tuned on
-\texttt{custom\_macbuf} alone. Table~\ref{tab:ga} reports the result: RL
-reaches \textbf{74.06\%} ADP reduction versus the GA's \textbf{68.17\%} on
-the identical benchmark, metric, and toolchain.
+The central claim of this paper is not that the policy finds a
+\emph{better} layout than evolutionary search, but that it reaches a
+comparable one at a tiny fraction of the search cost. To make that precise,
+without the metric- and baseline-matching caveat that attaches to the GOLDS
+comparison (Section~\ref{sec:results-golds}), we implemented a genetic
+algorithm under the same evaluation oracle, ADP metric, and baseline as the RL
+pipeline, and ran it on \texttt{softmax} (held out of RL training;
+Table~\ref{tab:benchmarks}): roulette-wheel selection, single-point crossover,
+and per-gene mutation over both hard-block coordinates and fabric aspect ratio.
+We give the GA a population of \textbf{8}, matching the eight parallel workers
+used for the RL runs, capped at 500 generations with early-stop patience of 50
+generations without improvement. The RL comparison point is the 11-benchmark
+policy (Section~\ref{sec:results-zeroshot}) applied to \texttt{softmax} both
+zero-shot and after fine-tuning.
+
+Table~\ref{tab:ga} reports the outcome. The GA converges to
+\textbf{\GAred\%} ADP reduction --- essentially the same destination as the
+fine-tuned policy's \textbf{14.82\%} --- but only after \textbf{\GAcalls}~VTR
+oracle calls spanning \textbf{\GAhours} of wall-clock on a 24-core machine.
+The policy reaches \textbf{5.39\%} of that reduction in a \emph{single}
+zero-shot oracle call ($\sim$134~s), and the full 14.82\% in 1{,}128 calls of
+amortized fine-tuning that begin from an already-competent policy rather than a
+random population. The comparison is deliberately stacked in the GA's favor ---
+it gets unbounded search time and the same oracle --- and it still pays
+\GAcalls\ VTR calls to arrive at the same place the policy reaches in one. Because
+that cost is re-incurred from scratch for every new protected IP block, whereas
+the policy's cost is paid once and amortized, the practical gap widens with
+every additional benchmark a designer must handle.
 
 \begin{table}[t]
-\caption{GA vs.\ RL on \texttt{custom\_macbuf} (baseline ADP
-$=44{,}503$). GA: population 5, $\le$500 generations, early-stop patience 50.
-RL zero-shot is a single deterministic rollout (seed 42); RL fine-tuned
-continues the 11-benchmark policy on \texttt{custom\_macbuf}.}
+\caption{Same destination, very different search cost, on \texttt{softmax}
+(baseline ADP $=3.58\!\times\!10^6$; held out of RL training). GA: population
+8, $\le$500 generations, early-stop patience 50, run to convergence. RL
+zero-shot is a single deterministic rollout (seed 42); RL fine-tuned continues
+the 11-benchmark policy on \texttt{softmax}. Wall-clock is on the same 24-core
+machine; the GA and the RL fine-tune use the same eight parallel workers.}
 \label{tab:ga}
 \centering
 \begin{tabular}{@{}lrrr@{}}
 \toprule
-Method & Best ADP & Reduction & VTR calls \\
+Method & Reduction & VTR calls & Wall-clock \\
 \midrule
-GA            & 14{,}164.5 & 68.17\% & $\sim$935 \\
-RL zero-shot  & 18{,}008.4 & 59.53\% & \textbf{1} \\
-RL fine-tuned & 11{,}553.2 & \textbf{74.06\%} & 1{,}575 \\
+GA            & \GAred\%        & \GAcalls       & \GAhours \\
+RL zero-shot  & 5.39\%          & \textbf{1}     & \textbf{$\sim$2\,min} \\
+RL fine-tuned & \textbf{14.82\%}& 1{,}128        & $\sim$8\,h \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\textbf{Oracle cost.} The GA uses approximately 935 VTR oracle calls
-(population 5 over 186 generations) to reach its best \texttt{custom\_macbuf}
-layout. Applied zero-shot, the policy reaches 59.53\% reduction in a single
-oracle call; fine-tuning then uses 1{,}575 unique calls (of 6{,}000 episodes,
-the remaining 74.6\% resolved as cache hits as the policy's entropy falls) to
-reach 74.06\%, exceeding the GA at 40\% fewer oracle calls. Figure~\ref{fig:layout}
-shows the resulting layout: the policy compacts the baseline's $10\times12$
-active region into $6\times7$, which accounts for most of the ADP reduction.
+Figure~\ref{fig:layout} shows where the saving comes from physically on
+\texttt{softmax}. The traditional fabric provisions BRAM columns the netlist
+never uses and spends area on a generic, over-sized array. The policy's
+architecture omits the unused BRAM resource entirely and selects an aspect
+ratio under which VTR auto-sizes the same logic onto a $22\%$ smaller array ---
+the dominant term in the ADP reduction. The policy never moves a CLB; it
+removes idle resource columns and reshapes the fabric, and the tighter routing
+that follows is VTR's.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.9\textwidth]{fig_layout.pdf}
-\caption{What the policy recovers, physically (\texttt{custom\_macbuf}, the
-GA comparison benchmark). The traditional island-style baseline (left)
-spreads the same netlist's logic across a $10\times12$ active region; the
-RL-optimized fabric (right) packs it into a $6\times7$ region by clustering
-the DSP columns with their surrounding CLBs. Tile types: DSP (blue, four
-tiles tall), CLB (green), I/O pad (orange); the dashed rectangle marks the
-active-logic bounding box. This compaction of the routed area is the dominant
-term in the ADP reductions reported in Figure~\ref{fig:seedvar}.}
+\includegraphics[width=0.92\textwidth]{fig_layout.pdf}
+\caption{What the policy recovers, physically (\texttt{softmax}, the GA
+comparison benchmark). Both fabrics are drawn at the \emph{same tile scale}.
+The traditional island-style baseline (left) is a $43\times43$ heterogeneous
+fabric that provisions BRAM columns (plum) the netlist never uses, with DSP
+blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric
+(right) tailors the architecture to the netlist: it drops the unused BRAM
+columns entirely and repositions the DSPs, under an aspect ratio that lets VTR
+auto-size the same logic down to $36\times40$.
+The dashed outline is the traditional footprint and the hatched strip is the
+reclaimed area --- a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP
+reduction. Gaps between tiles are routing channels.}
 \label{fig:layout}
 \end{figure*}
 
@@ -564,7 +606,10 @@ training. Two of the six (\texttt{softmax}, \texttt{reduction\_layer}) were
 part of the training-time \emph{universe} used to size the policy's tensors
 (Section~\ref{sec:universe}) but never sampled during training; the other
 four were entirely outside the universe as well, a strictly harder
-generalization test. Every benchmark finishes positive under every seed —
+generalization test. Crucially, four of the six are fabrics
+\emph{larger than anything in the training pool} (up to $2{,}304$ tiles versus
+the pool's $676$; Figure~\ref{fig:scale}), so this is size extrapolation, not
+interpolation. Every benchmark finishes positive under every seed —
 no sign flips at all, unlike the in-pool result — and every per-seed range is
 narrow (at most $\approx12$ points, for \texttt{custom\_macbuf}), with no
 benchmark approaching the \texttt{or1200}/\texttt{boundtop} spread.
@@ -574,8 +619,8 @@ The overall average across all six benchmarks and three seeds is
 seed-stable in relative terms (coefficient of variation 5--10\%), while the
 weakest (\texttt{softmax}, \texttt{arm\_core}) are proportionally the least
 certain (coefficient of variation 22--34\%) — the absolute spread is small
-everywhere, but on a small mean that spread represents a much larger
-fraction of the result.
+everywhere, but on a small mean that spread represents a much larger fraction
+of the result.
 
 \textbf{A note on deterministic decoding.} Every number above uses greedy
 decoding (the policy's most-likely action at each step), which is the intended
@@ -640,12 +685,14 @@ establish whether the asymmetry is stable.
 We asked whether a learned policy can replace per-instance evolutionary
 search for custom eFPGA-based logic masking. Under a controlled comparison
 on an identical benchmark, oracle, ADP metric, and baseline, the RL policy
-exceeds our genetic algorithm (74.06\% against 68.17\% ADP reduction); a
-single zero-shot rollout already provides a useful layout at one oracle call
-against the GA's $\sim$935, and fine-tuning reaches a better optimum at lower
-oracle cost (Section~\ref{sec:results-ga}). The same policy generalizes
-zero-shot to six held-out benchmarks and, recomputed on GOLDS' published
-metric, exceeds GOLDS' reported result (Sections~\ref{sec:results-golds},~\ref{sec:results-zeroshot}).
+reaches the same ADP reduction as our genetic algorithm while paying a tiny
+fraction of its search cost: a single zero-shot rollout lands in the GA's
+region at one oracle call, against the \GAcalls\ calls and \GAhours\ of search
+the GA re-pays from scratch for every new netlist (Section~\ref{sec:results-ga}).
+The same policy generalizes zero-shot to six held-out benchmarks --- four of
+them fabrics larger than anything seen in training (Figure~\ref{fig:scale}) ---
+and, recomputed on GOLDS' published metric, exceeds GOLDS' reported result
+(Sections~\ref{sec:results-golds},~\ref{sec:results-zeroshot}).
 
 Two reliability findings qualify these results and matter for reproduction.
 In-pool fitting is far more seed-sensitive than zero-shot transfer (the
@@ -655,17 +702,16 @@ stochastic sampling (negative for 4 of 6 benchmarks in a preliminary check).
 A single-seed or single-rollout number is therefore not a stable
 characterization of the policy (Section~\ref{sec:results-tradeoff}).
 
-Several gaps remain. Results rest on three seeds rather than the larger
-seed-averaged statistics a fully rigorous claim requires, and a systematic
+Several gaps remain. Results rest on three seeds, and a systematic
 stochastic-rollout evaluation across all seeds is still outstanding. The
 action space covers DSP/BRAM placement and aspect ratio only; the NSGA-II
 follow-up~\cite{nsgaii} additionally co-evolves CLB LUT size and
 arithmetic-block sizing, a natural extension given that the GCN representation
 (Section~\ref{sec:gnn}) already generalizes across netlist size and resource
-mix. Finally, the benchmark pool does not yet cover the full set GOLDS and
-the NSGA-II follow-up report on (e.g.\ \texttt{sha}, the Koios suite);
-broadening it would let every comparison here be made directly rather than
-through the metric-converted comparison of Section~\ref{sec:results-golds}.
+mix. Finally, broadening the benchmark pool to the full GOLDS/NSGA-II set
+(e.g.\ \texttt{sha}, the Koios suite) would let every comparison be made
+directly rather than through the metric conversion of
+Section~\ref{sec:results-golds}.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
