@@ -2,22 +2,23 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{golds,alice}
+\citation{golds,nsgaii}
 \citation{golds}
+\citation{golds}
+\citation{nsgaii}
+\citation{alice,arianna}
+\citation{golds}
+\citation{shell}
+\citation{nuredact}
 \citation{golds}
 \citation{nsgaii}
 \@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
 \newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Zero-shot scale extrapolation. The policy is trained only on small fabrics ($\le $676 grid tiles; shaded band). With a single zero-shot rollout per benchmark it produces ADP reductions on all six held-out benchmarks. The four larger ones lie to the \emph  {right} of the training band --- out of distribution in size, up to $2{,}304$ tiles ($\sim $$3.4\times $ the area and $\sim $$5\times $ the logic of anything in the training pool) --- and every one is positive across all three seeds. The two small benchmarks (\texttt  {custom\_macbuf}, \texttt  {lightweight\_cipher}; grey) are in-size controls. Dots are three seeds (7/42/123), the tick is the median, and the line spans min--max. All reductions are against the same traditional baseline.}}{1}{figure.caption.3}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:scale}{{1}{1}{Zero-shot scale extrapolation. The policy is trained only on small fabrics ($\le $676 grid tiles; shaded band). With a single zero-shot rollout per benchmark it produces ADP reductions on all six held-out benchmarks. The four larger ones lie to the \emph {right} of the training band --- out of distribution in size, up to $2{,}304$ tiles ($\sim $$3.4\times $ the area and $\sim $$5\times $ the logic of anything in the training pool) --- and every one is positive across all three seeds. The two small benchmarks (\texttt {custom\_macbuf}, \texttt {lightweight\_cipher}; grey) are in-size controls. Dots are three seeds (7/42/123), the tick is the median, and the line spans min--max. All reductions are against the same traditional baseline}{figure.caption.3}{}}
-\citation{golds,nsgaii}
-\citation{alphachip,chipformer}
-\citation{alice,arianna}
-\citation{shell}
-\citation{nuredact}
-\citation{golds}
-\citation{nsgaii}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background and Related Work}{1}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{1}{Background and Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Custom eFPGA Layout Design}{1}{subsection.2.1}\protected@file@percent }
 \citation{alphachip,alphachip_addendum}
 \citation{maskplace}
 \citation{deeppr}
@@ -28,19 +29,19 @@
 \citation{transplace}
 \citation{vtr9,vtr8,vpr97}
 \citation{parmys}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Background and Related Work}{2}{section.2}\protected@file@percent }
-\newlabel{sec:related}{{2}{2}{Background and Related Work}{section.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}eFPGA-Based Logic Masking}{2}{subsection.2.1}\protected@file@percent }
+\citation{maskableppo}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Learned Policies for Physical Design}{2}{subsection.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}VTR/VPR Background}{2}{subsection.2.3}\protected@file@percent }
-\citation{maskableppo}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Methodology}{2}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Problem Formulation}{2}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:problem}{{3.1}{2}{Problem Formulation}{subsection.3.1}{}}
+\newlabel{eq:adp}{{1}{2}{Problem Formulation}{equation.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}RL Formulation}{2}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:rl}{{3.2}{2}{RL Formulation}{subsection.3.2}{}}
 \citation{gamora}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Methodology}{3}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Problem Formulation}{3}{subsection.3.1}\protected@file@percent }
-\newlabel{sec:problem}{{3.1}{3}{Problem Formulation}{subsection.3.1}{}}
-\newlabel{eq:adp}{{1}{3}{Problem Formulation}{equation.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}RL Formulation}{3}{subsection.3.2}\protected@file@percent }
-\newlabel{sec:rl}{{3.2}{3}{RL Formulation}{subsection.3.2}{}}
+\citation{golds}
+\citation{vtr8}
+\citation{koios}
 \newlabel{eq:reward}{{2}{3}{RL Formulation}{equation.3.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}GCN Feature Extractor}{3}{subsection.3.3}\protected@file@percent }
 \newlabel{sec:gnn}{{3.3}{3}{GCN Feature Extractor}{subsection.3.3}{}}
@@ -48,23 +49,21 @@
 \newlabel{sec:universe}{{3.4}{3}{Universe Superset and Action Masking}{subsection.3.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Training Setup}{3}{subsection.3.5}\protected@file@percent }
 \newlabel{sec:training}{{3.5}{3}{Training Setup}{subsection.3.5}{}}
-\citation{golds}
-\citation{vtr8}
-\citation{koios}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{3}{section.4}\protected@file@percent }
+\newlabel{sec:setup}{{4}{3}{Experimental Setup}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Evaluation Oracle}{3}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:oracle}{{4.1}{3}{Evaluation Oracle}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Baseline}{3}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:baseline}{{4.2}{3}{Baseline}{subsection.4.2}{}}
 \citation{golds}
 \citation{nsgaii}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{4}{section.4}\protected@file@percent }
-\newlabel{sec:setup}{{4}{4}{Experimental Setup}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Evaluation Oracle}{4}{subsection.4.1}\protected@file@percent }
-\newlabel{sec:oracle}{{4.1}{4}{Evaluation Oracle}{subsection.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Baseline}{4}{subsection.4.2}\protected@file@percent }
-\newlabel{sec:baseline}{{4.2}{4}{Baseline}{subsection.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Per-seed ADP reduction for all 17 benchmarks; row labels carry the benchmark pool metadata (grid size and hard-block counts: D=DSP, B=BRAM) in place of a separate table. Dots are the three training seeds (7/42/123), the tick is the median, and the line spans min--max. In-pool fitting is seed-sensitive on \texttt  {or1200} and \texttt  {boundtop} (shaded), spanning $\sim $28--29 points; every other benchmark stays within $\le 12$ points. The held-out zero-shot group is more seed-stable than in-pool fitting.}}{4}{figure.caption.3}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:seedvar}{{1}{4}{Per-seed ADP reduction for all 17 benchmarks; row labels carry the benchmark pool metadata (grid size and hard-block counts: D=DSP, B=BRAM) in place of a separate table. Dots are the three training seeds (7/42/123), the tick is the median, and the line spans min--max. In-pool fitting is seed-sensitive on \texttt {or1200} and \texttt {boundtop} (shaded), spanning $\sim $28--29 points; every other benchmark stays within $\le 12$ points. The held-out zero-shot group is more seed-stable than in-pool fitting}{figure.caption.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Benchmarks}{4}{subsection.4.3}\protected@file@percent }
 \newlabel{sec:benchmarks}{{4.3}{4}{Benchmarks}{subsection.4.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Baselines Compared}{4}{subsection.4.4}\protected@file@percent }
 \newlabel{sec:baselines-compared}{{4.4}{4}{Baselines Compared}{subsection.4.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Benchmark pool: grid size and hard-block requirements.}}{4}{table.caption.4}\protected@file@percent }
-\newlabel{tab:benchmarks}{{1}{4}{Benchmark pool: grid size and hard-block requirements}{table.caption.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Results}{4}{section.5}\protected@file@percent }
 \newlabel{sec:results}{{5}{4}{Results}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}In-Pool Performance}{4}{subsection.5.1}\protected@file@percent }
@@ -72,20 +71,18 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GA Head-to-Head Comparisons}{4}{subsection.5.2}\protected@file@percent }
 \newlabel{sec:results-ga}{{5.2}{4}{GA Head-to-Head Comparisons}{subsection.5.2}{}}
 \citation{golds}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Per-seed ADP reduction for every benchmark; this figure carries the per-benchmark results in place of a table. Each benchmark shows its three training-seed outcomes (dots; seeds 7/42/123), the median (tick), and the min--max range (line) --- raw seeds rather than mean $\pm $ SD, which three runs cannot justify. In-pool fitting is seed-sensitive on two benchmarks, \texttt  {or1200} and \texttt  {boundtop} (shaded), whose ranges span $\sim $28 and $\sim $29 points; every other in-pool benchmark and all six held-out (zero-shot) benchmarks are tight (range $\le 12$ points). The held-out group is more seed-stable than in-pool fitting.}}{5}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:seedvar}{{2}{5}{Per-seed ADP reduction for every benchmark; this figure carries the per-benchmark results in place of a table. Each benchmark shows its three training-seed outcomes (dots; seeds 7/42/123), the median (tick), and the min--max range (line) --- raw seeds rather than mean $\pm $ SD, which three runs cannot justify. In-pool fitting is seed-sensitive on two benchmarks, \texttt {or1200} and \texttt {boundtop} (shaded), whose ranges span $\sim $28 and $\sim $29 points; every other in-pool benchmark and all six held-out (zero-shot) benchmarks are tight (range $\le 12$ points). The held-out group is more seed-stable than in-pool fitting}{figure.caption.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Same destination, very different search cost, on \texttt  {softmax} (baseline ADP $=3.58\!\times \!10^6$; held out of RL training). GA: population 8, $\le $500 generations, early-stop patience 50, run to convergence. RL zero-shot is a single deterministic rollout (seed 42); RL fine-tuned continues the 11-benchmark policy on \texttt  {softmax}. Wall-clock is on the same 24-core machine; the GA and the RL fine-tune use the same eight parallel workers.}}{5}{table.caption.6}\protected@file@percent }
-\newlabel{tab:ga}{{2}{5}{Same destination, very different search cost, on \texttt {softmax} (baseline ADP $=3.58\!\times \!10^6$; held out of RL training). GA: population 8, $\le $500 generations, early-stop patience 50, run to convergence. RL zero-shot is a single deterministic rollout (seed 42); RL fine-tuned continues the 11-benchmark policy on \texttt {softmax}. Wall-clock is on the same 24-core machine; the GA and the RL fine-tune use the same eight parallel workers}{table.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces GA vs.\ RL on \texttt  {softmax} (held out of RL training; baseline ADP $=3.58\!\times \!10^6$). GA: pop.\ 8, $\le $500 gens, patience 50; best at gen.\nonbreakingspace 46, stagnated the final 50 gens. RL zero-shot: single deterministic rollout (seed 42). RL fine-tuned: 11-benchmark policy continued on \texttt  {softmax}. Same 24-core machine throughout.}}{5}{table.caption.4}\protected@file@percent }
+\newlabel{tab:ga}{{1}{5}{GA vs.\ RL on \texttt {softmax} (held out of RL training; baseline ADP $=3.58\!\times \!10^6$). GA: pop.\ 8, $\le $500 gens, patience 50; best at gen.~46, stagnated the final 50 gens. RL zero-shot: single deterministic rollout (seed 42). RL fine-tuned: 11-benchmark policy continued on \texttt {softmax}. Same 24-core machine throughout}{table.caption.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Head-to-Head Against GOLDS}{5}{subsection.5.3}\protected@file@percent }
 \newlabel{sec:results-golds}{{5.3}{5}{Head-to-Head Against GOLDS}{subsection.5.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Zero-Shot Generalization}{5}{subsection.5.4}\protected@file@percent }
 \newlabel{sec:results-zeroshot}{{5.4}{5}{Zero-Shot Generalization}{subsection.5.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces What the policy recovers, physically (\texttt  {softmax}, the GA comparison benchmark). Both fabrics are drawn at the \emph  {same tile scale}. The traditional island-style baseline (left) is a $43\times 43$ heterogeneous fabric that provisions BRAM columns (plum) the netlist never uses, with DSP blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric (right) tailors the architecture to the netlist: it drops the unused BRAM columns entirely, repositions the DSPs, and shrinks the array to $36\times 40$. The dashed outline is the traditional footprint and the hatched strip is the reclaimed area --- a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP reduction. Gaps between tiles are routing channels.}}{6}{figure.caption.7}\protected@file@percent }
-\newlabel{fig:layout}{{3}{6}{What the policy recovers, physically (\texttt {softmax}, the GA comparison benchmark). Both fabrics are drawn at the \emph {same tile scale}. The traditional island-style baseline (left) is a $43\times 43$ heterogeneous fabric that provisions BRAM columns (plum) the netlist never uses, with DSP blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric (right) tailors the architecture to the netlist: it drops the unused BRAM columns entirely, repositions the DSPs, and shrinks the array to $36\times 40$. The dashed outline is the traditional footprint and the hatched strip is the reclaimed area --- a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP reduction. Gaps between tiles are routing channels}{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Fine-Tuning Efficiency}{6}{subsection.5.5}\protected@file@percent }
-\newlabel{sec:results-finetune}{{5.5}{6}{Fine-Tuning Efficiency}{subsection.5.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Seed Variance: In-Pool vs.\ Zero-Shot}{6}{subsection.5.6}\protected@file@percent }
-\newlabel{sec:results-tradeoff}{{5.6}{6}{Seed Variance: In-Pool vs.\ Zero-Shot}{subsection.5.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Fine-Tuning Efficiency}{5}{subsection.5.5}\protected@file@percent }
+\newlabel{sec:results-finetune}{{5.5}{5}{Fine-Tuning Efficiency}{subsection.5.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Seed Variance: In-Pool vs.\ Zero-Shot}{5}{subsection.5.6}\protected@file@percent }
+\newlabel{sec:results-tradeoff}{{5.6}{5}{Seed Variance: In-Pool vs.\ Zero-Shot}{subsection.5.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{5}{section.6}\protected@file@percent }
+\newlabel{sec:conclusion}{{6}{5}{Conclusion}{section.6}{}}
 \citation{nsgaii}
 \bibstyle{ACM-Reference-Format}
 \bibdata{references}
@@ -99,6 +96,9 @@
 \bibcite{nuredact}{{8}{2026}{{Das et~al\mbox  {.}}}{{}}}
 \bibcite{vtr9}{{9}{2025}{{Elgammal et~al\mbox  {.}}}{{}}}
 \bibcite{rlplace}{{10}{2022}{{Elgammal et~al\mbox  {.}}}{{}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces What the policy recovers, physically (\texttt  {softmax}, the GA comparison benchmark). Both fabrics are drawn at the \emph  {same tile scale}. The traditional island-style baseline (left) is a $43\times 43$ heterogeneous fabric that provisions BRAM columns (plum) the netlist never uses, with DSP blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric (right) tailors the architecture to the netlist: it drops the unused BRAM columns entirely and repositions the DSPs, under an aspect ratio that lets VTR auto-size the same logic down to $36\times 40$. The dashed outline is the traditional footprint and the hatched strip is the reclaimed area --- a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP reduction. Gaps between tiles are routing channels.}}{6}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:layout}{{2}{6}{What the policy recovers, physically (\texttt {softmax}, the GA comparison benchmark). Both fabrics are drawn at the \emph {same tile scale}. The traditional island-style baseline (left) is a $43\times 43$ heterogeneous fabric that provisions BRAM columns (plum) the netlist never uses, with DSP blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric (right) tailors the architecture to the netlist: it drops the unused BRAM columns entirely and repositions the DSPs, under an aspect ratio that lets VTR auto-size the same logic down to $36\times 40$. The dashed outline is the traditional footprint and the hatched strip is the reclaimed area --- a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP reduction. Gaps between tiles are routing channels}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{References}{6}{section*.7}\protected@file@percent }
 \bibcite{alphachip_addendum}{{11}{2024}{{Goldie et~al\mbox  {.}}}{{}}}
 \bibcite{transplace}{{12}{2025}{{Hou et~al\mbox  {.}}}{{}}}
 \bibcite{fasttuner}{{13}{2024}{{Hsiao et~al\mbox  {.}}}{{}}}
@@ -118,8 +118,5 @@
 \newlabel{tocindent3}{0pt}
 \newlabel{tocindent4}{0pt}
 \newlabel{tocindent5}{0pt}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{7}{section.6}\protected@file@percent }
-\newlabel{sec:conclusion}{{6}{7}{Conclusion}{section.6}{}}
-\@writefile{toc}{\contentsline {section}{References}{7}{section*.9}\protected@file@percent }
 \newlabel{TotPages}{{7}{7}{}{page.7}{}}
 \gdef \@abspage@last{7}

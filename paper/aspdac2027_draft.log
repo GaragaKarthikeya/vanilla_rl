@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.6.24)  26 JUN 2026 22:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.6.24)  27 JUN 2026 04:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -925,32 +925,32 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 51.
+(Font)              scaled to size 17.28pt on input line 42.
 LaTeX Font Info:    Trying to load font information for T1+LinuxBiolinumT-TLF o
-n input line 51.
+n input line 42.
 
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/T1LinuxBiolinumT-TLF.fd
 File: T1LinuxBiolinumT-TLF.fd 2017/03/20 (autoinst) Font definitions for T1/Lin
 uxBiolinumT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 51.
+(Font)              scaled to size 17.28pt on input line 42.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinuxBiolinumT-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 51.
+(Font)              scaled to size 17.28pt on input line 42.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 51.
+(Font)              scaled to size 12.0pt on input line 42.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 51.
+(Font)              scaled to size 10.0pt on input line 42.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 51.
+(Font)              scaled to size 9.0pt on input line 42.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 51.
+(Font)              scaled to size 10.95pt on input line 42.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 51.
+(Font)              scaled to size 9.0pt on input line 42.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -962,37 +962,30 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<fig_scale.pdf, id=111, 252.46922pt x 188.41393pt>
-File: fig_scale.pdf Graphic file (type pdf)
-<use fig_scale.pdf>
-Package pdftex.def Info: fig_scale.pdf  used on input line 55.
-(pdftex.def)             Requested size: 241.14749pt x 179.97543pt.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/it' will be
-(Font)              scaled to size 9.0pt on input line 65.
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 65
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 70
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
-LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
-(Font)              scaled to size 9.0pt on input line 65.
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 9.0pt on input line 70.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
-Class acmart Warning: A possible image without description on input line 67.
-
-LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 93.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 95.
+(Font)              scaled to size 9.0pt on input line 72.
 
-Overfull \hbox (10.13622pt too wide) in paragraph at lines 89--102
+Overfull \hbox (10.13622pt too wide) in paragraph at lines 66--79
 []\T1/LinuxLibertineT-TLF/m/n/9 (-20) Two prior pa-pers es-tab-lish that per-in
 stance search over DSP/BRAM
+ []
+
+
+Overfull \hbox (6.15872pt too wide) in paragraph at lines 129--156
+\T1/LinuxLibertineT-TLF/m/n/9 (-20) A generic island-style FPGA pro-vi-sions DS
+P columns, BRAM columns,
  []
 
 [1.1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texm
@@ -1000,82 +993,89 @@ f-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/share/texlive/texmf-dist
 /fonts/enc/dvips/libertine/lbtn_76gpa5.enc}
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/
-share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}{/usr/share/
-texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/usr/share/texliv
-e/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/usr/share/texlive/texmf-
-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc} <./fig_scale.pdf>]
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 230.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 230.
- [2.2]
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 321.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 321.
+share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/usr/share/
+texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/usr/share/texlive/
+texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}]
+Overfull \hbox (37.51303pt too wide) in paragraph at lines 206--220
+\T1/LinuxLibertineT-TLF/m/n/9 (-20) blocks, the pol-icy emits an ar-chi-tec-tur
+e de-scrip-tor $\OML/nxlmi/m/it/9 ^^Y \U/ntxmia/m/it/9 = \LMS/ntxsy/m/n/9 ¹[]\O
+ML/nxlmi/m/it/9 ; \LMS/ntxsy/m/n/9 f¹\OML/nxlmi/m/it/9 x[]; y[]\LMS/ntxsy/m/n/9
+ ºg[]º$\T1/LinuxLibertineT-TLF/m/n/9 (-20) :
+ []
 
-Overfull \hbox (21.12433pt too wide) in paragraph at lines 321--333
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 253.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 253.
+[2.2]
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 7.3pt on input line 302.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 5.5pt on input line 302.
+
+Overfull \hbox (21.12433pt too wide) in paragraph at lines 302--314
 []\T1/LinuxLibertineT-TLF/m/n/9 (-20) This re-duced graph is padded to a fixed 
 $\LMS/ntxsy/m/n/9 ¹[]\OML/nxlmi/m/it/9 ; []\LMS/ntxsy/m/n/9 º$
  []
 
 
-Overfull \hbox (24.2749pt too wide) in paragraph at lines 337--347
+Overfull \hbox (24.2749pt too wide) in paragraph at lines 318--328
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) dependent quan-tity ^^V can-vas $\LMS/ntxsy
 /m/n/9 ¹\OML/nxlmi/m/it/9 W[]; H[]\LMS/ntxsy/m/n/9 º$\T1/LinuxLibertineT-TLF/m/
 n/9 (-20) , $[]$, $[]$
  []
 
-[3.3]
-Overfull \hbox (8.83408pt too wide) in paragraph at lines 372--385
+
+Overfull \hbox (8.83408pt too wide) in paragraph at lines 353--366
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) Every can-di-date place-ment is scored by t
 he true down-stream toolchain,
  []
 
-<fig_seed_variance.pdf, id=256, 250.45758pt x 320.73074pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3.3]
+<fig_seed_variance.pdf, id=226, 368.93593pt x 320.24193pt>
 File: fig_seed_variance.pdf Graphic file (type pdf)
 <use fig_seed_variance.pdf>
-Package pdftex.def Info: fig_seed_variance.pdf  used on input line 465.
-(pdftex.def)             Requested size: 207.38698pt x 265.57512pt.
+Package pdftex.def Info: fig_seed_variance.pdf  used on input line 416.
+(pdftex.def)             Requested size: 207.38698pt x 180.01836pt.
+LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
+(Font)              scaled to size 9.0pt on input line 423.
 
-Class acmart Warning: A possible image without description on input line 476.
 
-[4.4]
-<fig_layout.pdf, id=272, 502.43367pt x 290.41449pt>
+Class acmart Warning: A possible image without description on input line 425.
+
+<fig_layout.pdf, id=234, 502.43367pt x 290.41449pt>
 File: fig_layout.pdf Graphic file (type pdf)
 <use fig_layout.pdf>
-Package pdftex.def Info: fig_layout.pdf  used on input line 558.
+Package pdftex.def Info: fig_layout.pdf  used on input line 513.
 (pdftex.def)             Requested size: 465.79047pt x 269.24515pt.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/it' will be
+(Font)              scaled to size 9.0pt on input line 524.
+
+Class acmart Warning: A possible image without description on input line 526.
 
 
-Class acmart Warning: A possible image without description on input line 570.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (1.20218pt too wide) in paragraph at lines 592--614
-\T1/LinuxLibertineT-TLF/m/n/9 (-20) marks (\T1/zi4/m/n/9 mkDelayWorker32B\T1/Li
-nuxLibertineT-TLF/m/n/9 (-20) , \T1/zi4/m/n/9 custom_macbuf\T1/LinuxLibertineT-
-TLF/m/n/9 (-20) ) are also the most seed-
- []
-
-[5.5 <./fig_seed_variance.pdf>]
-Overfull \hbox (8.18073pt too wide) in paragraph at lines 631--643
+ [4.4 <./fig_seed_variance.pdf>]
+Overfull \hbox (8.18073pt too wide) in paragraph at lines 580--592
 \T1/LinuxLibertineT-TLF/m/n/9 (-20) mark (\T1/zi4/m/n/9 diffeq1\T1/LinuxLiberti
 neT-TLF/m/n/9 (-20) , in the train-ing pool): fine-tuning the multi-benchmark
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6.6 <./fig_layout.pdf>] (./aspdac2027_draft.bbl
+[5.5] (./aspdac2027_draft.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 7.0pt on input line 51.
 
-Underfull \vbox (badness 2073) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6.6{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc} 
+<./fig_layout.pdf>])
 
 Class acmart Warning: Some images may lack descriptions.
 (acmart)              ACM is committed to complying with the upcoming US ADA ht
@@ -1104,8 +1104,8 @@ Class acmart Warning: ACM reference format is mandatory
 Class acmart Warning: CCS concepts are mandatory for papers over two pages.
 
 
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
+Overfull \vbox (1.16599pt too high) has occurred while \output is active []
+
 
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
@@ -1119,16 +1119,16 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `aspdac2027_draft.out' has not changed.
-(rerunfilecheck)             Checksum: DA324E8ADA4677467B35D55C579951FA;4445.
+(rerunfilecheck)             Checksum: 3838192088A615783ACBEFEC6F13EE97;4453.
  ) 
 Here is how much of TeX's memory you used:
- 21209 strings out of 474222
- 340336 string characters out of 5748733
+ 21198 strings out of 474222
+ 340115 string characters out of 5748733
  1957975 words of memory out of 5000000
- 42430 multiletter control sequences out of 15000+600000
- 701183 words of font info for 375 fonts, out of 8000000 for 9000
+ 42421 multiletter control sequences out of 15000+600000
+ 701294 words of font info for 375 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 90i,12n,131p,1013b,574s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,131p,1013b,711s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4
 b.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata
 -zi4r.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/LibertineMath
@@ -1142,10 +1142,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on aspdac2027_draft.pdf (7 pages, 698346 bytes).
+Output written on aspdac2027_draft.pdf (7 pages, 675241 bytes).
 PDF statistics:
- 449 PDF objects out of 1000 (max. 8388607)
- 361 compressed objects within 4 object streams
- 65 named destinations out of 1000 (max. 500000)
- 66800 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 415 PDF objects out of 1000 (max. 8388607)
+ 343 compressed objects within 4 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 66795 words of extra memory for PDF output out of 74296 (max. 10000000)
 

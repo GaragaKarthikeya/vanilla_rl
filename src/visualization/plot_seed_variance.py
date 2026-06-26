@@ -21,9 +21,34 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
 from matplotlib.font_manager import FontManager
 from statistics import median as _median
 import palette as PAL
+
+# grid (WxH), DSP count, BRAM count  — matches Table 1
+BENCH_META = {
+    # in-pool
+    "fifo":          ( "6×6",   0,  1),
+    "ch_intrinsics": ("10×10",  0,  1),
+    "diffeq2":       ("14×14",  5,  0),
+    "boundtop":      ("13×13",  0,  1),
+    "diffeq1":       ("14×14",  5,  0),
+    "spree":         ("12×12",  1,  3),
+    "mkSMAdapter4B": ("18×18",  0,  5),
+    "or1200":        ("25×25",  1,  2),
+    "mmc_core":      ("13×13",  0,  1),
+    "mkPktMerge":    ("26×26",  0, 15),
+    "raygentop":     ("17×17",  6,  1),
+    # held-out
+    "softmax":           ("41×41",  8,  0),
+    "reduction_layer":   ("42×42",  0, 32),
+    "cipher":("12×12",  0,  3),
+    "macbuf":     ("12×12",  3,  1),
+    "mkDelayWorker32B":  ("48×48",  0, 43),
+    "arm_core":          ("35×35",  0, 24),
+}
+
 
 RL_BLUE  = PAL.TEAL    # in-pool (trained)
 ZS_BLUE  = PAL.TERRA   # held-out (zero-shot)
@@ -51,17 +76,17 @@ inpool = {
     "raygentop": [-2.14, -1.70, -2.20],
 }
 zeroshot = {
-    "mkDelayWorker32B": [62.42, 54.88, 58.88], "custom_macbuf": [47.76, 59.53, 59.09],
-    "lightweight_cipher": [30.22, 39.73, 30.51], "reduction_layer": [28.89, 21.51, 19.49],
+    "mkDelayWorker32B": [62.42, 54.88, 58.88], "macbuf": [47.76, 59.53, 59.09],
+    "cipher": [30.22, 39.73, 30.51], "reduction_layer": [28.89, 21.51, 19.49],
     "arm_core": [6.99, 11.83, 8.52], "softmax": [5.65, 5.39, 10.77],
 }
-VOLATILE = {"or1200", "boundtop"}
+VOLATILE = set()  # highlighting removed
 
 def ordered(d):  # by median descending
     return sorted(d.items(), key=lambda kv: _median(kv[1]), reverse=True)
 
-fig, ax = plt.subplots(figsize=(3.35, 4.3))
-gap = 1.4
+fig, ax = plt.subplots(figsize=(5.5, 4.6))
+gap = 2.0
 y = 0
 rows, ticks, labels = [], [], []
 for name, vals in reversed(ordered(zeroshot)):
@@ -73,50 +98,78 @@ for name, vals in reversed(ordered(inpool)):
     rows.append((y, name, vals, RL_BLUE)); ticks.append(y); labels.append(name); y += 1
 inpool_top = y - 1
 
-for yy, name, vals, c in rows:
-    if name in VOLATILE:
-        ax.axhspan(yy - 0.45, yy + 0.45, color=HILITE, zorder=0)
-
 ax.axvline(0, color=REF_GRAY, lw=0.8, ls=(0, (4, 3)), alpha=0.7, zorder=1)
 
+raygentop_y = None
 for yy, name, vals, c in rows:
     lo, hi, med = min(vals), max(vals), _median(vals)
-    lwr = 1.2 if name in VOLATILE else 0.8
-    ax.plot([lo, hi], [yy, yy], color=c, lw=lwr, alpha=0.45, zorder=2,
+    ax.plot([lo, hi], [yy, yy], color=c, lw=0.8, alpha=0.45, zorder=2,
             solid_capstyle="round")
     ax.scatter(vals, [yy] * 3, s=11, color=c, alpha=0.85, zorder=3,
                edgecolor="white", linewidth=0.3)
     ax.plot([med, med], [yy - 0.26, yy + 0.26], color=c, lw=1.3, zorder=4,
             solid_capstyle="butt")
+    if name == "raygentop":
+        raygentop_y = yy
+
+# vertical tick at x=0 for raygentop to show its data sits left of baseline
+if raygentop_y is not None:
+    ax.plot([0, 0], [raygentop_y - 0.32, raygentop_y + 0.32],
+            color=RL_BLUE, lw=1.4, zorder=5, solid_capstyle="butt", alpha=0.7)
 
 ax.set_yticks(ticks)
-ax.set_yticklabels(labels, fontsize=7.5)
-for lab in ax.get_yticklabels():
-    if lab.get_text() in VOLATILE:
-        lab.set_fontweight("bold")
+ax.set_yticklabels([""] * len(labels))  # blank — we draw our own columns
 
-xr = 89
+# --- inline table: benchmark | grid | DSP | BRAM as separate ax.text columns ---
+# all x in axes-fraction via get_yaxis_transform() (0=left spine, 1=right spine)
+# All columns in plain data coordinates — extend xlim left to make room
+# x positions (data coords, negative = left of 0-baseline)
+X_NAME = -57   # benchmark name, left-aligned
+X_GRID = -30   # grid size, centered
+X_DSP  = -19   # DSP count, centered
+X_BRAM = -10   # BRAM count, centered
+COL_FS = 7.0
+
+for yy, name, _vals, _c in rows:
+    grid, dsp, bram = BENCH_META[name]
+    bold = name in VOLATILE
+    fw = "bold" if bold else "normal"
+    display = name.replace("mkDelayWorker32B", "mkDelayW32B").replace("mkSMAdapter4B", "mkSMAdapt4B")
+    ax.text(X_NAME, yy, display,                 fontsize=COL_FS, va="center", ha="left",   fontweight=fw, clip_on=False)
+    ax.text(X_GRID, yy, grid,                    fontsize=COL_FS, va="center", ha="center", fontweight=fw, clip_on=False)
+    ax.text(X_DSP,  yy, str(dsp)  if dsp  else "—", fontsize=COL_FS, va="center", ha="center", fontweight=fw, clip_on=False)
+    ax.text(X_BRAM, yy, str(bram) if bram else "—", fontsize=COL_FS, va="center", ha="center", fontweight=fw, clip_on=False)
+
+xr = 87
 ax.text(xr, (inpool_bot + inpool_top) / 2, "In-pool\n(trained)",
         fontsize=8, color=RL_BLUE, weight="bold", rotation=270, va="center", ha="center")
 ax.text(xr, zs_top / 2, "Held-out\n(zero-shot)",
         fontsize=8, color=ZS_BLUE, weight="bold", rotation=270, va="center", ha="center")
 
 # legend-in-place: what the glyphs mean (one row, top-left empty space)
-ax.annotate("dots: 3 seeds (7/42/123)   |: median   line: min–max",
-            xy=(0, 0), xytext=(-7, inpool_top + 0.6), fontsize=6.6,
-            color=PAL.SUBINK, va="bottom", ha="left", annotation_clip=False)
+ax.text(20, inpool_top + 0.85, "dots: 3 seeds (7/42/123)   |: median   line: min–max",
+        fontsize=6.6, color=PAL.SUBINK, va="bottom", ha="left")
 
-# punchline arrow at the volatile bars
-y_by = {name: yy for yy, name, vals, c in rows}
-ax.annotate("two benchmarks carry\nall in-pool seed spread",
-            xy=(max(inpool["boundtop"]), y_by["boundtop"]),
-            xytext=(54, y_by["mmc_core"]),
-            fontsize=7.2, color="#7a5a2a", va="center", ha="left",
-            arrowprops=dict(arrowstyle="-", color="#7a5a2a", lw=0.7, alpha=0.7,
-                            connectionstyle="arc3,rad=0.2"))
+# column headers aligned to the same x positions as the data columns
+HDR_Y = inpool_top + 0.85
+HDR_KW = dict(fontsize=6.5, color=PAL.SUBINK, fontweight="bold", va="bottom", clip_on=False)
+ax.text(X_NAME, HDR_Y, "Benchmark", ha="left",   **HDR_KW)
+ax.text(X_GRID, HDR_Y, "Grid",      ha="center", **HDR_KW)
+ax.text(X_DSP,  HDR_Y, "DSP",       ha="center", **HDR_KW)
+ax.text(X_BRAM, HDR_Y, "BRAM",      ha="center", **HDR_KW)
 
-ax.set_xlim(-8, 94)
-ax.set_ylim(-0.8, inpool_top + 1.4)
+# line under column headers — spans full table width (X_NAME to right edge)
+LINE_Y = inpool_top + 0.55
+ax.plot([X_NAME, 87], [LINE_Y, LINE_Y], color=PAL.SUBINK, lw=0.5, alpha=0.5,
+        clip_on=False, transform=ax.transData)
+
+# line between in-pool and held-out sections
+sep_y = (inpool_bot + zs_top) / 2
+ax.axhline(sep_y, color=PAL.SUBINK, lw=0.5, alpha=0.4, ls=(0, (4, 3)), clip_on=False)
+
+
+ax.set_xlim(-55, 94)
+ax.set_ylim(-0.8, inpool_top + 1.8)
 ax.set_xlabel("ADP reduction vs. baseline (%), per seed", fontsize=8.3)
 ax.set_xticks([0, 20, 40, 60, 80])
 ax.tick_params(axis="x", labelsize=8)
@@ -125,7 +178,7 @@ ax.spines["right"].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.tick_params(axis="y", length=0)
 
-fig.tight_layout(pad=0.3)
+fig.subplots_adjust(left=0.04, right=0.92, top=0.93, bottom=0.09)
 out = "paper/fig_seed_variance.pdf"
 fig.savefig(out, bbox_inches="tight")
 print("wrote", out)
