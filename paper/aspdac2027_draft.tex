@@ -28,7 +28,7 @@ zero-shot to circuits never seen in training.
 Under a controlled comparison against a GA sharing the same oracle,
 metric, and baseline, zero-shot delivers an immediate positive result
 in one call while the GA requires 768 VTR evaluations and ${\sim}$6.6\,h
---- 50 generations spent stagnating after its best was already found.
+--- with 50 generations spent stagnating after its best was already found.
 Jointly trained, the policy achieves 27.35\% aggregate in-pool ADP
 reduction (three seeds); applied zero-shot to six held-out circuits ---
 including fabrics up to $3.4\times$ the training area --- every result
@@ -45,7 +45,7 @@ Embedding a small reconfigurable fabric in an ASIC --- an eFPGA ---
 lets a fixed design adapt after fabrication: acceleration, protocol
 updates, IP security, and extended product life managed through the
 bitstream rather than a chip respin~\cite{golds,alice}.
-A generic FPGA is over-provisioned for any single application ---
+A generic FPGA is over-provisioned for any single application: it contains
 extra routing, DSP columns, and BRAMs the deployed netlist never fully uses.
 A custom eFPGA fabric, sized for one specific netlist, can recover much of
 that overhead. The product of routing area, critical-path delay, and dynamic
@@ -383,7 +383,7 @@ continues to 14.82\% at episode~1{,}128 (${\sim}$8\,h).
 
 The timing exposes a structural difference: the GA's best appeared at
 generation~46 and never improved; the remaining 50 generations were spent
-on a stagnated population. Per-generation averages confirm it --- the typical
+on a stagnated population. Per-generation averages confirm it: the typical
 individual is worse than baseline in \emph{every} generation; the GA carries
 forward a lucky draw but never updates its sampling distribution. Gradient
 updates do exactly this: the fraction of RL episodes beating baseline rises
@@ -457,8 +457,8 @@ Two (\texttt{softmax}, \texttt{reduction\_layer}) were in the sizing universe
 but never sampled; the other four were outside the universe entirely, a
 strictly harder test. Four of the six are larger than anything in the training
 pool (up to $2{,}304$ tiles vs.\ $676$), making this size extrapolation, not
-interpolation. Every benchmark is positive under every seed --- no sign flips
---- and every per-seed range is narrow ($\le12$ points), far from the
+interpolation. Every benchmark is positive under every seed (no sign flips),
+and every per-seed range is narrow ($\le12$ points), far from the
 \texttt{or1200}/\texttt{boundtop} spread. The overall average is
 \textbf{31.23\%}.
 
