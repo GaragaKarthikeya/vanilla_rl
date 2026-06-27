@@ -1,0 +1,4 @@
+\subsection{Custom eFPGA Layout Design}
+drop the tailoring word, we are not weavers, stop using the word custom so many times
+this "not directly comparable to
+our three-term ADP (Section~\ref{sec:intro}). " is unnecessary to add try something elsewhere
