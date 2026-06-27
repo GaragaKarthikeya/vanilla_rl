@@ -51,9 +51,9 @@
 \citation{vtr8}
 \citation{koios}
 \citation{golds}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces System overview: a netlist becomes a fixed-schema graph (Panel A), encoded jointly with the occupancy grid by a fixed-weight GCN+CNN policy that emits aspect ratio and block coordinates under action masking (Panel B); the policy decodes one H-block per step, updating the occupancy grid, until the full layout is placed. Our own code then renders that layout into an architecture XML, which the real, external VTR flow scores once per episode (Panel C), producing the reward (computed against the traditional baseline) that updates the policy (training only). The same trained weights accept any netlist that fits within the fixed-capacity superset, including ones never seen during training (dashed path, bottom-left): this is the zero-shot path evaluated in Section 5.3.}}{3}{figure.caption.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces System overview of the RL-based fabric layout search. Panel A encodes the input netlist and grid. Panel B rollouts the placement sequentially, positioning one H-block per step under action masking. Panel C uses Jinja2 to render the final placement into a VTR architecture XML for verification and reward computation. The dashed line (bottom-left) denotes the zero-shot path where unseen netlists bypass training and are directly evaluated by the fixed policy.}}{3}{figure.caption.3}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:architecture}{{1}{3}{System overview: a netlist becomes a fixed-schema graph (Panel A), encoded jointly with the occupancy grid by a fixed-weight GCN+CNN policy that emits aspect ratio and block coordinates under action masking (Panel B); the policy decodes one H-block per step, updating the occupancy grid, until the full layout is placed. Our own code then renders that layout into an architecture XML, which the real, external VTR flow scores once per episode (Panel C), producing the reward (computed against the traditional baseline) that updates the policy (training only). The same trained weights accept any netlist that fits within the fixed-capacity superset, including ones never seen during training (dashed path, bottom-left): this is the zero-shot path evaluated in Section 5.3}{figure.caption.3}{}}
+\newlabel{fig:architecture}{{1}{3}{System overview of the RL-based fabric layout search. Panel A encodes the input netlist and grid. Panel B rollouts the placement sequentially, positioning one H-block per step under action masking. Panel C uses Jinja2 to render the final placement into a VTR architecture XML for verification and reward computation. The dashed line (bottom-left) denotes the zero-shot path where unseen netlists bypass training and are directly evaluated by the fixed policy}{figure.caption.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{3}{section.4}\protected@file@percent }
 \newlabel{sec:setup}{{4}{3}{Experimental Setup}{section.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Evaluation Oracle}{3}{subsection.4.1}\protected@file@percent }
@@ -66,6 +66,8 @@
 \newlabel{sec:results}{{5}{3}{Results}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}In-Pool Performance}{3}{subsection.5.1}\protected@file@percent }
 \newlabel{sec:results-inpool}{{5.1}{3}{In-Pool Performance}{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GA Comparison}{3}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:results-ga}{{5.2}{3}{GA Comparison}{subsection.5.2}{}}
 \citation{nsgaii}
 \bibstyle{ACM-Reference-Format}
 \bibdata{references}
@@ -81,17 +83,15 @@
 \bibcite{rlplace}{{10}{2022}{{Elgammal et~al\mbox  {.}}}{{}}}
 \bibcite{alphachip_addendum}{{11}{2024}{{Goldie et~al\mbox  {.}}}{{}}}
 \bibcite{transplace}{{12}{2025}{{Hou et~al\mbox  {.}}}{{}}}
+\bibcite{fasttuner}{{13}{2024}{{Hsiao et~al\mbox  {.}}}{{}}}
+\bibcite{maskableppo}{{14}{2022}{{Huang and Onta{\~n}{\'o}n}}{{}}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Per-seed ADP reduction for all 17 benchmarks (11 in-pool, 6 held-out zero-shot).}}{4}{figure.caption.4}\protected@file@percent }
 \newlabel{fig:seedvar}{{2}{4}{Per-seed ADP reduction for all 17 benchmarks (11 in-pool, 6 held-out zero-shot)}{figure.caption.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GA Comparison}{4}{subsection.5.2}\protected@file@percent }
-\newlabel{sec:results-ga}{{5.2}{4}{GA Comparison}{subsection.5.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Zero-Shot Generalization}{4}{subsection.5.3}\protected@file@percent }
 \newlabel{sec:results-zeroshot}{{5.3}{4}{Zero-Shot Generalization}{subsection.5.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{4}{section.6}\protected@file@percent }
 \newlabel{sec:conclusion}{{6}{4}{Conclusion}{section.6}{}}
 \@writefile{toc}{\contentsline {section}{References}{4}{section*.7}\protected@file@percent }
-\bibcite{fasttuner}{{13}{2024}{{Hsiao et~al\mbox  {.}}}{{}}}
-\bibcite{maskableppo}{{14}{2022}{{Huang and Onta{\~n}{\'o}n}}{{}}}
 \bibcite{shell}{{15}{2023}{{Kamali et~al\mbox  {.}}}{{}}}
 \bibcite{chipformer}{{16}{2023}{{Lai et~al\mbox  {.}}}{{}}}
 \bibcite{maskplace}{{17}{2022}{{Lai et~al\mbox  {.}}}{{}}}

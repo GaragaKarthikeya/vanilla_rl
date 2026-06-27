@@ -64,7 +64,7 @@
 \resizebox{\textwidth}{!}{%
 \fi
 \begin{tikzpicture}[
-  font=\sffamily\small,
+  font=\sffamily\large,
   node distance=8mm,
   box/.style={draw, rounded corners=3pt, minimum height=12mm, minimum width=28mm,
               align=center, line width=0.7pt, text=pINK, inner sep=6pt},
@@ -80,10 +80,10 @@
                  inner sep=0pt, rounded corners=1.5pt, dash pattern=on 2pt off 1.5pt},
   sliver_ep/.style={draw=pTERRA, fill=pTERRA!10, line width=0.7pt, minimum width=5mm,
                     inner sep=0pt, rounded corners=1.5pt, dash pattern=on 2pt off 1.5pt},
-  lbl/.style={text=pSUBINK, font=\sffamily\scriptsize},
-  tinylbl/.style={text=pSUBINK, font=\sffamily\scriptsize},
-  callout/.style={text=pSUBINK, font=\sffamily\scriptsize, align=left},
-  panel_lbl/.style={text=pINK, font=\sffamily\small\bfseries},
+  lbl/.style={text=pSUBINK, font=\sffamily\small},
+  tinylbl/.style={text=pSUBINK, font=\sffamily\small},
+  callout/.style={text=pSUBINK, font=\sffamily\small, align=left},
+  panel_lbl/.style={text=pINK, font=\sffamily\large\bfseries},
   arr/.style={-{Triangle[length=2.5mm,width=2mm]}, line width=0.8pt, draw=pINK, rounded corners=3pt},
   loopback/.style={arr, draw=pTERRA},
   leader/.style={-{Triangle[length=2mm,width=1.5mm]}, line width=0.5pt, draw=pSUBINK, dash pattern=on 1.5pt off 1.5pt},
@@ -106,9 +106,9 @@
 % PANEL A: INPUT ENCODING  (left column, two rows)
 % =========================================================
 % --- Top row: netlist pipeline ---
-\node[episodic, minimum width=26mm] (netlist) at (-12mm,\rowtop) {Netlist\\\scriptsize(Verilog)};
-\node[episodic, minimum width=26mm, right=11mm of netlist] (graph) {Netlist graph\\\scriptsize H-block nodes\\\scriptsize + fabric node};
-\node[episodic, minimum width=26mm, right=11mm of graph] (pad) {Pad to\\fixed capacity\\\scriptsize max.\ nodes/edges};
+\node[episodic, minimum width=26mm] (netlist) at (-12mm,\rowtop) {Netlist\\[-0.3ex]\small(Verilog)};
+\node[episodic, minimum width=26mm, right=11mm of netlist] (graph) {Netlist graph\\[-0.3ex]\small H-block nodes+fabric node};
+\node[episodic, minimum width=26mm, right=11mm of graph] (pad) {Pad to\\[-0.3ex]fixed capacity\\[-0.3ex]\small max.\ nodes/edges};
 \node[tinylbl, below=1mm of pad] (pad_tiny) {once per episode};
 
 \node[callout, above=4mm of graph] (feat) {\texttt{[is\_dsp, is\_bram, is\_fabric, net\_count]}};
@@ -118,19 +118,19 @@
 \coordinate (occ_pos) at (graph |- {(0,-46mm)});
 \node[minimum width=1cm, minimum height=1.6cm] (occ_anchor) at (occ_pos) {};
 \pic (occ) at ($(occ_anchor.center) + (-0.6cm,-0.35cm)$) {cuboid={width=0.5, height=2.0, depth=2.0, fill=pTERRA!12, draw=pTERRA}};
-\node[text=pINK, font=\sffamily\small\bfseries, align=center] (occ_lbl) at ($(occ_pos)+(0,-20mm)$)
-      {Occupancy grid\\[-0.2ex]\normalfont\scriptsize current placement state, per step\\[-0.2ex]\normalfont\scriptsize once per step};
+\node[text=pINK, font=\sffamily\large\bfseries, align=center] (occ_lbl) at ($(occ_pos)+(0,-20mm)$)
+      {Occupancy grid\\[-0.3ex]\normalfont\small current placement state, per step\\[-0.3ex]\normalfont\small once per step};
 \node[minimum height=3mm, below=0mm of occ_lbl] (panelA_pad) {};
 
 % --- Zero-shot unseen netlist, below netlist ---
-\node[zsdata, minimum width=26mm] (unseen) at (netlist |- {(0,-32mm)}) {Unseen netlist\\\scriptsize never trained on};
+\node[zsdata, minimum width=26mm] (unseen) at (netlist |- {(0,-32mm)}) {Unseen netlist\\[-0.3ex]\small never trained on};
 \draw[zsarrow] (unseen.north) -- (netlist.south);
 \node[lbl, below=2mm of unseen, text width=30mm, align=center] (unseen_lbl)
-      {same checkpoint,\\[-0.5ex]single rollout $\to$ \S 5.3};
+      {same checkpoint,\\[-0.3ex]single rollout $\to$ \S 5.3};
 
 % --- valid(w,h): per-episode data, aligned under graph column ---
 \node[episodic, text width=26mm, align=center] (validwh) at (graph |- {(0,-90mm)})
-      {valid $(w,h)$\\\scriptsize norm.\ footprint};
+      {valid $(w,h)$\\[-0.3ex]\small norm.\ footprint};
 % Invisible node to give Panel A a small right margin past validwh.
 \node[minimum width=2mm, right=2mm of validwh] (validwh_pad) {};
 
@@ -145,9 +145,9 @@
 
 % --- GCN encoder (top row) ---
 \node[fixed, minimum width=30mm, minimum height=26mm] (gcn_box) at (\enccol,\rowtop) {};
-\node[text=pINK, font=\sffamily\small\bfseries] (gcn_lbl) at ($(gcn_box.north)+(0,5mm)$) {GCN encoder};
-\node[text=pSUBINK, font=\sffamily\scriptsize, align=center] (gcn_sub) at ($(gcn_box.south)+(0,-5mm)$)
-      {2$\times$ GCNConv (64)\\[-0.5ex]$\to$ node embeddings};
+\node[text=pINK, font=\sffamily\large\bfseries] (gcn_lbl) at ($(gcn_box.north)+(0,5mm)$) {GCN encoder};
+\node[text=pSUBINK, font=\sffamily\small, align=center] (gcn_sub) at ($(gcn_box.south)+(0,-5mm)$)
+      {2$\times$ GCNConv (64)\\[-0.3ex]$\to$ node embeddings};
 \begin{scope}[shift={($(gcn_box.center)+(-1.5mm, 0.5mm)$)}]
   \coordinate (n1) at (-7mm,-4mm); \coordinate (n2) at (-3mm,5mm);
   \coordinate (n3) at (6mm,6mm);   \coordinate (n4) at (7mm,-5mm);
@@ -159,11 +159,11 @@
 
 % --- CNN encoder (bottom row, SAME column as GCN: vertically stacked) ---
 \node[fixed, minimum width=30mm, minimum height=26mm] (cnn_box) at (\enccol,\rowbot) {};
-\node[text=pINK, font=\sffamily\small\bfseries] (cnn_lbl) at ($(cnn_box.north)+(0,5mm)$) {CNN encoder};
-\node[text=pSUBINK, font=\sffamily\scriptsize, align=center] (cnn_sub) at ($(cnn_box.south)+(0,-5mm)$)
-      {4-channel grid\\[-0.5ex]AdaptiveAvgPool $\to$ Linear};
+\node[text=pINK, font=\sffamily\large\bfseries] (cnn_lbl) at ($(cnn_box.north)+(0,5mm)$) {CNN encoder};
+\node[text=pSUBINK, font=\sffamily\small, align=center] (cnn_sub) at ($(cnn_box.south)+(0,-5mm)$)
+      {4-channel grid\\[-0.3ex]AdaptiveAvgPool $\to$ Linear};
 \begin{scope}[shift={($(cnn_box.center)+(-0.35,-0.05)$)}]
-  \pic (cnn1) at (-1.0,0)  {cuboid={width=0.6, height=1.3, depth=1.2, fill=pTEAL!18, draw=pTEAL}};
+  \pic (cnn1) at (-1.0,-0.21)  {cuboid={width=0.6, height=1.3, depth=1.2, fill=pTEAL!18, draw=pTEAL}};
   \pic (cnn2) at (0.7,0)   {cuboid={width=0.8, height=0.75, depth=0.6, fill=pTEAL!18, draw=pTEAL}};
   
   \coordinate (s1) at (-0.16, 0.35);
@@ -211,30 +211,35 @@
 
 % --- GCN fork: split node then route to pool & curr ---
 \coordinate (gcn_split) at ($(gcn_box.east)+(8mm,0)$);
+
 \draw[pINK, line width=0.8pt] (gcn_box.east) -- (gcn_split);
 \draw[pINK, line width=0.8pt, rounded corners=3pt] (gcn_split) |- ($(emb_pool.west)+(-12mm,0)$) -- (emb_pool.west);
 \draw[arr] ($(emb_pool.west)+(-2pt,0)$) -- (emb_pool.west);
-\node[lbl, align=right, anchor=south east] (pool_lbl)
-      at ($(emb_pool.west) + (-2mm, 0)$) {mean-pooled\\[-0.5ex]whole-netlist\\[-0.5ex]\scriptsize 64-d};
+\node[lbl, align=center, anchor=south] (pool_lbl)
+      at ($(emb_pool.north) + (0, 0.5mm)$) {mean-pooled\\[-0.3ex]whole-netlist\\[-0.3ex]\small 64-d};
+
 \draw[pINK, line width=0.8pt, rounded corners=3pt] (gcn_split) |- ($(emb_curr.west)+(-12mm,0)$) -- (emb_curr.west);
 \draw[arr] ($(emb_curr.west)+(-2pt,0)$) -- (emb_curr.west);
-\node[lbl, align=right, anchor=south east] (curr_lbl)
-      at ($(emb_curr.west) + (-2mm, 0)$) {current\\[-0.5ex]H-block\\[-0.5ex]\scriptsize 64-d};
+\node[lbl, align=center, anchor=north] (curr_lbl)
+      at ($(emb_curr.south) + (0, -0.5mm)$) {current\\[-0.3ex]H-block\\[-0.3ex]\small 64-d};
 
 % --- CNN output: clean horizontal into emb_cnn (same row) ---
-\draw[arr] (cnn_box.east) -- node[midway, above=0.8mm, lbl, align=center]
-      {CNN output\\[-0.5ex]\scriptsize 64-d} (emb_cnn.west);
+\draw[arr] (cnn_box.east) -- (emb_cnn.west);
+\node[lbl, align=center, anchor=north] (cnn_lbl)
+      at ($(emb_cnn.south) + (0, -0.5mm)$) {CNN output\\[-0.3ex]\small 64-d};
 
 % --- valid(w,h) -> emb_wh : per-episode footprint crosses into the concat ---
-\draw[arr] (validwh.east) -- node[pos=0.85, above=0.8mm, lbl] {\scriptsize 2-d} (emb_wh.west);
+\draw[arr] (validwh.east) -- (emb_wh.west);
+\node[lbl, align=center, anchor=north] (wh_lbl)
+      at ($(emb_wh.south) + (0, -0.5mm)$) {\small 2-d};
 
 % =========================================================
 % CONCATENATION SLIVER
 % =========================================================
 \def\concatcol{200mm}
 \node[sliver, fill=pTEAL!22, minimum height=122mm] (concat) at (\concatcol,-40mm) {};
-\node[text=pINK, font=\sffamily\small\bfseries, align=center] (concat_lbl) at ($(concat.north)+(0,7mm)$)
-      {Concatenated\\[-0.5ex]\normalfont\scriptsize (64+64+64+2) = \textbf{194-d}};
+\node[text=pINK, font=\sffamily\large\bfseries, align=center] (concat_lbl) at ($(concat.north)+(0,7mm)$)
+      {Concatenation\\[-0.3ex]\normalfont\small \textbf{194-d}};
 
 \draw[arr] (emb_pool.east) -- (emb_pool.east -| concat.west);
 \draw[arr] (emb_curr.east) -- (emb_curr.east -| concat.west);
@@ -248,10 +253,10 @@
 \def\fusecol{234mm}
 % Shorter sliver than concat (reduction); same thin-bar style.
 \node[sliver, fill=pTEAL!22, minimum height=66mm] (fuse) at (\fusecol,-40mm) {};
-\node[text=pINK, font=\sffamily\small\bfseries, align=center] (fuse_lbl) at ($(fuse.north)+(0,7mm)$)
-      {Fuse $\to$ \textbf{128-d}};
-\node[text=pSUBINK, font=\sffamily\scriptsize, align=center] (fuse_sub) at ($(fuse.south)+(0,-3.5mm)$)
-      {Linear(194 $\to$ 128)\\[-0.5ex]+ ReLU};
+\node[text=pINK, font=\sffamily\large\bfseries, align=center] (fuse_lbl) at ($(fuse.north)+(0,7mm)$)
+      {Fuse \& Project\\[-0.3ex]\normalfont\small \textbf{128-d}};
+\node[text=pSUBINK, font=\sffamily\small, align=center] (fuse_sub) at ($(fuse.south)+(0,-3.5mm)$)
+      {Linear + ReLU};
 
 % dense fan: concat right edge -> fuse left edge (the reduction)
 \begin{scope}[on background layer]
@@ -275,12 +280,12 @@
 % =========================================================
 % PPO AGENT
 % =========================================================
-\node[fixed, minimum height=11mm, minimum width=24mm] (actor)  at ($(fuse.east)+(30mm,8mm)$)  {Actor\\\scriptsize (masked action)};
-\node[fixed, minimum height=11mm, minimum width=24mm] (critic) at ($(fuse.east)+(30mm,-12mm)$) {Critic\\\scriptsize (value)};
+\node[fixed, minimum height=11mm, minimum width=24mm] (actor)  at ($(fuse.east)+(30mm,8mm)$)  {Actor\\[-0.3ex]\small (masked action)};
+\node[fixed, minimum height=11mm, minimum width=24mm] (critic) at ($(fuse.east)+(30mm,-12mm)$) {Critic\\[-0.3ex]\small (value)};
 \node[draw=pTEAL, dashed, rounded corners=5pt, fit=(actor)(critic), inner sep=7pt] (ppo_sys) {};
-\node[text=pINK, font=\sffamily\small\bfseries] (ppo_lbl) at ($(ppo_sys.north)+(0,5mm)$) {PPO Agent};
-\node[lbl, align=center, text width=32mm] (mask_lbl) at ($(ppo_sys.south)+(0,-5mm)$)
-      {mask: valid coords, active benchmark\\loop: repeats per H-block};
+\node[text=pINK, font=\sffamily\large\bfseries] (ppo_lbl) at ($(ppo_sys.north)+(0,5mm)$) {PPO Agent};
+\node[lbl, align=center, text width=38mm] (mask_lbl) at ($(ppo_sys.south)+(0,-5mm)$)
+      {mask: valid coords,\\[-0.3ex]active benchmark\\[-0.3ex]loop: repeats per H-block};
 
 % fuse -> ppo agent container
 \draw[arr] (fuse.east) -- (fuse.east -| ppo_sys.west);
@@ -290,14 +295,14 @@
 % =========================================================
 % PANEL C: EVALUATION ORACLE
 % =========================================================
-\node[ourcode, minimum width=30mm, right=30mm of actor] (bake) {Render layout\\\scriptsize Jinja2 $\to$ arch.\ XML};
+\node[ourcode, minimum width=30mm, right=30mm of actor] (bake) {Render layout\\[-0.3ex]\small Jinja2 $\to$ arch.\ XML};
 \node[oracle, minimum width=30mm, right=12mm of bake] (vtr)
-      {VTR oracle\\\scriptsize synth/pack/place/route\\\scriptsize one call per episode};
-\node[oracle, minimum width=30mm, below=12mm of vtr] (reward) {ADP $\to$ reward\\\scriptsize Eq. 3};
+      {VTR oracle\\[-0.3ex]\small synth/pack/place/route\\[-0.3ex]\small one call per episode};
+\node[oracle, minimum width=30mm, below=12mm of vtr] (reward) {ADP $\to$ reward\\[-0.3ex]\small Eq. 3};
 \node[ourcode, minimum width=30mm, below=12mm of bake] (baseline)
-      {Baseline metrics\\\scriptsize Area$_0$,Delay$_0$,Power$_0$};
+      {Baseline metrics\\[-0.3ex]\small Area$_0$,Delay$_0$,Power$_0$};
 
-\draw[arr] (actor.east) -- node[midway, above=1mm, lbl, align=center] {placed coords\\[-0.5ex]\scriptsize per H-block} (bake.west);
+\draw[arr] (actor.east) -- (bake.west);
 \draw[arr] (bake) -- (vtr);
 \draw[arr] (vtr) -- (reward);
 \draw[arr] (baseline) -- (reward);
@@ -322,13 +327,13 @@
 \coordinate (loopback_y) at (0,-120mm);
 \draw[loopback] (panelC.south) -- (panelC.south |- loopback_y)
     -| node[pos=0.20, above=1.5mm, lbl, text width=46mm, align=center]
-       {PPO gradient (training only)\\[-0.5ex]\scriptsize updates GCN, CNN, Fuse, Actor, Critic}
+       {PPO gradient (training only)\\[-0.3ex]\small updates GCN, CNN, Fuse, Actor, Critic}
        (panelB.south);
 
 % =========================================================
 % LEGEND
 % =========================================================
-\node[legendkey, fill=pTERRA!12, draw=pTERRA] (lg1) at ($(current bounding box.south)+(-118mm,-16mm)$) {};
+\node[legendkey, fill=pTERRA!12, draw=pTERRA] (lg1) at ($(current bounding box.south)+(-162mm,-16mm)$) {};
 \node[lbl, anchor=west, right=2.5mm of lg1] (lg1t) {per-episode data};
 \node[legendkey, fill=pTEAL!18, draw=pTEAL, right=8mm of lg1t] (lg2) {};
 \node[lbl, anchor=west, right=2.5mm of lg2] (lg2t) {fixed policy module};
@@ -346,17 +351,7 @@
 \end{tikzpicture}%
 \ifnum\figisstandalone=1\else
 }
-\caption{System overview: a netlist becomes a fixed-schema graph (Panel A),
-encoded jointly with the occupancy grid by a fixed-weight GCN+CNN policy that
-emits aspect ratio and block coordinates under action masking (Panel B); the
-policy decodes one H-block per step, updating the occupancy grid, until the
-full layout is placed. Our own code then renders that layout into an
-architecture XML, which the real, external VTR flow scores once per episode
-(Panel C), producing the reward (computed against the traditional baseline)
-that updates the policy (training only). The same trained weights accept any
-netlist that fits within the fixed-capacity superset, including ones never
-seen during training (dashed path, bottom-left): this is the zero-shot path
-evaluated in Section 5.3.}
+\caption{System overview of the RL-based fabric layout search. Panel A encodes the input netlist and grid. Panel B rollouts the placement sequentially, positioning one H-block per step under action masking. Panel C uses Jinja2 to render the final placement into a VTR architecture XML for verification and reward computation. The dashed line (bottom-left) denotes the zero-shot path where unseen netlists bypass training and are directly evaluated by the fixed policy.}
 \label{fig:architecture}
 \end{figure*}
 \fi

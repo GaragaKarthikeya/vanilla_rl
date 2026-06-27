@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.6.24)  27 JUN 2026 21:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.6.24)  27 JUN 2026 21:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1287,33 +1287,31 @@ share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/usr/share/
 texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}] (./fig_architecture.tex
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 348.
+(Font)              scaled to size 9.0pt on input line 353.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 348.
+(Font)              scaled to size 10.0pt on input line 353.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 348.
+(Font)              scaled to size 8.0pt on input line 353.
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 6.0pt on input line 348.
+(Font)              scaled to size 8.0pt on input line 353.
 
 Missing character: There is no ) in font nullfont!
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 348.
+(Font)              scaled to size 10.0pt on input line 353.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 348.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 348.
+(Font)              scaled to size 8.0pt on input line 353.
 Missing character: There is no ) in font nullfont!
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.5pt on input line 348.
+(Font)              scaled to size 8.0pt on input line 353.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 6.2pt on input line 353.
 Missing character: There is no ) in font nullfont!
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 348.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.2pt on input line 348.
+(Font)              scaled to size 10.0pt on input line 353.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 6.0pt on input line 348.
+(Font)              scaled to size 8.0pt on input line 353.
 
-Class acmart Warning: A possible image without description on input line 361.
+Class acmart Warning: A possible image without description on input line 356.
 
 )
 Underfull \vbox (badness 1902) has occurred while \output is active []
@@ -1335,10 +1333,7 @@ Package pdftex.def Info: fig_seed_variance.pdf  used on input line 342.
 
 Class acmart Warning: A possible image without description on input line 345.
 
-
-Underfull \vbox (badness 4378) has occurred while \output is active []
-
- [3.3]
+[3.3]
 <fig_layout.pdf, id=213, 502.43367pt x 290.41449pt>
 File: fig_layout.pdf Graphic file (type pdf)
 <use fig_layout.pdf>
@@ -1355,6 +1350,9 @@ Class acmart Warning: A possible image without description on input line 404.
 (./aspdac2027_draft.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 7.0pt on input line 51.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [4.4 <./fig_seed_variance.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1405,11 +1403,11 @@ Package rerunfilecheck Info: File `aspdac2027_draft.out' has not changed.
 (rerunfilecheck)             Checksum: 251CC8E51D63BA16F53E9F7AB54EF383;3577.
  ) 
 Here is how much of TeX's memory you used:
- 32792 strings out of 474222
- 594123 string characters out of 5748733
+ 32798 strings out of 474222
+ 594218 string characters out of 5748733
  1983975 words of memory out of 5000000
- 53736 multiletter control sequences out of 15000+600000
- 752266 words of font info for 438 fonts, out of 8000000 for 9000
+ 53742 multiletter control sequences out of 15000+600000
+ 747597 words of font info for 438 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  90i,12n,131p,1013b,1418s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4
@@ -1425,7 +1423,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on aspdac2027_draft.pdf (5 pages, 665325 bytes).
+Output written on aspdac2027_draft.pdf (5 pages, 663943 bytes).
 PDF statistics:
  368 PDF objects out of 1000 (max. 8388607)
  299 compressed objects within 3 object streams
