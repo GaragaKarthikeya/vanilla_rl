@@ -43,45 +43,45 @@ Warning--empty address in alice
 Warning--empty publisher in gamora
 Warning--empty address in gamora
 Warning--page numbers missing in both pages and numpages fields in gamora
-You've used 22 entries,
+You've used 21 entries,
             6273 wiz_defined-function locations,
-            1652 strings with 24443 characters,
-and the built_in function-call counts, 29964 in all, are:
-= -- 3480
-> -- 1386
+            1645 strings with 23966 characters,
+and the built_in function-call counts, 27903 in all, are:
+= -- 3223
+> -- 1219
 < -- 0
-+ -- 493
-- -- 487
-* -- 2451
-:= -- 3083
-add.period$ -- 109
-call.type$ -- 22
-change.case$ -- 236
-chr.to.int$ -- 22
-cite$ -- 53
-duplicate$ -- 2465
-empty$ -- 1721
-format.name$ -- 571
-if$ -- 7091
++ -- 432
+- -- 427
+* -- 2228
+:= -- 2825
+add.period$ -- 104
+call.type$ -- 21
+change.case$ -- 212
+chr.to.int$ -- 21
+cite$ -- 52
+duplicate$ -- 2363
+empty$ -- 1649
+format.name$ -- 507
+if$ -- 6622
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 103
-newline$ -- 216
-num.names$ -- 154
-pop$ -- 1113
+missing$ -- 99
+newline$ -- 207
+num.names$ -- 147
+pop$ -- 1064
 preamble$ -- 1
-purify$ -- 412
+purify$ -- 380
 quote$ -- 0
-skip$ -- 901
+skip$ -- 866
 stack$ -- 0
-substring$ -- 1970
-swap$ -- 237
+substring$ -- 1864
+swap$ -- 225
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 562
+type$ -- 546
 warning$ -- 31
-while$ -- 129
+while$ -- 123
 width$ -- 0
-write$ -- 462
+write$ -- 442
 (There were 31 warnings)

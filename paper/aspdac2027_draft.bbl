@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{22}
+\begin{thebibliography}{21}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -175,27 +175,6 @@
   \bibinfo{number}{8} (\bibinfo{year}{2022}), \bibinfo{pages}{2532--2545}.
 \newblock
 \href{https://doi.org/10.1109/TCAD.2021.3109863}{doi:\nolinkurl{10.1109/TCAD.2021.3109863}}
-
-
-\bibitem[Goldie et~al\mbox{.}(2024)]%
-        {alphachip_addendum}
-\bibfield{author}{\bibinfo{person}{Anna Goldie}, \bibinfo{person}{Azalia
-  Mirhoseini}, \bibinfo{person}{Mustafa Yazgan}, \bibinfo{person}{Joe~Wenjie
-  Jiang}, \bibinfo{person}{Ebrahim Songhori}, \bibinfo{person}{Shen Wang},
-  \bibinfo{person}{Young-Joon Lee}, \bibinfo{person}{Eric Johnson},
-  \bibinfo{person}{Omkar Pathak}, \bibinfo{person}{Azade Nova},
-  \bibinfo{person}{Jiwoo Pak}, \bibinfo{person}{Andy Tong},
-  \bibinfo{person}{Kavya Srinivasa}, \bibinfo{person}{William Hang},
-  \bibinfo{person}{Emre Tuncer}, \bibinfo{person}{Quoc~V. Le},
-  \bibinfo{person}{James Laudon}, \bibinfo{person}{Richard Ho},
-  \bibinfo{person}{Roger Carpenter}, {and} \bibinfo{person}{Jeff Dean}.}
-  \bibinfo{year}{2024}\natexlab{}.
-\newblock \showarticletitle{Addendum: A graph placement methodology for fast
-  chip design}.
-\newblock \bibinfo{journal}{\emph{Nature}} \bibinfo{volume}{634},
-  \bibinfo{number}{8034} (\bibinfo{year}{2024}), \bibinfo{pages}{E10--E11}.
-\newblock
-\href{https://doi.org/10.1038/s41586-024-08032-5}{doi:\nolinkurl{10.1038/s41586-024-08032-5}}
 
 
 \bibitem[Hou et~al\mbox{.}(2025)]%

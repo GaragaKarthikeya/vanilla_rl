@@ -2,25 +2,22 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\citation{golds,alice}
 \citation{golds,nsgaii}
 \citation{golds}
 \citation{golds}
 \citation{nsgaii}
+\citation{rlplace,vprgym}
 \citation{alice,arianna}
 \citation{golds}
 \citation{shell}
 \citation{nuredact}
 \citation{golds}
 \citation{nsgaii}
-\citation{alphachip,alphachip_addendum}
+\citation{nsgaii}
+\citation{alphachip}
 \citation{maskplace}
 \citation{deeppr}
 \citation{chipformer}
-\citation{rlplace}
-\citation{vprgym}
-\citation{fasttuner}
-\citation{transplace}
 \@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
 \newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
@@ -28,6 +25,10 @@
 \newlabel{sec:related}{{2}{1}{Background and Related Work}{section.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Per-Design eFPGA Layout}{1}{subsection.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Learned Policies for Physical Design}{1}{subsection.2.2}\protected@file@percent }
+\citation{rlplace}
+\citation{vprgym}
+\citation{fasttuner}
+\citation{transplace}
 \citation{vtr9}
 \citation{parmys}
 \citation{vpr97}
@@ -42,32 +43,28 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}RL Formulation}{2}{subsection.3.2}\protected@file@percent }
 \newlabel{sec:rl}{{3.2}{2}{RL Formulation}{subsection.3.2}{}}
 \newlabel{eq:reward}{{3}{2}{RL Formulation}{equation.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}GCN Feature Extractor}{2}{subsection.3.3}\protected@file@percent }
-\newlabel{sec:gnn}{{3.3}{2}{GCN Feature Extractor}{subsection.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Fixed-Capacity Sizing and Action Masking}{2}{subsection.3.4}\protected@file@percent }
-\newlabel{sec:capacity}{{3.4}{2}{Fixed-Capacity Sizing and Action Masking}{subsection.3.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Training Setup}{2}{subsection.3.5}\protected@file@percent }
-\newlabel{sec:training}{{3.5}{2}{Training Setup}{subsection.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Multi-Modal Feature Extractor}{2}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:gnn}{{3.3}{2}{Multi-Modal Feature Extractor}{subsection.3.3}{}}
 \citation{vtr8}
 \citation{koios}
 \citation{golds}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces System overview of the RL-based fabric layout search. Panel A encodes the input netlist and grid. Panel B rollouts the placement sequentially, positioning one H-block per step under action masking. Panel C uses Jinja2 to render the final placement into a VTR architecture XML for verification and reward computation. The dashed line (bottom-left) denotes the zero-shot path where unseen netlists bypass training and are directly evaluated by the fixed policy.}}{3}{figure.caption.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces System overview of the RL-based fabric layout search. The left panel encodes the input netlist and grid. The center panel rolls out the placement sequentially, positioning one H-block per step under action masking. The right panel uses Jinja2 to render the final placement into a VTR architecture XML for verification and reward computation.}}{3}{figure.caption.4}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:architecture}{{1}{3}{System overview of the RL-based fabric layout search. Panel A encodes the input netlist and grid. Panel B rollouts the placement sequentially, positioning one H-block per step under action masking. Panel C uses Jinja2 to render the final placement into a VTR architecture XML for verification and reward computation. The dashed line (bottom-left) denotes the zero-shot path where unseen netlists bypass training and are directly evaluated by the fixed policy}{figure.caption.3}{}}
+\newlabel{fig:architecture}{{1}{3}{System overview of the RL-based fabric layout search. The left panel encodes the input netlist and grid. The center panel rolls out the placement sequentially, positioning one H-block per step under action masking. The right panel uses Jinja2 to render the final placement into a VTR architecture XML for verification and reward computation}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Training Setup}{3}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:training}{{3.4}{3}{Training Setup}{subsection.3.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Setup}{3}{section.4}\protected@file@percent }
 \newlabel{sec:setup}{{4}{3}{Experimental Setup}{section.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Evaluation Oracle}{3}{subsection.4.1}\protected@file@percent }
 \newlabel{sec:oracle}{{4.1}{3}{Evaluation Oracle}{subsection.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Benchmarks}{3}{subsection.4.2}\protected@file@percent }
-\newlabel{sec:benchmarks}{{4.2}{3}{Benchmarks}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Benchmark Circuits}{3}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:benchmarks}{{4.2}{3}{Benchmark Circuits}{subsection.4.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Baselines Compared}{3}{subsection.4.3}\protected@file@percent }
 \newlabel{sec:baselines-compared}{{4.3}{3}{Baselines Compared}{subsection.4.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Results}{3}{section.5}\protected@file@percent }
 \newlabel{sec:results}{{5}{3}{Results}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}In-Pool Performance}{3}{subsection.5.1}\protected@file@percent }
 \newlabel{sec:results-inpool}{{5.1}{3}{In-Pool Performance}{subsection.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GA Comparison}{3}{subsection.5.2}\protected@file@percent }
-\newlabel{sec:results-ga}{{5.2}{3}{GA Comparison}{subsection.5.2}{}}
 \citation{nsgaii}
 \bibstyle{ACM-Reference-Format}
 \bibdata{references}
@@ -81,25 +78,26 @@
 \bibcite{nuredact}{{8}{2026}{{Das et~al\mbox  {.}}}{{}}}
 \bibcite{vtr9}{{9}{2025}{{Elgammal et~al\mbox  {.}}}{{}}}
 \bibcite{rlplace}{{10}{2022}{{Elgammal et~al\mbox  {.}}}{{}}}
-\bibcite{alphachip_addendum}{{11}{2024}{{Goldie et~al\mbox  {.}}}{{}}}
-\bibcite{transplace}{{12}{2025}{{Hou et~al\mbox  {.}}}{{}}}
-\bibcite{fasttuner}{{13}{2024}{{Hsiao et~al\mbox  {.}}}{{}}}
-\bibcite{maskableppo}{{14}{2022}{{Huang and Onta{\~n}{\'o}n}}{{}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Per-seed ADP reduction for all 17 benchmarks (11 in-pool, 6 held-out zero-shot).}}{4}{figure.caption.4}\protected@file@percent }
-\newlabel{fig:seedvar}{{2}{4}{Per-seed ADP reduction for all 17 benchmarks (11 in-pool, 6 held-out zero-shot)}{figure.caption.4}{}}
+\bibcite{transplace}{{11}{2025}{{Hou et~al\mbox  {.}}}{{}}}
+\bibcite{fasttuner}{{12}{2024}{{Hsiao et~al\mbox  {.}}}{{}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Per-seed ADP reduction for all 17 benchmark circuits (11 in-pool, 6 held-out zero-shot).}}{4}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:seedvar}{{2}{4}{Per-seed ADP reduction for all 17 benchmark circuits (11 in-pool, 6 held-out zero-shot)}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GA Comparison}{4}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:results-ga}{{5.2}{4}{GA Comparison}{subsection.5.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Zero-Shot Generalization}{4}{subsection.5.3}\protected@file@percent }
 \newlabel{sec:results-zeroshot}{{5.3}{4}{Zero-Shot Generalization}{subsection.5.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{4}{section.6}\protected@file@percent }
 \newlabel{sec:conclusion}{{6}{4}{Conclusion}{section.6}{}}
-\@writefile{toc}{\contentsline {section}{References}{4}{section*.7}\protected@file@percent }
-\bibcite{shell}{{15}{2023}{{Kamali et~al\mbox  {.}}}{{}}}
-\bibcite{chipformer}{{16}{2023}{{Lai et~al\mbox  {.}}}{{}}}
-\bibcite{maskplace}{{17}{2022}{{Lai et~al\mbox  {.}}}{{}}}
-\bibcite{alphachip}{{18}{2021}{{Mirhoseini et~al\mbox  {.}}}{{}}}
-\bibcite{vtr8}{{19}{2020}{{Murray et~al\mbox  {.}}}{{}}}
-\bibcite{golds}{{20}{2024}{{Nandi et~al\mbox  {.}}}{{}}}
-\bibcite{alice}{{21}{2022}{{Tomajoli et~al\mbox  {.}}}{{}}}
-\bibcite{gamora}{{22}{2023}{{Wu et~al\mbox  {.}}}{{}}}
+\@writefile{toc}{\contentsline {section}{References}{4}{section*.8}\protected@file@percent }
+\bibcite{maskableppo}{{13}{2022}{{Huang and Onta{\~n}{\'o}n}}{{}}}
+\bibcite{shell}{{14}{2023}{{Kamali et~al\mbox  {.}}}{{}}}
+\bibcite{chipformer}{{15}{2023}{{Lai et~al\mbox  {.}}}{{}}}
+\bibcite{maskplace}{{16}{2022}{{Lai et~al\mbox  {.}}}{{}}}
+\bibcite{alphachip}{{17}{2021}{{Mirhoseini et~al\mbox  {.}}}{{}}}
+\bibcite{vtr8}{{18}{2020}{{Murray et~al\mbox  {.}}}{{}}}
+\bibcite{golds}{{19}{2024}{{Nandi et~al\mbox  {.}}}{{}}}
+\bibcite{alice}{{20}{2022}{{Tomajoli et~al\mbox  {.}}}{{}}}
+\bibcite{gamora}{{21}{2023}{{Wu et~al\mbox  {.}}}{{}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{4.185pt}
@@ -107,7 +105,7 @@
 \newlabel{tocindent3}{0pt}
 \newlabel{tocindent4}{0pt}
 \newlabel{tocindent5}{0pt}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces What the policy recovers, physically (\texttt  {softmax}, the GA comparison benchmark). Both fabrics are drawn at the \emph  {same tile scale}. The traditional island-style baseline (left) is a $43\times 43$ heterogeneous fabric that provisions BRAM columns (plum) the netlist never uses, with DSP blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric (right) tailors the architecture to the netlist: it drops the unused BRAM columns entirely and repositions the DSPs, under an aspect ratio that lets VTR auto-size the same logic down to $36\times 40$. The dashed outline is the traditional footprint and the hatched strip is the reclaimed area: a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP reduction. Gaps between tiles are routing channels.}}{5}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:layout}{{3}{5}{What the policy recovers, physically (\texttt {softmax}, the GA comparison benchmark). Both fabrics are drawn at the \emph {same tile scale}. The traditional island-style baseline (left) is a $43\times 43$ heterogeneous fabric that provisions BRAM columns (plum) the netlist never uses, with DSP blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric (right) tailors the architecture to the netlist: it drops the unused BRAM columns entirely and repositions the DSPs, under an aspect ratio that lets VTR auto-size the same logic down to $36\times 40$. The dashed outline is the traditional footprint and the hatched strip is the reclaimed area: a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP reduction. Gaps between tiles are routing channels}{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces What the policy recovers, physically (\texttt  {softmax}, the GA comparison benchmark circuit). Both fabrics are drawn at the \emph  {same tile scale}. The traditional island-style baseline (left) is a $43\times 43$ heterogeneous fabric that provisions BRAM columns (plum) the netlist never uses, with DSP blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric (right) tailors the architecture to the netlist: it drops the unused BRAM columns entirely and repositions the DSPs, under an aspect ratio that lets VTR auto-size the same logic down to $36\times 40$. The dashed outline is the traditional footprint and the hatched strip is the reclaimed area: a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP reduction. Gaps between tiles are routing channels.}}{5}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:layout}{{3}{5}{What the policy recovers, physically (\texttt {softmax}, the GA comparison benchmark circuit). Both fabrics are drawn at the \emph {same tile scale}. The traditional island-style baseline (left) is a $43\times 43$ heterogeneous fabric that provisions BRAM columns (plum) the netlist never uses, with DSP blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric (right) tailors the architecture to the netlist: it drops the unused BRAM columns entirely and repositions the DSPs, under an aspect ratio that lets VTR auto-size the same logic down to $36\times 40$. The dashed outline is the traditional footprint and the hatched strip is the reclaimed area: a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP reduction. Gaps between tiles are routing channels}{figure.caption.6}{}}
 \newlabel{TotPages}{{5}{5}{}{page.5}{}}
 \gdef \@abspage@last{5}

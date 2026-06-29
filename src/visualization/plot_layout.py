@@ -83,7 +83,7 @@ def _block_kind(name: str) -> str:
     n = name.lower()
     if n.startswith("$mul") or "mult_36" in n:
         return "dsp"
-    if "bram" in n or "mem[" in n or n.startswith("$bram"):
+    if "bram" in n or "mem[" in n or n.startswith("$bram") or "mem~" in n or "dual_port_ram" in n:
         return "bram"
     # IO pads from VPR are on the perimeter; classify anything else as clb
     return "clb"
@@ -211,7 +211,7 @@ def draw_panel(ax, gw: int, gh: int, grid: list[list[str]],
     ax.set_xlim(-0.5, gw + 0.5)
     ax.set_ylim(-0.5, gh + 0.5)
     ax.set_aspect("equal")
-    ax.set_title(title, color=C["text"], fontsize=10.5, fontweight="semibold", pad=7)
+    ax.set_title(title, color=C["text"], fontsize=9.5, fontweight="semibold", pad=7, wrap=True)
 
     # ── Background fabric (flat, hairline grid) ──────────────────────────────
     # For large fabrics the per-tile grid lines become visual noise; fade them.
@@ -316,7 +316,7 @@ def main():
             panels.append((args.place3, args.arch3, args.title3))
 
     n = len(panels)
-    fig, axes = plt.subplots(1, n, figsize=(3.5 * n, 3.8), dpi=300)
+    fig, axes = plt.subplots(1, n, figsize=(4.5 * n, 4.2), dpi=300)
     fig.patch.set_facecolor(C["void"])
     if n == 1:
         axes = [axes]

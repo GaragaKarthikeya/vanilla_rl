@@ -1,0 +1,37 @@
+Abstract
+
+Field-Programmable Gate Arrays (FPGAs) offer essential hardware flexibility through programmable logic and interconnects. Embedded FPGAs (eFPGAs) extend this capability by integrating reconfigurable fabrics directly into fixed-silicon Systems-on-Chip (SoCs) or ASICs, enabling post-fabrication functional updates and robust IP security. Hence, discovering optimized layouts for these reconfigurable fabrics is essential to fully realize their architectural potential. The proposed work trains a single graph-and-grid-conditioned Reinforcement Learning (RL) policy across various benchmark circuits to place heterogeneous blocks (H-blocks, such as DSPs and BRAMs) and select the optimal fabric aspect ratio for the eFPGA architectures. This approach generates layouts jointly optimized for Power, Performance, and Area (PPA). To demonstrate generalizability, the trained RL policy evaluates benchmark circuits completely unseen during training, producing highly efficient zero-shot layouts. Across three random seeds, the policy achieves up to a $58.7\%$ zero-shot ADP reduction on unseen benchmark circuits relative to traditional island-style architectures.
+
+Keywords
+
+FPGA, Reinforcement Learning (RL), Graph Neural Networks (GNN), Convolutional Neural Networks (CNN), Macro Placement, Reconfigurable Computing
+
+Introduction
+
+A generic FPGA inherently over-provisions hardware resources for any single application, carrying extra routing and heterogeneous blocks (H-blocks: DSP slices, BRAMs) that the deployed netlist never fully utilizes. Sizing an eFPGA fabric for one specific netlist recovers much of this overhead. The product of routing area, critical-path delay, and total power (ADP throughout) directly quantifies this overhead; minimizing this metric benefits every eFPGA application
+
+$$3, 20$$
+
+.
+
+Prior efforts optimize fabric layouts on a per-design basis using computationally expensive search heuristics like Genetic Algorithms [20] or NSGA-II [3]. These approaches restart the search from scratch for every new circuit, transferring no knowledge across runs and incurring the full computational search cost each time.
+
+The proposed work trains a single graph-and-grid-conditioned RL policy to determine H-block placement and fabric aspect ratio, addressing a domain where computationally expensive per-instance GA search previously served as the only option. Unlike RL methods that assign blocks to a pre-fabricated grid, this policy directly constructs the fabric layout itself. Following joint training on $11$ circuits evaluated via the standard VTR flow, a single model checkpoint applies zero-shot to unseen circuits, including fabrics up to $3.4\times$ the maximum training pool area. Training occurs only once, after which evaluating a new circuit requires just a single policy rollout. Comprehensive comparisons against a from-scratch GA under an identical oracle, metric, and baseline show that while the GA retains a marginal advantage in absolute $ADP$ reduction for some circuits, the trained policy consistently achieves highly competitive results. Crucially, for larger circuits where evolutionary runtimes scale prohibitively, this zero-shot policy provides a superior alternative by delivering optimized layouts instantly without the expensive computational overhead.
+
+Footnotes
+
+$$^1$$
+
+: GOLDS
+
+$$20$$
+
+uses the same abbreviation, ADP, for a different, two-term $(\text{logical\_area} \times \text{delay})$ product; the proposed framework employs a three-term $(\text{routing\_area} \times \text{delay} \times \text{power})$ product throughout this paper.
+
+This paper contributes:
+(   )
+
+
+
+
+remove the [18] citation

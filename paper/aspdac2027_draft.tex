@@ -38,21 +38,28 @@
 \begin{document}
 
 \begin{abstract}
-eFPGA fabrics embed reconfigurability in fixed silicon for
-acceleration, post-fabrication updates, and IP security. We train a
-single graph-and-grid-conditioned RL policy that places H-blocks (DSP/BRAM) and
-selects the fabric aspect ratio across 11 circuits, then apply the same
-checkpoint zero-shot to circuits never seen in training. Jointly trained,
-the policy reaches 27.60\% aggregate in-pool ADP reduction (three seeds);
-applied zero-shot to six held-out circuits (including fabrics up to
-$3.4\times$ the training area), every result is positive, averaging
-31.23\%, with markedly lower seed variance than in-pool. Against a GA
-sharing the same VTR oracle, metric, and baseline, the fine-tuned policy
-reaches a comparable best ADP reduction, while zero-shot already lands a
-positive result with no per-design search at all. Unlike per-instance
-search, the trained policy amortizes: each new netlist costs one rollout,
-not a restarted search.
+Field-Programmable Gate Arrays (FPGAs) offer essential hardware flexibility
+through programmable logic and interconnects. Embedded FPGAs (eFPGAs) extend
+this capability by integrating reconfigurable fabrics directly into
+fixed-silicon Systems-on-Chip (SoCs) or ASICs, enabling post-fabrication
+functional updates and robust IP security. Hence, discovering optimized
+layouts for these reconfigurable fabrics is essential to fully realize their
+architectural potential. We train a single
+graph-and-grid-conditioned Reinforcement Learning (RL) policy across various
+benchmark circuits to place heterogeneous blocks (H-blocks, such as DSPs and
+BRAMs) and select the optimal fabric aspect ratio for the eFPGA
+architectures. We thereby generate layouts jointly optimized for Power,
+Performance, and Area (PPA). To demonstrate generalizability, we evaluate
+the trained RL policy on benchmark circuits completely unseen during
+training, producing highly efficient zero-shot layouts. Across three random
+seeds, the policy achieves up to a $58.7\%$ zero-shot ADP reduction on
+unseen benchmark circuits relative to traditional island-style
+architectures.
 \end{abstract}
+
+\keywords{FPGA, Reinforcement Learning (RL), Graph Convolutional Networks (GCN),
+Convolutional Neural Networks (CNN), Macro Placement, Reconfigurable
+Computing}
 
 \maketitle
 
@@ -60,54 +67,49 @@ not a restarted search.
 \section{Introduction}
 \label{sec:intro}
 
-Embedding a small reconfigurable fabric into otherwise fixed silicon, an
-eFPGA, lets a chip adapt after fabrication, whether as a standalone
-ASIC or as an accelerator block inside a larger SoC: acceleration, protocol
-updates, IP security, and extended product life managed through the
-bitstream rather than a chip respin~\cite{golds,alice}.
-A generic FPGA is over-provisioned for any single application: it contains
-extra routing and heterogeneous blocks (\emph{H-blocks}: DSP slices, BRAMs)
-the deployed netlist never fully uses.
-An eFPGA fabric sized for one specific netlist can recover much of
-that overhead. The product of routing area, critical-path delay, and dynamic
-power (\textbf{ADP} throughout) quantifies this overhead directly, and
-minimizing it benefits every eFPGA application~\cite{golds,nsgaii}.\footnote{GOLDS~\cite{golds} uses the same abbreviation, ADP, for a different, two-term Area$\times$Delay product; ours is three-term (Area$\times$Delay$\times$Power) throughout this paper.}
+A generic FPGA inherently over-provisions hardware resources for any single
+application, carrying extra routing and heterogeneous blocks
+(\emph{H-blocks}: DSP slices, BRAMs) that the deployed netlist never fully
+utilizes. Sizing an eFPGA fabric for one specific netlist recovers much of
+this overhead. The product of routing area, critical-path delay, and total
+power (\textbf{ADP} throughout) directly quantifies this overhead; minimizing
+this metric benefits every eFPGA application~\cite{golds,nsgaii}.\footnote{GOLDS~\cite{golds}
+uses the same abbreviation, ADP, for a different, two-term
+(logical\_area$\times$delay) product; the proposed framework employs a
+three-term (routing\_area$\times$delay$\times$power) product throughout this
+paper.}
 
-Two prior papers show per-instance search substantially reduces eFPGA overhead:
-GOLDS~\cite{golds} uses a GA with Area$\times$Delay fitness; a follow-up
-applies NSGA-II and also co-evolves CLB LUT size and arithmetic-block
-sizing~\cite{nsgaii}. Both report gains on their own
-Area$\times$Delay metric (Section~\ref{sec:related}), but both are
-\emph{testbench-specific}: each run re-initializes from scratch,
-and nothing learned on one netlist transfers to the next:
-every new target pays the full search cost again.
+Prior efforts optimize fabric layouts on a per-design basis using
+computationally expensive search heuristics like Genetic Algorithms~\cite{golds}
+or NSGA-II~\cite{nsgaii}. These approaches restart the search from scratch
+for every new circuit, transferring no knowledge across runs and incurring
+the full computational search cost each time.
 
-We train a single graph-and-grid-conditioned RL policy to choose H-block placement
-and fabric aspect ratio, the problem where per-instance GA search has
-been the only option. Unlike RL methods that assign blocks to an
-already-fabricated grid, our policy \emph{constructs} the fabric
-layout itself. Trained jointly on 11 circuits and scored by the real VTR
-flow, the same checkpoint applies zero-shot to unseen circuits, including
-fabrics up to $3.4\times$ the training pool area.
-Training runs once; each new netlist costs one rollout.
-We compare against a from-scratch GA under identical oracle, metric, and
-baseline: the fine-tuned policy reaches a comparable best ADP reduction,
-while zero-shot already gives a positive result with no per-design search
-at all (Section~\ref{sec:results-ga}).
+We train a single graph-and-grid-conditioned RL policy to
+determine H-block placement and fabric aspect ratio, addressing a domain
+where computationally expensive per-instance GA search previously served as
+the only option. Unlike RL methods~\cite{rlplace,vprgym} that assign blocks to a pre-fabricated
+grid, our policy directly constructs the fabric layout itself. After
+jointly training on 11 circuits evaluated via the standard VTR flow, we
+apply a single model checkpoint zero-shot to unseen circuits, including
+fabrics up to $3.4\times$ the maximum training pool area. We train only
+once, after which evaluating a new circuit requires just a single policy
+rollout.
+We compare comprehensively against a from-scratch GA under an identical
+oracle, metric, and baseline and find that while the GA retains a marginal
+advantage in absolute ADP reduction for some circuits, the trained policy
+consistently achieves highly competitive results. Crucially, for larger
+circuits where evolutionary runtimes scale prohibitively, our zero-shot
+policy provides a superior alternative by delivering optimized layouts
+instantly without the expensive computational overhead
+(Section~\ref{sec:results-ga}).
 
-This paper contributes:
+We contribute:
 \begin{itemize}
-  \item A graph-and-grid-conditioned RL policy for H-block placement and
-        aspect-ratio selection, with one fixed-size checkpoint applied
-        zero-shot to unseen circuits and evaluated against the true VTR
-        flow rather than a proxy (Sections~\ref{sec:gnn},~\ref{sec:capacity}).
-  \item A comparison against a GA on held-out \texttt{softmax} under the
-        same oracle, metric, and baseline (Section~\ref{sec:results-ga}).
-  \item An aggregate in-pool ADP reduction of 27.60\% across three seeds
-        (Section~\ref{sec:results-inpool}).
-  \item A three-seed reliability analysis comparing in-pool and zero-shot
-        seed sensitivity, reported as raw per-seed results
-        (Sections~\ref{sec:results-inpool},~\ref{sec:results-zeroshot}).
+  \item
+  \item
+  \item
+  \item
 \end{itemize}
 
 \section{Background and Related Work}
@@ -124,23 +126,23 @@ efficient fabric. Applications include IP security
 domain-specific acceleration, and post-fabrication reconfigurability~\cite{golds}.
 Subsequent work reduces overhead by shrinking under-utilized routing~\cite{shell}
 or de-regularizing the fabric~\cite{nuredact}, both motivating the
-non-island-style layouts this paper synthesizes. All rely on per-design
+non-island-style layouts we synthesize. All rely on per-design
 search; none amortizes layout effort across netlists.
 GOLDS~\cite{golds} introduced layout search built for a single design: a GA over
 H-block placement with Area$\times$Delay fitness through the real VTR flow.
 A follow-up~\cite{nsgaii} applies NSGA-II, also co-evolving CLB LUT size
 and H-block sizing. Both report per-design gains on their own two-term
 Area$\times$Delay metric, a different quantity from the three-term ADP
-this paper reports. Both start from a random
+we report. Both start from a random
 population for every new design, transferring
-nothing from prior runs. We target the same problem GOLDS defines with the
-same VTR oracle, enabling a clean controlled comparison
-(Section~\ref{sec:results-ga}); block-sizing co-evolution is a natural
+nothing from prior runs. We target the same H-block placement problem using
+an RL approach instead; incorporating
+block-sizing co-evolution~\cite{nsgaii} into the RL policy is a natural
 extension (Section~\ref{sec:conclusion}).
 
 \subsection{Learned Policies for Physical Design}
 
-AlphaChip~\cite{alphachip,alphachip_addendum} trains an RL agent to place
+AlphaChip~\cite{alphachip} trains an RL agent to place
 ASIC macros using a learned proxy and reports cross-design transfer:
 the amortization argument we make here, at a much larger scale.
 Subsequent work explores visual representations~\cite{maskplace}, joint
@@ -162,10 +164,7 @@ fabric geometry.
 
 We build on the open-source Verilog-to-Routing (VTR)~\cite{vtr9}:
 Yosys synthesizes the design~\cite{parmys} and VPR~\cite{vpr97} packs, places, and routes
-against an architecture XML of tile types, positions, and connectivity. This
-XML (which GOLDS and NSGA-II generate by search and we generate by policy
-rollout) must represent arbitrary heterogeneous layouts, not just
-island-style grids, which is what makes this entire line of work possible.
+against an architecture XML of tile types, positions, and connectivity.
 
 \section{Methodology}
 
@@ -175,35 +174,40 @@ island-style grids, which is what makes this entire line of work possible.
 \subsection{Problem Formulation}
 \label{sec:problem}
 
-A fabric optimized for one netlist trades general-purpose flexibility for
+A fabric optimized for one circuit trades general-purpose flexibility for
 a significantly smaller, more efficient implementation: it accommodates
 parameter changes, post-fabrication fixes, and a known set of operational
 modes on that one primary function, not arbitrary workloads with
 substantially different H-block requirements.
 
-Two roles are easily conflated: the \emph{policy} designs the fabric; the
-\emph{VTR toolchain} maps the circuit onto it. Given a netlist requiring
+The \emph{policy} configures the fabric's H-block placement and aspect
+ratio; the \emph{VTR toolchain} maps the circuit onto it. Given a netlist requiring
 $n_{\mathrm{dsp}}$ DSP and $n_{\mathrm{bram}}$ BRAM blocks, the policy emits
 \begin{equation}
 \label{eq:policy}
   \pi = \Big(\mathrm{ar},\ \{(x_i,y_i)\}_{i=1}^{n_{\mathrm{dsp}}+n_{\mathrm{bram}}}\Big):
 \end{equation}
-a fabric aspect ratio $\mathrm{ar} \in \mathcal{R}$ and a tile coordinate for
-every H-block. VTR then synthesizes, packs, places, routes, and auto-sizes
+a fabric aspect ratio $\mathrm{ar} \in \mathcal{R} = \{0.1, 0.2, \ldots, 2.0\}$,
+a discrete set of 20 candidate ratios spaced $0.1$ apart, and a tile
+coordinate for every H-block. VTR then synthesizes, packs, places, routes, and auto-sizes
 the array to the smallest grid of the chosen aspect ratio that holds the design.
 The policy never places a CLB or fixes grid dimensions; it shapes the fabric
-and positions H-blocks; VTR reports back the realized cost.
+and positions H-blocks; the cost is realized through VTR reports.
 We take that cost to be the three-term ADP (Section~\ref{sec:intro}):
 \begin{equation}
 \label{eq:adp}
   \mathrm{ADP}(\pi) = \mathrm{Area}(\pi) \times \mathrm{Delay}(\pi) \times \mathrm{Power}(\pi),
 \end{equation}
 where each term is from the VTR flow (Section~\ref{sec:setup}). Area is
-VPR's \emph{routing area}: the physical tile-grid footprint including
-routing channels, which tracks the fabric geometry the policy controls
-and reflects actual on-chip die area; logical CLB area stays fixed
-regardless of layout. We report results as percentage ADP reduction
-relative to a traditional island-style baseline at matched logic capacity.
+VPR's \emph{routing area}: since the number of  H-blocks placed is fixed
+by functional requirements, logic block count offers limited sensitivity to
+placement decisions, while routing area varies directly with  H-block
+positions through their influence on interconnect length and congestion,
+making it a more discriminative metric for placement quality. Delay is
+VPR's \emph{critical-path delay}: the longest timing path through the design's logic and routing interconnects. Power is VPR's \emph{total power}:
+the dynamic and static power dissipated by the synthesized circuit. We
+report results as percentage ADP reduction relative to a traditional
+island-style baseline architecture. The Area-Delay-Power Product (ADP) acts as a comprehensive PPA metric, evaluating the design's trade-offs by combining all three physical constraints into a single, joint optimization figure of merit.
 
 \subsection{RL Formulation}
 \label{sec:rl}
@@ -216,44 +220,55 @@ the action space to legal tile coordinates at each step.
 $\mathcal{R}$; each subsequent step positions one H-block (BRAMs then DSPs,
 both ordered by descending shared-net connectivity). Once all blocks are placed,
 the environment renders the layout into an architecture XML via Jinja2 and invokes
-VTR to obtain $\mathrm{Area}(\pi)$, $\mathrm{Delay}(\pi)$, $\mathrm{Power}(\pi)$;
+VTR to obtain $\mathrm{Area}(\pi)$, $\mathrm{Delay}(\pi)$, $\mathrm{Power}(\pi)$. Once these metrics are obtained, the final reward is computed by the environment and given to the agent
 intermediate steps receive zero reward.
 
 \textbf{Action space.} The action space is $\mathrm{Discrete}(W_{\max} \times
-H_{\max})$, fixed across all benchmarks (Section~\ref{sec:capacity}).
-Step-0 actions select from $\mathcal{R}$; later steps decode an index to
-$(x,y)$ via a fixed stride on $H_{\max}$. Action masking restricts the policy
-to legal, non-overlapping, in-bounds coordinates for the active benchmark.
+H_{\max})$, fixed across all benchmark circuits, where $W_{\max}$ and
+$H_{\max}$ are the core grid width and height taken over both the training
+pool and the unseen, zero-shot benchmark circuits (Section~\ref{sec:capacity}). Each benchmark's own
+\emph{core grid} is its $\mathrm{width} \times \mathrm{height}$ tile array
+excluding the surrounding IO ring, sized from its traditional-baseline
+resource requirements. At step 0, action index
+$a$ selects $\mathcal{R}[a]$ directly (legal only for $a < |\mathcal{R}|$).
+At every later steps, the same index decodes to a tile coordinate
+$x = 1 + \lfloor a / H_{\max} \rfloor$, $y = 1 + (a \bmod H_{\max})$ within
+the IO ring, using the fixed $H_{\max}$ rather than the active benchmark
+circuit's real height, so a given index always maps to the same $(x,y)$
+regardless of which benchmark circuit is active. Action masking then
+restricts the policy to indices whose decoded $(x,y)$ falls inside the
+\emph{active} benchmark circuit's own core grid, fits the block's height
+without crossing that grid's boundary, and does not overlap an
+already-placed block; coordinates outside the active benchmark circuit's
+core grid, even though addressable within the shared
+$W_{\max} \times H_{\max}$ space, are masked out every step.
 
-\textbf{Reward.} The terminal reward is a weighted sum of negative log-ratios
-against the traditional baseline for the active benchmark:
+\textbf{Reward.} The terminal reward is a sum of negative log-ratios
+against the traditional baseline for the active benchmark circuit:
 \begin{equation}
 \label{eq:reward}
   r = -\Big(
-    w_a \log\tfrac{\mathrm{Area}}{\mathrm{Area}_0} +
-    w_d \log\tfrac{\mathrm{Delay}}{\mathrm{Delay}_0} +
-    w_p \log\tfrac{\mathrm{Power}}{\mathrm{Power}_0}
+    \log\tfrac{\mathrm{Area}(\pi)}{\mathrm{Area}_0} +
+    \log\tfrac{\mathrm{Delay}(\pi)}{\mathrm{Delay}_0} +
+    \log\tfrac{\mathrm{Power}(\pi)}{\mathrm{Power}_0}
   \Big),
 \end{equation}
 where $\mathrm{Area}_0,\mathrm{Delay}_0,\mathrm{Power}_0$ are the
-traditional-baseline metrics and $w_a,w_d,w_p$ are configurable
-(Section~\ref{sec:training}). With $w_a=w_d=w_p=1$,
-$r = \log(\mathrm{ADP}_0/\mathrm{ADP})$, making reward and headline metric
-directly comparable. An invalid choice (degenerate aspect ratio,
+traditional-baseline metrics. An invalid choice (degenerate aspect ratio,
 out-of-bounds or overlapping placement, or a VTR failure) terminates early
 with penalty $-10$.
 
-\subsection{GCN Feature Extractor}
+\subsection{Multi-Modal Feature Extractor}
 \label{sec:gnn}
 
-To generalize across benchmarks with varying netlist sizes, H-block counts,
+To generalize across benchmark circuits with varying netlist sizes, H-block counts,
 and grid dimensions, we encode each netlist as a graph, giving the policy the
 inductive bias for cross-topology transfer that graph learning provides
 elsewhere in EDA~\cite{gamora}. We reduce each netlist to a compact
 fixed-schema graph: one node per H-block instance plus one aggregate
 ``fabric'' node for the remaining standard-cell logic, with node features
 \texttt{[is\_dsp, is\_bram, is\_fabric, net\_count\_normalized]}. Edges are
-weighted by shared-net count, log-normalized to $[0,1]$, both between
+weighted by shared-net count, normalized to $[0,1]$, both between
 H-blocks and between each H-block and the fabric node.
 
 The graph is padded to a fixed maximum node and edge count
@@ -262,21 +277,11 @@ layers, giving every H-block a learned embedding. Global mean-pooling
 yields a whole-netlist embedding, and the embedding of the node under
 consideration at the current step yields a per-step embedding; both are
 concatenated with a CNN encoding of the 4-channel occupancy grid and the
-benchmark's normalized fabric dimensions, then projected to a single
+benchmark circuit's normalized fabric dimensions, then projected to a single
 128-dimensional vector consumed by the PPO actor and critic heads. The
 encoder trains end-to-end under the PPO objective, with no separate
 pretraining stage.
 
-\subsection{Fixed-Capacity Sizing and Action Masking}
-\label{sec:capacity}
-
-Policy dimensions are fixed at construction, yet we want one checkpoint
-loadable against benchmarks never trained on. We therefore size every
-dimension-dependent quantity, the maximum fabric width and height and the
-maximum node and edge count, from a deliberate superset of benchmark
-sizes that includes ones reserved for zero-shot evaluation. Per-episode
-action masking restricts the fixed-size network to each benchmark's
-smaller real footprint.
 
 \subsection{Training Setup}
 \label{sec:training}
@@ -284,10 +289,8 @@ smaller real footprint.
 Training samples uniformly from the benchmark pool, episode-by-episode.
 We use \texttt{MaskablePPO}
 with 24 parallel environments, 48 rollout steps per update, batch size 144,
-15 epochs per update, entropy coefficient 0.01, and reward weights
-$w_a=w_d=w_p=1$ (Eq.~\ref{eq:reward}), giving reward
-$=\log(\mathrm{ADP}_0/\mathrm{ADP})$. Each run trains for 13{,}000 episodes
-with a 300s VTR timeout per episode. We report three independent seeds (7, 42,
+15 epochs per update, and entropy coefficient 0.01. Each run trains for 13{,}000 episodes.
+ We report three independent seeds (7, 42,
 123) throughout Section~\ref{sec:results} to characterize reliability rather
 than present a single run as ground truth.
 
@@ -302,19 +305,19 @@ A placement is rendered into a VTR architecture XML and VPR constraints
 file via Jinja2 templates, then run through the full VTR flow (synthesis,
 packing, placement, routing, and power estimation against a 45nm PTM file),
 and routing area, critical-path delay, and dynamic power are extracted
-from VPR reports. All evaluations use VTR 9.0.0 (git \texttt{22a09d39},
-GCC 13.3.0). Evaluated pairs are cached; the synthesis-to-routing flow
-dominates cost (seconds to low minutes per call).
+from VPR reports.\footnote{All evaluations use VTR 9.0.0 (git
+\texttt{22a09d39}, GCC 13.3.0).} Evaluated pairs are cached; the
+synthesis-to-routing flow dominates cost (seconds to low minutes per call).
 
-\subsection{Benchmarks}
+\subsection{Benchmark Circuits}
 \label{sec:benchmarks}
 
-Figure~\ref{fig:seedvar} lists all 17 benchmarks with grid size and
+Figure~\ref{fig:seedvar} lists all 17 benchmark circuits with grid size and
 H-block counts: 11 for training and 6 held-out for zero-shot evaluation
 only (Section~\ref{sec:results-zeroshot}), drawn from the VTR suite~\cite{vtr8},
 Koios~\cite{koios}, and two small probes authored for this work, covering the
 small-fabric end the standard suites underrepresent. Four held-out
-benchmarks (\texttt{softmax}, \texttt{reduction\_layer}, \texttt{arm\_core},
+benchmark circuits (\texttt{softmax}, \texttt{reduction\_layer}, \texttt{arm\_core},
 \texttt{mkDelayWorker32B}) are larger circuits, probing fabric sizes well
 beyond the training pool. The GA comparison (Section~\ref{sec:results-ga})
 uses \texttt{softmax}, held out of RL training.
@@ -340,21 +343,21 @@ algorithm implemented under the same evaluation oracle and ADP metric
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.86\columnwidth]{fig_seed_variance.pdf}
-\caption{Per-seed ADP reduction for all 17 benchmarks (11 in-pool, 6 held-out zero-shot).}
+\caption{Per-seed ADP reduction for all 17 benchmark circuits (11 in-pool, 6 held-out zero-shot).}
 \label{fig:seedvar}
 \end{figure}
 
-Figure~\ref{fig:seedvar} (upper group) shows per-benchmark in-pool ADP
+Figure~\ref{fig:seedvar} (upper group) shows per-benchmark-circuit in-pool ADP
 reduction across three seeds. The pooled aggregate (summed ADP over all 11
-benchmarks versus summed baseline) is 23.11\%, 35.73\%, and 23.97\% for
-seeds 7, 42, and 123 respectively, averaging \textbf{27.60\%}. Nine of eleven benchmarks are consistently
+benchmark circuits versus summed baseline) is 23.11\%, 35.73\%, and 23.97\% for
+seeds 7, 42, and 123 respectively, averaging \textbf{27.60\%}. Nine of eleven benchmark circuits are consistently
 positive and stable; \texttt{raygentop} is the only persistent failure
 ($[-2.2, -1.7]\%$ across all seeds). \texttt{or1200} and \texttt{boundtop}
 are positive but highly seed-sensitive, spanning 28--29 points each and
 driving most of the aggregate variance. In-pool performance is considerably
 more seed-sensitive than zero-shot, which stays within $\sim$12 points across
-all six held-out benchmarks (Section~\ref{sec:results-zeroshot}): early
-convergence on most training benchmarks leaves fewer episodes for
+all six held-out benchmark circuits (Section~\ref{sec:results-zeroshot}): early
+convergence on most training benchmark circuits leaves fewer episodes for
 slow-to-converge ones like \texttt{or1200}, so which seed handles them well
 varies run to run.
 
@@ -390,7 +393,7 @@ routing is VTR's.
 \centering
 \includegraphics[width=0.92\textwidth]{fig_layout.pdf}
 \caption{What the policy recovers, physically (\texttt{softmax}, the GA
-comparison benchmark). Both fabrics are drawn at the \emph{same tile scale}.
+comparison benchmark circuit). Both fabrics are drawn at the \emph{same tile scale}.
 The traditional island-style baseline (left) is a $43\times43$ heterogeneous
 fabric that provisions BRAM columns (plum) the netlist never uses, with DSP
 blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric
@@ -408,14 +411,14 @@ reduction. Gaps between tiles are routing channels.}
 \label{sec:results-zeroshot}
 
 Figure~\ref{fig:seedvar} (lower group) reports ADP reduction on six held-out
-benchmarks across the same three seeds, with zero benchmark-specific training.
+benchmark circuits across the same three seeds, with zero benchmark-specific training.
 All six fit within the checkpoint's fixed dimensions. Only two
 (\texttt{softmax}, \texttt{reduction\_layer}) were used to choose those
-dimensions; the other four were sized in by benchmarks elsewhere in the
+dimensions; the other four were sized in by benchmark circuits elsewhere in the
 sizing superset, a harder test of generalization.
 Four of the six are larger than anything in the training
 pool (up to $2{,}304$ tiles vs.\ $676$), making this size extrapolation, not
-interpolation. Every benchmark is positive under every seed (no sign flips),
+interpolation. Every benchmark circuit is positive under every seed (no sign flips),
 and every per-seed range is narrow ($\le12$ points), far from the
 \texttt{or1200}/\texttt{boundtop} spread. The overall average is
 \textbf{31.23\%}.
@@ -423,20 +426,20 @@ and every per-seed range is narrow ($\le12$ points), far from the
 \section{Conclusion}
 \label{sec:conclusion}
 
-This paper trains one policy across 11 circuits and compares it to a GA
+We train one policy across 11 circuits and compare it to a GA
 under the same oracle, metric, and baseline (Section~\ref{sec:results-ga}):
 the fine-tuned policy reaches a similar best ADP reduction, and zero-shot
 gives a positive result with no per-design search. The same policy applies
-zero-shot to six held-out benchmarks, four larger than anything in
+zero-shot to six held-out benchmark circuits, four larger than anything in
 training (Section~\ref{sec:results-zeroshot}).
 
 These results rest on three seeds and one deterministic rollout per
-zero-shot benchmark, with in-pool fitting showing more seed sensitivity
+zero-shot benchmark circuit, with in-pool fitting showing more seed sensitivity
 than zero-shot transfer within that sample (Section~\ref{sec:results-inpool}).
 A few directions follow naturally: a systematic stochastic-rollout
 evaluation; extending the action space, currently placement and aspect
 ratio only, to co-evolve CLB LUT size and block sizing~\cite{nsgaii}; and
-running on the full GOLDS/NSGA-II benchmark set for direct comparison.
+running on the full GOLDS/NSGA-II benchmark circuit set for direct comparison.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}

@@ -50,6 +50,7 @@ def main() -> None:
     p.add_argument("--universe_benchmarks", required=True, help="Comma-separated full universe (must match training)")
     p.add_argument("--vtr_timeout", type=int, default=1200, help="Per-episode VTR timeout (generous for eval)")
     p.add_argument("--out", default=None, help="Optional path to write JSON results")
+    p.add_argument("--cache_suffix", default="", help="Suffix for an isolated VTR layout cache DB (use a unique value to force a fresh VTR run, bypassing any existing cached result)")
     args = p.parse_args()
 
     try:
@@ -63,7 +64,7 @@ def main() -> None:
     max_width, max_height, max_nodes, max_edges = compute_max_dims(universe_names)
     print(f"Universe dims: MAX_WIDTH={max_width} MAX_HEIGHT={max_height} MAX_NODES={max_nodes} MAX_EDGES={max_edges}")
 
-    configs = build_benchmark_configs(eval_names, max_width, max_height, max_nodes, max_edges)
+    configs = build_benchmark_configs(eval_names, max_width, max_height, max_nodes, max_edges, cache_suffix=args.cache_suffix)
     env = FPGAEnv(configs, max_width, max_height, max_nodes, max_edges, vtr_timeout=args.vtr_timeout)
 
     model = CustomMaskablePPO.load(
