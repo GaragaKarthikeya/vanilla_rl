@@ -331,13 +331,6 @@ uses \texttt{softmax}, held out of RL training.
 \subsection{In-Pool Performance}
 \label{sec:results-inpool}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.86\columnwidth]{fig_seed_variance.pdf}
-\caption{Per-seed ADP reduction for all 17 benchmark circuits (11 in-pool, 6 held-out zero-shot).}
-\label{fig:seedvar}
-\end{figure}
-
 Figure~\ref{fig:seedvar} (upper group) shows per-benchmark-circuit in-pool ADP
 reduction across three seeds. The pooled aggregate (summed ADP over all 11
 benchmark circuits versus summed baseline) is 23.11\%, 35.73\%, and 23.97\% for
@@ -351,6 +344,13 @@ all six held-out benchmark circuits (Section~\ref{sec:results-zeroshot}): early
 convergence on most training benchmark circuits leaves fewer episodes for
 slow-to-converge ones like \texttt{or1200}, so which seed handles them well
 varies run to run.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\columnwidth]{fig_seed_variance.pdf}
+\caption{Per-seed ADP reduction for all 17 benchmark circuits (11 in-pool, 6 held-out zero-shot).}
+\label{fig:seedvar}
+\end{figure}
 
 \subsection{GA Comparison}
 \label{sec:results-ga}
@@ -380,22 +380,6 @@ to a $22\%$ smaller array, the dominant ADP term. The policy never moves
 a CLB; it removes idle columns and reshapes the fabric, and the tighter
 routing is VTR's.
 
-\begin{figure*}[t]
-\centering
-\includegraphics[width=0.92\textwidth]{fig_layout.pdf}
-\caption{What the policy recovers, physically (\texttt{softmax}, the GA
-comparison benchmark circuit). Both fabrics are drawn at the \emph{same tile scale}.
-The traditional island-style baseline (left) is a $43\times43$ heterogeneous
-fabric that provisions BRAM columns (plum) the netlist never uses, with DSP
-blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric
-(right) tailors the architecture to the netlist: it drops the unused BRAM
-columns entirely and repositions the DSPs, under an aspect ratio that lets VTR
-auto-size the same logic down to $36\times40$.
-The dashed outline is the traditional footprint and the hatched strip is the
-reclaimed area: a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP
-reduction. Gaps between tiles are routing channels.}
-\label{fig:layout}
-\end{figure*}
 
 
 \subsection{Zero-Shot Generalization}

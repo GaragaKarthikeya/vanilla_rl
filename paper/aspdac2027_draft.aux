@@ -58,12 +58,12 @@
 \newlabel{sec:oracle}{{4.1}{3}{Evaluation Oracle}{subsection.4.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Benchmark Circuits}{3}{subsection.4.2}\protected@file@percent }
 \newlabel{sec:benchmarks}{{4.2}{3}{Benchmark Circuits}{subsection.4.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Per-seed ADP reduction for all 17 benchmark circuits (11 in-pool, 6 held-out zero-shot).}}{3}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:seedvar}{{2}{3}{Per-seed ADP reduction for all 17 benchmark circuits (11 in-pool, 6 held-out zero-shot)}{figure.caption.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Results}{3}{section.5}\protected@file@percent }
 \newlabel{sec:results}{{5}{3}{Results}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}In-Pool Performance}{3}{subsection.5.1}\protected@file@percent }
 \newlabel{sec:results-inpool}{{5.1}{3}{In-Pool Performance}{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GA Comparison}{3}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:results-ga}{{5.2}{3}{GA Comparison}{subsection.5.2}{}}
 \citation{nsgaii}
 \bibstyle{ACM-Reference-Format}
 \bibdata{references}
@@ -84,13 +84,13 @@
 \bibcite{chipformer}{{15}{2023}{{Lai et~al\mbox  {.}}}{{}}}
 \bibcite{maskplace}{{16}{2022}{{Lai et~al\mbox  {.}}}{{}}}
 \bibcite{alphachip}{{17}{2021}{{Mirhoseini et~al\mbox  {.}}}{{}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}GA Comparison}{4}{subsection.5.2}\protected@file@percent }
-\newlabel{sec:results-ga}{{5.2}{4}{GA Comparison}{subsection.5.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Per-seed ADP reduction for all 17 benchmark circuits (11 in-pool, 6 held-out zero-shot).}}{4}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:seedvar}{{2}{4}{Per-seed ADP reduction for all 17 benchmark circuits (11 in-pool, 6 held-out zero-shot)}{figure.caption.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Zero-Shot Generalization}{4}{subsection.5.3}\protected@file@percent }
 \newlabel{sec:results-zeroshot}{{5.3}{4}{Zero-Shot Generalization}{subsection.5.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{4}{section.6}\protected@file@percent }
 \newlabel{sec:conclusion}{{6}{4}{Conclusion}{section.6}{}}
-\@writefile{toc}{\contentsline {section}{References}{4}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{4}{section*.7}\protected@file@percent }
 \bibcite{vtr8}{{18}{2020}{{Murray et~al\mbox  {.}}}{{}}}
 \bibcite{golds}{{19}{2024}{{Nandi et~al\mbox  {.}}}{{}}}
 \bibcite{alice}{{20}{2022}{{Tomajoli et~al\mbox  {.}}}{{}}}
@@ -102,7 +102,5 @@
 \newlabel{tocindent3}{0pt}
 \newlabel{tocindent4}{0pt}
 \newlabel{tocindent5}{0pt}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces What the policy recovers, physically (\texttt  {softmax}, the GA comparison benchmark circuit). Both fabrics are drawn at the \emph  {same tile scale}. The traditional island-style baseline (left) is a $43\times 43$ heterogeneous fabric that provisions BRAM columns (plum) the netlist never uses, with DSP blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric (right) tailors the architecture to the netlist: it drops the unused BRAM columns entirely and repositions the DSPs, under an aspect ratio that lets VTR auto-size the same logic down to $36\times 40$. The dashed outline is the traditional footprint and the hatched strip is the reclaimed area: a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP reduction. Gaps between tiles are routing channels.}}{5}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:layout}{{3}{5}{What the policy recovers, physically (\texttt {softmax}, the GA comparison benchmark circuit). Both fabrics are drawn at the \emph {same tile scale}. The traditional island-style baseline (left) is a $43\times 43$ heterogeneous fabric that provisions BRAM columns (plum) the netlist never uses, with DSP blocks (terracotta) spread across regular DSP columns. The RL-optimized fabric (right) tailors the architecture to the netlist: it drops the unused BRAM columns entirely and repositions the DSPs, under an aspect ratio that lets VTR auto-size the same logic down to $36\times 40$. The dashed outline is the traditional footprint and the hatched strip is the reclaimed area: a $22\%$ smaller fabric, the dominant term in the $15\%$ ADP reduction. Gaps between tiles are routing channels}{figure.caption.6}{}}
 \newlabel{TotPages}{{5}{5}{}{page.5}{}}
 \gdef \@abspage@last{5}

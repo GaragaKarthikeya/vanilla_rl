@@ -210,23 +210,23 @@
 \draw[pINK, line width=0.8pt] (gcn_box.east) -- (gcn_split);
 \draw[pINK, line width=0.8pt, rounded corners=3pt] (gcn_split) |- ($(emb_pool.west)+(-12mm,0)$) -- (emb_pool.west);
 \draw[arr] ($(emb_pool.west)+(-2pt,0)$) -- (emb_pool.west);
-\node[lbl, align=center, anchor=south] (pool_lbl)
-      at ($(emb_pool.north) + (0, 0.5mm)$) {mean-pooled\\[-0.3ex]whole-netlist\\[-0.3ex]\small 64-d};
+\node[lbl, align=left, anchor=south west] (pool_lbl)
+      at ($(emb_pool.north west) + (0, 0.5mm)$) {mean-pooled\\[-0.3ex]whole-netlist\\[-0.3ex]\small 64-d};
 
 \draw[pINK, line width=0.8pt, rounded corners=3pt] (gcn_split) |- ($(emb_curr.west)+(-12mm,0)$) -- (emb_curr.west);
 \draw[arr] ($(emb_curr.west)+(-2pt,0)$) -- (emb_curr.west);
-\node[lbl, align=center, anchor=north] (curr_lbl)
-      at ($(emb_curr.south) + (0, -0.5mm)$) {current\\[-0.3ex]H-block\\[-0.3ex]\small 64-d};
+\node[lbl, align=left, anchor=north west] (curr_lbl)
+      at ($(emb_curr.south west) + (0, -0.5mm)$) {current\\[-0.3ex]H-block\\[-0.3ex]\small 64-d};
 
 % --- CNN output: clean horizontal into emb_cnn (same row) ---
 \draw[arr] (cnn_box.east) -- (emb_cnn.west);
-\node[lbl, align=center, anchor=north] (cnn_lbl)
-      at ($(emb_cnn.south) + (0, -0.5mm)$) {CNN output\\[-0.3ex]\small 64-d};
+\node[lbl, align=left, anchor=north west] (cnn_lbl)
+      at ($(emb_cnn.south west) + (0, -0.5mm)$) {CNN output\\[-0.3ex]\small 64-d};
 
 % --- valid(w,h) -> emb_wh : per-episode footprint crosses into the concat ---
 \draw[arr] (validwh.east) -- (emb_wh.west);
-\node[lbl, align=center, anchor=north] (wh_lbl)
-      at ($(emb_wh.south) + (0, -0.5mm)$) {\small 2-d};
+\node[lbl, align=left, anchor=north west] (wh_lbl)
+      at ($(emb_wh.south west) + (0, -0.5mm)$) {\small 2-d};
 
 % =========================================================
 % CONCATENATION SLIVER
