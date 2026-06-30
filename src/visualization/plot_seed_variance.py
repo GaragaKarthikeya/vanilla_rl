@@ -29,24 +29,24 @@ import palette as PAL
 # grid (WxH), DSP count, BRAM count  — matches Table 1
 BENCH_META = {
     # in-pool
-    "fifo":          ( "6×6",   0,  1),
-    "ch_intrinsics": ("10×10",  0,  1),
-    "diffeq2":       ("14×14",  5,  0),
-    "boundtop":      ("13×13",  0,  1),
-    "diffeq1":       ("14×14",  5,  0),
-    "spree":         ("12×12",  1,  3),
-    "mkSMAdapter4B": ("18×18",  0,  5),
-    "or1200":        ("25×25",  1,  2),
-    "mmc_core":      ("13×13",  0,  1),
-    "mkPktMerge":    ("26×26",  0, 15),
-    "raygentop":     ("17×17",  6,  1),
+    "fifo":          ( "6×6",    4, 0,  1),
+    "ch_intrinsics": ("10×10",  68, 0,  1),
+    "diffeq2":       ("14×14",  27, 5,  0),
+    "boundtop":      ("13×13",  46, 0,  1),
+    "diffeq1":       ("14×14",  37, 5,  0),
+    "spree":         ("12×12",  60, 1,  3),
+    "mkSMAdapter4B": ("18×18", 156, 0,  5),
+    "or1200":        ("25×25", 245, 1,  2),
+    "mmc_core":      ("13×13", 128, 0,  1),
+    "mkPktMerge":    ("26×26",  29, 0, 15),
+    "raygentop":     ("17×17", 121, 6,  1),
     # held-out
-    "softmax":           ("41×41",  8,  0),
-    "reduction_layer":   ("42×42",  0, 32),
-    "cipher":("12×12",  0,  3),
-    "macbuf":     ("12×12",  3,  1),
-    "mkDelayWorker32B":  ("48×48",  0, 43),
-    "arm_core":          ("35×35",  0, 24),
+    "softmax":           ("41×41", 1227, 8,  0),
+    "reduction_layer":   ("42×42",  748, 0, 32),
+    "cipher":            ("12×12",   40, 0,  3),
+    "macbuf":            ("12×12",   14, 3,  1),
+    "mkDelayWorker32B":  ("48×48",  464, 0, 43),
+    "arm_core":          ("35×35",  868, 0, 24),
 }
 
 
@@ -124,21 +124,32 @@ ax.set_yticklabels([""] * len(labels))  # blank — we draw our own columns
 # all x in axes-fraction via get_yaxis_transform() (0=left spine, 1=right spine)
 # All columns in plain data coordinates — extend xlim left to make room
 # x positions (data coords, negative = left of 0-baseline)
-X_NAME = -57   # benchmark name, left-aligned
-X_GRID = -30   # grid size, centered
-X_DSP  = -19   # DSP count, centered
-X_BRAM = -10   # BRAM count, centered
-COL_FS = 7.0
+# x positions (data coords, negative = left of 0-baseline)
+X_NAME = -82   # benchmark name, left-aligned
+X_GRID = -47   # grid size, centered
+X_BLOCKS = -23 # (CLB, DSP, BRAM) count, centered
+COL_FS = 8.5
 
 for yy, name, _vals, _c in rows:
-    grid, dsp, bram = BENCH_META[name]
+    grid, clb, dsp, bram = BENCH_META[name]
     bold = name in VOLATILE
     fw = "bold" if bold else "normal"
     display = name.replace("mkDelayWorker32B", "mkDelayW32B").replace("mkSMAdapter4B", "mkSMAdapt4B")
     ax.text(X_NAME, yy, display,                 fontsize=COL_FS, va="center", ha="left",   fontweight=fw, clip_on=False)
     ax.text(X_GRID, yy, grid,                    fontsize=COL_FS, va="center", ha="center", fontweight=fw, clip_on=False)
-    ax.text(X_DSP,  yy, str(dsp)  if dsp  else "—", fontsize=COL_FS, va="center", ha="center", fontweight=fw, clip_on=False)
-    ax.text(X_BRAM, yy, str(bram) if bram else "—", fontsize=COL_FS, va="center", ha="center", fontweight=fw, clip_on=False)
+    # Draw (CLB, DSP, BRAM) as perfectly aligned individual text elements
+    # using the default serif font instead of monospace to keep consistency.
+    X_L  = -37; X_CLB = -26; X_C1 = -25.5
+    X_DSP  = -18; X_C2 = -17.5
+    X_BRAM  = -10; X_R = -9.0
+    
+    ax.text(X_L,    yy, "(", fontsize=COL_FS, va="center", ha="left",  fontweight=fw, clip_on=False)
+    ax.text(X_CLB,  yy, str(clb), fontsize=COL_FS, va="center", ha="right", fontweight=fw, clip_on=False)
+    ax.text(X_C1,   yy, ",", fontsize=COL_FS, va="center", ha="left",  fontweight=fw, clip_on=False)
+    ax.text(X_DSP,  yy, str(dsp), fontsize=COL_FS, va="center", ha="right", fontweight=fw, clip_on=False)
+    ax.text(X_C2,   yy, ",", fontsize=COL_FS, va="center", ha="left",  fontweight=fw, clip_on=False)
+    ax.text(X_BRAM, yy, str(bram), fontsize=COL_FS, va="center", ha="right", fontweight=fw, clip_on=False)
+    ax.text(X_R,    yy, ")", fontsize=COL_FS, va="center", ha="left",  fontweight=fw, clip_on=False)
 
 xr = 87
 ax.text(xr, (inpool_bot + inpool_top) / 2, "In-pool\n(trained)",
@@ -147,16 +158,15 @@ ax.text(xr, zs_top / 2, "Held-out\n(zero-shot)",
         fontsize=8, color=ZS_BLUE, weight="bold", rotation=270, va="center", ha="center")
 
 # legend-in-place: what the glyphs mean (one row, top-left empty space)
-ax.text(20, inpool_top + 0.85, "dots: 3 seeds (7/42/123)   |: median   line: min–max",
-        fontsize=6.6, color=PAL.SUBINK, va="bottom", ha="left")
+ax.text(40, inpool_top + 0.85, "dots: 3 seeds (7/42/123)   |: median   line: min–max",
+        fontsize=6.6, color=PAL.SUBINK, va="bottom", ha="center")
 
 # column headers aligned to the same x positions as the data columns
 HDR_Y = inpool_top + 0.85
-HDR_KW = dict(fontsize=6.5, color=PAL.SUBINK, fontweight="bold", va="bottom", clip_on=False)
+HDR_KW = dict(fontsize=8.0, color=PAL.SUBINK, fontweight="bold", va="bottom", clip_on=False)
 ax.text(X_NAME, HDR_Y, "Benchmark", ha="left",   **HDR_KW)
 ax.text(X_GRID, HDR_Y, "Grid",      ha="center", **HDR_KW)
-ax.text(X_DSP,  HDR_Y, "DSP",       ha="center", **HDR_KW)
-ax.text(X_BRAM, HDR_Y, "BRAM",      ha="center", **HDR_KW)
+ax.text(X_BLOCKS, HDR_Y, "(CLB, DSP, BRAM)", ha="center", **HDR_KW)
 
 # line under column headers — spans full table width (X_NAME to right edge)
 LINE_Y = inpool_top + 0.55
@@ -168,7 +178,7 @@ sep_y = (inpool_bot + zs_top) / 2
 ax.axhline(sep_y, color=PAL.SUBINK, lw=0.5, alpha=0.4, ls=(0, (4, 3)), clip_on=False)
 
 
-ax.set_xlim(-55, 94)
+ax.set_xlim(-85, 94)
 ax.set_ylim(-0.8, inpool_top + 1.8)
 ax.set_xlabel("ADP reduction vs. baseline (%), per seed", fontsize=8.3)
 ax.set_xticks([0, 20, 40, 60, 80])

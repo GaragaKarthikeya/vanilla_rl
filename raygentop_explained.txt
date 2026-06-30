@@ -1,0 +1,17 @@
+Why raygentop's ADP does not improve over the traditional baseline
+====================================================================
+
+raygentop's netlist places an unusually heavy demand on IO pins relative
+to its logic and H-block requirements. Because IO pads occupy only the
+fabric's outer perimeter, their capacity is set by the grid's outer
+dimensions alone, independent of how DSP and BRAM tiles are arranged
+inside it. This IO demand alone is enough to pin the minimum feasible
+fabric footprint to essentially the same size as the traditional
+baseline already uses. That, in turn, caps how much room the policy's
+placement and aspect-ratio actions have to work with: the array cannot
+shrink further no matter where H-blocks are placed, so the
+layout-optimization headroom available to the RL formulation is itself
+constrained by the benchmark's IO profile before any placement decision
+is made. raygentop is consequently the one in-pool benchmark where the
+traditional baseline is already close to the floor our action space can
+reach.
