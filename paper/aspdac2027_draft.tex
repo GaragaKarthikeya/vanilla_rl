@@ -87,7 +87,7 @@ architectures. We thereby generate layouts jointly optimized for Power,
 Performance, and Area (PPA). To demonstrate generalizability, we evaluate
 the trained RL policy on benchmark circuits completely unseen during
 training, producing highly efficient zero-shot layouts. Across three random
-seeds, the policy achieves up to a $58.7\%$ zero-shot ADP reduction on
+seeds, the policy achieves up to a $58.73\%$ zero-shot ADP reduction on
 unseen benchmark circuits relative to traditional island-style
 architectures.
 \end{abstract}
@@ -461,12 +461,12 @@ the same seeds, held-out benchmark circuits.}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
-Benchmark & GA avg.\ ADP red.\ & GA avg.\ VTR calls & Zero-shot avg.\ ADP red.\ \\
+Benchmark & GA avg.\ ADP red.\ (\%) & GA avg.\ VTR calls & Zero-shot avg.\ ADP red.\ (\%) \\
 \midrule
 \texttt{macbuf}           & TBD & TBD & 55.46 \\
 \texttt{mkDelayW32B}      & TBD & TBD & 58.73 \\
 \texttt{cipher}           & TBD & TBD & 33.49 \\
-\texttt{reduction\_layer} & TBD & TBD & 23.30 \\
+\texttt{reduction\_layer} & 7.18 & 731 & 23.30 \\
 \texttt{arm\_core}        & TBD & TBD & 9.11 \\
 \texttt{softmax}          & \GAred\,(single run) & 768\,(single run) & 7.27 \\
 \bottomrule
