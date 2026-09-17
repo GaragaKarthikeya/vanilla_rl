@@ -1,0 +1,973 @@
+E2: 162 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cdcc651f.xml
+  Size   : 14x14
+  DSPs   : [(11, 2), (10, 3), (5, 8)]
+  BRAMs  : [(9, 6)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f7d2ea3b.xml
+  Size   : 14x14
+  DSPs   : [(1, 4), (7, 6), (4, 1)]
+  BRAMs  : [(12, 5)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_fde40857.xml
+  Size   : 14x14
+  DSPs   : [(7, 9), (8, 7), (11, 1)]
+  BRAMs  : [(12, 3)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4baa6dd5.xml
+  Size   : 14x14
+  DSPs   : [(12, 4), (9, 6), (11, 8)]
+  BRAMs  : [(3, 1)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c8a0295c.xml
+  Size   : 14x14
+  DSPs   : [(1, 4), (7, 6), (4, 1)]
+  BRAMs  : [(12, 5)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e88f02ee.xml
+  Size   : 14x14
+  DSPs   : [(10, 5), (6, 5), (12, 9)]
+  BRAMs  : [(5, 7)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_87f1df9c.xml
+  Size   : 14x14
+  DSPs   : [(12, 4), (9, 6), (11, 8)]
+  BRAMs  : [(3, 1)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9307bcea.xml
+  Size   : 14x14
+  DSPs   : [(10, 5), (6, 5), (12, 9)]
+  BRAMs  : [(5, 7)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8544cefb.xml
+  Size   : 14x14
+  DSPs   : [(7, 9), (8, 7), (11, 1)]
+  BRAMs  : [(12, 3)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cad5759c.xml
+  Size   : 14x14
+  DSPs   : [(5, 4), (1, 8), (7, 3)]
+  BRAMs  : [(6, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e88f02ee.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_87f1df9c.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f7d2ea3b.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9307bcea.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_579d70bf.xml
+  Size   : 14x14
+  DSPs   : [(11, 2), (10, 3), (5, 8)]
+  BRAMs  : [(9, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4baa6dd5.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_fde40857.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cad5759c.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_579d70bf.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cdcc651f.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8544cefb.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c8a0295c.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1f4ec3ec.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(3, 43), (36, 34), (7, 14), (30, 41), (38, 2), (6, 20), (18, 10), (39, 36), (8, 36), (30, 16), (39, 20), (32, 31), (9, 11), (6, 27), (44, 28), (16, 20), (28, 31), (4, 20), (37, 39), (3, 24), (11, 42), (37, 3), (18, 43), (28, 40), (38, 8), (40, 39), (34, 14), (12, 12), (25, 25), (31, 37), (22, 35), (39, 28), (42, 1), (33, 23), (11, 33), (8, 18), (35, 40), (5, 14), (44, 39), (24, 43), (40, 20), (11, 3), (14, 25)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1f4ec3ec.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_19d7f971.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(42, 34), (37, 34), (43, 5), (6, 13), (13, 19), (10, 5), (11, 30), (8, 29), (26, 41), (22, 2), (28, 41), (25, 10), (41, 39), (48, 30), (18, 36), (15, 38), (11, 41), (17, 2), (21, 7), (26, 29), (29, 32), (12, 36), (33, 16), (2, 23), (4, 8), (38, 38), (31, 41), (44, 38), (6, 6), (41, 18), (45, 27), (17, 32), (23, 20), (18, 27), (26, 17), (26, 7), (39, 41), (10, 28), (22, 32), (33, 43), (22, 11), (23, 2), (34, 36)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_19d7f971.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a8bad709.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(42, 34), (37, 34), (43, 5), (6, 13), (13, 19), (10, 5), (11, 30), (8, 29), (26, 41), (22, 2), (28, 41), (25, 10), (41, 39), (48, 30), (18, 36), (15, 38), (11, 41), (17, 2), (21, 7), (26, 29), (29, 32), (12, 36), (33, 16), (2, 23), (4, 8), (38, 38), (31, 41), (44, 38), (6, 6), (41, 18), (45, 27), (17, 32), (23, 20), (18, 27), (26, 17), (26, 7), (39, 41), (10, 28), (22, 32), (33, 43), (22, 11), (23, 2), (34, 36)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0ecfac0d.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(3, 43), (36, 34), (7, 14), (30, 41), (38, 2), (6, 20), (18, 10), (39, 36), (8, 36), (30, 16), (39, 20), (32, 31), (9, 11), (6, 27), (44, 28), (16, 20), (28, 31), (4, 20), (37, 39), (3, 24), (11, 42), (37, 3), (18, 43), (28, 40), (38, 8), (40, 39), (34, 14), (12, 12), (25, 25), (31, 37), (22, 35), (39, 28), (42, 1), (33, 23), (11, 33), (8, 18), (35, 40), (5, 14), (44, 39), (24, 43), (40, 20), (11, 3), (14, 25)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a8bad709.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0ecfac0d.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_04b78644.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(34, 2), (45, 14), (47, 28), (35, 11), (37, 3), (13, 22), (44, 8), (28, 6), (34, 42), (21, 25), (13, 3), (5, 14), (23, 36), (41, 8), (41, 14), (42, 18), (32, 18), (42, 30), (17, 17), (44, 19), (38, 24), (39, 16), (29, 23), (33, 33), (8, 10), (6, 20), (21, 13), (2, 5), (36, 27), (31, 40), (17, 1), (17, 40), (37, 26), (22, 29), (15, 14), (19, 28), (11, 33), (14, 5), (4, 12), (46, 27), (11, 40), (43, 34), (33, 8)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_04b78644.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 2.45
+done E2 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.25
+done E2 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.25
+done E2 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.26
+done E2 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.28
+done E2 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.29
+done E2 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.28
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e8863c0c.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(34, 2), (45, 14), (47, 28), (35, 11), (37, 3), (13, 22), (44, 8), (28, 6), (34, 42), (21, 25), (13, 3), (5, 14), (23, 36), (41, 8), (41, 14), (42, 18), (32, 18), (42, 30), (17, 17), (44, 19), (38, 24), (39, 16), (29, 23), (33, 33), (8, 10), (6, 20), (21, 13), (2, 5), (36, 27), (31, 40), (17, 1), (17, 40), (37, 26), (22, 29), (15, 14), (19, 28), (11, 33), (14, 5), (4, 12), (46, 27), (11, 40), (43, 34), (33, 8)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e8863c0c.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_00c257cb.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(4, 3), (5, 1), (2, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_00c257cb.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 6.06
+done E2 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 6.08
+done E2 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 6.19
+done E2 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 6.17
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b6ec1576.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(3, 4), (7, 6), (4, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b6ec1576.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f60915e2.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(4, 3), (5, 1), (2, 4)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0014e66d.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(12, 2), (8, 2), (5, 3)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6d2f8148.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(3, 4), (7, 6), (4, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f60915e2.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0014e66d.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6d2f8148.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_902cfdd6.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(42, 21), (37, 16), (5, 34), (43, 24), (34, 11), (6, 37), (48, 30), (2, 42), (40, 11), (13, 34), (10, 16), (3, 37), (35, 26), (32, 43), (26, 40), (47, 1), (39, 25), (16, 38), (48, 4), (18, 32), (15, 39), (22, 14), (43, 34), (47, 21), (18, 41), (24, 15), (46, 8), (10, 23), (5, 4), (7, 33), (6, 27), (6, 6), (21, 21), (27, 5), (5, 24), (17, 2), (8, 27), (25, 15), (15, 19), (1, 23), (2, 5), (40, 41), (33, 36)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_902cfdd6.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6d87ac01.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(29, 25), (25, 29), (11, 8), (10, 37), (26, 18), (10, 16), (16, 30), (17, 27), (31, 24), (41, 27), (1, 28), (27, 29), (22, 21), (21, 12), (13, 10), (9, 14), (19, 23), (13, 35), (11, 42), (8, 28), (9, 28), (48, 28), (12, 15), (41, 13), (40, 35), (15, 38), (25, 11), (13, 19), (6, 12), (33, 18), (12, 3), (3, 3), (27, 43), (3, 15), (40, 25), (34, 1), (44, 38), (46, 34), (22, 31), (15, 9), (47, 28), (23, 14), (30, 40)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2d4b8279.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(42, 21), (37, 16), (5, 34), (43, 24), (34, 11), (6, 37), (48, 30), (2, 42), (40, 11), (13, 34), (10, 16), (3, 37), (35, 26), (32, 43), (26, 40), (47, 1), (39, 25), (16, 38), (48, 4), (18, 32), (15, 39), (22, 14), (43, 34), (47, 21), (18, 41), (24, 15), (46, 8), (10, 23), (5, 4), (7, 33), (6, 27), (6, 6), (21, 21), (27, 5), (5, 24), (17, 2), (8, 27), (25, 15), (15, 19), (1, 23), (2, 5), (40, 41), (33, 36)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_36f675be.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(29, 25), (25, 29), (11, 8), (10, 37), (26, 18), (10, 16), (16, 30), (17, 27), (31, 24), (41, 27), (1, 28), (27, 29), (22, 21), (21, 12), (13, 10), (9, 14), (19, 23), (13, 35), (11, 42), (8, 28), (9, 28), (48, 28), (12, 15), (41, 13), (40, 35), (15, 38), (25, 11), (13, 19), (6, 12), (33, 18), (12, 3), (3, 3), (27, 43), (3, 15), (40, 25), (34, 1), (44, 38), (46, 34), (22, 31), (15, 9), (47, 28), (23, 14), (30, 40)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6d87ac01.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ea8991db.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (7, 16), (15, 11), (13, 14), (11, 17), (10, 14), (7, 10), (22, 17), (2, 18), (18, 19), (9, 18), (21, 6), (12, 5), (17, 1), (22, 5), (13, 3), (6, 18), (9, 4), (12, 14), (4, 12), (20, 4), (5, 15), (3, 2), (2, 7), (23, 18), (4, 6), (16, 11), (8, 18), (10, 5), (24, 13), (19, 4), (9, 11), (16, 5), (6, 2), (23, 6), (8, 11), (7, 4), (16, 20), (11, 7), (18, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2d4b8279.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_36f675be.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ea8991db.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.33
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2815280e.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(12, 2), (8, 2), (5, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2815280e.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 6.04
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_45370fef.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(4, 5), (11, 7), (9, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_45370fef.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.52
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_eea8ee28.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(4, 5), (11, 7), (9, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_eea8ee28.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.85
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2404fd3c.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(5, 2), (7, 3), (6, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2404fd3c.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 7.44
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_12e909ae.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(5, 2), (7, 3), (6, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_12e909ae.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.04
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5ac4880d.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 4), (2, 3), (5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5ac4880d.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.06
+done E2 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.8
+done E2 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 6.54
+done E2 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 7.44
+done E2 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.95
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4b169f29.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(31, 22), (41, 36), (23, 13), (38, 2), (15, 9), (10, 17), (5, 14), (31, 31), (1, 6), (18, 9), (4, 1), (34, 36), (7, 18), (42, 13), (40, 9), (19, 6), (11, 3), (38, 32), (22, 18), (40, 29), (37, 17), (14, 22), (8, 23), (9, 17), (38, 13), (14, 28), (24, 12), (7, 26), (28, 28), (37, 29), (39, 21), (36, 29)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4b169f29.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_50e293af.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(31, 7), (23, 8), (11, 20), (3, 6), (16, 25), (34, 17), (22, 9), (38, 7), (7, 11), (39, 12), (26, 25), (19, 28), (40, 21), (9, 28), (16, 19), (24, 1), (27, 27), (37, 13), (1, 20), (7, 32), (9, 4), (5, 13), (20, 3), (42, 20), (10, 35), (21, 27), (13, 22), (4, 15), (31, 18), (28, 22), (15, 26), (9, 18)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_50e293af.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6c473096.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(31, 22), (41, 36), (23, 13), (38, 2), (15, 9), (10, 17), (5, 14), (31, 31), (1, 6), (18, 9), (4, 1), (34, 36), (7, 18), (42, 13), (40, 9), (19, 6), (11, 3), (38, 32), (22, 18), (40, 29), (37, 17), (14, 22), (8, 23), (9, 17), (38, 13), (14, 28), (24, 12), (7, 26), (28, 28), (37, 29), (39, 21), (36, 29)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6c473096.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_09de9fee.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(31, 7), (23, 8), (11, 20), (3, 6), (16, 25), (34, 17), (22, 9), (38, 7), (7, 11), (39, 12), (26, 25), (19, 28), (40, 21), (9, 28), (16, 19), (24, 1), (27, 27), (37, 13), (1, 20), (7, 32), (9, 4), (5, 13), (20, 3), (42, 20), (10, 35), (21, 27), (13, 22), (4, 15), (31, 18), (28, 22), (15, 26), (9, 18)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b608f8e2.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(25, 21), (35, 6), (5, 23), (2, 7), (3, 5), (10, 21), (29, 18), (23, 31), (17, 18), (18, 21), (32, 31), (39, 37), (35, 27), (9, 15), (25, 3), (40, 30), (30, 19), (8, 19), (23, 6), (8, 35), (14, 18), (23, 18), (6, 28), (37, 16), (11, 15), (9, 25), (34, 36), (8, 8), (20, 37), (32, 7), (36, 20), (31, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b608f8e2.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_09de9fee.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 35.72
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 38.18
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 41.1
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 40.54
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_bf7c0a24.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(25, 21), (35, 6), (5, 23), (2, 7), (3, 5), (10, 21), (29, 18), (23, 31), (17, 18), (18, 21), (32, 31), (39, 37), (35, 27), (9, 15), (25, 3), (40, 30), (30, 19), (8, 19), (23, 6), (8, 35), (14, 18), (23, 18), (6, 28), (37, 16), (11, 15), (9, 25), (34, 36), (8, 8), (20, 37), (32, 7), (36, 20), (31, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_bf7c0a24.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 45.55
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 40.88
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 44.94
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2c04a149.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (7, 16), (15, 11), (13, 14), (11, 17), (10, 14), (7, 10), (22, 17), (2, 18), (18, 19), (9, 18), (21, 6), (12, 5), (17, 1), (22, 5), (13, 3), (6, 18), (9, 4), (12, 14), (4, 12), (5, 15), (20, 4), (3, 2), (2, 7), (23, 18), (4, 6), (16, 11), (8, 18), (10, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2c04a149.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 46.74
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 52.18
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 49.93
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9689f385.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(19, 18), (8, 3), (27, 17), (11, 2), (24, 7), (17, 8), (20, 11), (18, 24), (7, 20), (13, 3), (14, 3), (9, 11), (8, 16), (2, 22), (5, 24), (28, 13), (3, 20), (20, 27), (1, 29), (9, 2), (22, 16), (24, 18), (12, 30), (20, 4)]
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 52.79
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9689f385.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f41587f4.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(19, 18), (8, 3), (27, 17), (11, 2), (24, 7), (17, 8), (20, 11), (18, 24), (7, 20), (13, 3), (14, 3), (9, 11), (8, 16), (2, 22), (5, 24), (28, 13), (3, 20), (20, 27), (1, 29), (9, 2), (22, 16), (24, 18), (12, 30), (20, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f41587f4.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ddfd86e8.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(34, 20), (18, 5), (9, 16), (9, 23), (27, 11), (19, 14), (32, 28), (1, 1), (7, 18), (34, 3), (35, 11), (18, 27), (2, 11), (24, 17), (13, 17), (27, 24), (11, 1), (1, 11), (22, 19), (20, 30), (15, 28), (26, 14), (29, 21), (30, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ddfd86e8.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_747cfe8c.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(34, 20), (18, 5), (9, 16), (9, 23), (27, 11), (19, 14), (32, 28), (1, 1), (7, 18), (34, 3), (35, 11), (18, 27), (2, 11), (24, 17), (13, 17), (27, 24), (11, 1), (1, 11), (22, 19), (20, 30), (15, 28), (26, 14), (29, 21), (30, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_747cfe8c.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2a3863d8.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(35, 6), (27, 23), (29, 3), (2, 14), (4, 10), (26, 14), (35, 16), (31, 5), (10, 3), (33, 18), (6, 9), (17, 4), (14, 23), (24, 11), (16, 17), (30, 8), (5, 18), (32, 2), (7, 14), (12, 24), (11, 10), (24, 20), (23, 24), (34, 20)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2a3863d8.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e2d5c155.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(35, 6), (27, 23), (29, 3), (2, 14), (4, 10), (26, 14), (35, 16), (31, 5), (10, 3), (33, 18), (6, 9), (17, 4), (14, 23), (24, 11), (16, 17), (30, 8), (5, 18), (32, 2), (7, 14), (12, 24), (11, 10), (24, 20), (23, 24), (34, 20)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e2d5c155.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2f1a8f1f.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (13, 14), (7, 16), (15, 11), (10, 14), (11, 17), (7, 10), (2, 18), (22, 17), (9, 18), (21, 6), (18, 19), (12, 5), (22, 5), (17, 1), (6, 18), (13, 3), (9, 4), (12, 14), (4, 12), (5, 15)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2f1a8f1f.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_558079da.xml
+  Size   : 43x43
+  DSPs   : [(23, 35), (1, 30), (41, 29), (28, 13), (10, 28), (21, 36), (33, 35), (19, 25)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_558079da.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_53bef399.xml
+  Size   : 43x43
+  DSPs   : [(23, 35), (1, 30), (41, 29), (28, 13), (10, 28), (21, 36), (33, 35), (19, 25)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_53bef399.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 171.77
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_06c38c02.xml
+  Size   : 43x43
+  DSPs   : [(41, 36), (6, 2), (37, 12), (40, 10), (14, 17), (38, 28), (2, 37), (31, 32)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_06c38c02.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 7, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 164.77
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7cb9e01c.xml
+  Size   : 43x43
+  DSPs   : [(41, 36), (6, 2), (37, 12), (40, 10), (14, 17), (38, 28), (2, 37), (31, 32)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7cb9e01c.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 211.26
+done E2 {'circuit': 'reduction_layer', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 214.82
+done E2 {'circuit': 'arm_core', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 173.62
+done E2 {'circuit': 'arm_core', 'seed': 7, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 184.57
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_08ee895d.xml
+  Size   : 43x43
+  DSPs   : [(7, 1), (29, 17), (18, 6), (35, 36), (40, 12), (29, 27), (11, 21), (17, 20)]
+  BRAMs  : []
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6a8edbfe.xml
+  Size   : 14x14
+  DSPs   : [(10, 4), (8, 6), (5, 9)]
+  BRAMs  : [(2, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_08ee895d.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6a8edbfe.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 228.49
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f2adec90.xml
+  Size   : 14x14
+  DSPs   : [(10, 4), (8, 6), (5, 9)]
+  BRAMs  : [(2, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f2adec90.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_fc4862d4.xml
+  Size   : 43x43
+  DSPs   : [(19, 12), (17, 15), (1, 9), (7, 16), (14, 14), (15, 11), (13, 14), (7, 11)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_fc4862d4.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d2217be4.xml
+  Size   : 43x43
+  DSPs   : [(7, 1), (29, 17), (18, 6), (35, 36), (40, 12), (29, 27), (11, 21), (17, 20)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d2217be4.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 2.95
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c84beec5.xml
+  Size   : 14x14
+  DSPs   : [(11, 5), (10, 3), (11, 1)]
+  BRAMs  : [(8, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c84beec5.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.99
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cf1f620c.xml
+  Size   : 14x14
+  DSPs   : [(11, 5), (10, 3), (11, 1)]
+  BRAMs  : [(8, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cf1f620c.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.35
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d25abb1f.xml
+  Size   : 14x14
+  DSPs   : [(12, 6), (10, 7), (11, 5)]
+  BRAMs  : [(9, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d25abb1f.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.62
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0eb62655.xml
+  Size   : 14x14
+  DSPs   : [(12, 6), (10, 7), (11, 5)]
+  BRAMs  : [(9, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0eb62655.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.8
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_fc8935bd.xml
+  Size   : 14x14
+  DSPs   : [(7, 3), (2, 1), (10, 4)]
+  BRAMs  : [(9, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_fc8935bd.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.16
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c693c790.xml
+  Size   : 14x14
+  DSPs   : [(7, 3), (2, 1), (10, 4)]
+  BRAMs  : [(9, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c693c790.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.75
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_30482afb.xml
+  Size   : 14x14
+  DSPs   : [(6, 2), (2, 2), (8, 6)]
+  BRAMs  : [(11, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_30482afb.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.86
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9b27d8c6.xml
+  Size   : 14x14
+  DSPs   : [(6, 2), (2, 2), (8, 6)]
+  BRAMs  : [(11, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9b27d8c6.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 245.37
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1b5bb1bf.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (3, 6), (6, 4)]
+  BRAMs  : [(2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1b5bb1bf.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.0
+done E2 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.18
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_49d66da4.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(31, 27), (39, 7), (22, 15), (12, 27), (45, 11), (20, 7), (40, 22), (31, 1), (44, 12), (39, 35), (44, 34), (27, 40), (22, 1), (37, 4), (12, 41), (40, 14), (48, 31), (20, 1), (2, 36), (35, 38), (5, 2), (10, 17), (1, 35), (24, 34), (30, 34), (40, 2), (9, 15), (15, 13), (3, 11), (23, 9), (10, 40), (17, 22), (6, 43), (43, 33), (38, 13), (4, 13), (10, 9), (28, 42), (17, 3), (41, 19), (18, 36), (30, 2), (48, 23)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_49d66da4.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.78
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_566924d9.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(31, 27), (39, 7), (22, 15), (12, 27), (45, 11), (20, 7), (40, 22), (31, 1), (44, 12), (39, 35), (44, 34), (27, 40), (22, 1), (37, 4), (12, 41), (40, 14), (48, 31), (20, 1), (2, 36), (35, 38), (5, 2), (10, 17), (1, 35), (24, 34), (30, 34), (40, 2), (9, 15), (15, 13), (3, 11), (23, 9), (10, 40), (17, 22), (6, 43), (43, 33), (38, 13), (4, 13), (10, 9), (28, 42), (17, 3), (41, 19), (18, 36), (30, 2), (48, 23)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_566924d9.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2ac42a4.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(11, 15), (29, 7), (30, 12), (26, 17), (29, 29), (39, 25), (35, 22), (21, 43), (44, 6), (40, 10), (29, 14), (34, 10), (8, 29), (8, 43), (1, 37), (42, 6), (43, 11), (32, 37), (48, 27), (10, 8), (28, 24), (16, 26), (1, 8), (16, 19), (24, 42), (45, 5), (9, 30), (34, 21), (2, 19), (39, 4), (38, 6), (40, 43), (46, 31), (23, 6), (30, 5), (16, 42), (25, 5), (44, 15), (19, 23), (41, 14), (5, 22), (25, 24), (10, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c2ac42a4.xml
+done E2 {'circuit': 'arm_core', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 241.49
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e22f5963.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(11, 15), (29, 7), (30, 12), (26, 17), (29, 29), (39, 25), (35, 22), (21, 43), (44, 6), (40, 10), (29, 14), (34, 10), (8, 29), (8, 43), (1, 37), (42, 6), (43, 11), (32, 37), (48, 27), (10, 8), (28, 24), (16, 26), (1, 8), (16, 19), (24, 42), (45, 5), (9, 30), (34, 21), (2, 19), (39, 4), (38, 6), (40, 43), (46, 31), (23, 6), (30, 5), (16, 42), (25, 5), (44, 15), (19, 23), (41, 14), (5, 22), (25, 24), (10, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e22f5963.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 49.64
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ea7d5488.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(46, 27), (25, 17), (30, 18), (38, 29), (1, 41), (40, 33), (14, 20), (29, 30), (1, 25), (42, 40), (6, 42), (41, 32), (30, 31), (36, 37), (20, 31), (14, 30), (23, 23), (30, 8), (20, 41), (24, 6), (38, 17), (4, 32), (12, 3), (45, 40), (36, 26), (26, 5), (7, 15), (10, 36), (39, 43), (33, 12), (21, 13), (43, 37), (46, 8), (8, 2), (25, 29), (19, 36), (36, 13), (19, 15), (32, 11), (8, 13), (30, 25), (35, 43), (3, 22)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ea7d5488.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 54.63
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4c90cdeb.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(46, 27), (25, 17), (30, 18), (38, 29), (1, 41), (40, 33), (14, 20), (29, 30), (1, 25), (42, 40), (6, 42), (41, 32), (30, 31), (36, 37), (20, 31), (14, 30), (23, 23), (30, 8), (20, 41), (24, 6), (38, 17), (4, 32), (12, 3), (45, 40), (36, 26), (26, 5), (7, 15), (10, 36), (39, 43), (33, 12), (21, 13), (43, 37), (46, 8), (8, 2), (25, 29), (19, 36), (36, 13), (19, 15), (32, 11), (8, 13), (30, 25), (35, 43), (3, 22)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4c90cdeb.xml
+done E2 {'circuit': 'arm_core', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 285.82
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3cae9713.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(36, 37), (24, 23), (2, 3), (29, 9), (47, 2), (9, 24), (41, 4), (14, 19), (41, 16), (17, 27), (22, 1), (30, 16), (3, 32), (9, 11), (14, 42), (15, 34), (39, 7), (25, 21), (42, 37), (5, 41), (24, 32), (13, 31), (27, 1), (31, 43), (31, 24), (6, 13), (5, 32), (43, 6), (7, 28), (42, 8), (36, 12), (40, 36), (6, 28), (35, 4), (37, 43), (45, 18), (41, 28), (43, 27), (15, 8), (1, 26), (11, 13), (44, 2), (42, 28)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3cae9713.xml
+done E2 {'circuit': 'arm_core', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 284.15
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3dff541c.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(36, 37), (24, 23), (2, 3), (29, 9), (47, 2), (9, 24), (41, 4), (14, 19), (41, 16), (17, 27), (22, 1), (30, 16), (3, 32), (9, 11), (14, 42), (15, 34), (39, 7), (25, 21), (42, 37), (5, 41), (24, 32), (13, 31), (27, 1), (31, 43), (31, 24), (6, 13), (5, 32), (43, 6), (7, 28), (42, 8), (36, 12), (40, 36), (6, 28), (35, 4), (37, 43), (45, 18), (41, 28), (43, 27), (15, 8), (1, 26), (11, 13), (44, 2), (42, 28)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3dff541c.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 72.99
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_507d4abb.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(33, 25), (35, 15), (11, 16), (44, 16), (1, 13), (18, 25), (3, 19), (37, 9), (2, 3), (24, 34), (18, 18), (10, 36), (31, 30), (37, 19), (24, 40), (18, 42), (34, 41), (10, 4), (7, 1), (38, 19), (30, 6), (32, 23), (30, 31), (36, 16), (42, 23), (21, 13), (44, 7), (13, 35), (37, 29), (34, 16), (37, 42), (40, 6), (1, 20), (36, 41), (4, 27), (36, 22), (16, 33), (13, 29), (15, 10), (19, 17), (20, 27), (25, 22), (7, 38)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_507d4abb.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 66.89
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_39128114.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(33, 25), (35, 15), (11, 16), (44, 16), (1, 13), (18, 25), (3, 19), (37, 9), (2, 3), (24, 34), (18, 18), (10, 36), (31, 30), (37, 19), (24, 40), (18, 42), (34, 41), (10, 4), (7, 1), (38, 19), (30, 6), (32, 23), (30, 31), (36, 16), (42, 23), (21, 13), (44, 7), (13, 35), (37, 29), (34, 16), (37, 42), (40, 6), (1, 20), (36, 41), (4, 27), (36, 22), (16, 33), (13, 29), (15, 10), (19, 17), (20, 27), (25, 22), (7, 38)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_39128114.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 333.92
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 47.51
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ba2fb6b7.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(3, 5), (5, 2), (11, 6)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_74a993ee.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ba2fb6b7.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_74a993ee.xml
+done E2 {'circuit': 'arm_core', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 312.28
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7ad1e248.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(3, 5), (5, 2), (11, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7ad1e248.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.67
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c8055a6a.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(1, 4), (7, 2), (6, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c8055a6a.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.48
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_18c51b0c.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(1, 4), (7, 2), (6, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_18c51b0c.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.41
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cdbdc0b0.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(5, 3), (6, 4), (10, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cdbdc0b0.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 53.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b8c87cf2.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(5, 3), (6, 4), (10, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b8c87cf2.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.96
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0a8520e4.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(4, 1), (1, 2), (8, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0a8520e4.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.45
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_bce69d60.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(4, 1), (1, 2), (8, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_bce69d60.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.05
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2ad05aed.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 5), (5, 4), (7, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2ad05aed.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.84
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_07bb6085.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 5), (5, 4), (7, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_07bb6085.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.86
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_abaace70.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (8, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_abaace70.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.29
+done E2 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.68
+done E2 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.84
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 54.85
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3a3a4dff.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(33, 19), (10, 6), (28, 19), (24, 7), (23, 20), (37, 12), (31, 9), (25, 29), (30, 27), (36, 23), (26, 6), (19, 22), (6, 6), (17, 27), (3, 21), (27, 1), (42, 3), (14, 23), (39, 37), (40, 24), (38, 28), (26, 31), (29, 19), (6, 18), (33, 9), (31, 15), (30, 16), (35, 29), (37, 1), (18, 15), (9, 25), (35, 15)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3a3a4dff.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 65.6
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2919a86d.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(5, 7), (29, 31), (5, 37), (17, 4), (23, 21), (4, 23), (38, 23), (13, 6), (6, 37), (33, 24), (31, 34), (38, 36), (18, 23), (26, 2), (42, 29), (41, 34), (18, 4), (23, 4), (42, 23), (15, 32), (34, 33), (30, 35), (21, 3), (4, 15), (21, 16), (28, 3), (14, 7), (19, 13), (9, 14), (15, 19), (22, 8), (25, 15)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_57ee15ad.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(33, 19), (10, 6), (28, 19), (24, 7), (23, 20), (37, 12), (31, 9), (25, 29), (30, 27), (36, 23), (26, 6), (19, 22), (6, 6), (17, 27), (3, 21), (27, 1), (42, 3), (14, 23), (39, 37), (40, 24), (38, 28), (26, 31), (29, 19), (6, 18), (33, 9), (31, 15), (30, 16), (35, 29), (37, 1), (18, 15), (9, 25), (35, 15)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2919a86d.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_57ee15ad.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5f161ec7.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(5, 7), (29, 31), (5, 37), (17, 4), (23, 21), (4, 23), (38, 23), (13, 6), (6, 37), (33, 24), (31, 34), (38, 36), (18, 23), (26, 2), (42, 29), (41, 34), (18, 4), (23, 4), (42, 23), (15, 32), (34, 33), (30, 35), (21, 3), (4, 15), (21, 16), (28, 3), (14, 7), (19, 13), (9, 14), (15, 19), (22, 8), (25, 15)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5f161ec7.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_90387a50.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(34, 10), (28, 28), (20, 19), (30, 27), (27, 17), (23, 29), (40, 3), (2, 6), (8, 1), (41, 18), (8, 15), (4, 3), (9, 32), (5, 31), (4, 23), (24, 14), (30, 33), (10, 20), (2, 22), (32, 4), (7, 27), (16, 2), (14, 20), (22, 18), (5, 18), (34, 1), (27, 37), (6, 9), (29, 10), (22, 6), (11, 28), (26, 34)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_90387a50.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 61.95
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6093c2d0.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(34, 10), (28, 28), (20, 19), (30, 27), (27, 17), (23, 29), (40, 3), (2, 6), (8, 1), (41, 18), (8, 15), (4, 3), (9, 32), (5, 31), (4, 23), (24, 14), (30, 33), (10, 20), (2, 22), (32, 4), (7, 27), (16, 2), (14, 20), (22, 18), (5, 18), (34, 1), (27, 37), (6, 9), (29, 10), (22, 6), (11, 28), (26, 34)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6093c2d0.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 47.58
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 40.45
+done E2 {'circuit': 'softmax', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 346.05
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b205b12b.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b205b12b.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ce4b3ea4.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(14, 30), (27, 8), (33, 2), (9, 29), (28, 24), (35, 17), (28, 12), (1, 3), (34, 17), (2, 6), (12, 3), (19, 12), (12, 17), (5, 26), (32, 10), (11, 10), (25, 11), (32, 17), (6, 16), (7, 11), (3, 16), (8, 19), (23, 23), (33, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ce4b3ea4.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_18c5e19f.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(14, 30), (27, 8), (33, 2), (9, 29), (28, 24), (35, 17), (28, 12), (1, 3), (34, 17), (2, 6), (12, 3), (19, 12), (12, 17), (5, 26), (32, 10), (11, 10), (25, 11), (32, 17), (6, 16), (7, 11), (3, 16), (8, 19), (23, 23), (33, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_18c5e19f.xml
+done E2 {'circuit': 'arm_core', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 363.9
+done E2 {'circuit': 'softmax', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 357.4
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6de807b0.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(18, 22), (30, 17), (23, 23), (32, 21), (3, 26), (20, 26), (10, 10), (30, 5), (14, 25), (31, 25), (28, 2), (22, 5), (8, 1), (29, 8), (19, 2), (9, 12), (34, 12), (35, 7), (16, 24), (14, 2), (11, 28), (29, 26), (16, 8), (10, 21)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6de807b0.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_81a75293.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(18, 22), (30, 17), (23, 23), (32, 21), (3, 26), (20, 26), (10, 10), (30, 5), (14, 25), (31, 25), (28, 2), (22, 5), (8, 1), (29, 8), (19, 2), (9, 12), (34, 12), (35, 7), (16, 24), (14, 2), (11, 28), (29, 26), (16, 8), (10, 21)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_81a75293.xml
+done E2 {'circuit': 'softmax', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 289.93
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8de58e93.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(6, 20), (16, 29), (27, 28), (32, 21), (14, 1), (24, 14), (8, 8), (4, 3), (19, 22), (5, 14), (28, 5), (14, 13), (2, 26), (14, 30), (24, 2), (25, 30), (22, 24), (24, 23), (11, 15), (27, 16), (4, 26), (11, 30), (13, 22), (26, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8de58e93.xml
+done E2 {'circuit': 'softmax', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 291.9
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_614fb388.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(6, 20), (16, 29), (27, 28), (32, 21), (14, 1), (24, 14), (8, 8), (4, 3), (19, 22), (5, 14), (28, 5), (14, 13), (2, 26), (14, 30), (24, 2), (25, 30), (22, 24), (24, 23), (11, 15), (27, 16), (4, 26), (11, 30), (13, 22), (26, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_614fb388.xml
+done E2 {'circuit': 'softmax', 'seed': 7, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 287.95
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5dca83f9.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5dca83f9.xml
+done E2 {'circuit': 'softmax', 'seed': 7, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 299.72
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cf2c53cb.xml
+  Size   : 43x43
+  DSPs   : [(11, 27), (8, 5), (25, 24), (41, 6), (30, 1), (3, 11), (5, 8), (8, 14)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cf2c53cb.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 42, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 152.58
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4849be20.xml
+  Size   : 43x43
+  DSPs   : [(11, 27), (8, 5), (25, 24), (41, 6), (30, 1), (3, 11), (5, 8), (8, 14)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4849be20.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 195.3
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7186c390.xml
+  Size   : 43x43
+  DSPs   : [(33, 1), (15, 1), (40, 2), (1, 34), (16, 25), (18, 37), (22, 29), (18, 10)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7186c390.xml
+done E2 {'circuit': 'softmax', 'seed': 7, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 393.94
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_40a61f03.xml
+  Size   : 43x43
+  DSPs   : [(33, 1), (15, 1), (40, 2), (1, 34), (16, 25), (18, 37), (22, 29), (18, 10)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_40a61f03.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 252.78
+done E2 {'circuit': 'reduction_layer', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 256.03
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_29558de8.xml
+  Size   : 43x43
+  DSPs   : [(9, 16), (21, 8), (16, 19), (36, 20), (19, 18), (6, 21), (21, 36), (16, 6)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_29558de8.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7b6f09d3.xml
+  Size   : 43x43
+  DSPs   : [(9, 16), (21, 8), (16, 19), (36, 20), (19, 18), (6, 21), (21, 36), (16, 6)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7b6f09d3.xml
+done E2 {'circuit': 'arm_core', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 249.92
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8b2310e9.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8b2310e9.xml
+done E2 {'circuit': 'arm_core', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 257.54
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e9554895.xml
+  Size   : 14x14
+  DSPs   : [(9, 4), (7, 9), (2, 3)]
+  BRAMs  : [(1, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e9554895.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.45
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7c1d885b.xml
+  Size   : 14x14
+  DSPs   : [(9, 4), (7, 9), (2, 3)]
+  BRAMs  : [(1, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7c1d885b.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.69
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_628ed857.xml
+  Size   : 14x14
+  DSPs   : [(1, 7), (2, 5), (7, 8)]
+  BRAMs  : [(8, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_628ed857.xml
+done E2 {'circuit': 'arm_core', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 277.7
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_566baa2b.xml
+  Size   : 14x14
+  DSPs   : [(1, 7), (2, 5), (7, 8)]
+  BRAMs  : [(8, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_566baa2b.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 2.8
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d28f9387.xml
+  Size   : 14x14
+  DSPs   : [(8, 6), (6, 9), (2, 3)]
+  BRAMs  : [(4, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d28f9387.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 294.88
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_eaf1f39a.xml
+  Size   : 14x14
+  DSPs   : [(8, 6), (6, 9), (2, 3)]
+  BRAMs  : [(4, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_eaf1f39a.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 2.74
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7dde3525.xml
+  Size   : 14x14
+  DSPs   : [(8, 5), (12, 9), (4, 1)]
+  BRAMs  : [(6, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7dde3525.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 291.2
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_589edda8.xml
+  Size   : 14x14
+  DSPs   : [(8, 5), (12, 9), (4, 1)]
+  BRAMs  : [(6, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_589edda8.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.72
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_323f9787.xml
+  Size   : 14x14
+  DSPs   : [(3, 5), (9, 1), (4, 8)]
+  BRAMs  : [(8, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_323f9787.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 2.7
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_66a92343.xml
+  Size   : 14x14
+  DSPs   : [(3, 5), (9, 1), (4, 8)]
+  BRAMs  : [(8, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_66a92343.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.53
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5454ca83.xml
+  Size   : 14x14
+  DSPs   : [(2, 3), (6, 3), (3, 4)]
+  BRAMs  : [(5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5454ca83.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.19
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e5edd5af.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(33, 1), (16, 11), (44, 20), (9, 8), (21, 36), (31, 8), (32, 1), (43, 10), (23, 43), (6, 12), (20, 2), (31, 39), (20, 39), (17, 29), (42, 3), (23, 11), (4, 9), (41, 42), (41, 33), (2, 14), (39, 18), (22, 9), (1, 18), (8, 40), (39, 26), (20, 26), (34, 40), (23, 4), (45, 17), (5, 23), (5, 13), (21, 5), (11, 18), (25, 40), (6, 18), (34, 11), (6, 38), (13, 9), (37, 26), (34, 22), (9, 24), (38, 15), (36, 25)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e5edd5af.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 2.6
+done E2 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.12
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_94a292ff.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(33, 1), (16, 11), (44, 20), (9, 8), (21, 36), (31, 8), (32, 1), (43, 10), (23, 43), (6, 12), (20, 2), (31, 39), (20, 39), (17, 29), (42, 3), (23, 11), (4, 9), (41, 42), (41, 33), (2, 14), (39, 18), (22, 9), (1, 18), (8, 40), (39, 26), (20, 26), (34, 40), (23, 4), (45, 17), (5, 23), (5, 13), (21, 5), (11, 18), (25, 40), (6, 18), (34, 11), (6, 38), (13, 9), (37, 26), (34, 22), (9, 24), (38, 15), (36, 25)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_94a292ff.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3a02a589.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(26, 22), (13, 11), (46, 33), (5, 29), (33, 8), (31, 15), (14, 6), (43, 21), (33, 2), (10, 41), (47, 11), (17, 23), (2, 19), (22, 41), (15, 30), (27, 8), (1, 1), (12, 7), (36, 6), (24, 29), (12, 30), (6, 1), (38, 8), (47, 27), (8, 29), (10, 1), (18, 19), (48, 20), (10, 15), (43, 27), (21, 36), (25, 39), (15, 13), (46, 5), (5, 10), (30, 14), (16, 31), (14, 37), (1, 27), (23, 42), (7, 29), (26, 15), (17, 8)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3a02a589.xml
+done E2 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.44
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_219f235a.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(26, 22), (13, 11), (46, 33), (5, 29), (33, 8), (31, 15), (14, 6), (43, 21), (33, 2), (10, 41), (47, 11), (17, 23), (2, 19), (22, 41), (15, 30), (27, 8), (1, 1), (12, 7), (36, 6), (24, 29), (12, 30), (6, 1), (38, 8), (47, 27), (8, 29), (10, 1), (18, 19), (48, 20), (10, 15), (43, 27), (21, 36), (25, 39), (15, 13), (46, 5), (5, 10), (30, 14), (16, 31), (14, 37), (1, 27), (23, 42), (7, 29), (26, 15), (17, 8)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_219f235a.xml
+done E2 {'circuit': 'arm_core', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 238.61
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b48ebe97.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(3, 26), (12, 39), (15, 10), (7, 36), (44, 4), (29, 22), (41, 39), (12, 7), (36, 13), (34, 17), (38, 31), (48, 7), (16, 10), (46, 1), (37, 36), (47, 1), (24, 28), (33, 28), (25, 12), (24, 15), (41, 12), (22, 13), (2, 28), (14, 38), (5, 20), (37, 4), (43, 16), (7, 14), (14, 26), (6, 22), (28, 31), (43, 38), (45, 35), (35, 2), (44, 14), (1, 18), (18, 40), (17, 42), (42, 8), (23, 18), (23, 11), (14, 5), (7, 8)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b48ebe97.xml
+done E2 {'circuit': 'arm_core', 'seed': 42, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 193.49
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ca0528a3.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(3, 26), (12, 39), (15, 10), (7, 36), (44, 4), (29, 22), (41, 39), (12, 7), (36, 13), (34, 17), (38, 31), (48, 7), (16, 10), (46, 1), (37, 36), (47, 1), (24, 28), (33, 28), (25, 12), (24, 15), (41, 12), (22, 13), (2, 28), (14, 38), (5, 20), (37, 4), (43, 16), (7, 14), (14, 26), (6, 22), (28, 31), (43, 38), (45, 35), (35, 2), (44, 14), (1, 18), (18, 40), (17, 42), (42, 8), (23, 18), (23, 11), (14, 5), (7, 8)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ca0528a3.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 341.76
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7527839f.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(18, 16), (33, 16), (45, 2), (15, 37), (3, 19), (34, 6), (46, 42), (30, 20), (27, 6), (9, 5), (31, 26), (48, 19), (1, 22), (10, 16), (34, 18), (33, 29), (22, 27), (40, 13), (48, 4), (9, 31), (21, 6), (10, 39), (48, 31), (19, 9), (14, 40), (15, 27), (37, 19), (18, 10), (23, 21), (47, 3), (44, 15), (9, 13), (15, 10), (42, 9), (26, 36), (38, 35), (40, 28), (47, 12), (3, 7), (7, 3), (36, 32), (34, 30), (7, 24)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7527839f.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 50.44
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_94c3ec69.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(18, 16), (33, 16), (45, 2), (15, 37), (3, 19), (34, 6), (46, 42), (30, 20), (27, 6), (9, 5), (31, 26), (48, 19), (1, 22), (10, 16), (34, 18), (33, 29), (22, 27), (40, 13), (48, 4), (9, 31), (21, 6), (10, 39), (48, 31), (19, 9), (14, 40), (15, 27), (37, 19), (18, 10), (23, 21), (47, 3), (44, 15), (9, 13), (15, 10), (42, 9), (26, 36), (38, 35), (40, 28), (47, 12), (3, 7), (7, 3), (36, 32), (34, 30), (7, 24)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_94c3ec69.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 55.03
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_15546576.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(48, 26), (18, 11), (24, 23), (32, 37), (31, 38), (34, 42), (19, 41), (47, 22), (32, 29), (6, 41), (27, 27), (44, 20), (8, 38), (42, 36), (10, 43), (19, 27), (42, 16), (40, 13), (38, 26), (48, 32), (27, 35), (43, 15), (5, 32), (40, 21), (20, 37), (11, 42), (45, 9), (28, 4), (41, 37), (34, 36), (27, 6), (46, 15), (30, 20), (23, 19), (34, 6), (36, 24), (6, 29), (39, 43), (6, 10), (7, 34), (4, 40), (36, 1), (27, 19)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_15546576.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 68.46
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_180c767c.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(48, 26), (18, 11), (24, 23), (32, 37), (31, 38), (34, 42), (19, 41), (47, 22), (32, 29), (6, 41), (27, 27), (44, 20), (8, 38), (42, 36), (10, 43), (19, 27), (42, 16), (40, 13), (38, 26), (48, 32), (27, 35), (43, 15), (5, 32), (40, 21), (20, 37), (11, 42), (45, 9), (28, 4), (41, 37), (34, 36), (27, 6), (46, 15), (30, 20), (23, 19), (34, 6), (36, 24), (6, 29), (39, 43), (6, 10), (7, 34), (4, 40), (36, 1), (27, 19)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_180c767c.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 69.13
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_13669b02.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(18, 2), (18, 13), (12, 5), (1, 9), (11, 4), (7, 16), (13, 2), (9, 15), (12, 19), (3, 10), (11, 17), (13, 9), (10, 9), (11, 10), (21, 7), (19, 16), (2, 10), (14, 11), (9, 3), (15, 5), (8, 13), (15, 12), (9, 9), (19, 9), (5, 12), (17, 13), (6, 16), (8, 4), (14, 3), (6, 9), (16, 6), (3, 18), (4, 10), (20, 19), (21, 17), (23, 15), (5, 5), (10, 3), (17, 6), (12, 11), (4, 1), (22, 15), (20, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_13669b02.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 53.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0c122343.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 5), (5, 1), (6, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0c122343.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.5
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_33008c2a.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 5), (5, 1), (6, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_33008c2a.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.75
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a39eff8e.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(1, 2), (8, 1), (9, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a39eff8e.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.15
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_09acde33.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(1, 2), (8, 1), (9, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_09acde33.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 53.24
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2c296e35.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(4, 6), (3, 7), (10, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2c296e35.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 69.94
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_60411560.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(4, 6), (3, 7), (10, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_60411560.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.35
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c395848e.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(11, 5), (7, 3), (2, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c395848e.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 4.5
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_50a8c873.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(11, 5), (7, 3), (2, 6)]
+done E2 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.59
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_50a8c873.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2eae3869.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 3), (8, 3), (10, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2eae3869.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 51.57
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4957084d.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 3), (8, 3), (10, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4957084d.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.05
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f1caaaca.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 3), (3, 4), (5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f1caaaca.xml
+done E2 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 3.96
+done E2 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 3, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.07
+done E2 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 6.09
+done E2 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 5.28
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 41.94
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_46768163.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(6, 37), (18, 28), (39, 25), (8, 37), (16, 16), (18, 19), (30, 29), (31, 21), (36, 1), (37, 14), (36, 18), (7, 16), (2, 35), (40, 4), (14, 26), (34, 16), (35, 20), (12, 35), (10, 27), (14, 17), (38, 5), (13, 1), (30, 8), (3, 31), (29, 30), (6, 17), (35, 34), (17, 34), (26, 33), (15, 30), (21, 15), (30, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_46768163.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_96b5c191.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(6, 37), (18, 28), (39, 25), (8, 37), (16, 16), (18, 19), (30, 29), (31, 21), (36, 1), (37, 14), (36, 18), (7, 16), (2, 35), (40, 4), (14, 26), (34, 16), (35, 20), (12, 35), (10, 27), (14, 17), (38, 5), (13, 1), (30, 8), (3, 31), (29, 30), (6, 17), (35, 34), (17, 34), (26, 33), (15, 30), (21, 15), (30, 16)]
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 61.0
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_96b5c191.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_992b410f.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(21, 35), (33, 24), (24, 25), (32, 14), (17, 19), (17, 3), (9, 32), (13, 36), (37, 25), (39, 20), (10, 26), (1, 37), (37, 37), (37, 5), (16, 37), (13, 3), (38, 8), (9, 10), (6, 12), (16, 17), (8, 9), (41, 33), (20, 20), (26, 32), (29, 26), (34, 33), (5, 13), (39, 3), (38, 16), (4, 27), (7, 4), (31, 26)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_16c45745.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(21, 35), (33, 24), (24, 25), (32, 14), (17, 19), (17, 3), (9, 32), (13, 36), (37, 25), (39, 20), (10, 26), (1, 37), (37, 37), (37, 5), (16, 37), (13, 3), (38, 8), (9, 10), (6, 12), (16, 17), (8, 9), (41, 33), (20, 20), (26, 32), (29, 26), (34, 33), (5, 13), (39, 3), (38, 16), (4, 27), (7, 4), (31, 26)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_992b410f.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_16c45745.xml
+done E2 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 4, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 54.43
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ded36ed6.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(14, 19), (4, 20), (18, 36), (25, 27), (30, 3), (35, 10), (26, 33), (23, 35), (9, 11), (29, 30), (36, 24), (4, 1), (9, 5), (42, 35), (7, 32), (1, 28), (11, 29), (19, 27), (5, 35), (42, 13), (3, 12), (34, 19), (5, 26), (39, 5), (29, 36), (36, 2), (14, 11), (29, 14), (13, 18), (5, 8), (21, 23), (1, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ded36ed6.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_346f8dfb.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(14, 19), (4, 20), (18, 36), (25, 27), (30, 3), (35, 10), (26, 33), (23, 35), (9, 11), (29, 30), (36, 24), (4, 1), (9, 5), (42, 35), (7, 32), (1, 28), (11, 29), (19, 27), (5, 35), (42, 13), (3, 12), (34, 19), (5, 26), (39, 5), (29, 36), (36, 2), (14, 11), (29, 14), (13, 18), (5, 8), (21, 23), (1, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_346f8dfb.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0f127d94.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(18, 2), (12, 5), (18, 13), (1, 9), (7, 16), (9, 15), (12, 19), (11, 4), (11, 17), (21, 7), (13, 2), (19, 16), (13, 9), (10, 14), (2, 10), (3, 10), (11, 10), (5, 17), (9, 3), (19, 9), (15, 5), (8, 13), (8, 4), (6, 16), (20, 19), (15, 11), (14, 11), (6, 9), (9, 9), (3, 18), (21, 17), (5, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0f127d94.xml
+done E2 {'circuit': 'softmax', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 281.29
+done E2 {'circuit': 'arm_core', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 430.65
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_900d4938.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(30, 13), (6, 28), (31, 16), (25, 8), (21, 23), (32, 13), (10, 28), (20, 14), (11, 12), (7, 23), (16, 13), (34, 13), (4, 17), (23, 17), (31, 4), (19, 12), (23, 9), (28, 2), (19, 25), (30, 1), (12, 17), (20, 6), (23, 28), (23, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_900d4938.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3e24cd23.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(30, 13), (6, 28), (31, 16), (25, 8), (21, 23), (32, 13), (10, 28), (20, 14), (11, 12), (7, 23), (16, 13), (34, 13), (4, 17), (23, 17), (31, 4), (19, 12), (23, 9), (28, 2), (19, 25), (30, 1), (12, 17), (20, 6), (23, 28), (23, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3e24cd23.xml
+done E2 {'circuit': 'arm_core', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 366.17
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_912d6c18.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(33, 29), (7, 4), (2, 9), (26, 21), (10, 30), (15, 2), (15, 8), (29, 6), (7, 14), (3, 24), (29, 30), (27, 8), (25, 18), (9, 6), (11, 5), (18, 1), (4, 5), (11, 29), (35, 5), (3, 5), (13, 23), (22, 16), (2, 24), (26, 12)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_912d6c18.xml
+done E2 {'circuit': 'softmax', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 350.17
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dd0c57d4.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(33, 29), (7, 4), (2, 9), (26, 21), (10, 30), (15, 2), (15, 8), (29, 6), (7, 14), (3, 24), (29, 30), (27, 8), (25, 18), (9, 6), (11, 5), (18, 1), (4, 5), (11, 29), (35, 5), (3, 5), (13, 23), (22, 16), (2, 24), (26, 12)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dd0c57d4.xml
+done E2 {'circuit': 'softmax', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 328.7
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ce61b0e7.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(23, 28), (28, 30), (19, 7), (1, 23), (31, 27), (9, 26), (20, 20), (29, 2), (28, 24), (18, 5), (3, 9), (24, 28), (26, 30), (34, 20), (9, 5), (14, 18), (23, 16), (22, 11), (29, 21), (27, 13), (15, 25), (23, 7), (7, 20), (21, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ce61b0e7.xml
+done E2 {'circuit': 'softmax', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 287.17
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9238d0e4.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(23, 28), (28, 30), (19, 7), (1, 23), (31, 27), (9, 26), (20, 20), (29, 2), (28, 24), (18, 5), (3, 9), (24, 28), (26, 30), (34, 20), (9, 5), (14, 18), (23, 16), (22, 11), (29, 21), (27, 13), (15, 25), (23, 7), (7, 20), (21, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9238d0e4.xml
+done E2 {'circuit': 'softmax', 'seed': 42, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 287.93
+done E2 {'circuit': 'softmax', 'seed': 42, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 297.13
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_21a45d50.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(18, 2), (12, 5), (1, 9), (7, 16), (9, 15), (18, 13), (12, 19), (21, 7), (11, 17), (19, 16), (11, 4), (10, 14), (13, 2), (13, 9), (5, 17), (2, 10), (3, 15), (19, 9), (8, 4), (20, 19), (6, 16), (8, 18), (9, 3), (14, 15)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_21a45d50.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_31bc97f2.xml
+  Size   : 43x43
+  DSPs   : [(25, 6), (22, 32), (21, 13), (16, 30), (24, 17), (11, 3), (34, 21), (19, 27)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_31bc97f2.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 165.6
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_66a4233e.xml
+  Size   : 43x43
+  DSPs   : [(25, 6), (22, 32), (21, 13), (16, 30), (24, 17), (11, 3), (34, 21), (19, 27)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_66a4233e.xml
+done E2 {'circuit': 'softmax', 'seed': 42, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 338.17
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2a3a1a32.xml
+  Size   : 43x43
+  DSPs   : [(25, 2), (10, 14), (10, 23), (31, 16), (12, 9), (33, 25), (24, 19), (37, 32)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2a3a1a32.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 219.14
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4edd2de4.xml
+  Size   : 43x43
+  DSPs   : [(25, 2), (10, 14), (10, 23), (31, 16), (12, 9), (33, 25), (24, 19), (37, 32)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4edd2de4.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 260.66
+done E2 {'circuit': 'reduction_layer', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 255.42
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d48d8238.xml
+  Size   : 43x43
+  DSPs   : [(27, 35), (37, 29), (38, 17), (19, 1), (10, 34), (14, 6), (41, 30), (40, 37)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d48d8238.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cc2e8dde.xml
+  Size   : 43x43
+  DSPs   : [(27, 35), (37, 29), (38, 17), (19, 1), (10, 34), (14, 6), (41, 30), (40, 37)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cc2e8dde.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 123, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 270.56
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dd864658.xml
+  Size   : 43x43
+  DSPs   : [(18, 13), (18, 2), (1, 11), (18, 7), (12, 5), (14, 11), (13, 2), (3, 10)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dd864658.xml
+done E2 {'circuit': 'reduction_layer', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 295.94
+done E2 {'circuit': 'arm_core', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 281.95
+done E2 {'circuit': 'arm_core', 'seed': 123, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 188.08
+done E2 {'circuit': 'arm_core', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 231.74
+done E2 {'circuit': 'arm_core', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 295.89
+done E2 {'circuit': 'arm_core', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 314.74
+done E2 {'circuit': 'softmax', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 252.9
+done E2 {'circuit': 'arm_core', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 323.74
+done E2 {'circuit': 'arm_core', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 297.66
+done E2 {'circuit': 'softmax', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 230.66
+done E2 {'circuit': 'softmax', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 213.2
+done E2 {'circuit': 'reduction_layer', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 441.95
+done E2 {'circuit': 'softmax', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 1, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 263.69
+done E2 {'circuit': 'softmax', 'seed': 123, 'variant': 'fixed_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 203.64
+done E2 {'circuit': 'softmax', 'seed': 123, 'variant': 'fixed_ar_policy_blocks', 'draw_index': 0, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 192.49
+done E2 {'circuit': 'softmax', 'seed': 123, 'variant': 'policy_ar_random_blocks', 'draw_index': 2, 'source': 'data_export2/tools/e2.py; actions in data_export2/logs/e2_actions.json'} True 223.21

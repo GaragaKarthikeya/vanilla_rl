@@ -1,0 +1,6 @@
+=== E1 mismatched_netlist VTR  03:22:13
+=== E1b heuristic  03:24:55
+=== E2 ar rank (no runs)  03:27:23
+=== E2 rollouts  03:27:26
+=== E2 VTR  03:27:47
+=== ALL DONE  03:50:01

@@ -1,0 +1,374 @@
+E1: 54 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1851be36.xml
+  Size   : 14x14
+  DSPs   : [(1, 8), (2, 3), (5, 4)]
+  BRAMs  : [(6, 4)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6d80e26e.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 4), (2, 3), (5, 4)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4255393a.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 4), (2, 3), (5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1851be36.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4255393a.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3b69246a.xml
+  Size   : 14x14
+  DSPs   : [(5, 4), (1, 8), (2, 3)]
+  BRAMs  : [(6, 4)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a42f3204.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 4), (2, 3), (5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3b69246a.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_17bef23b.xml
+  Size   : 14x14
+  DSPs   : [(5, 4), (1, 8), (2, 3)]
+  BRAMs  : [(6, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a42f3204.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_17bef23b.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6d80e26e.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_26dad19e.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (7, 16), (15, 11), (13, 14), (11, 17), (10, 14), (7, 10), (22, 17), (2, 18), (18, 19), (9, 18), (21, 6), (12, 5), (17, 1), (22, 5), (13, 3), (6, 18), (9, 4), (12, 14), (4, 12), (5, 15), (20, 4), (3, 2), (2, 7), (23, 18), (4, 6), (16, 11), (8, 18), (10, 5), (24, 13), (19, 4), (9, 11), (16, 5), (6, 2), (23, 6), (8, 11), (7, 4), (16, 20), (11, 7), (18, 3)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_00cf2f3d.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (7, 16), (15, 11), (13, 14), (11, 17), (10, 14), (7, 10), (22, 17), (2, 18), (18, 19), (9, 18), (21, 6), (12, 5), (17, 1), (22, 5), (13, 3), (6, 18), (9, 4), (12, 14), (4, 12), (5, 15), (20, 4), (3, 2), (2, 7), (23, 18), (4, 6), (16, 11), (8, 18), (10, 5), (24, 13), (19, 4), (9, 11), (6, 2), (16, 5), (23, 6), (8, 11), (7, 4), (16, 20), (11, 7), (18, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_26dad19e.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_00cf2f3d.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_af8940cd.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (7, 16), (15, 11), (13, 14), (11, 17), (10, 14), (7, 10), (22, 17), (2, 18), (18, 19), (9, 18), (21, 6), (12, 5), (17, 1), (22, 5), (13, 3), (6, 18), (9, 4), (12, 14), (4, 12), (5, 15), (20, 4), (3, 2), (2, 7), (23, 18), (4, 6), (16, 11), (8, 18), (10, 5), (24, 13), (19, 4), (9, 11), (16, 5), (6, 2), (23, 6), (8, 11), (7, 4), (16, 20), (11, 7), (18, 3)]
+done E1 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 5.49
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_af8940cd.xml
+done E1 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 3, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 9.26
+done E1 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'zero_edges', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 5.89
+done E1 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 9.51
+done E1 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'zero_edges', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 10.27
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_51d3ed7a.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (7, 16), (13, 14), (15, 11), (10, 14), (11, 17), (7, 10), (2, 18), (22, 17), (9, 18), (21, 6), (18, 19), (12, 5), (6, 18), (22, 5), (13, 3), (17, 1), (9, 4), (12, 14), (5, 15), (4, 12), (3, 2), (20, 4), (23, 18), (2, 7), (4, 5), (16, 11), (8, 18), (6, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e8351bff.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (6, 2), (3, 6)]
+  BRAMs  : [(2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e8351bff.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_99ceb4ff.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_51d3ed7a.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_16790408.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (7, 16), (13, 14), (15, 11), (10, 14), (11, 17), (7, 10), (2, 18), (22, 17), (9, 18), (21, 6), (18, 19), (12, 5), (6, 18), (22, 5), (13, 3), (17, 1), (9, 4), (12, 14), (5, 15), (4, 12), (3, 2), (20, 4), (23, 18), (2, 7), (4, 5), (16, 11), (8, 18), (6, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1c5e450b.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (13, 14), (7, 16), (15, 11), (10, 14), (11, 17), (7, 10), (2, 18), (22, 17), (9, 18), (21, 6), (18, 19), (6, 18), (12, 5), (22, 5), (13, 3), (17, 1), (9, 4), (12, 14), (5, 15), (4, 12)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_16790408.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0a7503d7.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_99ceb4ff.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ff9dca70.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (13, 14), (7, 16), (15, 11), (10, 14), (11, 17), (7, 10), (2, 18), (22, 17), (9, 18), (21, 6), (18, 19), (12, 5), (22, 5), (6, 18), (17, 1), (13, 3), (9, 4), (12, 14), (4, 12), (5, 15)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1c5e450b.xml
+done E1 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 10.84
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3559996d.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (7, 16), (13, 14), (15, 11), (11, 17), (10, 14), (7, 10), (22, 17), (2, 18), (9, 18), (18, 19), (21, 6), (12, 5), (22, 5), (17, 1), (6, 18), (13, 3), (9, 4), (12, 14), (4, 12), (5, 15), (20, 4), (3, 2), (2, 7), (23, 18), (4, 6), (16, 11), (8, 18), (10, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0a7503d7.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ff9dca70.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3559996d.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b8c0a3ff.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14), (13, 14), (7, 16), (15, 11), (10, 14), (11, 17), (7, 10), (2, 18), (22, 17), (9, 18), (21, 6), (18, 19), (6, 18), (12, 5), (22, 5), (13, 3), (9, 4), (17, 1), (12, 14), (5, 15), (4, 12)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b8c0a3ff.xml
+done E1 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 4, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 3.67
+done E1 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'zero_edges', 'action_sequence_identical_to_control': False, 'n_actions_differing': 1, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 3.91
+done E1 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 4.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7d3365bb.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7d3365bb.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_234fb81e.xml
+  Size   : 43x43
+  DSPs   : [(19, 12), (17, 15), (1, 9), (7, 16), (14, 14), (15, 11), (13, 14), (7, 11)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_234fb81e.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9d18337a.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9d18337a.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_47e7ac66.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_47e7ac66.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_53c1e284.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_53c1e284.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_17156c3a.xml
+  Size   : 43x43
+  DSPs   : [(19, 12), (17, 15), (1, 9), (7, 16), (14, 14), (15, 11), (13, 14), (7, 11)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_17156c3a.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_68d60789.xml
+  Size   : 43x43
+  DSPs   : [(19, 12), (17, 15), (1, 9), (7, 16), (14, 14), (15, 11), (13, 14), (7, 11)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_68d60789.xml
+done E1 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 1, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 6.53
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_038ab138.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_038ab138.xml
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 2, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 21.69
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_28a3ed17.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (2, 6), (3, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_28a3ed17.xml
+done E1 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 3.64
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'zero_edges', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 26.48
+done E1 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'zero_edges', 'action_sequence_identical_to_control': False, 'n_actions_differing': 4, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 7.53
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 31.89
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c4f89386.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c4f89386.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_97f71bcf.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_97f71bcf.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e6f4e6eb.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e6f4e6eb.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ada035d7.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ada035d7.xml
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 4, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 40.55
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 36.45
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'zero_edges', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 37.6
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2b0164db.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2b0164db.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_620cd3e7.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_620cd3e7.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_381be824.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_381be824.xml
+done E1 {'circuit': 'reduction_layer', 'seed': 42, 'variant': 'zero_edges', 'action_sequence_identical_to_control': False, 'n_actions_differing': 2, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 145.73
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_72a6f38d.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_72a6f38d.xml
+done E1 {'circuit': 'reduction_layer', 'seed': 7, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 18, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 201.69
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_85398a5c.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_85398a5c.xml
+done E1 {'circuit': 'reduction_layer', 'seed': 7, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 216.54
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8d00f5eb.xml
+  Size   : 14x14
+  DSPs   : [(5, 4), (2, 3), (3, 4)]
+  BRAMs  : [(6, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8d00f5eb.xml
+done E1 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 3, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 2.46
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3066deee.xml
+  Size   : 14x14
+  DSPs   : [(2, 3), (6, 3), (3, 4)]
+  BRAMs  : [(5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3066deee.xml
+done E1 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 3.54
+done E1 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'zero_edges', 'action_sequence_identical_to_control': False, 'n_actions_differing': 3, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dcf8c572.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(18, 2), (18, 13), (12, 5), (1, 9), (11, 4), (13, 2), (9, 10), (7, 16), (3, 10), (14, 11), (11, 10), (10, 9), (13, 9), (12, 19), (2, 10), (11, 17), (19, 16), (15, 5), (21, 7), (9, 3), (9, 17), (15, 12), (8, 13), (14, 3), (17, 13), (5, 12), (16, 6), (6, 9), (19, 9), (4, 10), (6, 16), (3, 18), (8, 4), (17, 6), (1, 1), (23, 15), (4, 1), (20, 19), (10, 3), (21, 17), (1, 19), (12, 11), (5, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dcf8c572.xml
+done E1 {'circuit': 'reduction_layer', 'seed': 7, 'variant': 'zero_edges', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 226.87
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_270514ec.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(18, 2), (18, 13), (12, 5), (1, 9), (7, 16), (11, 4), (13, 2), (9, 15), (12, 19), (11, 17), (3, 10), (13, 9), (21, 7), (10, 9), (19, 16), (11, 10), (2, 10), (14, 11), (9, 3), (15, 5), (8, 13), (19, 9), (9, 9), (15, 12), (5, 12), (6, 16), (8, 4), (17, 13), (6, 9), (16, 6), (14, 3), (3, 18), (20, 19), (4, 10), (21, 17), (23, 15), (5, 5), (10, 3), (17, 1), (12, 11), (22, 15), (20, 10), (20, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_270514ec.xml
+done E1 {'circuit': 'arm_core', 'seed': 7, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 7, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 229.66
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b79d7197.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(18, 2), (18, 13), (12, 5), (1, 9), (7, 16), (11, 4), (13, 2), (9, 15), (12, 19), (11, 17), (13, 9), (3, 10), (21, 7), (19, 16), (10, 9), (11, 10), (2, 10), (14, 11), (9, 3), (15, 5), (8, 13), (19, 9), (9, 9), (15, 12), (5, 12), (6, 16), (8, 4), (6, 9), (17, 13), (3, 18), (16, 6), (14, 3), (20, 19), (4, 10), (21, 17), (23, 15), (5, 5), (10, 3), (17, 6), (12, 11), (22, 15), (20, 10), (20, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b79d7197.xml
+done E1 {'circuit': 'reduction_layer', 'seed': 42, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 4, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 219.11
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_fe4f19b2.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 3), (5, 4), (2, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_fe4f19b2.xml
+done E1 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 2, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 4.6
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_520ab818.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 3), (3, 4), (5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_520ab818.xml
+done E1 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 4.94
+done E1 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'zero_edges', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c9977653.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(18, 2), (18, 13), (12, 5), (1, 9), (11, 4), (13, 2), (7, 16), (9, 10), (3, 10), (14, 11), (10, 9), (11, 10), (13, 9), (12, 19), (2, 10), (11, 17), (19, 16), (21, 7), (15, 5), (9, 3), (9, 17), (8, 13), (15, 12), (17, 13), (14, 3), (5, 12), (16, 6), (19, 9), (6, 9), (6, 16), (4, 10), (3, 18)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c9977653.xml
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 37, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 39.47
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c469110d.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(18, 2), (12, 5), (1, 9), (18, 13), (7, 16), (9, 15), (12, 19), (11, 17), (11, 4), (21, 7), (19, 16), (13, 2), (13, 9), (10, 14), (2, 10), (3, 10), (5, 17), (11, 10), (19, 9), (9, 3), (8, 4), (15, 5), (8, 13), (6, 16), (20, 19), (15, 11), (6, 9), (9, 9), (3, 18), (21, 17), (5, 5), (14, 11)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c469110d.xml
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 43.5
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'zero_edges', 'action_sequence_identical_to_control': False, 'n_actions_differing': 10, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 43.83
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0c301f41.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(18, 2), (12, 5), (1, 9), (18, 13), (7, 16), (9, 15), (12, 19), (11, 17), (21, 7), (11, 4), (19, 16), (13, 2), (10, 14), (13, 9), (2, 10), (3, 10), (5, 17), (11, 10), (19, 9), (9, 3), (8, 4), (15, 5), (8, 13), (6, 16), (20, 19), (15, 11), (6, 9), (9, 9), (3, 18), (21, 17), (5, 5), (14, 11)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0c301f41.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7886fc9e.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(18, 2), (18, 13), (12, 5), (1, 9), (11, 4), (13, 2), (7, 16), (9, 10), (3, 10), (10, 9), (12, 19), (11, 10), (13, 9), (14, 11), (11, 17), (2, 10), (19, 16), (21, 7), (9, 17), (9, 3), (15, 5), (8, 13), (15, 12), (19, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7886fc9e.xml
+done E1 {'circuit': 'arm_core', 'seed': 42, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 6, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 260.42
+done E1 {'circuit': 'arm_core', 'seed': 7, 'variant': 'zero_edges', 'action_sequence_identical_to_control': False, 'n_actions_differing': 2, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 295.32
+done E1 {'circuit': 'arm_core', 'seed': 42, 'variant': 'zero_edges', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 241.76
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c9f45e1b.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(18, 2), (1, 9), (12, 5), (7, 16), (9, 15), (21, 7), (12, 19), (11, 17), (18, 13), (19, 16), (10, 14), (11, 4), (13, 2), (5, 17), (13, 9), (3, 15), (8, 4), (2, 10), (19, 9), (20, 19), (8, 18), (6, 16), (14, 15), (9, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c9f45e1b.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dc6f5cb2.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(18, 2), (12, 5), (1, 9), (7, 16), (9, 15), (12, 19), (21, 7), (11, 17), (18, 13), (19, 16), (11, 4), (10, 14), (13, 2), (5, 17), (13, 9), (3, 15), (8, 4), (2, 10), (19, 9), (20, 19), (8, 18), (6, 16), (14, 15), (9, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dc6f5cb2.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6a5ebdca.xml
+  Size   : 43x43
+  DSPs   : [(18, 2), (18, 13), (12, 5), (18, 7), (1, 11), (13, 2), (11, 4), (14, 11)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6a5ebdca.xml
+done E1 {'circuit': 'arm_core', 'seed': 42, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 257.3
+done E1 {'circuit': 'reduction_layer', 'seed': 42, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 283.95
+done E1 {'circuit': 'softmax', 'seed': 7, 'variant': 'zero_edges', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 307.74
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c6a640e7.xml
+  Size   : 43x43
+  DSPs   : [(18, 2), (18, 13), (1, 11), (18, 7), (12, 5), (14, 11), (13, 2), (11, 4)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c6a640e7.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_bc586eab.xml
+  Size   : 43x43
+  DSPs   : [(18, 13), (18, 2), (1, 11), (18, 7), (12, 5), (14, 11), (13, 2), (11, 4)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_bc586eab.xml
+done E1 {'circuit': 'softmax', 'seed': 7, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 320.8
+done E1 {'circuit': 'arm_core', 'seed': 7, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 332.22
+done E1 {'circuit': 'softmax', 'seed': 7, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 331.21
+done E1 {'circuit': 'softmax', 'seed': 42, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 306.72
+done E1 {'circuit': 'reduction_layer', 'seed': 123, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 142.19
+done E1 {'circuit': 'reduction_layer', 'seed': 123, 'variant': 'zero_edges', 'action_sequence_identical_to_control': False, 'n_actions_differing': 4, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 134.42
+done E1 {'circuit': 'softmax', 'seed': 42, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 271.68
+done E1 {'circuit': 'arm_core', 'seed': 123, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 22, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 182.53
+done E1 {'circuit': 'arm_core', 'seed': 123, 'variant': 'zero_edges', 'action_sequence_identical_to_control': False, 'n_actions_differing': 4, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 162.49
+done E1 {'circuit': 'softmax', 'seed': 42, 'variant': 'zero_edges', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 266.23
+done E1 {'circuit': 'reduction_layer', 'seed': 123, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 28, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 220.59
+done E1 {'circuit': 'arm_core', 'seed': 123, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': False, 'n_actions_differing': 2, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 203.36
+done E1 {'circuit': 'softmax', 'seed': 123, 'variant': 'zero_graph_embedding', 'action_sequence_identical_to_control': False, 'n_actions_differing': 5, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 206.3
+done E1 {'circuit': 'softmax', 'seed': 123, 'variant': 'zero_edges', 'action_sequence_identical_to_control': False, 'n_actions_differing': 2, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 191.89
+done E1 {'circuit': 'softmax', 'seed': 123, 'variant': 'shuffled_netcount', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 200.83
+E1: 18 jobs
+done E1 {'circuit': 'custom_macbuf', 'seed': 123, 'variant': 'mismatched_netlist', 'donor_circuit': 'softmax', 'permutation_changed': '', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.54
+done E1 {'circuit': 'custom_macbuf', 'seed': 7, 'variant': 'mismatched_netlist', 'donor_circuit': 'softmax', 'permutation_changed': '', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.78
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5818d271.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 4), (5, 4), (7, 3)]
+done E1 {'circuit': 'custom_macbuf', 'seed': 42, 'variant': 'mismatched_netlist', 'donor_circuit': 'softmax', 'permutation_changed': '', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.68
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5818d271.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0bf84c58.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (3, 6), (2, 6)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7937d4bc.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(5, 4), (2, 3), (6, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0bf84c58.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7937d4bc.xml
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'variant': 'mismatched_netlist', 'donor_circuit': 'reduction_layer', 'permutation_changed': '', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.39
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'variant': 'mismatched_netlist', 'donor_circuit': 'reduction_layer', 'permutation_changed': '', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.27
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_bed1a6e9.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(18, 2), (18, 13), (12, 5), (1, 9), (7, 16), (11, 4), (9, 15), (13, 2), (12, 19), (11, 17), (13, 9), (3, 10), (21, 7), (19, 16), (10, 9), (11, 10), (2, 10), (14, 11), (9, 3), (15, 5), (8, 13), (19, 9), (9, 9), (15, 12), (5, 12), (6, 16), (8, 4), (6, 9), (17, 13), (3, 18), (16, 6), (20, 19), (14, 3), (4, 10), (21, 17), (23, 15), (5, 5), (10, 3), (17, 1), (20, 10), (12, 11), (22, 15), (20, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_bed1a6e9.xml
+done E1 {'circuit': 'lightweight_cipher', 'seed': 7, 'variant': 'mismatched_netlist', 'donor_circuit': 'softmax', 'permutation_changed': '', 'action_sequence_identical_to_control': False, 'n_actions_differing': 2, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 8.8
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_96d1832d.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(18, 2), (12, 5), (1, 9), (7, 16), (9, 15), (12, 19), (18, 13), (21, 7), (11, 17), (19, 16), (11, 4), (10, 14), (13, 2), (13, 9), (5, 17), (2, 10), (3, 15), (8, 4), (19, 9), (20, 19), (8, 18), (6, 16), (14, 15), (9, 3)]
+done E1 {'circuit': 'arm_core', 'seed': 7, 'variant': 'mismatched_netlist', 'donor_circuit': 'reduction_layer', 'permutation_changed': '', 'action_sequence_identical_to_control': False, 'n_actions_differing': 2, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.05
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_96d1832d.xml
+done E1 {'circuit': 'lightweight_cipher', 'seed': 123, 'variant': 'mismatched_netlist', 'donor_circuit': 'softmax', 'permutation_changed': '', 'action_sequence_identical_to_control': False, 'n_actions_differing': 3, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 5.52
+done E1 {'circuit': 'reduction_layer', 'seed': 7, 'variant': 'mismatched_netlist', 'donor_circuit': 'mkDelayWorker32B', 'permutation_changed': '', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.01
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8e55646b.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(18, 2), (12, 5), (1, 9), (18, 13), (7, 16), (9, 15), (12, 19), (11, 4), (11, 17), (21, 7), (13, 2), (19, 16), (13, 9), (10, 14), (2, 10), (3, 10), (11, 10), (5, 17), (9, 3), (19, 9), (15, 5), (8, 4), (8, 13), (6, 16), (20, 19), (15, 11), (9, 9), (14, 11), (6, 9), (3, 18), (21, 17), (5, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8e55646b.xml
+done E1 {'circuit': 'arm_core', 'seed': 42, 'variant': 'mismatched_netlist', 'donor_circuit': 'reduction_layer', 'permutation_changed': '', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.01
+done E1 {'circuit': 'lightweight_cipher', 'seed': 42, 'variant': 'mismatched_netlist', 'donor_circuit': 'softmax', 'permutation_changed': '', 'action_sequence_identical_to_control': False, 'n_actions_differing': 4, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 8.05
+done E1 {'circuit': 'reduction_layer', 'seed': 42, 'variant': 'mismatched_netlist', 'donor_circuit': 'mkDelayWorker32B', 'permutation_changed': '', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.07
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9706d82d.xml
+  Size   : 43x43
+  DSPs   : [(19, 12), (17, 15), (1, 9), (14, 14), (7, 16), (15, 11), (13, 14), (7, 11)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9706d82d.xml
+done E1 {'circuit': 'softmax', 'seed': 42, 'variant': 'mismatched_netlist', 'donor_circuit': 'arm_core', 'permutation_changed': '', 'action_sequence_identical_to_control': True, 'n_actions_differing': 0, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 0.1
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_105b5559.xml
+  Size   : 43x43
+  DSPs   : [(18, 2), (18, 13), (12, 5), (1, 9), (18, 7), (7, 16), (9, 15), (11, 4)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_105b5559.xml
+done E1 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'variant': 'mismatched_netlist', 'donor_circuit': 'reduction_layer', 'permutation_changed': '', 'action_sequence_identical_to_control': False, 'n_actions_differing': 15, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 22.21
+done E1 {'circuit': 'arm_core', 'seed': 123, 'variant': 'mismatched_netlist', 'donor_circuit': 'reduction_layer', 'permutation_changed': '', 'action_sequence_identical_to_control': False, 'n_actions_differing': 10, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 123.08
+done E1 {'circuit': 'reduction_layer', 'seed': 123, 'variant': 'mismatched_netlist', 'donor_circuit': 'mkDelayWorker32B', 'permutation_changed': '', 'action_sequence_identical_to_control': False, 'n_actions_differing': 16, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 127.16
+done E1 {'circuit': 'softmax', 'seed': 7, 'variant': 'mismatched_netlist', 'donor_circuit': 'arm_core', 'permutation_changed': '', 'action_sequence_identical_to_control': False, 'n_actions_differing': 2, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 142.22
+done E1 {'circuit': 'softmax', 'seed': 123, 'variant': 'mismatched_netlist', 'donor_circuit': 'arm_core', 'permutation_changed': '', 'action_sequence_identical_to_control': False, 'n_actions_differing': 5, 'source': 'data_export2/tools/e1.py rollout + FPGAEnv VTR eval; actions in data_export2/logs/e1_actions.json'} True 141.94

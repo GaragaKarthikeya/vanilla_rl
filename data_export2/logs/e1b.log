@@ -1,0 +1,43 @@
+custom_macbuf        clb/io=   0.182 -> AR 0.5
+mkDelayWorker32B     clb/io=   0.438 -> AR 0.5
+lightweight_cipher   clb/io=   0.151 -> AR 0.5
+reduction_layer      clb/io=  13.852 -> AR 1.0
+arm_core             clb/io=   2.782 -> AR 1.0
+softmax              clb/io=   2.223 -> AR 1.0
+E1b: 6 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0770e6a9.xml
+  Size   : 14x14
+  DSPs   : [(7, 6), (5, 6), (8, 6)]
+  BRAMs  : [(6, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0770e6a9.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8b11432f.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 6), (7, 6), (5, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8b11432f.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_508dcddb.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(24, 24), (25, 24), (23, 24), (26, 24), (22, 24), (27, 24), (21, 24), (28, 24), (20, 24), (29, 24), (19, 24), (24, 30), (25, 30), (30, 24), (23, 30), (26, 30), (22, 30), (27, 30), (18, 24), (21, 30), (24, 18), (25, 18), (28, 30), (31, 24), (23, 18), (26, 18), (22, 18), (27, 18), (20, 30), (29, 30), (21, 18), (28, 18), (17, 24), (32, 24), (19, 30), (30, 30), (20, 18), (29, 18), (16, 24), (18, 30), (19, 18), (30, 18), (31, 30)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_508dcddb.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3b556243.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(18, 18), (17, 18), (19, 18), (16, 18), (20, 18), (15, 18), (21, 18), (14, 18), (22, 18), (13, 18), (23, 18), (12, 18), (18, 12), (18, 24), (24, 18), (17, 12), (17, 24), (19, 12), (19, 24), (16, 12), (16, 24), (20, 12), (20, 24), (15, 12)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3b556243.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a328ee85.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(21, 21), (22, 21), (20, 21), (23, 21), (19, 21), (24, 21), (18, 21), (25, 21), (17, 21), (26, 21), (16, 21), (21, 27), (22, 27), (27, 21), (20, 27), (23, 27), (19, 27), (24, 27), (15, 21), (18, 27), (21, 15), (22, 15), (25, 27), (28, 21), (20, 15), (23, 15), (19, 15), (24, 15), (17, 27), (26, 27), (18, 15), (25, 15)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a328ee85.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_82e039ed.xml
+  Size   : 43x43
+  DSPs   : [(21, 21), (20, 21), (22, 21), (19, 21), (23, 21), (18, 21), (24, 21), (17, 21)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_82e039ed.xml
+done E1b {'circuit': 'custom_macbuf', 'seed': '', 'variant': 'heuristic', 'draw_index': 0, 'clb_io_ratio': 0.18181818181818182, 'rule': 'AR = 0.5 if num_clbs_packed/num_io < 1 (IO-bound, elongate) else 1.0 (square); H-blocks in FPGAEnv order (BRAMs then DSPs by descending net count), each taking the legal action nearest the grid centre by Euclidean distance (ties -> lower action index).', 'source': 'data_export2/tools/e1b.py; clb/io from data_export/circuits.csv; evaluated through FPGAEnv (same bake/pin/VTR path as the policy)'} True 5.49
+done E1b {'circuit': 'lightweight_cipher', 'seed': '', 'variant': 'heuristic', 'draw_index': 0, 'clb_io_ratio': 0.1509433962264151, 'rule': 'AR = 0.5 if num_clbs_packed/num_io < 1 (IO-bound, elongate) else 1.0 (square); H-blocks in FPGAEnv order (BRAMs then DSPs by descending net count), each taking the legal action nearest the grid centre by Euclidean distance (ties -> lower action index).', 'source': 'data_export2/tools/e1b.py; clb/io from data_export/circuits.csv; evaluated through FPGAEnv (same bake/pin/VTR path as the policy)'} True 2.83
+done E1b {'circuit': 'mkDelayWorker32B', 'seed': '', 'variant': 'heuristic', 'draw_index': 0, 'clb_io_ratio': 0.4381491973559962, 'rule': 'AR = 0.5 if num_clbs_packed/num_io < 1 (IO-bound, elongate) else 1.0 (square); H-blocks in FPGAEnv order (BRAMs then DSPs by descending net count), each taking the legal action nearest the grid centre by Euclidean distance (ties -> lower action index).', 'source': 'data_export2/tools/e1b.py; clb/io from data_export/circuits.csv; evaluated through FPGAEnv (same bake/pin/VTR path as the policy)'} True 30.14
+done E1b {'circuit': 'arm_core', 'seed': '', 'variant': 'heuristic', 'draw_index': 0, 'clb_io_ratio': 2.782051282051282, 'rule': 'AR = 0.5 if num_clbs_packed/num_io < 1 (IO-bound, elongate) else 1.0 (square); H-blocks in FPGAEnv order (BRAMs then DSPs by descending net count), each taking the legal action nearest the grid centre by Euclidean distance (ties -> lower action index).', 'source': 'data_export2/tools/e1b.py; clb/io from data_export/circuits.csv; evaluated through FPGAEnv (same bake/pin/VTR path as the policy)'} True 85.46
+done E1b {'circuit': 'reduction_layer', 'seed': '', 'variant': 'heuristic', 'draw_index': 0, 'clb_io_ratio': 13.851851851851851, 'rule': 'AR = 0.5 if num_clbs_packed/num_io < 1 (IO-bound, elongate) else 1.0 (square); H-blocks in FPGAEnv order (BRAMs then DSPs by descending net count), each taking the legal action nearest the grid centre by Euclidean distance (ties -> lower action index).', 'source': 'data_export2/tools/e1b.py; clb/io from data_export/circuits.csv; evaluated through FPGAEnv (same bake/pin/VTR path as the policy)'} True 109.84
+done E1b {'circuit': 'softmax', 'seed': '', 'variant': 'heuristic', 'draw_index': 0, 'clb_io_ratio': 2.222826086956522, 'rule': 'AR = 0.5 if num_clbs_packed/num_io < 1 (IO-bound, elongate) else 1.0 (square); H-blocks in FPGAEnv order (BRAMs then DSPs by descending net count), each taking the legal action nearest the grid centre by Euclidean distance (ties -> lower action index).', 'source': 'data_export2/tools/e1b.py; clb/io from data_export/circuits.csv; evaluated through FPGAEnv (same bake/pin/VTR path as the policy)'} True 135.4

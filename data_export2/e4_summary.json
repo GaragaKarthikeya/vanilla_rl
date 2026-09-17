@@ -1,0 +1,721 @@
+{
+ "_meta": {
+  "generated_by": "data_export2/tools/e4.py",
+  "circuits": [
+   "custom_macbuf",
+   "mkDelayWorker32B",
+   "lightweight_cipher",
+   "reduction_layer",
+   "arm_core",
+   "softmax"
+  ],
+  "seeds": [
+   7,
+   42,
+   123
+  ],
+  "authored_probes_excluded_in_*_no_probes": [
+   "custom_macbuf",
+   "lightweight_cipher"
+  ],
+  "note": "All ADP reductions are percent vs. the traditional VTR baseline. 'across the 6 circuits' statistics are taken over one value per circuit; for seeded methods that per-circuit value is the mean over seeds 7/42/123, which is the same rule the paper uses for its held-out table."
+ },
+ "per_circuit_zero_shot_over_seeds": {
+  "custom_macbuf": {
+   "mean": 55.460560696630154,
+   "median": 59.088977401455686,
+   "min": 47.75818410442031,
+   "max": 59.53452058401446,
+   "stdev": 6.674172687161138,
+   "n": 3,
+   "source": "data_export/results_per_circuit_seed.csv (split=heldout)",
+   "note": "over seeds 7/42/123."
+  },
+  "mkDelayWorker32B": {
+   "mean": 58.72472932407964,
+   "median": 58.87798514652862,
+   "min": 54.87823639923658,
+   "max": 62.41796642647371,
+   "stdev": 3.77220064832734,
+   "n": 3,
+   "source": "data_export/results_per_circuit_seed.csv (split=heldout)",
+   "note": "over seeds 7/42/123."
+  },
+  "lightweight_cipher": {
+   "mean": 33.48917692433678,
+   "median": 30.514889494557313,
+   "min": 30.223853190985402,
+   "max": 39.72878808746763,
+   "stdev": 5.405620790695506,
+   "n": 3,
+   "source": "data_export/results_per_circuit_seed.csv (split=heldout)",
+   "note": "over seeds 7/42/123."
+  },
+  "reduction_layer": {
+   "mean": 23.298379195969016,
+   "median": 21.50995793041336,
+   "min": 19.491427722139992,
+   "max": 28.89375193535369,
+   "stdev": 4.949723539745924,
+   "n": 3,
+   "source": "data_export/results_per_circuit_seed.csv (split=heldout)",
+   "note": "over seeds 7/42/123."
+  },
+  "arm_core": {
+   "mean": 9.115778647946426,
+   "median": 8.521169695917106,
+   "min": 6.993083178723758,
+   "max": 11.833083069198413,
+   "stdev": 2.4741805894727493,
+   "n": 3,
+   "source": "data_export/results_per_circuit_seed.csv (split=heldout)",
+   "note": "over seeds 7/42/123."
+  },
+  "softmax": {
+   "mean": 7.268734799268221,
+   "median": 5.648280594885477,
+   "min": 5.390174734836533,
+   "max": 10.767749068082653,
+   "stdev": 3.0329820801932126,
+   "n": 3,
+   "source": "data_export/results_per_circuit_seed.csv (split=heldout)",
+   "note": "over seeds 7/42/123."
+  }
+ },
+ "per_circuit_values_by_method": {
+  "zero_shot_policy": {
+   "values": {
+    "custom_macbuf": 55.460560696630154,
+    "mkDelayWorker32B": 58.72472932407964,
+    "lightweight_cipher": 33.48917692433678,
+    "reduction_layer": 23.298379195969016,
+    "arm_core": 9.115778647946426,
+    "softmax": 7.268734799268221
+   },
+   "source": "data_export/results_per_circuit_seed.csv (split=heldout)",
+   "note": "per circuit = mean over 3 seeds."
+  },
+  "trimmed_baseline_ar_sweep_best": {
+   "values": {
+    "custom_macbuf": 48.198454551118544,
+    "mkDelayWorker32B": 10.886920093217185,
+    "lightweight_cipher": -0.08072906008054884,
+    "reduction_layer": 8.472529809206746,
+    "arm_core": 11.798543363948447,
+    "softmax": 9.894195251033864
+   },
+   "source": "data_export/baseline_ar_sweep.csv",
+   "note": "per circuit = best over the 20 aspect ratios (a 20-VTR-call, no-learning search). Not seeded. CAVEAT: see data_export2/notes.md - this sweep fixes H-block tile coordinates on the square baseline grid, so VPR stretches the other dimension; it understates a fair non-learning baseline."
+  },
+  "random_best_of_20": {
+   "values": {
+    "custom_macbuf": 50.69765367754512,
+    "mkDelayWorker32B": -2.778870028905024,
+    "lightweight_cipher": 31.265981300576026,
+    "reduction_layer": -20.002319570967497,
+    "arm_core": -17.731824347743792,
+    "softmax": -4.475557578410659
+   },
+   "source": "data_export/random_floorplans.csv",
+   "note": "per circuit-seed = best of the 20 random legal floorplans; per circuit = mean over seeds."
+  },
+  "sampled_best_of_10": {
+   "values": {
+    "custom_macbuf": 67.57295884052878,
+    "mkDelayWorker32B": -2.7892598461876412,
+    "lightweight_cipher": 34.4327898670346,
+    "reduction_layer": -8.03280868513825,
+    "arm_core": -0.5594144209316605,
+    "softmax": 6.780199566537459
+   },
+   "source": "data_export/policy_sampled.csv",
+   "note": "per circuit-seed = best of 10 stochastic rollouts; per circuit = mean over seeds."
+  },
+  "ga_at_8_calls": {
+   "values": {
+    "custom_macbuf": 14.815275070257835,
+    "mkDelayWorker32B": -32.59030121193146,
+    "lightweight_cipher": 14.190472741013469,
+    "reduction_layer": -61.62209696489693,
+    "arm_core": -22.048065053507734,
+    "softmax": 3.4456313532597185
+   },
+   "source": "data_export/ga_convergence.csv",
+   "note": "per circuit-seed = GA best-so-far at <= 8 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_at_24_calls": {
+   "values": {
+    "custom_macbuf": 36.81562820080222,
+    "mkDelayWorker32B": 9.228608332993396,
+    "lightweight_cipher": 30.41582212603395,
+    "reduction_layer": -8.717584164409569,
+    "arm_core": 3.085072350368837,
+    "softmax": 5.6192074628707305
+   },
+   "source": "data_export/ga_convergence.csv",
+   "note": "per circuit-seed = GA best-so-far at <= 24 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_at_96_calls": {
+   "values": {
+    "custom_macbuf": 57.332449321785234,
+    "mkDelayWorker32B": 12.37273828356369,
+    "lightweight_cipher": 38.217984332476,
+    "reduction_layer": 1.6069110938738236,
+    "arm_core": 10.627893822640232,
+    "softmax": 13.42730649086471
+   },
+   "source": "data_export/ga_convergence.csv",
+   "note": "per circuit-seed = GA best-so-far at <= 96 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_at_200_calls": {
+   "values": {
+    "custom_macbuf": 61.1947616870372,
+    "mkDelayWorker32B": 14.221906255958382,
+    "lightweight_cipher": 42.03610178197338,
+    "reduction_layer": 5.1545595363689785,
+    "arm_core": 11.587124402244424,
+    "softmax": 13.42730649086471
+   },
+   "source": "data_export/ga_convergence.csv",
+   "note": "per circuit-seed = GA best-so-far at <= 200 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_converged": {
+   "values": {
+    "custom_macbuf": 65.32636995423832,
+    "mkDelayWorker32B": 17.91922875022216,
+    "lightweight_cipher": 44.13381734182954,
+    "reduction_layer": 7.184986126384182,
+    "arm_core": 17.881799628960948,
+    "softmax": 15.6145178507197
+   },
+   "source": "data_export/ga_runs.csv",
+   "note": "per circuit = mean over the 3 seeds of each run's best individual at early-stop."
+  }
+ },
+ "across_6_circuits": {
+  "zero_shot_policy": {
+   "mean": 31.226226598038373,
+   "median": 28.393778060152897,
+   "min": 7.268734799268221,
+   "max": 58.72472932407964,
+   "stdev": 22.245339430217392,
+   "n": 6,
+   "source": "data_export/results_per_circuit_seed.csv (split=heldout)",
+   "note": "per circuit = mean over 3 seeds."
+  },
+  "trimmed_baseline_ar_sweep_best": {
+   "mean": 14.861652334740706,
+   "median": 10.390557672125524,
+   "min": -0.08072906008054884,
+   "max": 48.198454551118544,
+   "stdev": 16.88368913031571,
+   "n": 6,
+   "source": "data_export/baseline_ar_sweep.csv",
+   "note": "per circuit = best over the 20 aspect ratios (a 20-VTR-call, no-learning search). Not seeded. CAVEAT: see data_export2/notes.md - this sweep fixes H-block tile coordinates on the square baseline grid, so VPR stretches the other dimension; it understates a fair non-learning baseline."
+  },
+  "random_best_of_20": {
+   "mean": 6.162510575349029,
+   "median": -3.627213803657842,
+   "min": -20.002319570967497,
+   "max": 50.69765367754512,
+   "stdev": 28.50339478989163,
+   "n": 6,
+   "source": "data_export/random_floorplans.csv",
+   "note": "per circuit-seed = best of the 20 random legal floorplans; per circuit = mean over seeds."
+  },
+  "sampled_best_of_10": {
+   "mean": 16.23407755364055,
+   "median": 3.1103925728028994,
+   "min": -8.03280868513825,
+   "max": 67.57295884052878,
+   "stdev": 29.288360066427312,
+   "n": 6,
+   "source": "data_export/policy_sampled.csv",
+   "note": "per circuit-seed = best of 10 stochastic rollouts; per circuit = mean over seeds."
+  },
+  "ga_at_8_calls": {
+   "mean": -13.968180677634184,
+   "median": -9.301216850124009,
+   "min": -61.62209696489693,
+   "max": 14.815275070257835,
+   "stdev": 30.356553094264534,
+   "n": 6,
+   "source": "data_export/ga_convergence.csv",
+   "note": "per circuit-seed = GA best-so-far at <= 8 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_at_24_calls": {
+   "mean": 12.741125718109927,
+   "median": 7.423907897932063,
+   "min": -8.717584164409569,
+   "max": 36.81562820080222,
+   "stdev": 17.370962307133702,
+   "n": 6,
+   "source": "data_export/ga_convergence.csv",
+   "note": "per circuit-seed = GA best-so-far at <= 24 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_at_96_calls": {
+   "mean": 22.264213890867282,
+   "median": 12.9000223872142,
+   "min": 1.6069110938738236,
+   "max": 57.332449321785234,
+   "stdev": 21.0825247691297,
+   "n": 6,
+   "source": "data_export/ga_convergence.csv",
+   "note": "per circuit-seed = GA best-so-far at <= 96 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_at_200_calls": {
+   "mean": 24.603626692407847,
+   "median": 13.824606373411546,
+   "min": 5.1545595363689785,
+   "max": 61.1947616870372,
+   "stdev": 22.014486800838508,
+   "n": 6,
+   "source": "data_export/ga_convergence.csv",
+   "note": "per circuit-seed = GA best-so-far at <= 200 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_converged": {
+   "mean": 28.01011994205914,
+   "median": 17.900514189591554,
+   "min": 7.184986126384182,
+   "max": 65.32636995423832,
+   "stdev": 22.109826954857077,
+   "n": 6,
+   "source": "data_export/ga_runs.csv",
+   "note": "per circuit = mean over the 3 seeds of each run's best individual at early-stop."
+  }
+ },
+ "across_4_circuits_no_probes": {
+  "zero_shot_policy": {
+   "mean": 24.601905491815824,
+   "median": 16.20707892195772,
+   "min": 7.268734799268221,
+   "max": 58.72472932407964,
+   "stdev": 23.849005695367953,
+   "n": 4,
+   "source": "data_export/results_per_circuit_seed.csv (split=heldout)",
+   "note": "Excludes custom_macbuf and lightweight_cipher. per circuit = mean over 3 seeds."
+  },
+  "trimmed_baseline_ar_sweep_best": {
+   "mean": 10.26304712935156,
+   "median": 10.390557672125524,
+   "min": 8.472529809206746,
+   "max": 11.798543363948447,
+   "stdev": 1.4246602101765362,
+   "n": 4,
+   "source": "data_export/baseline_ar_sweep.csv",
+   "note": "Excludes custom_macbuf and lightweight_cipher. per circuit = best over the 20 aspect ratios (a 20-VTR-call, no-learning search). Not seeded. CAVEAT: see data_export2/notes.md - this sweep fixes H-block tile coordinates on the square baseline grid, so VPR stretches the other dimension; it understates a fair non-learning baseline."
+  },
+  "random_best_of_20": {
+   "mean": -11.247142881506743,
+   "median": -11.103690963077225,
+   "min": -20.002319570967497,
+   "max": -2.778870028905024,
+   "stdev": 8.874499520263164,
+   "n": 4,
+   "source": "data_export/random_floorplans.csv",
+   "note": "Excludes custom_macbuf and lightweight_cipher. per circuit-seed = best of the 20 random legal floorplans; per circuit = mean over seeds."
+  },
+  "sampled_best_of_10": {
+   "mean": -1.150320846430023,
+   "median": -1.6743371335596509,
+   "min": -8.03280868513825,
+   "max": 6.780199566537459,
+   "stdev": 6.145379953512023,
+   "n": 4,
+   "source": "data_export/policy_sampled.csv",
+   "note": "Excludes custom_macbuf and lightweight_cipher. per circuit-seed = best of 10 stochastic rollouts; per circuit = mean over seeds."
+  },
+  "ga_at_8_calls": {
+   "mean": -28.203707969269104,
+   "median": -27.319183132719598,
+   "min": -61.62209696489693,
+   "max": 3.4456313532597185,
+   "stdev": 26.929559611441864,
+   "n": 4,
+   "source": "data_export/ga_convergence.csv",
+   "note": "Excludes custom_macbuf and lightweight_cipher. per circuit-seed = GA best-so-far at <= 8 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_at_24_calls": {
+   "mean": 2.3038259954558487,
+   "median": 4.352139906619784,
+   "min": -8.717584164409569,
+   "max": 9.228608332993396,
+   "stdev": 7.768015458184918,
+   "n": 4,
+   "source": "data_export/ga_convergence.csv",
+   "note": "Excludes custom_macbuf and lightweight_cipher. per circuit-seed = GA best-so-far at <= 24 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_at_96_calls": {
+   "mean": 9.508712422735615,
+   "median": 11.500316053101962,
+   "min": 1.6069110938738236,
+   "max": 13.42730649086471,
+   "stdev": 5.39286735262306,
+   "n": 4,
+   "source": "data_export/ga_convergence.csv",
+   "note": "Excludes custom_macbuf and lightweight_cipher. per circuit-seed = GA best-so-far at <= 96 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_at_200_calls": {
+   "mean": 11.097724171359124,
+   "median": 12.507215446554568,
+   "min": 5.1545595363689785,
+   "max": 14.221906255958382,
+   "stdev": 4.112914049903147,
+   "n": 4,
+   "source": "data_export/ga_convergence.csv",
+   "note": "Excludes custom_macbuf and lightweight_cipher. per circuit-seed = GA best-so-far at <= 200 VTR calls (the GA logs once per generation = 8 calls); per circuit = mean over seeds."
+  },
+  "ga_converged": {
+   "mean": 14.650133089071748,
+   "median": 16.748158739840324,
+   "min": 7.184986126384182,
+   "max": 17.91922875022216,
+   "stdev": 5.092121765034495,
+   "n": 4,
+   "source": "data_export/ga_runs.csv",
+   "note": "Excludes custom_macbuf and lightweight_cipher. per circuit = mean over the 3 seeds of each run's best individual at early-stop."
+  }
+ },
+ "grids_and_tile_counts": {
+  "values": {
+   "custom_macbuf": {
+    "7": {
+     "policy_grid_w": 10,
+     "policy_grid_h": 13,
+     "baseline_grid_w": 14,
+     "baseline_grid_h": 14,
+     "policy_total_tiles": 130,
+     "baseline_total_tiles": 196
+    },
+    "42": {
+     "policy_grid_w": 9,
+     "policy_grid_h": 11,
+     "baseline_grid_w": 14,
+     "baseline_grid_h": 14,
+     "policy_total_tiles": 99,
+     "baseline_total_tiles": 196
+    },
+    "123": {
+     "policy_grid_w": 9,
+     "policy_grid_h": 11,
+     "baseline_grid_w": 14,
+     "baseline_grid_h": 14,
+     "policy_total_tiles": 99,
+     "baseline_total_tiles": 196
+    }
+   },
+   "mkDelayWorker32B": {
+    "7": {
+     "policy_grid_w": 34,
+     "policy_grid_h": 38,
+     "baseline_grid_w": 50,
+     "baseline_grid_h": 50,
+     "policy_total_tiles": 1292,
+     "baseline_total_tiles": 2500
+    },
+    "42": {
+     "policy_grid_w": 34,
+     "policy_grid_h": 38,
+     "baseline_grid_w": 50,
+     "baseline_grid_h": 50,
+     "policy_total_tiles": 1292,
+     "baseline_total_tiles": 2500
+    },
+    "123": {
+     "policy_grid_w": 34,
+     "policy_grid_h": 38,
+     "baseline_grid_w": 50,
+     "baseline_grid_h": 50,
+     "policy_total_tiles": 1292,
+     "baseline_total_tiles": 2500
+    }
+   },
+   "lightweight_cipher": {
+    "7": {
+     "policy_grid_w": 10,
+     "policy_grid_h": 13,
+     "baseline_grid_w": 14,
+     "baseline_grid_h": 14,
+     "policy_total_tiles": 130,
+     "baseline_total_tiles": 196
+    },
+    "42": {
+     "policy_grid_w": 10,
+     "policy_grid_h": 11,
+     "baseline_grid_w": 14,
+     "baseline_grid_h": 14,
+     "policy_total_tiles": 110,
+     "baseline_total_tiles": 196
+    },
+    "123": {
+     "policy_grid_w": 10,
+     "policy_grid_h": 13,
+     "baseline_grid_w": 14,
+     "baseline_grid_h": 14,
+     "policy_total_tiles": 130,
+     "baseline_total_tiles": 196
+    }
+   },
+   "reduction_layer": {
+    "7": {
+     "policy_grid_w": 32,
+     "policy_grid_h": 36,
+     "baseline_grid_w": 44,
+     "baseline_grid_h": 44,
+     "policy_total_tiles": 1152,
+     "baseline_total_tiles": 1936
+    },
+    "42": {
+     "policy_grid_w": 32,
+     "policy_grid_h": 36,
+     "baseline_grid_w": 44,
+     "baseline_grid_h": 44,
+     "policy_total_tiles": 1152,
+     "baseline_total_tiles": 1936
+    },
+    "123": {
+     "policy_grid_w": 32,
+     "policy_grid_h": 36,
+     "baseline_grid_w": 44,
+     "baseline_grid_h": 44,
+     "policy_total_tiles": 1152,
+     "baseline_total_tiles": 1936
+    }
+   },
+   "arm_core": {
+    "7": {
+     "policy_grid_w": 32,
+     "policy_grid_h": 36,
+     "baseline_grid_w": 37,
+     "baseline_grid_h": 37,
+     "policy_total_tiles": 1152,
+     "baseline_total_tiles": 1369
+    },
+    "42": {
+     "policy_grid_w": 32,
+     "policy_grid_h": 36,
+     "baseline_grid_w": 37,
+     "baseline_grid_h": 37,
+     "policy_total_tiles": 1152,
+     "baseline_total_tiles": 1369
+    },
+    "123": {
+     "policy_grid_w": 32,
+     "policy_grid_h": 36,
+     "baseline_grid_w": 37,
+     "baseline_grid_h": 37,
+     "policy_total_tiles": 1152,
+     "baseline_total_tiles": 1369
+    }
+   },
+   "softmax": {
+    "7": {
+     "policy_grid_w": 36,
+     "policy_grid_h": 40,
+     "baseline_grid_w": 43,
+     "baseline_grid_h": 43,
+     "policy_total_tiles": 1440,
+     "baseline_total_tiles": 1849
+    },
+    "42": {
+     "policy_grid_w": 36,
+     "policy_grid_h": 40,
+     "baseline_grid_w": 43,
+     "baseline_grid_h": 43,
+     "policy_total_tiles": 1440,
+     "baseline_total_tiles": 1849
+    },
+    "123": {
+     "policy_grid_w": 36,
+     "policy_grid_h": 40,
+     "baseline_grid_w": 43,
+     "baseline_grid_h": 43,
+     "policy_total_tiles": 1440,
+     "baseline_total_tiles": 1849
+    }
+   }
+  },
+  "source": "data_export/results_per_circuit_seed.csv (split=heldout)",
+  "note": "Grid dimensions as reported by VPR including the IO ring; total tiles = w*h. A policy grid was recorded for every circuit-seed; none missing."
+ },
+ "sampled_rollouts": {
+  "values": {
+   "custom_macbuf": {
+    "7": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 1.0,
+     "frac_beating_deterministic": 0.6,
+     "min": 43.12422821958202,
+     "median": 47.99397832661275,
+     "max": 70.12066443667524,
+     "deterministic_rollout": 47.75818410442031
+    },
+    "42": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 1.0,
+     "frac_beating_deterministic": 0.2,
+     "min": 24.68020951404883,
+     "median": 45.42970306304059,
+     "max": 63.606006168341324,
+     "deterministic_rollout": 59.53452058401446
+    },
+    "123": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 1.0,
+     "frac_beating_deterministic": 0.5,
+     "min": 36.62102211608704,
+     "median": 57.780203467142286,
+     "max": 68.9922059165698,
+     "deterministic_rollout": 59.088977401455686
+    }
+   },
+   "mkDelayWorker32B": {
+    "7": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.0,
+     "frac_beating_deterministic": 0.0,
+     "min": -34.766823555794836,
+     "median": -13.22512117036175,
+     "max": -1.3499325485238964,
+     "deterministic_rollout": 62.41796642647371
+    },
+    "42": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.0,
+     "frac_beating_deterministic": 0.0,
+     "min": -108.60647206617257,
+     "median": -24.54875934772512,
+     "max": -12.141714784857191,
+     "deterministic_rollout": 54.87823639923658
+    },
+    "123": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.1,
+     "frac_beating_deterministic": 0.0,
+     "min": -7489.474360974883,
+     "median": -13.992224598893925,
+     "max": 5.123867794818164,
+     "deterministic_rollout": 58.87798514652862
+    }
+   },
+   "lightweight_cipher": {
+    "7": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 1.0,
+     "frac_beating_deterministic": 0.9,
+     "min": 30.19853813963872,
+     "median": 30.459268617550457,
+     "max": 33.978637205974785,
+     "deterministic_rollout": 30.223853190985402
+    },
+    "42": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.9,
+     "frac_beating_deterministic": 0.0,
+     "min": -20.608511408993905,
+     "median": 23.723342502194253,
+     "max": 38.278112892059696,
+     "deterministic_rollout": 39.72878808746763
+    },
+    "123": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 1.0,
+     "frac_beating_deterministic": 0.4,
+     "min": 27.099809001989822,
+     "median": 30.33491115511162,
+     "max": 31.041619503069317,
+     "deterministic_rollout": 30.514889494557313
+    }
+   },
+   "reduction_layer": {
+    "7": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.0,
+     "frac_beating_deterministic": 0.0,
+     "min": -58.250585722148095,
+     "median": -49.59980862702629,
+     "max": -7.58486435959221,
+     "deterministic_rollout": 28.89375193535369
+    },
+    "42": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.0,
+     "frac_beating_deterministic": 0.0,
+     "min": -92.5190250220317,
+     "median": -47.42633118726843,
+     "max": -2.137961140954527,
+     "deterministic_rollout": 21.50995793041336
+    },
+    "123": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.0,
+     "frac_beating_deterministic": 0.0,
+     "min": -5874.044251544518,
+     "median": -43.18955582144018,
+     "max": -14.37560055486801,
+     "deterministic_rollout": 19.491427722139992
+    }
+   },
+   "arm_core": {
+    "7": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.1,
+     "frac_beating_deterministic": 0.0,
+     "min": -39.91017259711117,
+     "median": -21.055101539830645,
+     "max": 0.026942372190420994,
+     "deterministic_rollout": 6.993083178723758
+    },
+    "42": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.1,
+     "frac_beating_deterministic": 0.0,
+     "min": -48.45875903478522,
+     "median": -36.640228743872285,
+     "max": 0.7608486462266997,
+     "deterministic_rollout": 11.833083069198413
+    },
+    "123": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.0,
+     "frac_beating_deterministic": 0.0,
+     "min": -53.83492345365597,
+     "median": -33.22520433737862,
+     "max": -2.466034281212102,
+     "deterministic_rollout": 8.521169695917106
+    }
+   },
+   "softmax": {
+    "7": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.2,
+     "frac_beating_deterministic": 0.1,
+     "min": -66.3709530472728,
+     "median": -21.886179271453813,
+     "max": 10.57569735664102,
+     "deterministic_rollout": 5.648280594885477
+    },
+    "42": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.7,
+     "frac_beating_deterministic": 0.4,
+     "min": -57.437938248738426,
+     "median": 2.4292384968560077,
+     "max": 11.984066719510938,
+     "deterministic_rollout": 5.390174734836533
+    },
+    "123": {
+     "n_successful_samples": 10,
+     "frac_beating_baseline": 0.0,
+     "frac_beating_deterministic": 0.0,
+     "min": -8852.030664124182,
+     "median": -165.00718230999854,
+     "max": -2.219165376539582,
+     "deterministic_rollout": 10.767749068082653
+    }
+   }
+  },
+  "source": "data_export/policy_sampled.csv + data_export/results_per_circuit_seed.csv (split=heldout)",
+  "note": "10 stochastic rollouts per circuit-seed. 'beating baseline' = adp_reduction_pct > 0; 'beating deterministic' = strictly greater than the deterministic rollout's reduction. Fractions are over successful VTR runs only (n_successful_samples)."
+ }
+}
