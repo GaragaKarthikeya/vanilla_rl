@@ -1,0 +1,1112 @@
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+C5: 180 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a66a834a.xml
+  Size   : 14x14
+  DSPs   : [(2, 6), (4, 3), (7, 3)]
+  BRAMs  : [(6, 3)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1dbec7e3.xml
+  Size   : 14x14
+  DSPs   : [(3, 5), (1, 8), (6, 4)]
+  BRAMs  : [(5, 3)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c1a8a691.xml
+  Size   : 14x14
+  DSPs   : [(5, 4), (6, 4), (4, 3)]
+  BRAMs  : [(2, 3)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_834b5436.xml
+  Size   : 14x14
+  DSPs   : [(5, 4), (7, 3), (1, 8)]
+  BRAMs  : [(6, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1dbec7e3.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c1a8a691.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_61787920.xml
+  Size   : 14x14
+  DSPs   : [(5, 8), (4, 3), (5, 4)]
+  BRAMs  : [(6, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a66a834a.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_61787920.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1a1137e0.xml
+  Size   : 14x14
+  DSPs   : [(4, 2), (1, 8), (7, 3)]
+  BRAMs  : [(6, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1a1137e0.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_834b5436.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3a468782.xml
+  Size   : 14x14
+  DSPs   : [(6, 4), (8, 8), (5, 8)]
+  BRAMs  : [(7, 4)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e6f1f4cf.xml
+  Size   : 14x14
+  DSPs   : [(4, 2), (5, 4), (2, 3)]
+  BRAMs  : [(6, 4)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b55c5cf1.xml
+  Size   : 14x14
+  DSPs   : [(4, 2), (5, 4), (6, 4)]
+  BRAMs  : [(2, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3a468782.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e6f1f4cf.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b55c5cf1.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_eefa399b.xml
+  Size   : 14x14
+  DSPs   : [(6, 4), (4, 3), (1, 8)]
+  BRAMs  : [(5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_eefa399b.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d98b7ef0.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(13, 37), (27, 8), (3, 29), (29, 33), (40, 33), (48, 26), (36, 24), (13, 5), (32, 29), (19, 12), (24, 21), (38, 40), (17, 16), (48, 6), (7, 16), (10, 19), (22, 40), (43, 9), (22, 10), (38, 12), (12, 43), (9, 18), (1, 9), (8, 35), (15, 25), (22, 3), (27, 40), (43, 38), (18, 19), (4, 5), (14, 2), (9, 36), (24, 32), (45, 43), (27, 32), (1, 34), (8, 27), (7, 10), (47, 16), (21, 20), (5, 15), (21, 6), (48, 37)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_78759fa3.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(8, 28), (17, 16), (35, 39), (13, 14), (7, 5), (48, 25), (2, 37), (15, 43), (25, 19), (7, 16), (34, 21), (45, 20), (34, 15), (3, 1), (46, 20), (26, 28), (38, 25), (13, 4), (21, 6), (45, 9), (45, 38), (19, 12), (10, 9), (27, 14), (12, 15), (3, 33), (7, 34), (15, 11), (39, 38), (37, 12), (18, 19), (22, 17), (1, 9), (12, 41), (37, 34), (16, 23), (47, 19), (12, 5), (11, 13), (4, 25), (19, 5), (17, 1), (36, 29)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5af0a1df.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(19, 12), (9, 18), (43, 29), (7, 16), (33, 8), (28, 20), (9, 36), (21, 9), (3, 16), (4, 14), (44, 17), (17, 1), (44, 43), (10, 34), (22, 3), (24, 24), (4, 6), (17, 15), (4, 35), (1, 9), (14, 14), (14, 8), (13, 8), (10, 10), (9, 4), (35, 39), (3, 27), (32, 43), (3, 2), (6, 18), (43, 8), (18, 28), (36, 28), (7, 5), (23, 16), (35, 3), (16, 11), (5, 12), (43, 17), (20, 17), (11, 13), (39, 38), (27, 36)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_78759fa3.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d98b7ef0.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5af0a1df.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_73763cec.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(44, 9), (41, 37), (18, 5), (14, 10), (47, 35), (8, 18), (3, 34), (47, 24), (13, 17), (32, 36), (20, 12), (17, 15), (30, 36), (6, 19), (17, 23), (33, 17), (12, 14), (40, 36), (37, 37), (19, 12), (19, 30), (14, 39), (42, 18), (45, 19), (26, 42), (43, 5), (40, 7), (13, 3), (11, 36), (8, 41), (22, 5), (31, 41), (31, 26), (10, 27), (27, 29), (11, 14), (7, 11), (40, 23), (3, 8), (15, 15), (9, 16), (34, 41), (22, 26)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0ae44828.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(17, 15), (45, 35), (23, 36), (42, 13), (16, 36), (10, 5), (24, 6), (15, 25), (30, 12), (46, 36), (19, 12), (47, 30), (21, 27), (25, 29), (6, 34), (3, 1), (24, 36), (20, 41), (35, 1), (31, 9), (47, 38), (7, 5), (17, 33), (11, 43), (33, 8), (2, 12), (12, 2), (1, 9), (22, 32), (7, 16), (24, 26), (8, 10), (31, 41), (28, 13), (41, 25), (13, 39), (4, 13), (35, 33), (9, 5), (14, 19), (15, 11), (13, 1), (5, 37)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9cd0e7cd.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(19, 12), (38, 42), (16, 20), (46, 30), (41, 21), (5, 8), (14, 11), (7, 8), (11, 11), (22, 27), (9, 18), (12, 14), (32, 30), (32, 41), (15, 30), (1, 9), (21, 6), (31, 22), (46, 43), (12, 4), (25, 42), (10, 5), (5, 15), (37, 33), (18, 34), (1, 31), (13, 6), (30, 9), (15, 24), (34, 37), (34, 15), (9, 43), (39, 35), (4, 37), (33, 27), (6, 19), (27, 3), (9, 1), (12, 24), (35, 14), (43, 5), (4, 2), (39, 42)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_73763cec.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9cd0e7cd.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0ae44828.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 7, 'sample_index': 3} True 1.93
+done C5 {'circuit': 'custom_macbuf', 'seed': 7, 'sample_index': 0} True 2.93
+done C5 {'circuit': 'custom_macbuf', 'seed': 7, 'sample_index': 9} True 2.8
+done C5 {'circuit': 'custom_macbuf', 'seed': 7, 'sample_index': 7} True 2.75
+done C5 {'circuit': 'custom_macbuf', 'seed': 7, 'sample_index': 8} True 2.71
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ce8f7984.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(16, 3), (21, 24), (6, 7), (7, 10), (30, 1), (25, 31), (1, 9), (11, 13), (40, 24), (4, 6), (43, 9), (31, 20), (14, 2), (17, 1), (42, 17), (22, 5), (26, 29), (10, 9), (44, 29), (20, 14), (16, 19), (2, 18), (12, 5), (17, 29), (26, 38), (22, 17), (6, 33), (13, 5), (13, 36), (12, 29), (19, 12), (18, 14), (45, 6), (14, 19), (15, 11), (12, 14), (46, 2), (20, 33), (38, 35), (29, 25), (13, 17), (37, 24), (34, 37)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ce8f7984.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_fb00f65c.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 4), (2, 6), (4, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_fb00f65c.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 7, 'sample_index': 5} True 4.6
+done C5 {'circuit': 'custom_macbuf', 'seed': 7, 'sample_index': 4} True 6.7
+done C5 {'circuit': 'custom_macbuf', 'seed': 7, 'sample_index': 1} True 4.52
+done C5 {'circuit': 'custom_macbuf', 'seed': 7, 'sample_index': 2} True 4.87
+done C5 {'circuit': 'custom_macbuf', 'seed': 7, 'sample_index': 6} True 4.34
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_023a8eb7.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 3), (4, 2), (5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_023a8eb7.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a8ae110a.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 4), (4, 2), (5, 4)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d40cedaa.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 4), (6, 4), (2, 6)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_910449c8.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 3), (6, 4), (3, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a8ae110a.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_910449c8.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d40cedaa.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_06617016.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 4), (5, 4), (7, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_06617016.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a5272493.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(17, 22), (10, 29), (22, 40), (41, 32), (34, 28), (48, 34), (14, 27), (47, 7), (19, 12), (42, 33), (17, 15), (20, 40), (42, 17), (41, 23), (44, 42), (47, 29), (13, 17), (44, 3), (1, 9), (46, 30), (38, 36), (20, 16), (15, 11), (28, 26), (42, 9), (21, 1), (43, 16), (6, 21), (29, 40), (48, 23), (14, 14), (18, 14), (10, 19), (24, 25), (7, 1), (40, 7), (32, 5), (11, 17), (46, 10), (47, 18), (9, 14), (3, 27), (39, 42)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a5272493.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f41935ab.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(15, 11), (7, 26), (35, 34), (7, 19), (1, 9), (21, 9), (18, 19), (5, 26), (6, 6), (14, 19), (46, 35), (19, 12), (11, 17), (43, 8), (30, 36), (13, 32), (28, 24), (39, 4), (10, 17), (36, 8), (13, 14), (48, 21), (41, 38), (37, 29), (10, 28), (5, 18), (16, 21), (7, 7), (30, 21), (44, 20), (34, 29), (29, 19), (23, 19), (11, 6), (43, 35), (23, 39), (11, 42), (20, 39), (19, 27), (48, 31), (12, 3), (9, 4), (35, 22)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f4343d97.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(9, 5), (25, 23), (6, 39), (30, 39), (32, 16), (1, 9), (4, 28), (40, 9), (15, 8), (37, 24), (31, 36), (19, 30), (7, 11), (28, 18), (2, 18), (17, 15), (16, 35), (2, 11), (40, 1), (2, 25), (29, 8), (19, 12), (5, 31), (23, 22), (26, 41), (45, 30), (44, 42), (7, 2), (35, 26), (27, 5), (12, 4), (37, 4), (28, 6), (11, 13), (20, 5), (36, 41), (10, 15), (22, 17), (17, 34), (34, 4), (14, 14), (12, 33), (44, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f41935ab.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f4343d97.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 7, 'sample_index': 0} True 3.11
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cfdfcfed.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(5, 4), (6, 4), (4, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cfdfcfed.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 7, 'sample_index': 5} True 5.26
+done C5 {'circuit': 'lightweight_cipher', 'seed': 7, 'sample_index': 4} True 5.48
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d57ed67a.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 4), (4, 2), (7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d57ed67a.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 7, 'sample_index': 1} True 5.87
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_fb6dfbf9.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 4), (2, 3), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_fb6dfbf9.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 7, 'sample_index': 2} True 6.37
+done C5 {'circuit': 'lightweight_cipher', 'seed': 7, 'sample_index': 3} True 6.38
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c8ba9dc6.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(5, 3), (3, 5), (2, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c8ba9dc6.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 7, 'sample_index': 6} True 6.35
+done C5 {'circuit': 'lightweight_cipher', 'seed': 7, 'sample_index': 8} True 5.27
+done C5 {'circuit': 'lightweight_cipher', 'seed': 7, 'sample_index': 9} True 4.59
+done C5 {'circuit': 'lightweight_cipher', 'seed': 7, 'sample_index': 7} True 8.23
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_281bbec5.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(17, 15), (26, 33), (23, 36), (42, 13), (16, 36), (10, 5), (24, 6), (15, 25), (30, 12), (16, 14), (19, 12), (14, 10), (21, 27), (25, 29), (6, 34), (3, 1), (24, 36), (13, 17), (35, 1), (31, 9), (23, 21), (7, 5), (17, 33), (34, 21), (33, 8), (2, 12), (12, 2), (1, 9), (22, 32), (7, 16), (24, 26), (8, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_281bbec5.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_225f30bd.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(14, 1), (41, 37), (18, 5), (14, 10), (19, 12), (8, 18), (3, 34), (36, 9), (13, 17), (32, 36), (20, 12), (17, 15), (30, 36), (6, 19), (17, 23), (33, 17), (12, 14), (40, 36), (20, 5), (40, 22), (19, 30), (33, 3), (42, 18), (1, 34), (14, 19), (1, 9), (40, 7), (13, 3), (11, 36), (2, 18), (22, 5), (4, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_225f30bd.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f96b4350.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(13, 37), (27, 8), (3, 29), (29, 33), (40, 33), (7, 11), (36, 24), (13, 5), (32, 29), (19, 12), (24, 21), (14, 2), (17, 16), (32, 37), (27, 19), (10, 19), (42, 22), (3, 35), (22, 10), (38, 12), (34, 32), (9, 18), (1, 9), (8, 35), (15, 25), (22, 3), (9, 24), (23, 18), (18, 19), (4, 5), (4, 20), (9, 36)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f96b4350.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2d98e07.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(19, 12), (24, 6), (16, 20), (3, 16), (41, 21), (5, 8), (14, 11), (7, 8), (11, 11), (22, 27), (9, 18), (12, 14), (32, 30), (36, 30), (15, 30), (1, 9), (21, 6), (31, 22), (8, 6), (12, 4), (2, 18), (10, 5), (5, 15), (37, 33), (18, 34), (1, 31), (13, 6), (30, 9), (15, 24), (34, 37), (34, 15), (40, 21)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_86f7de0e.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(19, 12), (9, 18), (10, 14), (7, 16), (33, 8), (28, 20), (9, 36), (21, 9), (3, 16), (4, 14), (17, 15), (17, 1), (1, 9), (10, 34), (22, 3), (24, 24), (4, 6), (14, 12), (4, 35), (32, 12), (24, 3), (7, 5), (13, 8), (6, 3), (9, 4), (25, 29), (3, 27), (29, 14), (3, 2), (6, 18), (17, 36), (18, 28)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c2d98e07.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_86f7de0e.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b33122bb.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(8, 28), (17, 16), (11, 34), (13, 14), (7, 5), (17, 22), (2, 37), (21, 6), (25, 19), (7, 16), (34, 21), (9, 8), (34, 15), (3, 1), (11, 5), (26, 28), (38, 25), (13, 4), (27, 6), (19, 12), (42, 14), (37, 26), (10, 9), (27, 14), (12, 15), (3, 33), (7, 34), (15, 11), (36, 20), (37, 12), (18, 19), (22, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b33122bb.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'sample_index': 1} True 39.23
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'sample_index': 3} True 41.15
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'sample_index': 6} True 39.38
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'sample_index': 2} True 44.97
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'sample_index': 5} True 48.33
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'sample_index': 7} True 44.09
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7c008cae.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(16, 3), (21, 24), (6, 7), (7, 10), (30, 1), (25, 31), (1, 9), (11, 13), (40, 24), (4, 6), (1, 22), (31, 20), (14, 2), (17, 1), (42, 17), (22, 5), (26, 29), (10, 9), (5, 15), (20, 14), (16, 19), (2, 18), (12, 5), (17, 29), (15, 11), (22, 17), (6, 33), (13, 5), (13, 36), (12, 29), (19, 12), (18, 14)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7c008cae.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'sample_index': 8} True 47.75
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'sample_index': 9} True 47.76
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'sample_index': 0} True 54.05
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 7, 'sample_index': 4} True 54.19
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3756d7fb.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(17, 22), (10, 29), (26, 24), (41, 32), (34, 28), (23, 25), (14, 27), (11, 17), (19, 12), (42, 33), (17, 15), (19, 27), (42, 17), (41, 23), (7, 16), (28, 6), (13, 17), (12, 5), (1, 9), (14, 14), (38, 36), (20, 16), (15, 11), (28, 26), (42, 9), (21, 1), (12, 14), (6, 21), (24, 12), (10, 14), (7, 10), (18, 14)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6dbddc2d.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(9, 5), (25, 23), (5, 33), (13, 14), (32, 16), (1, 9), (4, 28), (40, 9), (15, 8), (37, 24), (31, 36), (19, 30), (7, 11), (28, 18), (2, 18), (17, 15), (16, 35), (2, 11), (40, 1), (2, 25), (29, 8), (19, 12), (30, 29), (23, 22), (39, 30), (21, 9), (18, 19), (7, 2), (35, 26), (27, 5), (12, 4), (37, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6dbddc2d.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3756d7fb.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5fc7d77b.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(15, 11), (7, 26), (35, 34), (7, 19), (1, 9), (21, 9), (18, 19), (5, 26), (6, 6), (14, 19), (14, 28), (19, 12), (11, 17), (26, 32), (30, 36), (13, 32), (28, 24), (39, 4), (10, 17), (36, 8), (13, 14), (33, 37), (12, 5), (37, 29), (10, 28), (5, 18), (16, 21), (7, 7), (30, 21), (12, 24), (34, 29), (29, 19)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5fc7d77b.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9baefae4.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(17, 15), (7, 10), (14, 21), (29, 2), (15, 7), (10, 5), (24, 6), (15, 25), (30, 12), (20, 1), (19, 12), (14, 10), (21, 27), (25, 29), (9, 18), (3, 1), (22, 17), (13, 17), (35, 1), (31, 9), (23, 21), (11, 20), (22, 5), (34, 21)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9baefae4.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_65833cad.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(14, 1), (11, 25), (18, 5), (14, 10), (19, 12), (8, 18), (6, 25), (22, 23), (13, 17), (12, 17), (20, 12), (17, 15), (15, 11), (6, 19), (17, 23), (33, 17), (16, 5), (18, 19), (20, 5), (21, 6), (19, 30), (33, 3), (22, 17), (7, 8)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_65833cad.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6aac8e5f.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(19, 12), (9, 18), (10, 14), (7, 16), (33, 8), (28, 20), (35, 29), (21, 9), (3, 16), (4, 14), (13, 14), (17, 1), (1, 9), (16, 4), (22, 3), (6, 2), (4, 6), (17, 15), (26, 20), (4, 30), (14, 14), (14, 8), (13, 8), (24, 18)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6aac8e5f.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a9d0c852.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(7, 4), (27, 8), (3, 29), (21, 9), (11, 18), (7, 11), (15, 7), (13, 5), (32, 29), (19, 12), (24, 21), (14, 2), (17, 16), (27, 14), (26, 22), (10, 19), (3, 9), (1, 9), (22, 10), (21, 18), (24, 1), (9, 18), (10, 5), (20, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a9d0c852.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1ba6d93a.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(8, 28), (17, 16), (19, 12), (13, 14), (7, 5), (17, 22), (21, 25), (21, 6), (25, 19), (7, 16), (34, 21), (9, 8), (34, 15), (3, 1), (11, 5), (26, 28), (10, 10), (13, 4), (27, 6), (27, 12), (14, 17), (1, 9), (8, 8), (22, 18)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_154394e5.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(19, 12), (24, 6), (16, 20), (3, 16), (9, 11), (5, 8), (14, 11), (7, 8), (11, 11), (22, 27), (9, 18), (12, 14), (32, 30), (17, 15), (15, 30), (1, 9), (21, 6), (31, 22), (8, 6), (12, 4), (2, 18), (10, 5), (5, 15), (35, 27)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1ba6d93a.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_154394e5.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 7, 'sample_index': 4} True 177.34
+done C5 {'circuit': 'reduction_layer', 'seed': 7, 'sample_index': 1} True 181.72
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_53c3f666.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(16, 3), (21, 24), (6, 7), (7, 10), (30, 1), (21, 1), (1, 9), (11, 13), (17, 20), (4, 6), (1, 22), (31, 20), (14, 2), (17, 1), (2, 18), (22, 5), (26, 29), (10, 9), (5, 15), (20, 14), (16, 19), (12, 2), (31, 5), (17, 29)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_53c3f666.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e4f11817.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(9, 5), (25, 23), (7, 16), (13, 14), (32, 16), (1, 9), (4, 28), (3, 15), (15, 8), (28, 19), (19, 12), (19, 30), (11, 23), (4, 5), (2, 18), (7, 7), (24, 6), (2, 11), (14, 15), (2, 25), (29, 8), (20, 3), (30, 29), (23, 22)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e4f11817.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 7, 'sample_index': 0} True 219.5
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_68f0f7ec.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(17, 22), (10, 29), (26, 24), (17, 15), (34, 28), (23, 25), (14, 27), (11, 17), (19, 12), (17, 1), (6, 2), (19, 27), (1, 9), (29, 11), (7, 16), (28, 6), (13, 17), (12, 5), (25, 23), (14, 14), (30, 22), (20, 16), (15, 11), (28, 26)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_68f0f7ec.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 7, 'sample_index': 8} True 194.29
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f8ff604f.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(15, 11), (7, 26), (19, 12), (7, 19), (1, 9), (29, 30), (18, 19), (13, 14), (6, 6), (14, 19), (14, 28), (25, 12), (11, 17), (10, 19), (7, 11), (20, 7), (28, 24), (18, 28), (23, 16), (4, 5), (17, 1), (21, 6), (12, 5), (17, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f8ff604f.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 7, 'sample_index': 9} True 199.38
+done C5 {'circuit': 'reduction_layer', 'seed': 7, 'sample_index': 5} True 236.84
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_81bb5c93.xml
+  Size   : 43x43
+  DSPs   : [(17, 15), (26, 33), (23, 36), (29, 2), (16, 36), (10, 5), (24, 6), (15, 25)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_81bb5c93.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7ab6e128.xml
+  Size   : 43x43
+  DSPs   : [(14, 1), (41, 37), (18, 5), (14, 10), (19, 12), (8, 18), (3, 34), (36, 9)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7ab6e128.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 7, 'sample_index': 2} True 260.19
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b66bf693.xml
+  Size   : 43x43
+  DSPs   : [(13, 37), (27, 8), (3, 29), (21, 9), (40, 33), (35, 12), (36, 24), (13, 5)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b66bf693.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 7, 'sample_index': 7} True 288.76
+done C5 {'circuit': 'reduction_layer', 'seed': 7, 'sample_index': 6} True 298.64
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_95252da7.xml
+  Size   : 43x43
+  DSPs   : [(19, 12), (9, 18), (10, 14), (7, 16), (33, 8), (28, 20), (9, 36), (21, 9)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_95252da7.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e12a1806.xml
+  Size   : 43x43
+  DSPs   : [(19, 12), (24, 6), (16, 20), (3, 16), (41, 21), (5, 8), (41, 16), (7, 8)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e12a1806.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 7, 'sample_index': 3} True 343.38
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0682ec87.xml
+  Size   : 43x43
+  DSPs   : [(8, 28), (17, 16), (11, 34), (13, 14), (7, 5), (17, 22), (2, 37), (21, 6)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0682ec87.xml
+done C5 {'circuit': 'arm_core', 'seed': 7, 'sample_index': 3} True 325.51
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_01aa2d31.xml
+  Size   : 43x43
+  DSPs   : [(16, 3), (21, 24), (6, 7), (7, 10), (30, 1), (25, 31), (1, 9), (11, 13)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_01aa2d31.xml
+done C5 {'circuit': 'arm_core', 'seed': 7, 'sample_index': 4} True 332.35
+done C5 {'circuit': 'arm_core', 'seed': 7, 'sample_index': 7} True 191.79
+done C5 {'circuit': 'arm_core', 'seed': 7, 'sample_index': 2} True 344.41
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2c133f78.xml
+  Size   : 43x43
+  DSPs   : [(9, 5), (25, 23), (5, 33), (13, 14), (32, 16), (1, 9), (4, 28), (40, 9)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2c133f78.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_11e67866.xml
+  Size   : 43x43
+  DSPs   : [(17, 22), (10, 29), (26, 24), (41, 32), (34, 28), (23, 25), (14, 27), (11, 17)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_11e67866.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2032f48f.xml
+  Size   : 43x43
+  DSPs   : [(15, 11), (7, 26), (35, 34), (7, 19), (1, 9), (21, 9), (18, 19), (5, 26)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2032f48f.xml
+done C5 {'circuit': 'arm_core', 'seed': 7, 'sample_index': 5} True 366.67
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0eb81e9b.xml
+  Size   : 14x14
+  DSPs   : [(2, 2), (2, 6), (3, 6)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0eb81e9b.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 42, 'sample_index': 0} True 2.84
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2f3ab5d3.xml
+  Size   : 14x14
+  DSPs   : [(5, 6), (7, 2), (2, 1)]
+  BRAMs  : [(3, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2f3ab5d3.xml
+done C5 {'circuit': 'arm_core', 'seed': 7, 'sample_index': 1} True 375.33
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4494e044.xml
+  Size   : 14x14
+  DSPs   : [(7, 1), (3, 2), (2, 1)]
+  BRAMs  : [(6, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4494e044.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 42, 'sample_index': 1} True 3.85
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d4bffb05.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (2, 6), (6, 4)]
+  BRAMs  : [(3, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d4bffb05.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 42, 'sample_index': 2} True 3.4
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_59f32484.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (7, 2), (5, 6)]
+  BRAMs  : [(2, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_59f32484.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 42, 'sample_index': 3} True 3.7
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cf91766d.xml
+  Size   : 14x14
+  DSPs   : [(6, 2), (2, 5), (4, 4)]
+  BRAMs  : [(3, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cf91766d.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 42, 'sample_index': 4} True 4.25
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5ffd22fe.xml
+  Size   : 14x14
+  DSPs   : [(7, 1), (2, 5), (3, 2)]
+  BRAMs  : [(3, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5ffd22fe.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 42, 'sample_index': 5} True 3.99
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3d0bb189.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (3, 6), (5, 6)]
+  BRAMs  : [(2, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3d0bb189.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 42, 'sample_index': 6} True 2.79
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_09ffb6b1.xml
+  Size   : 14x14
+  DSPs   : [(5, 4), (7, 1), (3, 3)]
+  BRAMs  : [(6, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_09ffb6b1.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 42, 'sample_index': 7} True 3.64
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_15646301.xml
+  Size   : 14x14
+  DSPs   : [(2, 5), (3, 6), (5, 4)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_15646301.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 42, 'sample_index': 8} True 3.19
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e8492e95.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(21, 10), (33, 35), (5, 28), (11, 17), (28, 39), (28, 3), (11, 3), (2, 9), (24, 15), (8, 14), (7, 4), (13, 7), (9, 1), (16, 37), (14, 9), (30, 42), (6, 25), (42, 27), (20, 30), (4, 10), (39, 6), (48, 35), (8, 31), (3, 34), (4, 27), (28, 25), (8, 3), (43, 22), (13, 25), (37, 35), (12, 7), (45, 4), (10, 16), (19, 28), (16, 18), (10, 5), (25, 43), (7, 41), (27, 25), (19, 3), (34, 5), (43, 1), (47, 26)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e8492e95.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 42, 'sample_index': 9} True 2.5
+done C5 {'circuit': 'arm_core', 'seed': 7, 'sample_index': 9} True 202.53
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_53e2cd7f.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(29, 4), (2, 27), (11, 4), (21, 1), (25, 35), (7, 20), (21, 16), (10, 7), (41, 28), (18, 34), (16, 23), (1, 3), (23, 5), (28, 7), (22, 8), (37, 35), (11, 18), (21, 10), (31, 18), (40, 4), (48, 15), (31, 35), (12, 5), (47, 11), (35, 10), (19, 25), (15, 30), (17, 22), (7, 14), (29, 14), (10, 33), (13, 17), (45, 23), (14, 1), (23, 42), (40, 40), (1, 39), (9, 26), (44, 40), (2, 18), (29, 25), (19, 43), (6, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_53e2cd7f.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f2002004.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(6, 2), (40, 7), (14, 3), (28, 15), (11, 4), (42, 23), (16, 43), (13, 9), (12, 17), (7, 24), (2, 9), (14, 10), (39, 33), (1, 6), (31, 42), (42, 13), (21, 34), (36, 6), (40, 14), (10, 7), (14, 20), (31, 10), (43, 33), (3, 8), (25, 36), (20, 18), (15, 19), (4, 40), (47, 15), (35, 16), (30, 19), (21, 17), (34, 4), (34, 27), (17, 28), (40, 36), (12, 4), (17, 20), (40, 25), (44, 22), (45, 30), (29, 20), (19, 24)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f2002004.xml
+done C5 {'circuit': 'arm_core', 'seed': 7, 'sample_index': 0} True 431.25
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_89ff6db0.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(9, 16), (11, 2), (5, 26), (2, 9), (3, 8), (30, 42), (4, 22), (44, 5), (25, 39), (28, 16), (8, 14), (10, 16), (36, 20), (47, 18), (39, 13), (42, 13), (14, 8), (12, 39), (39, 35), (2, 17), (29, 22), (1, 3), (27, 1), (21, 41), (22, 17), (13, 7), (34, 36), (15, 14), (8, 27), (3, 14), (40, 6), (4, 10), (14, 16), (6, 2), (19, 41), (7, 14), (11, 39), (40, 43), (40, 21), (12, 6), (16, 25), (30, 24), (21, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_89ff6db0.xml
+done C5 {'circuit': 'arm_core', 'seed': 7, 'sample_index': 6} True 291.5
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b77effee.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(21, 37), (48, 32), (23, 24), (31, 12), (14, 8), (32, 40), (28, 42), (11, 4), (48, 38), (37, 43), (9, 25), (24, 32), (12, 2), (39, 4), (8, 37), (21, 17), (17, 19), (3, 8), (18, 14), (20, 3), (47, 32), (13, 26), (20, 13), (12, 15), (43, 8), (20, 37), (48, 19), (46, 32), (19, 12), (31, 29), (5, 1), (13, 7), (36, 8), (43, 33), (45, 23), (40, 13), (35, 28), (12, 30), (10, 5), (7, 14), (35, 15), (16, 22), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b77effee.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'sample_index': 0} True 58.94
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'sample_index': 1} True 58.25
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_456c3681.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(10, 18), (4, 7), (10, 5), (34, 7), (44, 24), (47, 21), (46, 12), (30, 19), (20, 18), (11, 2), (13, 7), (14, 10), (44, 16), (34, 22), (31, 36), (40, 7), (18, 36), (42, 11), (38, 32), (33, 10), (7, 36), (19, 10), (37, 7), (31, 3), (8, 14), (14, 19), (32, 5), (1, 4), (3, 8), (2, 2), (43, 43), (14, 3), (37, 24), (5, 1), (43, 22), (2, 18), (27, 13), (39, 7), (27, 21), (21, 1), (17, 10), (17, 41), (28, 29)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_456c3681.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'sample_index': 2} True 59.33
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b3d18e06.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(12, 4), (13, 38), (6, 38), (27, 1), (2, 32), (19, 35), (27, 17), (9, 6), (1, 11), (15, 14), (35, 23), (22, 32), (11, 4), (6, 7), (11, 29), (13, 9), (46, 26), (19, 6), (34, 33), (48, 4), (5, 2), (35, 15), (43, 27), (17, 7), (20, 14), (2, 9), (8, 14), (32, 31), (14, 10), (4, 10), (48, 15), (43, 4), (48, 41), (22, 41), (44, 22), (21, 16), (10, 5), (29, 21), (20, 41), (48, 21), (41, 18), (30, 37), (5, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b3d18e06.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f2792280.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(25, 42), (28, 14), (13, 36), (12, 27), (12, 4), (1, 32), (12, 17), (4, 3), (8, 14), (17, 24), (2, 2), (21, 13), (36, 18), (3, 8), (10, 10), (1, 3), (16, 37), (7, 4), (30, 4), (14, 8), (20, 16), (14, 1), (47, 2), (40, 13), (10, 2), (18, 17), (39, 6), (30, 24), (27, 6), (2, 9), (38, 40), (29, 23), (42, 26), (35, 6), (42, 7), (24, 43), (31, 18), (14, 32), (8, 34), (30, 15), (33, 38), (23, 1), (43, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f2792280.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'sample_index': 3} True 54.57
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dd8f15b5.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(6, 7), (12, 16), (28, 26), (28, 11), (2, 9), (19, 29), (3, 14), (34, 2), (17, 16), (24, 16), (48, 4), (10, 27), (1, 42), (35, 4), (13, 2), (10, 18), (13, 9), (5, 17), (25, 40), (27, 20), (36, 9), (46, 41), (13, 25), (12, 4), (25, 10), (43, 10), (26, 2), (21, 12), (7, 14), (4, 33), (24, 27), (2, 25), (45, 33), (9, 41), (32, 9), (6, 38), (3, 8), (47, 19), (30, 5), (20, 18), (29, 36), (27, 8), (11, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dd8f15b5.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'sample_index': 5} True 51.11
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_017efe6d.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(42, 1), (22, 7), (12, 5), (29, 34), (7, 4), (45, 21), (25, 22), (2, 9), (2, 20), (35, 40), (6, 3), (30, 39), (5, 14), (19, 6), (13, 7), (25, 34), (43, 6), (18, 40), (20, 28), (8, 19), (2, 27), (48, 16), (18, 15), (45, 8), (3, 8), (31, 42), (15, 19), (32, 11), (12, 18), (21, 13), (38, 25), (36, 5), (19, 25), (37, 25), (38, 35), (14, 11), (40, 17), (16, 39), (44, 43), (14, 20), (10, 8), (15, 8), (48, 40)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_017efe6d.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'sample_index': 4} True 63.54
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ea0d4e50.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 4), (2, 2), (8, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ea0d4e50.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 42, 'sample_index': 0} True 3.85
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_162cc647.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(3, 5), (6, 2), (11, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_162cc647.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'sample_index': 7} True 56.37
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e9baf15f.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 2), (7, 1), (3, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e9baf15f.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 42, 'sample_index': 1} True 4.51
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3a042b16.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 2), (2, 2), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3a042b16.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 42, 'sample_index': 2} True 3.86
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a02860cc.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 6), (6, 2), (3, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a02860cc.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 42, 'sample_index': 3} True 3.83
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_13346fe4.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (10, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_13346fe4.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 42, 'sample_index': 4} True 3.67
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_134b36ab.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 2), (7, 1), (8, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_134b36ab.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 42, 'sample_index': 5} True 4.25
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_70f276b0.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (6, 2), (5, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_70f276b0.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 42, 'sample_index': 6} True 5.03
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e5223021.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 7), (2, 2), (7, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e5223021.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 42, 'sample_index': 7} True 5.16
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_39c0bd08.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(10, 5), (6, 2), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_39c0bd08.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 42, 'sample_index': 8} True 4.56
+done C5 {'circuit': 'arm_core', 'seed': 7, 'sample_index': 8} True 348.61
+done C5 {'circuit': 'lightweight_cipher', 'seed': 42, 'sample_index': 9} True 6.64
+done C5 {'circuit': 'softmax', 'seed': 7, 'sample_index': 2} True 305.29
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'sample_index': 6} True 79.66
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ba24ca4d.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(21, 10), (33, 35), (5, 28), (11, 17), (2, 9), (28, 3), (11, 3), (11, 10), (24, 15), (8, 14), (7, 4), (13, 7), (9, 1), (16, 37), (14, 9), (30, 5), (6, 25), (42, 27), (20, 30), (4, 10), (39, 6), (15, 27), (8, 31), (3, 34), (4, 27), (28, 25), (8, 3), (4, 2), (13, 25), (37, 35), (12, 7), (3, 18)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ba24ca4d.xml
+done C5 {'circuit': 'softmax', 'seed': 7, 'sample_index': 0} True 330.38
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'sample_index': 8} True 53.77
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_816e2c5f.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(29, 4), (2, 27), (11, 4), (21, 1), (25, 35), (7, 20), (21, 16), (10, 7), (41, 28), (18, 34), (16, 23), (1, 3), (23, 5), (28, 7), (22, 8), (37, 35), (11, 18), (21, 10), (31, 18), (40, 4), (27, 3), (31, 35), (12, 5), (2, 9), (35, 10), (19, 25), (15, 30), (17, 22), (7, 14), (29, 14), (10, 33), (13, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_816e2c5f.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_87ea933f.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(9, 16), (20, 15), (5, 26), (2, 9), (3, 8), (35, 27), (4, 22), (26, 24), (29, 8), (28, 16), (8, 14), (10, 16), (36, 20), (1, 28), (39, 13), (42, 13), (14, 8), (11, 3), (39, 35), (2, 17), (29, 22), (1, 3), (27, 1), (36, 28), (22, 17), (13, 7), (34, 36), (15, 14), (8, 27), (3, 14), (40, 6), (4, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_87ea933f.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_df886208.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(6, 2), (40, 7), (14, 3), (28, 15), (11, 4), (42, 23), (36, 22), (13, 9), (12, 17), (7, 24), (2, 9), (14, 10), (39, 33), (1, 6), (37, 23), (42, 13), (21, 34), (36, 6), (40, 14), (10, 7), (14, 20), (31, 10), (3, 13), (1, 12), (25, 36), (20, 18), (15, 19), (21, 17), (4, 29), (35, 16), (30, 19), (6, 9)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_047b195b.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(21, 37), (5, 12), (23, 24), (31, 12), (14, 8), (16, 29), (11, 1), (5, 30), (1, 2), (21, 13), (9, 25), (24, 32), (12, 2), (39, 4), (8, 37), (9, 5), (17, 19), (3, 8), (18, 14), (20, 3), (31, 28), (13, 26), (20, 13), (12, 15), (3, 25), (20, 37), (2, 9), (15, 14), (19, 12), (20, 30), (5, 1), (13, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_df886208.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_047b195b.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_16394b6a.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(10, 18), (4, 7), (10, 5), (34, 7), (33, 29), (8, 14), (27, 15), (30, 19), (20, 18), (11, 2), (13, 7), (14, 10), (19, 1), (34, 22), (31, 36), (40, 7), (18, 36), (42, 11), (38, 32), (33, 10), (7, 36), (19, 10), (37, 7), (31, 3), (12, 6), (14, 19), (32, 5), (1, 4), (3, 8), (2, 2), (36, 25), (6, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_16394b6a.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b57a5839.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(12, 4), (14, 3), (1, 5), (27, 1), (2, 32), (19, 35), (27, 17), (9, 6), (1, 11), (15, 14), (35, 23), (22, 32), (11, 4), (6, 7), (11, 29), (13, 9), (21, 16), (19, 6), (34, 33), (23, 33), (5, 2), (35, 15), (8, 34), (17, 7), (20, 14), (2, 9), (8, 14), (32, 31), (14, 10), (4, 10), (25, 27), (5, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b57a5839.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'sample_index': 9} True 54.2
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_188fa81f.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(7, 9), (28, 14), (13, 36), (12, 27), (12, 4), (1, 32), (12, 17), (4, 3), (8, 14), (17, 24), (2, 2), (21, 13), (36, 18), (3, 8), (10, 10), (1, 3), (16, 37), (22, 27), (30, 4), (14, 8), (20, 16), (14, 1), (11, 3), (40, 13), (10, 2), (18, 17), (39, 6), (30, 24), (27, 6), (2, 9), (8, 26), (29, 23)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_188fa81f.xml
+done C5 {'circuit': 'softmax', 'seed': 7, 'sample_index': 3} True 301.79
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a65083db.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(6, 7), (12, 16), (28, 26), (28, 11), (2, 9), (19, 29), (3, 14), (34, 2), (17, 16), (24, 16), (30, 30), (10, 27), (19, 9), (35, 4), (13, 2), (10, 18), (13, 9), (5, 17), (10, 2), (27, 20), (36, 9), (2, 36), (13, 25), (12, 4), (25, 10), (25, 28), (26, 2), (21, 12), (7, 14), (4, 33), (24, 27), (2, 25)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a65083db.xml
+done C5 {'circuit': 'softmax', 'seed': 7, 'sample_index': 1} True 390.74
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e9eb34ad.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(42, 1), (22, 7), (12, 5), (29, 34), (7, 4), (32, 16), (25, 22), (2, 9), (2, 20), (12, 15), (6, 3), (21, 16), (5, 14), (19, 6), (13, 7), (25, 34), (8, 19), (39, 2), (20, 28), (3, 8), (2, 27), (40, 7), (18, 15), (4, 34), (39, 30), (4, 24), (15, 19), (26, 5), (21, 10), (7, 14), (38, 25), (36, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e9eb34ad.xml
+done C5 {'circuit': 'softmax', 'seed': 7, 'sample_index': 4} True 321.08
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0ab6919c.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(21, 10), (3, 8), (12, 17), (11, 17), (2, 9), (28, 3), (11, 3), (11, 10), (24, 15), (8, 14), (7, 4), (13, 7), (9, 1), (32, 4), (14, 9), (30, 5), (6, 25), (5, 17), (20, 30), (4, 10), (24, 24), (15, 27), (20, 15), (21, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0ab6919c.xml
+done C5 {'circuit': 'softmax', 'seed': 7, 'sample_index': 9} True 305.14
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0d452bfc.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(29, 4), (2, 27), (11, 4), (21, 1), (9, 8), (7, 20), (21, 16), (10, 7), (12, 5), (15, 20), (16, 23), (1, 3), (23, 5), (28, 7), (22, 8), (31, 14), (11, 18), (21, 10), (28, 25), (19, 3), (27, 3), (14, 18), (2, 2), (2, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0d452bfc.xml
+done C5 {'circuit': 'softmax', 'seed': 7, 'sample_index': 5} True 364.29
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2b578009.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(6, 2), (15, 17), (14, 3), (28, 15), (11, 4), (2, 12), (13, 9), (35, 17), (12, 17), (7, 24), (8, 14), (14, 10), (31, 26), (1, 6), (5, 17), (12, 4), (8, 30), (34, 5), (14, 30), (10, 7), (14, 20), (31, 10), (3, 13), (1, 12)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2b578009.xml
+done C5 {'circuit': 'softmax', 'seed': 7, 'sample_index': 7} True 336.32
+done C5 {'circuit': 'softmax', 'seed': 7, 'sample_index': 6} True 350.29
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_54222f03.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(9, 16), (20, 15), (5, 26), (2, 9), (3, 8), (35, 27), (4, 22), (26, 24), (29, 8), (28, 16), (8, 14), (10, 16), (14, 19), (1, 28), (27, 5), (7, 14), (14, 8), (11, 3), (5, 10), (2, 17), (29, 22), (1, 3), (12, 17), (3, 14)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_54222f03.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_343fcbf5.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(20, 17), (5, 12), (21, 16), (31, 12), (14, 8), (16, 29), (11, 1), (5, 30), (1, 2), (35, 9), (9, 25), (8, 18), (12, 2), (14, 27), (1, 28), (9, 5), (17, 19), (3, 8), (18, 14), (20, 3), (31, 28), (13, 26), (33, 21), (12, 15)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_343fcbf5.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 42, 'sample_index': 5} True 165.79
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dacd465e.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(10, 18), (4, 7), (10, 5), (34, 7), (33, 29), (8, 14), (27, 15), (30, 19), (20, 18), (11, 2), (13, 7), (14, 10), (19, 1), (34, 22), (7, 22), (6, 16), (14, 24), (3, 9), (6, 5), (33, 10), (12, 4), (19, 10), (27, 26), (31, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dacd465e.xml
+done C5 {'circuit': 'softmax', 'seed': 7, 'sample_index': 8} True 363.34
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_eef816bb.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(12, 4), (14, 3), (1, 5), (27, 1), (2, 9), (7, 20), (27, 17), (9, 6), (1, 11), (15, 14), (35, 23), (17, 16), (11, 4), (6, 7), (11, 29), (13, 9), (21, 16), (19, 6), (31, 7), (8, 10), (5, 2), (35, 15), (8, 24), (17, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_eef816bb.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 42, 'sample_index': 2} True 220.68
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0c6fb355.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(5, 17), (28, 14), (34, 9), (12, 27), (12, 4), (6, 14), (12, 17), (4, 3), (8, 14), (17, 24), (2, 2), (21, 13), (10, 7), (3, 8), (13, 30), (35, 25), (14, 3), (7, 4), (30, 4), (1, 3), (20, 16), (7, 15), (11, 3), (5, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0c6fb355.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 42, 'sample_index': 1} True 260.34
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_39afbe65.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(6, 7), (12, 16), (28, 26), (28, 11), (2, 9), (19, 29), (3, 14), (34, 2), (17, 16), (24, 16), (30, 30), (10, 27), (19, 9), (35, 4), (13, 2), (10, 18), (13, 9), (5, 17), (10, 2), (27, 20), (21, 4), (1, 3), (13, 25), (12, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_39afbe65.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 42, 'sample_index': 7} True 248.38
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_795b8524.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(10, 5), (22, 7), (12, 5), (19, 7), (7, 4), (32, 16), (25, 22), (2, 9), (2, 20), (12, 15), (6, 3), (21, 16), (5, 14), (27, 2), (13, 7), (11, 4), (8, 19), (20, 16), (20, 28), (14, 10), (2, 27), (31, 30), (18, 15), (29, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_795b8524.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 42, 'sample_index': 8} True 221.08
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_04b82df1.xml
+  Size   : 43x43
+  DSPs   : [(21, 10), (33, 35), (5, 28), (11, 17), (9, 8), (28, 3), (11, 3), (2, 9)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_04b82df1.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 42, 'sample_index': 3} True 281.41
+done C5 {'circuit': 'arm_core', 'seed': 42, 'sample_index': 0} True 214.66
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_edda501e.xml
+  Size   : 43x43
+  DSPs   : [(29, 4), (2, 27), (11, 4), (21, 1), (25, 35), (7, 20), (21, 16), (10, 7)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_edda501e.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ec847cb1.xml
+  Size   : 43x43
+  DSPs   : [(6, 2), (40, 7), (14, 3), (28, 15), (11, 4), (2, 12), (36, 22), (13, 9)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ec847cb1.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 42, 'sample_index': 0} True 310.71
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b54bd314.xml
+  Size   : 43x43
+  DSPs   : [(9, 16), (11, 2), (5, 26), (2, 9), (3, 8), (35, 27), (4, 22), (26, 24)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b54bd314.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 42, 'sample_index': 4} True 318.85
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_71c83ab5.xml
+  Size   : 43x43
+  DSPs   : [(21, 37), (27, 38), (23, 24), (31, 12), (14, 8), (16, 29), (11, 1), (5, 30)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_71c83ab5.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 42, 'sample_index': 6} True 331.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6a55f794.xml
+  Size   : 43x43
+  DSPs   : [(10, 18), (4, 7), (10, 5), (34, 7), (33, 29), (6, 38), (18, 38), (30, 19)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6a55f794.xml
+done C5 {'circuit': 'arm_core', 'seed': 42, 'sample_index': 1} True 236.21
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ef26c0fa.xml
+  Size   : 43x43
+  DSPs   : [(12, 4), (13, 38), (6, 38), (27, 1), (2, 32), (19, 35), (27, 17), (9, 6)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ef26c0fa.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 42, 'sample_index': 9} True 317.53
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5da74d44.xml
+  Size   : 43x43
+  DSPs   : [(7, 9), (28, 14), (13, 36), (12, 27), (12, 4), (1, 32), (12, 17), (4, 3)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5da74d44.xml
+done C5 {'circuit': 'arm_core', 'seed': 42, 'sample_index': 2} True 292.28
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2247db0.xml
+  Size   : 43x43
+  DSPs   : [(6, 7), (12, 16), (28, 26), (28, 11), (2, 9), (19, 29), (3, 14), (34, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c2247db0.xml
+done C5 {'circuit': 'arm_core', 'seed': 42, 'sample_index': 5} True 318.73
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a08e8003.xml
+  Size   : 43x43
+  DSPs   : [(10, 5), (22, 7), (12, 5), (29, 34), (7, 4), (32, 16), (25, 22), (2, 9)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a08e8003.xml
+done C5 {'circuit': 'arm_core', 'seed': 42, 'sample_index': 3} True 354.13
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dcd8bd09.xml
+  Size   : 14x14
+  DSPs   : [(6, 3), (3, 4), (5, 4)]
+  BRAMs  : [(8, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dcd8bd09.xml
+done C5 {'circuit': 'arm_core', 'seed': 42, 'sample_index': 9} True 235.73
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c648d3d8.xml
+  Size   : 14x14
+  DSPs   : [(5, 4), (4, 3), (3, 4)]
+  BRAMs  : [(2, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c648d3d8.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 123, 'sample_index': 0} True 3.65
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_84832904.xml
+  Size   : 14x14
+  DSPs   : [(3, 4), (5, 4), (8, 4)]
+  BRAMs  : [(2, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_84832904.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 123, 'sample_index': 1} True 3.04
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_88e14ec8.xml
+  Size   : 14x14
+  DSPs   : [(5, 4), (6, 3), (3, 1)]
+  BRAMs  : [(2, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_88e14ec8.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 123, 'sample_index': 2} True 4.35
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4f111290.xml
+  Size   : 14x14
+  DSPs   : [(2, 3), (3, 4), (6, 3)]
+  BRAMs  : [(5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4f111290.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 123, 'sample_index': 3} True 1.89
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b891a446.xml
+  Size   : 14x14
+  DSPs   : [(3, 1), (2, 3), (6, 3)]
+  BRAMs  : [(5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b891a446.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 123, 'sample_index': 4} True 2.79
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f35dfd55.xml
+  Size   : 14x14
+  DSPs   : [(4, 3), (3, 4), (6, 3)]
+  BRAMs  : [(2, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f35dfd55.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 123, 'sample_index': 5} True 3.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7fb15588.xml
+  Size   : 14x14
+  DSPs   : [(5, 4), (3, 4), (1, 8)]
+  BRAMs  : [(2, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7fb15588.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 123, 'sample_index': 6} True 3.35
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d7570659.xml
+  Size   : 14x14
+  DSPs   : [(2, 3), (1, 8), (4, 3)]
+  BRAMs  : [(5, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d7570659.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 123, 'sample_index': 7} True 4.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1a558e06.xml
+  Size   : 14x14
+  DSPs   : [(5, 4), (2, 4), (4, 3)]
+  BRAMs  : [(6, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1a558e06.xml
+done C5 {'circuit': 'custom_macbuf', 'seed': 123, 'sample_index': 9} True 2.84
+done C5 {'circuit': 'custom_macbuf', 'seed': 123, 'sample_index': 8} True 5.2
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a68c4ff6.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(28, 41), (38, 8), (28, 12), (41, 40), (30, 3), (17, 21), (19, 13), (42, 43), (28, 23), (12, 19), (9, 40), (5, 12), (12, 28), (29, 19), (4, 42), (46, 20), (45, 22), (8, 42), (17, 30), (32, 34), (18, 2), (20, 30), (10, 42), (31, 18), (19, 32), (18, 13), (37, 23), (7, 28), (8, 3), (22, 28), (9, 17), (2, 10), (43, 4), (47, 14), (12, 41), (25, 4), (6, 12), (7, 4), (30, 41), (11, 13), (9, 4), (27, 27), (1, 24)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a68c4ff6.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ed864f60.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(13, 8), (38, 36), (20, 1), (9, 3), (8, 16), (45, 22), (6, 15), (7, 34), (18, 13), (14, 13), (44, 17), (39, 10), (26, 28), (3, 10), (18, 6), (43, 34), (10, 33), (24, 17), (8, 42), (13, 2), (46, 15), (1, 17), (11, 39), (9, 13), (28, 6), (7, 9), (34, 11), (44, 43), (37, 8), (29, 23), (4, 42), (7, 23), (40, 38), (4, 29), (39, 23), (25, 16), (32, 5), (48, 26), (47, 20), (29, 30), (32, 35), (32, 16), (15, 40)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ed864f60.xml
+done C5 {'circuit': 'arm_core', 'seed': 42, 'sample_index': 7} True 318.45
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5b50d48b.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(15, 3), (23, 3), (23, 43), (8, 4), (24, 14), (2, 41), (22, 33), (23, 13), (17, 1), (26, 32), (31, 11), (35, 38), (20, 7), (24, 23), (1, 9), (21, 18), (15, 19), (42, 3), (1, 42), (28, 39), (10, 1), (10, 14), (10, 25), (6, 30), (4, 36), (48, 1), (8, 13), (7, 16), (4, 25), (39, 15), (35, 9), (19, 43), (20, 13), (42, 10), (36, 38), (29, 12), (7, 43), (43, 11), (14, 15), (19, 16), (33, 36), (20, 1), (27, 37)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5b50d48b.xml
+done C5 {'circuit': 'softmax', 'seed': 42, 'sample_index': 0} True 273.22
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2773ee97.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(8, 34), (7, 18), (16, 12), (21, 5), (31, 39), (40, 29), (43, 25), (14, 6), (39, 17), (23, 33), (33, 14), (48, 24), (18, 2), (37, 38), (9, 6), (17, 8), (35, 22), (17, 25), (9, 18), (34, 37), (12, 5), (43, 32), (44, 8), (41, 38), (6, 17), (15, 2), (31, 11), (3, 33), (38, 43), (17, 31), (20, 25), (3, 18), (8, 13), (11, 8), (43, 40), (13, 2), (3, 25), (16, 41), (20, 13), (32, 6), (18, 25), (30, 6), (31, 31)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2773ee97.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'sample_index': 0} True 46.51
+done C5 {'circuit': 'arm_core', 'seed': 42, 'sample_index': 6} True 390.18
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3c1e633f.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(7, 42), (15, 18), (23, 15), (14, 8), (44, 7), (10, 6), (16, 20), (38, 24), (18, 7), (5, 6), (21, 7), (10, 38), (33, 40), (1, 19), (11, 4), (7, 18), (10, 12), (46, 35), (36, 19), (39, 24), (19, 15), (28, 28), (41, 41), (25, 11), (12, 5), (44, 30), (11, 16), (1, 43), (5, 36), (19, 9), (29, 12), (45, 24), (15, 30), (24, 27), (9, 15), (29, 19), (22, 33), (36, 4), (35, 38), (17, 14), (22, 10), (37, 20), (18, 13)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3c1e633f.xml
+done C5 {'circuit': 'arm_core', 'seed': 42, 'sample_index': 4} True 421.04
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_125d541d.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(17, 8), (15, 1), (20, 40), (15, 33), (31, 18), (35, 17), (48, 22), (14, 39), (21, 1), (29, 1), (47, 8), (9, 15), (38, 27), (34, 43), (21, 38), (28, 9), (8, 38), (40, 14), (21, 10), (45, 26), (31, 31), (32, 20), (13, 3), (2, 9), (46, 14), (36, 3), (16, 18), (6, 29), (17, 29), (46, 22), (34, 2), (32, 29), (11, 6), (28, 35), (8, 4), (13, 11), (15, 11), (42, 13), (41, 34), (14, 14), (15, 39), (23, 16), (18, 13)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_125d541d.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b7d8bf9b.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(5, 37), (6, 20), (34, 18), (4, 12), (20, 23), (45, 26), (15, 16), (8, 35), (11, 19), (48, 4), (6, 36), (29, 29), (16, 43), (12, 11), (45, 41), (30, 38), (30, 29), (18, 2), (19, 9), (19, 34), (43, 40), (24, 3), (24, 22), (46, 3), (7, 16), (14, 10), (5, 26), (26, 38), (31, 22), (6, 13), (40, 5), (15, 3), (41, 17), (10, 5), (44, 14), (16, 36), (21, 25), (15, 32), (32, 41), (37, 28), (39, 30), (35, 36), (33, 22)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b7d8bf9b.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'sample_index': 1} True 50.22
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e160b9db.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(39, 30), (7, 26), (7, 16), (37, 6), (27, 8), (24, 35), (40, 34), (14, 9), (14, 36), (39, 24), (40, 10), (47, 10), (45, 1), (17, 10), (9, 42), (10, 14), (35, 20), (40, 42), (47, 19), (4, 4), (26, 35), (16, 3), (34, 28), (3, 17), (8, 8), (11, 19), (33, 12), (9, 17), (48, 35), (19, 20), (42, 1), (46, 36), (5, 41), (18, 6), (19, 40), (46, 8), (12, 17), (39, 18), (35, 6), (20, 33), (43, 24), (12, 2), (10, 43)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e160b9db.xml
+done C5 {'circuit': 'softmax', 'seed': 42, 'sample_index': 1} True 296.53
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c78bbb9f.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(20, 38), (32, 16), (11, 12), (10, 25), (31, 24), (9, 9), (12, 18), (23, 25), (6, 35), (24, 42), (41, 10), (8, 14), (36, 34), (39, 34), (15, 31), (37, 19), (25, 43), (9, 15), (1, 9), (21, 5), (7, 25), (15, 2), (30, 11), (11, 18), (18, 7), (10, 14), (12, 10), (8, 4), (46, 6), (44, 27), (3, 29), (16, 3), (13, 10), (31, 5), (47, 24), (28, 24), (7, 6), (27, 2), (14, 35), (27, 29), (25, 13), (32, 28), (18, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c78bbb9f.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'sample_index': 3} True 52.57
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f9c16c0e.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(45, 25), (1, 40), (2, 15), (29, 19), (3, 10), (48, 18), (10, 37), (20, 39), (12, 19), (32, 23), (27, 26), (12, 28), (32, 30), (10, 31), (45, 18), (34, 1), (30, 24), (29, 2), (19, 12), (36, 32), (7, 32), (2, 22), (9, 19), (16, 31), (5, 16), (16, 6), (35, 13), (17, 34), (42, 29), (42, 10), (44, 29), (19, 40), (28, 3), (40, 3), (46, 3), (14, 15), (18, 2), (5, 37), (1, 20), (9, 35), (35, 7), (17, 26), (11, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f9c16c0e.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'sample_index': 4} True 46.52
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a578225a.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(8, 1), (6, 3), (3, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a578225a.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 123, 'sample_index': 0} True 3.81
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a94463d5.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 3), (5, 4), (8, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a94463d5.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'sample_index': 5} True 52.88
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_541e4674.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 3), (3, 4), (5, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_541e4674.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 123, 'sample_index': 1} True 5.21
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_91fdf30c.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 3), (5, 4), (6, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_91fdf30c.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 123, 'sample_index': 3} True 3.44
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9b7f4e30.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 3), (5, 4), (2, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9b7f4e30.xml
+done C5 {'circuit': 'arm_core', 'seed': 42, 'sample_index': 8} True 364.84
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5e720e24.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(8, 2), (6, 3), (2, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5e720e24.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 123, 'sample_index': 2} True 5.21
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c55f1f16.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 4), (4, 3), (3, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c55f1f16.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'sample_index': 6} True 59.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c45e2458.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 4), (7, 3), (3, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c45e2458.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 123, 'sample_index': 4} True 4.03
+done C5 {'circuit': 'lightweight_cipher', 'seed': 123, 'sample_index': 8} True 0.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7f5329cf.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 1), (3, 4), (2, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7f5329cf.xml
+done C5 {'circuit': 'lightweight_cipher', 'seed': 123, 'sample_index': 5} True 4.91
+done C5 {'circuit': 'softmax', 'seed': 42, 'sample_index': 2} True 336.95
+done C5 {'circuit': 'lightweight_cipher', 'seed': 123, 'sample_index': 7} True 6.02
+done C5 {'circuit': 'lightweight_cipher', 'seed': 123, 'sample_index': 6} True 6.96
+done C5 {'circuit': 'lightweight_cipher', 'seed': 123, 'sample_index': 9} True 7.33
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1b25111f.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(8, 1), (38, 8), (28, 12), (22, 4), (12, 18), (17, 21), (19, 13), (5, 12), (28, 23), (13, 14), (5, 5), (35, 29), (12, 28), (29, 19), (21, 8), (17, 33), (33, 18), (33, 28), (3, 10), (32, 34), (18, 2), (20, 30), (19, 37), (31, 18), (9, 10), (18, 13), (37, 23), (7, 28), (23, 9), (22, 28), (9, 17), (2, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1b25111f.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'sample_index': 7} True 72.4
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'sample_index': 8} True 52.48
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b404d325.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(13, 8), (38, 36), (20, 1), (9, 3), (8, 16), (7, 13), (6, 15), (7, 34), (18, 13), (14, 13), (18, 7), (39, 10), (26, 28), (3, 10), (10, 17), (15, 9), (10, 33), (24, 17), (23, 28), (13, 2), (17, 30), (17, 13), (32, 8), (9, 13), (1, 9), (10, 5), (34, 11), (12, 5), (37, 8), (29, 23), (12, 18), (7, 23)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b404d325.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_de1cafad.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(15, 3), (23, 3), (5, 2), (8, 4), (24, 14), (20, 6), (22, 33), (23, 13), (17, 1), (26, 32), (31, 11), (9, 10), (10, 36), (24, 23), (1, 9), (21, 18), (15, 19), (42, 3), (16, 20), (18, 9), (10, 1), (10, 14), (10, 25), (19, 16), (4, 36), (6, 37), (8, 13), (7, 16), (4, 25), (39, 15), (35, 9), (6, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_de1cafad.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5a6ea180.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(8, 34), (7, 18), (16, 12), (21, 5), (29, 13), (40, 29), (4, 26), (36, 23), (39, 17), (23, 33), (33, 14), (10, 20), (18, 2), (31, 19), (9, 6), (17, 8), (35, 22), (17, 25), (9, 18), (34, 37), (12, 5), (16, 6), (13, 25), (40, 6), (6, 17), (15, 2), (31, 11), (3, 33), (42, 21), (17, 31), (14, 2), (3, 18)]
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'sample_index': 9} True 46.95
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5a6ea180.xml
+done C5 {'circuit': 'softmax', 'seed': 42, 'sample_index': 6} True 288.61
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a01b6b8f.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(40, 11), (15, 18), (23, 15), (14, 8), (39, 34), (10, 6), (16, 20), (38, 24), (18, 7), (5, 6), (21, 7), (36, 36), (11, 11), (5, 17), (11, 4), (7, 18), (10, 12), (41, 15), (36, 19), (33, 35), (19, 15), (28, 28), (9, 9), (25, 11), (12, 5), (10, 33), (35, 20), (34, 31), (5, 36), (19, 9), (29, 12), (15, 33)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a01b6b8f.xml
+done C5 {'circuit': 'softmax', 'seed': 42, 'sample_index': 4} True 330.39
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_840f7db3.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(17, 8), (15, 1), (17, 28), (15, 33), (31, 18), (35, 17), (12, 17), (6, 12), (21, 1), (29, 1), (12, 1), (9, 15), (38, 27), (3, 20), (18, 18), (28, 9), (1, 25), (40, 14), (21, 10), (20, 33), (31, 31), (32, 20), (13, 3), (2, 9), (11, 2), (36, 3), (16, 18), (6, 29), (23, 8), (14, 3), (34, 2), (32, 29)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_840f7db3.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_40fa9916.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(5, 37), (6, 20), (34, 18), (4, 12), (20, 23), (16, 14), (15, 16), (8, 35), (11, 19), (9, 10), (6, 36), (29, 29), (9, 16), (12, 11), (22, 3), (38, 12), (30, 29), (18, 2), (19, 9), (19, 34), (25, 25), (24, 3), (24, 22), (23, 15), (7, 16), (14, 10), (5, 26), (10, 14), (31, 22), (6, 13), (40, 5), (15, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_40fa9916.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6c63b845.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(39, 30), (7, 26), (7, 16), (37, 6), (27, 8), (24, 35), (40, 34), (14, 9), (14, 36), (39, 24), (40, 10), (19, 9), (6, 12), (17, 10), (10, 24), (10, 14), (35, 20), (12, 35), (3, 16), (4, 4), (26, 35), (16, 3), (34, 28), (1, 20), (8, 8), (11, 19), (33, 12), (9, 17), (5, 17), (19, 20), (42, 1), (12, 5)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6c63b845.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3fd8bc51.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(14, 22), (32, 16), (11, 12), (10, 25), (31, 24), (19, 13), (12, 18), (23, 25), (6, 35), (14, 33), (41, 10), (8, 14), (36, 34), (39, 34), (15, 31), (37, 19), (18, 14), (9, 15), (1, 9), (21, 5), (7, 25), (15, 2), (30, 11), (11, 18), (18, 7), (10, 14), (12, 10), (8, 4), (34, 14), (7, 13), (3, 29), (16, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3fd8bc51.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_eea27e25.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(33, 15), (27, 32), (2, 15), (29, 19), (3, 10), (12, 19), (10, 37), (26, 22), (10, 9), (32, 23), (27, 26), (12, 28), (32, 30), (10, 31), (10, 3), (34, 1), (30, 24), (29, 2), (19, 12), (36, 32), (7, 32), (2, 22), (9, 19), (16, 31), (5, 16), (16, 6), (35, 13), (17, 34), (42, 29), (42, 10), (21, 14), (13, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_eea27e25.xml
+done C5 {'circuit': 'softmax', 'seed': 42, 'sample_index': 3} True 358.75
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1c317df6.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(8, 1), (23, 5), (28, 12), (22, 4), (12, 18), (17, 21), (16, 18), (5, 12), (28, 23), (13, 14), (5, 5), (35, 29), (12, 28), (29, 19), (21, 8), (20, 16), (8, 18), (33, 28), (17, 30), (11, 17), (18, 2), (20, 30), (12, 5), (31, 18)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1c317df6.xml
+done C5 {'circuit': 'softmax', 'seed': 42, 'sample_index': 7} True 300.07
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dbe6c9d7.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(13, 8), (7, 16), (20, 1), (9, 3), (8, 16), (10, 26), (6, 15), (6, 27), (18, 13), (14, 13), (18, 7), (9, 15), (26, 28), (3, 10), (10, 17), (15, 9), (20, 16), (24, 17), (23, 28), (13, 2), (1, 9), (17, 13), (32, 8), (7, 8)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dbe6c9d7.xml
+done C5 {'circuit': 'softmax', 'seed': 42, 'sample_index': 5} True 357.33
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7afd2255.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(15, 3), (23, 3), (5, 2), (8, 4), (24, 14), (20, 6), (9, 11), (23, 13), (17, 1), (16, 11), (31, 11), (18, 13), (14, 9), (24, 23), (1, 9), (21, 18), (15, 19), (35, 14), (33, 11), (5, 14), (10, 1), (10, 14), (10, 25), (19, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7afd2255.xml
+done C5 {'circuit': 'softmax', 'seed': 42, 'sample_index': 8} True 296.13
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2b763162.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(15, 11), (7, 18), (16, 12), (21, 5), (29, 13), (21, 26), (4, 26), (11, 13), (27, 9), (9, 15), (33, 14), (10, 20), (18, 2), (31, 19), (9, 6), (17, 8), (35, 22), (17, 25), (27, 22), (18, 17), (12, 5), (14, 15), (13, 25), (5, 14)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2b763162.xml
+done C5 {'circuit': 'mkDelayWorker32B', 'seed': 123, 'sample_index': 2} True 252.2
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_df3da59b.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 26), (15, 18), (23, 15), (14, 8), (4, 10), (10, 6), (16, 20), (1, 9), (18, 7), (5, 6), (21, 7), (12, 5), (22, 16), (5, 17), (11, 4), (7, 18), (12, 19), (10, 14), (21, 13), (34, 12), (19, 15), (28, 28), (9, 9), (25, 11)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_df3da59b.xml
+done C5 {'circuit': 'softmax', 'seed': 42, 'sample_index': 9} True 306.64
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_bfa20169.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(28, 13), (6, 20), (34, 18), (4, 12), (20, 23), (16, 14), (15, 16), (18, 15), (11, 19), (9, 10), (10, 13), (29, 29), (9, 16), (12, 11), (19, 16), (1, 4), (30, 29), (18, 2), (19, 9), (8, 3), (22, 8), (24, 3), (24, 22), (23, 15)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_bfa20169.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 123, 'sample_index': 8} True 189.67
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_14cb4bf0.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(17, 8), (15, 1), (17, 28), (8, 1), (31, 18), (35, 17), (9, 16), (6, 12), (21, 1), (29, 1), (19, 16), (8, 19), (10, 30), (3, 20), (18, 18), (28, 9), (1, 25), (15, 16), (21, 10), (9, 5), (4, 13), (32, 20), (13, 3), (5, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_14cb4bf0.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 123, 'sample_index': 1} True 213.6
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dd6f66b6.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(5, 10), (7, 26), (7, 16), (1, 4), (27, 8), (30, 24), (27, 18), (14, 9), (10, 22), (8, 22), (10, 9), (19, 9), (6, 12), (17, 10), (18, 17), (23, 17), (35, 20), (9, 7), (3, 16), (4, 4), (19, 16), (16, 3), (34, 28), (11, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dd6f66b6.xml
+done C5 {'circuit': 'arm_core', 'seed': 123, 'sample_index': 0} True 196.7
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_874c98f3.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(14, 22), (32, 16), (11, 12), (10, 25), (31, 24), (19, 13), (12, 18), (23, 25), (29, 21), (8, 4), (7, 10), (8, 14), (24, 14), (1, 9), (7, 26), (13, 8), (18, 14), (9, 15), (17, 13), (21, 5), (18, 2), (15, 2), (30, 11), (11, 18)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_874c98f3.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 123, 'sample_index': 5} True 223.55
+done C5 {'circuit': 'reduction_layer', 'seed': 123, 'sample_index': 6} True 226.63
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_bee7bb7b.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(33, 15), (10, 18), (2, 15), (29, 19), (3, 10), (12, 19), (16, 12), (26, 22), (10, 9), (32, 23), (27, 26), (12, 28), (32, 30), (21, 8), (10, 3), (34, 1), (9, 17), (29, 2), (19, 12), (32, 3), (20, 19), (2, 22), (18, 14), (28, 21)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_bee7bb7b.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 123, 'sample_index': 3} True 245.93
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5470e184.xml
+  Size   : 43x43
+  DSPs   : [(8, 1), (38, 8), (28, 12), (22, 4), (30, 3), (17, 21), (19, 13), (5, 12)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5470e184.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 123, 'sample_index': 4} True 246.97
+done C5 {'circuit': 'arm_core', 'seed': 123, 'sample_index': 1} True 221.71
+done C5 {'circuit': 'reduction_layer', 'seed': 123, 'sample_index': 7} True 247.33
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_81efecfb.xml
+  Size   : 43x43
+  DSPs   : [(13, 8), (38, 36), (20, 1), (16, 7), (8, 16), (1, 14), (6, 15), (7, 34)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_81efecfb.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_063f98e8.xml
+  Size   : 43x43
+  DSPs   : [(15, 3), (23, 3), (1, 4), (7, 30), (24, 14), (20, 6), (9, 11), (23, 13)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_063f98e8.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6f91b073.xml
+  Size   : 43x43
+  DSPs   : [(8, 34), (7, 18), (16, 12), (34, 33), (29, 13), (40, 29), (8, 38), (14, 6)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6f91b073.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_15c4c704.xml
+  Size   : 43x43
+  DSPs   : [(40, 11), (15, 18), (23, 15), (1, 2), (39, 34), (10, 6), (16, 20), (38, 24)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_15c4c704.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 123, 'sample_index': 0} True 282.57
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_413afe59.xml
+  Size   : 43x43
+  DSPs   : [(5, 37), (6, 20), (34, 18), (4, 12), (20, 23), (16, 14), (18, 13), (8, 35)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_413afe59.xml
+done C5 {'circuit': 'arm_core', 'seed': 123, 'sample_index': 2} True 250.47
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_223c7a85.xml
+  Size   : 43x43
+  DSPs   : [(17, 8), (15, 1), (17, 28), (15, 33), (31, 18), (35, 17), (18, 4), (24, 32)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_223c7a85.xml
+done C5 {'circuit': 'reduction_layer', 'seed': 123, 'sample_index': 9} True 293.45
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e366ebff.xml
+  Size   : 43x43
+  DSPs   : [(39, 30), (7, 26), (41, 19), (37, 6), (27, 8), (24, 35), (40, 34), (14, 9)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e366ebff.xml
+done C5 {'circuit': 'arm_core', 'seed': 123, 'sample_index': 4} True 274.76
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1fec0584.xml
+  Size   : 43x43
+  DSPs   : [(20, 38), (32, 16), (11, 12), (10, 25), (31, 24), (9, 9), (12, 18), (23, 25)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1fec0584.xml
+done C5 {'circuit': 'arm_core', 'seed': 123, 'sample_index': 3} True 443.53
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dad7deea.xml
+  Size   : 43x43
+  DSPs   : [(33, 15), (27, 32), (11, 10), (29, 19), (3, 10), (12, 19), (10, 37), (26, 22)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dad7deea.xml
+done C5 {'circuit': 'arm_core', 'seed': 123, 'sample_index': 6} True 331.78
+done C5 {'circuit': 'softmax', 'seed': 123, 'sample_index': 1} True 312.92
+done C5 {'circuit': 'arm_core', 'seed': 123, 'sample_index': 7} True 368.74
+done C5 {'circuit': 'arm_core', 'seed': 123, 'sample_index': 9} True 338.58
+done C5 {'circuit': 'arm_core', 'seed': 123, 'sample_index': 8} True 366.73
+done C5 {'circuit': 'arm_core', 'seed': 123, 'sample_index': 5} True 430.04
+done C5 {'circuit': 'softmax', 'seed': 123, 'sample_index': 6} True 289.44
+done C5 {'circuit': 'softmax', 'seed': 123, 'sample_index': 3} True 323.59
+done C5 {'circuit': 'softmax', 'seed': 123, 'sample_index': 4} True 339.88
+done C5 {'circuit': 'softmax', 'seed': 123, 'sample_index': 7} True 327.47
+done C5 {'circuit': 'softmax', 'seed': 123, 'sample_index': 5} True 378.27
+done C5 {'circuit': 'reduction_layer', 'seed': 123, 'sample_index': 2} True 672.41
+done C5 {'circuit': 'softmax', 'seed': 123, 'sample_index': 2} True 406.26
+done C5 {'circuit': 'softmax', 'seed': 123, 'sample_index': 8} True 250.92
+done C5 {'circuit': 'softmax', 'seed': 123, 'sample_index': 9} True 190.53
+done C5 {'circuit': 'softmax', 'seed': 123, 'sample_index': 0} True 520.1

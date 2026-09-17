@@ -1,0 +1,211 @@
+C4: 60 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_4d837e97.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_1e1a19f6.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_0001fe6e.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_351118bc.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_1e1a19f6.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_0001fe6e.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_4d837e97.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_351118bc.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_7e441df8.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_7e441df8.xml
+done C4 {'circuit': 'custom_macbuf', 'floorplan': 'policy_seed42', 'vpr_seed': 3} True 1.47
+done C4 {'circuit': 'custom_macbuf', 'floorplan': 'policy_seed42', 'vpr_seed': 1} True 1.57
+done C4 {'circuit': 'custom_macbuf', 'floorplan': 'policy_seed42', 'vpr_seed': 2} True 1.62
+done C4 {'circuit': 'custom_macbuf', 'floorplan': 'policy_seed42', 'vpr_seed': 4} True 1.67
+done C4 {'circuit': 'custom_macbuf', 'floorplan': 'baseline', 'vpr_seed': 1} True 1.78
+done C4 {'circuit': 'custom_macbuf', 'floorplan': 'baseline', 'vpr_seed': 4} True 1.93
+done C4 {'circuit': 'custom_macbuf', 'floorplan': 'baseline', 'vpr_seed': 2} True 1.93
+done C4 {'circuit': 'custom_macbuf', 'floorplan': 'baseline', 'vpr_seed': 5} True 2.45
+done C4 {'circuit': 'custom_macbuf', 'floorplan': 'policy_seed42', 'vpr_seed': 5} True 2.36
+done C4 {'circuit': 'custom_macbuf', 'floorplan': 'baseline', 'vpr_seed': 3} True 2.45
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_e49305f7.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_cf1ca1c9.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_e49305f7.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_cf1ca1c9.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_5f3b0dac.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_5f3b0dac.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_d796f837.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_d796f837.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_ad269859.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_ad269859.xml
+done C4 {'circuit': 'mkDelayWorker32B', 'floorplan': 'policy_seed42', 'vpr_seed': 4} True 24.23
+done C4 {'circuit': 'mkDelayWorker32B', 'floorplan': 'policy_seed42', 'vpr_seed': 3} True 24.91
+done C4 {'circuit': 'mkDelayWorker32B', 'floorplan': 'policy_seed42', 'vpr_seed': 5} True 25.01
+done C4 {'circuit': 'mkDelayWorker32B', 'floorplan': 'policy_seed42', 'vpr_seed': 2} True 26.88
+done C4 {'circuit': 'lightweight_cipher', 'floorplan': 'baseline', 'vpr_seed': 1} True 2.82
+done C4 {'circuit': 'lightweight_cipher', 'floorplan': 'baseline', 'vpr_seed': 2} True 3.12
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_63488e3f.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_63488e3f.xml
+done C4 {'circuit': 'mkDelayWorker32B', 'floorplan': 'policy_seed42', 'vpr_seed': 1} True 28.19
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_1e6ba2a5.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_1e6ba2a5.xml
+done C4 {'circuit': 'lightweight_cipher', 'floorplan': 'baseline', 'vpr_seed': 3} True 3.92
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_b6cb53ca.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_b6cb53ca.xml
+done C4 {'circuit': 'mkDelayWorker32B', 'floorplan': 'baseline', 'vpr_seed': 2} True 32.05
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_5e75da78.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_5e75da78.xml
+done C4 {'circuit': 'mkDelayWorker32B', 'floorplan': 'baseline', 'vpr_seed': 1} True 32.25
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_78cfc6de.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_78cfc6de.xml
+done C4 {'circuit': 'mkDelayWorker32B', 'floorplan': 'baseline', 'vpr_seed': 4} True 32.21
+done C4 {'circuit': 'lightweight_cipher', 'floorplan': 'baseline', 'vpr_seed': 4} True 3.16
+done C4 {'circuit': 'lightweight_cipher', 'floorplan': 'policy_seed42', 'vpr_seed': 1} True 2.35
+done C4 {'circuit': 'lightweight_cipher', 'floorplan': 'baseline', 'vpr_seed': 5} True 3.55
+done C4 {'circuit': 'lightweight_cipher', 'floorplan': 'policy_seed42', 'vpr_seed': 2} True 2.58
+done C4 {'circuit': 'lightweight_cipher', 'floorplan': 'policy_seed42', 'vpr_seed': 3} True 2.53
+done C4 {'circuit': 'lightweight_cipher', 'floorplan': 'policy_seed42', 'vpr_seed': 5} True 2.14
+done C4 {'circuit': 'lightweight_cipher', 'floorplan': 'policy_seed42', 'vpr_seed': 4} True 2.68
+done C4 {'circuit': 'mkDelayWorker32B', 'floorplan': 'baseline', 'vpr_seed': 3} True 34.75
+done C4 {'circuit': 'mkDelayWorker32B', 'floorplan': 'baseline', 'vpr_seed': 5} True 35.38
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_e15ad341.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_d28cb687.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_e15ad341.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_d28cb687.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_d6442c88.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_d6442c88.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_d1112ace.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_d1112ace.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_600815b3.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_600815b3.xml
+done C4 {'circuit': 'reduction_layer', 'floorplan': 'policy_seed42', 'vpr_seed': 5} True 127.83
+done C4 {'circuit': 'reduction_layer', 'floorplan': 'policy_seed42', 'vpr_seed': 4} True 132.39
+done C4 {'circuit': 'reduction_layer', 'floorplan': 'policy_seed42', 'vpr_seed': 1} True 142.16
+done C4 {'circuit': 'reduction_layer', 'floorplan': 'policy_seed42', 'vpr_seed': 2} True 185.45
+done C4 {'circuit': 'reduction_layer', 'floorplan': 'policy_seed42', 'vpr_seed': 3} True 189.75
+done C4 {'circuit': 'reduction_layer', 'floorplan': 'baseline', 'vpr_seed': 2} True 198.64
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_5b6c04e3.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_5b6c04e3.xml
+done C4 {'circuit': 'reduction_layer', 'floorplan': 'baseline', 'vpr_seed': 3} True 215.34
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_4a452e08.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_4a452e08.xml
+done C4 {'circuit': 'reduction_layer', 'floorplan': 'baseline', 'vpr_seed': 5} True 221.86
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_eb295e50.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_eb295e50.xml
+done C4 {'circuit': 'reduction_layer', 'floorplan': 'baseline', 'vpr_seed': 1} True 226.05
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_c59e8a57.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_c59e8a57.xml
+done C4 {'circuit': 'reduction_layer', 'floorplan': 'baseline', 'vpr_seed': 4} True 239.41
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_f9a68a10.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_f9a68a10.xml
+done C4 {'circuit': 'arm_core', 'floorplan': 'baseline', 'vpr_seed': 2} True 133.13
+done C4 {'circuit': 'arm_core', 'floorplan': 'baseline', 'vpr_seed': 1} True 161.34
+done C4 {'circuit': 'arm_core', 'floorplan': 'baseline', 'vpr_seed': 3} True 147.86
+done C4 {'circuit': 'arm_core', 'floorplan': 'baseline', 'vpr_seed': 5} True 115.6
+done C4 {'circuit': 'arm_core', 'floorplan': 'baseline', 'vpr_seed': 4} True 143.11
+done C4 {'circuit': 'arm_core', 'floorplan': 'policy_seed42', 'vpr_seed': 3} True 142.66
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_b5859997.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_b5859997.xml
+done C4 {'circuit': 'arm_core', 'floorplan': 'policy_seed42', 'vpr_seed': 4} True 145.75
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_40cbe041.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_40cbe041.xml
+done C4 {'circuit': 'arm_core', 'floorplan': 'policy_seed42', 'vpr_seed': 2} True 160.94
+done C4 {'circuit': 'arm_core', 'floorplan': 'policy_seed42', 'vpr_seed': 1} True 181.11
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_5862ec9c.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_5862ec9c.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_c6bc5c1d.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_c6bc5c1d.xml
+done C4 {'circuit': 'arm_core', 'floorplan': 'policy_seed42', 'vpr_seed': 5} True 152.32
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dx_8386e9fb.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dx_8386e9fb.xml
+done C4 {'circuit': 'softmax', 'floorplan': 'baseline', 'vpr_seed': 1} True 197.18
+done C4 {'circuit': 'softmax', 'floorplan': 'baseline', 'vpr_seed': 3} True 194.84
+done C4 {'circuit': 'softmax', 'floorplan': 'baseline', 'vpr_seed': 2} True 196.99
+done C4 {'circuit': 'softmax', 'floorplan': 'baseline', 'vpr_seed': 4} True 196.84
+done C4 {'circuit': 'softmax', 'floorplan': 'baseline', 'vpr_seed': 5} True 198.04
+done C4 {'circuit': 'softmax', 'floorplan': 'policy_seed42', 'vpr_seed': 1} True 188.43
+done C4 {'circuit': 'softmax', 'floorplan': 'policy_seed42', 'vpr_seed': 2} True 186.89
+done C4 {'circuit': 'softmax', 'floorplan': 'policy_seed42', 'vpr_seed': 3} True 183.22
+done C4 {'circuit': 'softmax', 'floorplan': 'policy_seed42', 'vpr_seed': 4} True 188.75
+done C4 {'circuit': 'softmax', 'floorplan': 'policy_seed42', 'vpr_seed': 5} True 180.65
