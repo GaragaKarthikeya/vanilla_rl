@@ -181,9 +181,12 @@ tension, and this is structural rather than a search failure:
 - Two candidates failed to synthesize: `eltwise_layer` and `conv_layer`
   (traditional VTR flow rc=1). Two more, `ethmac` and `enet_core`, also failed
   to build.
-- `bnn` and `gemm_layer` were still in ABC logic optimization after ~2.5 hours
-  when this request was written up; they are not in the table. Both are large
-  Koios designs and would very likely have exceeded the caps in any case.
+- `bnn` and `gemm_layer` never finished building. Both sat in ABC logic
+  optimization for more than 2.5 hours, and the host then ran out of memory and
+  rebooted, killing them. The builds ran without a per-job memory limit, which
+  was a mistake in this driver. Neither has a row in `f5_candidates*.csv` or in
+  any result. Both are large Koios designs and would very likely have exceeded
+  the universe caps in any case.
 
 So 6 circuits, of which 5 of 6 (83%) have occupancy above 60%, which does meet
 the "at least half" criterion. `robot_rl` was deliberately excluded as a

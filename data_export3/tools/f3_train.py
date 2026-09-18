@@ -1,6 +1,6 @@
 """F3: retrain seed 42 with the graph encoder removed.
 
-src/ is NOT modified. Two names are rebound at runtime, inside this script only:
+src/ is NOT modified. Three names are rebound at runtime, inside this script only:
 
   1. trainer.GNNFeaturesExtractor -> NoGCNFeaturesExtractor (the point of F3;
      trainer.py:176 hard-codes the class, so there is no flag for it).
@@ -10,6 +10,9 @@ src/ is NOT modified. Two names are rebound at runtime, inside this script only:
      compute_max_dims can no longer run. The pinned values are the ones logged
      by the paper's own seed-42 run (runs/train_multi11_seed42_v2.log), so the
      canvas and graph caps are identical to the paper's.
+  3. trainer.CheckpointCallback -> a wrapper that redirects intermediate
+     checkpoints to runs/f3_no_gcn_checkpoints_seed42/, away from the paper's
+     runs/checkpoints_seed_42/ (same file names, 259 paper checkpoints there).
 
 Every other hyperparameter is copied from the paper's seed-42 invocation
 (wandb-metadata.json of run 7y4orlsm):
@@ -41,6 +44,21 @@ PINNED = (MAX_W, MAX_H, MAX_NODES, MAX_EDGES)   # noqa: F405  (48, 48, 67, 2694)
 
 trainer.GNNFeaturesExtractor = NoGCNFeaturesExtractor
 trainer.compute_max_dims = lambda names: PINNED
+
+# 3. trainer.py:143-147 saves intermediate checkpoints to
+#    runs/checkpoints_seed_{seed}/multi_model_<N>_steps.zip WITHOUT the log
+#    suffix -- the same directory and file names as the paper's own seed-42
+#    run (259 checkpoints there). Redirect so no paper checkpoint is overwritten.
+F3_CKPT_DIR = REPO / "runs" / "f3_no_gcn_checkpoints_seed42"   # noqa: F405
+_OrigCheckpointCallback = trainer.CheckpointCallback
+
+
+def _redirected_checkpoint_callback(*args, **kwargs):
+    kwargs["save_path"] = str(F3_CKPT_DIR)
+    return _OrigCheckpointCallback(*args, **kwargs)
+
+
+trainer.CheckpointCallback = _redirected_checkpoint_callback
 
 cfg = trainer.TrainConfig(
     benchmark_names=TRAIN11,

@@ -45,7 +45,7 @@ Full detail, caveats and the vacuous/degenerate cases are in `notes.md`.
 | `f2_action_distribution.csv` | F2 | done, 342 placement steps, no new runs |
 | `f2_rank_vs_adp.csv` | F2 | done, 60/60 |
 | `f4_no_pinning.csv` | F4 | done, 18 unpinned runs + 18 reused pinned rows |
-| `f5_candidates.csv`, `f5_candidates_b2.csv` | F5 | 21 candidates surveyed, 2 still building |
+| `f5_candidates.csv`, `f5_candidates_b2.csv` | F5 | 23 candidates attempted: 21 recorded, 2 killed by an out-of-memory reboot |
 | `f5_extra_heldout.csv` | F5 | done, 6 circuits x 3 seeds = 18/18 |
 | `f6_entropy.csv` | F6 | done, 181 PPO updates, no new runs |
 | `logs/` | — | per-stage logs, raw action sequences |
@@ -102,7 +102,7 @@ Baselines were built with `tools/f5_build.py` rather than
 pick up the repo's stale `.env` paths. The arch, flow and metric parsing are the
 same.
 
-## What was skipped, and what is still running
+## What was skipped
 
 - **F3 (retrain seed 42 without the GCN) was not run.** It is last in the stated
   priority order and is a full ~11 h training run (the paper's seed-42 run took
@@ -114,10 +114,11 @@ same.
   (`trainer.py:176` hard-codes it) and `compute_max_dims` (the paper's universe
   includes `robot_rl`, whose files are deleted, so the dims are pinned to the
   logged 48/48/67/2694).
-- **`bnn` and `gemm_layer` baselines are still building** — both were still in
-  ABC logic optimization after ~2.5 h. They are recorded as unfinished in
-  `f5_candidates.csv` and are not in any result. Both are large Koios designs
-  and would very likely exceed the universe caps.
+- **`bnn` and `gemm_layer` baselines never finished.** Both were still in ABC
+  logic optimization after ~2.5 h when the host ran out of memory and rebooted.
+  The builds had no per-job memory limit; that was a driver mistake. They have
+  no row in `f5_candidates*.csv` and appear in no result. Both are large Koios
+  designs and would very likely exceed the universe caps.
 - **`eltwise_layer`, `conv_layer`, `ethmac`, `enet_core`** failed to build a
   baseline (traditional VTR flow returned rc=1). Recorded with that reason.
 
@@ -131,7 +132,7 @@ same.
 | F2 rank | 60 | 60 | 0 | 0 |
 | F4 unpinned | 18 | 18 | 0 | 0 |
 | F4 pinned | 18 | 0 (reused) | — | 0 |
-| F5 baseline builds | 21 | 21 | — | 4 build failures, 2 unfinished |
+| F5 baseline builds | 21 | 21 | — | 4 build failures; 2 more killed by OOM reboot |
 | F5 eval | 18 | 18 | 0 | 0 |
 | F6 | 181 | 0 (no VTR) | — | 0 |
 | **total** | | **147 timed VTR runs** | **0** | **0 evaluation failures** |
@@ -157,8 +158,8 @@ do not, so the shared isolated cache never served a repeat.
 | F2 rank (60) | 04:58 | |
 | F4 (18) | 05:03 | |
 | F6 | 05:05 | no VTR |
-| F5 builds + eval | 06:11 | 2 candidates still building |
-| **total** | | **~3 h 10 min** (2026-09-18, IST), 04:30–06:11 wall-clock excluding the two unfinished builds |
+| F5 builds + eval | 06:11 | bnn / gemm_layer later killed by an OOM reboot |
+| **total** | | **~3 h 10 min** (2026-09-18, IST), 04:30–06:11 wall-clock excluding the two killed builds |
 
 Summed `vtr_seconds` over the 147 timed runs is **5.90 h** of VTR time,
 compressed by the concurrency above. All runs ran under concurrent load, so

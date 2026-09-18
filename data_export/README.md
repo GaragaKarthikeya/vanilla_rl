@@ -33,7 +33,8 @@ Caveat: the paper's seed-42 in-pool **pooled** number (35.73%) comes from an old
 | `learning_curves.csv` | B8 | done, 39,012 episodes |
 | `figures.md`, `fig_seed_variance.pdf` | B9 | done; new PDF is exactly 3.33 in wide, all text 8 pt, verified programmatically + visually |
 | `inpool_final_checkpoint.csv` | C1 | done with **no new runs**: exactly this eval already existed (`runs/inpool_seed{7,42_v2,123}.json`, final checkpoints, deterministic). Aspect ratio/grid were not recorded there → null |
-| `baseline_ar_sweep.csv` | C2 | done, 340/340 VTR runs succeeded |
+| `baseline_ar_sweep_perar.csv` | C2 (corrected) | done 2026-09-18, 340/340; per-AR tile placement, held-out mean 28.56% |
+| `baseline_ar_sweep.csv` | C2 | done, 340/340 VTR runs succeeded. **Methodologically flawed; see the C2 caveat below and `mismatches.md` §7** |
 | `random_floorplans.csv` | C3 | done at **20 samples per circuit-seed** (360 runs, all succeeded), **not 720** |
 | `vpr_seed_noise.csv` | C4 | done, 60/60 |
 | `policy_sampled.csv` | C5 | done, k=10: 180/180 |
@@ -53,6 +54,16 @@ Caveat: the paper's seed-42 in-pool **pooled** number (35.73%) comes from an old
 - **Universe dims.** Pinned to the logged training values (48, 48, 67, 2694), because `baselines/robot_rl_*` is now deleted in the working tree and `compute_max_dims` cannot be re-run.
 - **Caching.** Every Tier C evaluation used an **isolated** cache (`runs/vtr_layout_cache_<circuit>_dataexport.db`) so the paper's cache DBs were not written to and every run is a real VTR run with a wall-clock time. There were 0 cache hits in C3/C5.
   - C1 reused existing results, which came from the paper's shared caches.
+- **C2 caveat (found after delivery): this sweep is a strawman.** The H-block
+  tile coordinates below are computed once on the square baseline grid and do
+  not change with the aspect ratio. VPR must then stretch the grid to keep every
+  fixed tile on the fabric, adding CLB area. For example mkDelayWorker32B goes
+  to 44x440 at AR 0.1 and 95x50 at AR 1.9, while the policy fits the same 43
+  BRAMs in 34x38. So `baseline_ar_sweep.csv`, and the 14.86% held-out mean
+  derived from it, **understate a fair non-learning AR sweep**. A corrected
+  sweep with per-aspect-ratio tile placement is `baseline_ar_sweep_perar.csv`
+  (340/340 succeeded, `tools/c2_perar.py`): its held-out mean is **28.56%**, not
+  14.86%, against the policy's 31.23%. See `mismatches.md` §7a.
 - **C2 trimmed baseline, H-block positioning.**
   - Same column pattern as `arch/k6_frac_N10_mem32K_40nm.xml`: DSP columns x = 6, 14, 22, … and BRAM columns x = 2, 10, 18, …, tiles stacked from y = 1 at pitch 4 (DSP) / 6 (BRAM).
   - Only the netlist's required count is kept, filling the lowest slot of the leftmost column first, within the baseline core grid (x ≤ W, y+h−1 ≤ H), the same bounds as the policy mask.

@@ -106,3 +106,54 @@ These are not numbers from the list above; they were found while collecting Tier
   - For the diffeq1 baseline, the routing area at relaxed W would be 904,549, not the reported 694,168 (`runs/diffeq1_traditional/vpr.out` vs `vpr_stdout.log`).
 - **"Power is VPR's total power: the dynamic and static power"** vs footnote-style "dynamic power" in the Evaluation Oracle section. The parsed value is the `Total` row of the `.power` report (`src/evaluation/vtr_runner.py:140-144`). The paper uses both wordings.
 - **Reward "An invalid layout ... receives a strict penalty of -10".** Matches the code. But the `reward` field stored in `det_seed*.json` / `inpool_seed*.json` was computed with FPGAEnv's constructor-default weights (wl .1, pw .3, dl .6, ar 0), because `evaluate_held_out.py:68` does not pass the training weights. ADP numbers are unaffected.
+
+## 7. The C2 trimmed-baseline sweep (14.86%) is a strawman (data_export's own error)
+
+This is a flaw in `data_export`'s C2 design, not in the paper's code. But the
+paper's abstract cites the number, so it is recorded here.
+
+`tools/c2_ar_sweep.py:trimmed_positions` computes DSP/BRAM tile coordinates
+once, from the square baseline core grid, and reuses them at every aspect ratio.
+The template renders `auto_layout aspect_ratio=AR` with those fixed `<single>`
+tiles, so VPR has to grow the grid until every fixed tile fits and then stretch
+the other dimension to hold the ratio. The extra area fills with unused CLBs.
+From `baseline_ar_sweep.csv`:
+
+| circuit | AR 0.1 | AR 0.7 | AR 1.0 | AR 1.9 |
+|---|---|---|---|---|
+| mkDelayWorker32B | 44x440 | 44x63 | 50x50 | 95x50 |
+| reduction_layer | 36x360 | | | |
+
+The policy places the same 43 BRAMs of mkDelayWorker32B in 34x38.
+
+Consequence: the held-out mean of the sweep's best, **14.86%**, is a lower bound
+for a non-learning aspect-ratio sweep, and it should not be cited as a fair
+baseline. A corrected sweep, with tile coordinates recomputed on each aspect
+ratio's own grid, is in `baseline_ar_sweep_perar.csv`; its result is in §7a.
+
+### 7a. Result of the corrected sweep (`baseline_ar_sweep_perar.csv`, 340/340 succeeded)
+
+Tile coordinates recomputed on each aspect ratio's own grid
+(`tools/c2_perar.py`). The stretching is gone: mkDelayWorker32B at AR 0.1 is
+built at 14x140 (planned core 13x132), against 44x440 in the flawed sweep.
+
+Best ADP reduction over the 20 aspect ratios, held-out circuits:
+
+| circuit | flawed sweep | corrected sweep (best AR) | policy zero-shot |
+|---|---|---|---|
+| custom_macbuf | 48.20 | 48.20 (0.6) | 55.46 |
+| mkDelayWorker32B | 10.89 | 37.60 (0.1) | 58.72 |
+| lightweight_cipher | -0.08 | 35.35 (0.3) | 33.49 |
+| reduction_layer | 8.47 | 27.40 (0.6) | 23.30 |
+| arm_core | 11.80 | 11.80 (1.2) | 9.12 |
+| softmax | 9.89 | 11.03 (1.4) | 7.27 |
+| **mean** | **14.86** | **28.56** | **31.23** |
+
+A fair 20-call non-learning sweep reaches 28.56%, not 14.86%. The policy's
+single call still leads on the mean by 2.67 points, but the sweep beats it on
+4 of 6 circuits (lightweight_cipher, reduction_layer, arm_core, softmax), and
+the policy's lead rests mainly on mkDelayWorker32B. Over all 17 circuits the
+corrected sweep's mean best is 26.24% (flawed: 18.59%).
+
+The abstract's "exceeds an aspect-ratio sweep over a trimmed baseline (14.86% at
+20 calls)" should be revised to the corrected figure.
