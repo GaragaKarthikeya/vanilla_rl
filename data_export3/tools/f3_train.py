@@ -60,24 +60,32 @@ def _redirected_checkpoint_callback(*args, **kwargs):
 
 trainer.CheckpointCallback = _redirected_checkpoint_callback
 
-cfg = trainer.TrainConfig(
-    benchmark_names=TRAIN11,
-    universe_benchmark_names=UNIVERSE,
-    n_envs=24, n_steps=48, batch_size=144, n_epochs=15, ent_coef=0.01,
-    ar_weight=1.0, dl_weight=1.0, pw_weight=1.0, wl_weight=0.0,
-    max_episodes=13000, timesteps=100000, vtr_timeout=300, seed=42,
-    save_path="runs/f3_no_gcn_seed42.zip",
-    log_suffix="_f3_no_gcn_seed42",
-    cache_suffix=CACHE_SUFFIX,        # noqa: F405
-    use_wandb=False,
-)
+def main():
+    cfg = trainer.TrainConfig(
+        benchmark_names=TRAIN11,
+        universe_benchmark_names=UNIVERSE,
+        n_envs=24, n_steps=48, batch_size=144, n_epochs=15, ent_coef=0.01,
+        ar_weight=1.0, dl_weight=1.0, pw_weight=1.0, wl_weight=0.0,
+        max_episodes=13000, timesteps=100000, vtr_timeout=300, seed=42,
+        save_path="runs/f3_no_gcn_seed42.zip",
+        log_suffix="_f3_no_gcn_seed42",
+        cache_suffix=CACHE_SUFFIX,        # noqa: F405
+        use_wandb=False,
+    )
 
-t0 = time.time()
-print(f"F3: training seed 42 WITHOUT the graph encoder. Pinned dims {PINNED}.", flush=True)
-trainer.train(cfg)
-hours = (time.time() - t0) / 3600.0
-(OUT / "logs" / "f3_train_wallclock.json").write_text(   # noqa: F405
-    json.dumps({"training_wall_clock_hours": round(hours, 3),                 # noqa: F405
-                "checkpoint": "runs/f3_no_gcn_seed42.zip",
-                "source": "measured around trainer.train() in data_export3/tools/f3_train.py"}, indent=1))
-print(f"F3 training done in {hours:.2f} h", flush=True)
+    t0 = time.time()
+    print(f"F3: training seed 42 WITHOUT the graph encoder. Pinned dims {PINNED}.", flush=True)
+    trainer.train(cfg)
+    hours = (time.time() - t0) / 3600.0
+    (OUT / "logs" / "f3_train_wallclock.json").write_text(   # noqa: F405
+        json.dumps({"training_wall_clock_hours": round(hours, 3),                 # noqa: F405
+                    "checkpoint": "runs/f3_no_gcn_seed42.zip",
+                    "source": "measured around trainer.train() in data_export3/tools/f3_train.py"},
+                   indent=1))
+    print(f"F3 training done in {hours:.2f} h", flush=True)
+
+
+# SubprocVecEnv starts its 24 workers with forkserver, which re-imports this
+# module in each worker; without this guard every worker would start training.
+if __name__ == "__main__":
+    main()

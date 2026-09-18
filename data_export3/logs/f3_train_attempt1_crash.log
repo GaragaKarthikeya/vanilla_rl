@@ -1,0 +1,126 @@
+F3: training seed 42 WITHOUT the graph encoder. Pinned dims (48, 48, 67, 2694).
+============================================================
+Benchmarks (train) : fifo, ch_intrinsics, spree, boundtop, mmc_core, diffeq1, diffeq2, raygentop, mkSMAdapter4B, or1200, mkPktMerge
+Universe (sizing)  : fifo, ch_intrinsics, spree, boundtop, mmc_core, diffeq1, diffeq2, raygentop, mkSMAdapter4B, or1200, mkPktMerge, softmax, reduction_layer
+Shared canvas      : 48x48  (+2 IO ring per benchmark when baked)
+Reduced graph caps : MAX_NODES=67  MAX_EDGES=2694
+  fifo             grid=6x6  dsp=0 bram=1  baseline wl=597.0 dl=1.93748 pw=0.0116
+  ch_intrinsics    grid=10x10  dsp=0 bram=1  baseline wl=1336.0 dl=1.88517 pw=0.01197
+  spree            grid=12x12  dsp=1 bram=3  baseline wl=11888.0 dl=10.5897 pw=0.00966
+  boundtop         grid=13x13  dsp=0 bram=1  baseline wl=6252.0 dl=2.5374 pw=0.01613
+  mmc_core         grid=13x13  dsp=0 bram=1  baseline wl=6891.0 dl=4.77659 pw=0.01021
+  diffeq1          grid=14x14  dsp=5 bram=0  baseline wl=12608.0 dl=22.3395 pw=0.007714
+  diffeq2          grid=14x14  dsp=5 bram=0  baseline wl=9193.0 dl=17.948 pw=0.007747
+  raygentop        grid=17x17  dsp=6 bram=1  baseline wl=23234.0 dl=5.63239 pw=0.02564
+  mkSMAdapter4B    grid=18x18  dsp=0 bram=5  baseline wl=17593.0 dl=5.46391 pw=0.02933
+  or1200           grid=25x25  dsp=1 bram=2  baseline wl=50547.0 dl=13.7171 pw=0.02352
+  mkPktMerge       grid=26x26  dsp=0 bram=15  baseline wl=14859.0 dl=4.4784 pw=0.08596
+Reward weights     : wl=0.0 pw=1.0 dl=1.0 ar=1.0
+============================================================
+Parallel workers   : 24
+F3: training seed 42 WITHOUT the graph encoder. Pinned dims (48, 48, 67, 2694).
+============================================================
+Benchmarks (train) : fifo, ch_intrinsics, spree, boundtop, mmc_core, diffeq1, diffeq2, raygentop, mkSMAdapter4B, or1200, mkPktMerge
+Universe (sizing)  : fifo, ch_intrinsics, spree, boundtop, mmc_core, diffeq1, diffeq2, raygentop, mkSMAdapter4B, or1200, mkPktMerge, softmax, reduction_layer
+Shared canvas      : 48x48  (+2 IO ring per benchmark when baked)
+Reduced graph caps : MAX_NODES=67  MAX_EDGES=2694
+  fifo             grid=6x6  dsp=0 bram=1  baseline wl=597.0 dl=1.93748 pw=0.0116
+  ch_intrinsics    grid=10x10  dsp=0 bram=1  baseline wl=1336.0 dl=1.88517 pw=0.01197
+  spree            grid=12x12  dsp=1 bram=3  baseline wl=11888.0 dl=10.5897 pw=0.00966
+  boundtop         grid=13x13  dsp=0 bram=1  baseline wl=6252.0 dl=2.5374 pw=0.01613
+  mmc_core         grid=13x13  dsp=0 bram=1  baseline wl=6891.0 dl=4.77659 pw=0.01021
+  diffeq1          grid=14x14  dsp=5 bram=0  baseline wl=12608.0 dl=22.3395 pw=0.007714
+  diffeq2          grid=14x14  dsp=5 bram=0  baseline wl=9193.0 dl=17.948 pw=0.007747
+  raygentop        grid=17x17  dsp=6 bram=1  baseline wl=23234.0 dl=5.63239 pw=0.02564
+  mkSMAdapter4B    grid=18x18  dsp=0 bram=5  baseline wl=17593.0 dl=5.46391 pw=0.02933
+  or1200           grid=25x25  dsp=1 bram=2  baseline wl=50547.0 dl=13.7171 pw=0.02352
+  mkPktMerge       grid=26x26  dsp=0 bram=15  baseline wl=14859.0 dl=4.4784 pw=0.08596
+Reward weights     : wl=0.0 pw=1.0 dl=1.0 ar=1.0
+============================================================
+Parallel workers   : 24
+Traceback (most recent call last):
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/forkserver.py", line 276, in main
+    code = _serve_one(child_r, fds,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/forkserver.py", line 315, in _serve_one
+    code = spawn._main(child_r, parent_sentinel)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/digital-2/workspace/rl_gnn/vanilla_rl/data_export3/tools/f3_train.py", line 77, in <module>
+    trainer.train(cfg)
+  File "/home/digital-2/workspace/rl_gnn/vanilla_rl/src/training/trainer.py", line 134, in train
+    env = make_vec_env(FPGAEnv, n_envs=n_envs, seed=cfg.seed, vec_env_cls=SubprocVecEnv, env_kwargs=env_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/digital-2/.venv/lib/python3.12/site-packages/stable_baselines3/common/env_util.py", line 126, in make_vec_env
+    vec_env = vec_env_cls([make_env(i + start_index) for i in range(n_envs)], **vec_env_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/digital-2/.venv/lib/python3.12/site-packages/stable_baselines3/common/vec_env/subproc_vec_env.py", line 122, in __init__
+    process.start()
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/context.py", line 301, in _Popen
+    return Popen(process_obj)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/popen_forkserver.py", line 35, in __init__
+    super().__init__(process_obj)
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/popen_forkserver.py", line 42, in _launch
+    prep_data = spawn.get_preparation_data(process_obj._name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/spawn.py", line 164, in get_preparation_data
+    _check_not_importing_main()
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/spawn.py", line 140, in _check_not_importing_main
+    raise RuntimeError('''
+RuntimeError: 
+        An attempt has been made to start a new process before the
+        current process has finished its bootstrapping phase.
+
+        This probably means that you are not using fork to start your
+        child processes and you have forgotten to use the proper idiom
+        in the main module:
+
+            if __name__ == '__main__':
+                freeze_support()
+                ...
+
+        The "freeze_support()" line can be omitted if the program
+        is not going to be frozen to produce an executable.
+
+        To fix this issue, refer to the "Safe importing of main module"
+        section in https://docs.python.org/3/library/multiprocessing.html
+        
+Traceback (most recent call last):
+  File "/home/digital-2/workspace/rl_gnn/vanilla_rl/data_export3/tools/f3_train.py", line 77, in <module>
+    trainer.train(cfg)
+  File "/home/digital-2/workspace/rl_gnn/vanilla_rl/src/training/trainer.py", line 134, in train
+    env = make_vec_env(FPGAEnv, n_envs=n_envs, seed=cfg.seed, vec_env_cls=SubprocVecEnv, env_kwargs=env_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/digital-2/.venv/lib/python3.12/site-packages/stable_baselines3/common/env_util.py", line 126, in make_vec_env
+    vec_env = vec_env_cls([make_env(i + start_index) for i in range(n_envs)], **vec_env_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/digital-2/.venv/lib/python3.12/site-packages/stable_baselines3/common/vec_env/subproc_vec_env.py", line 122, in __init__
+    process.start()
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/context.py", line 301, in _Popen
+    return Popen(process_obj)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/popen_forkserver.py", line 35, in __init__
+    super().__init__(process_obj)
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/home/digital-2/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/popen_forkserver.py", line 58, in _launch
+    f.write(buf.getbuffer())
+BrokenPipeError: [Errno 32] Broken pipe
