@@ -50,7 +50,7 @@ Full detail, caveats and the vacuous/degenerate cases are in `notes.md`.
 | `f6_entropy.csv` | F6 | done, 181 PPO updates, no new runs |
 | `logs/` | — | per-stage logs, raw action sequences |
 
-**F3 was not run.** See below.
+**F3 is running now (started 2026-09-18 09:46 IST); `f3_no_gcn.csv` is not in this snapshot yet.** See below.
 
 ## Method notes
 
@@ -102,18 +102,30 @@ Baselines were built with `tools/f5_build.py` rather than
 pick up the repo's stale `.env` paths. The arch, flow and metric parsing are the
 same.
 
-## What was skipped
+## What was skipped or is still running
 
-- **F3 (retrain seed 42 without the GCN) was not run.** It is last in the stated
-  priority order and is a full ~11 h training run (the paper's seed-42 run took
-  11.0 h, `data_export/training_accounting.csv`). `tools/f3_train.py` and
-  `tools/no_gcn_extractor.py` are written and smoke-tested: the fuse layer takes
-  66 inputs (64 CNN + 2 fabric dims, no zero-padding), has no `conv1`/`conv2`,
-  and still emits 128 features; the paper's extractor takes 194. Running it needs
-  two runtime rebindings, both documented in the script: the extractor class
-  (`trainer.py:176` hard-codes it) and `compute_max_dims` (the paper's universe
-  includes `robot_rl`, whose files are deleted, so the dims are pinned to the
-  logged 48/48/67/2694).
+- **F3 (retrain seed 42 without the GCN) is IN PROGRESS, not finished.**
+  Training started 2026-09-18 09:46 IST (`tools/run_f3.sh`). At 10:55 it had
+  run 1,194 of 13,000 episodes with no errors. The paper's seed-42 run took
+  11.0 h (`data_export/training_accounting.csv`), so the expected finish is
+  around 22:00 IST. The zero-shot evaluation on the six held-out circuits runs
+  automatically afterwards and writes `f3_no_gcn.csv`, which will be delivered
+  separately.
+  - Setup: `tools/no_gcn_extractor.py`'s fuse layer takes 66 inputs (64 CNN +
+    2 fabric dims, no zero-padding) with no `conv1`/`conv2`, still emitting 128
+    features; the paper's takes 194. Hyperparameters are copied from the
+    paper's seed-42 invocation.
+  - `tools/f3_train.py` rebinds three names at runtime (src/ is untouched): the
+    extractor class (`trainer.py:176` hard-codes it), `compute_max_dims` (the
+    universe includes `robot_rl`, whose files are deleted, so dims are pinned
+    to the logged 48/48/67/2694), and `CheckpointCallback`, whose save path
+    would otherwise overwrite the paper's 259 checkpoints in
+    `runs/checkpoints_seed_42/`.
+  - The first launch crashed at startup (missing `__main__` guard for
+    multiprocessing) before writing anything; log kept as
+    `logs/f3_train_attempt1_crash.log`.
+  - Training runs under a watchdog that stops it if host memory drops below
+    6 GB free.
 - **`bnn` and `gemm_layer` baselines never finished.** Both were still in ABC
   logic optimization after ~2.5 h when the host ran out of memory and rebooted.
   The builds had no per-job memory limit; that was a driver mistake. They have
