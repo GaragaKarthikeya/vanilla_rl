@@ -1,0 +1,640 @@
+sweep: 120 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_b506fec6.xml
+  Size   : 6x24
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_5ed3a026.xml
+  Size   : 10x15
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_364c8c6e.xml
+  Size   : 5x31
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_e5cc1b88.xml
+  Size   : 7x20
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_02ae72fb.xml
+  Size   : 9x16
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_dc31c207.xml
+  Size   : 8x17
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 0.4} True 4.37
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_6f6c480c.xml
+  Size   : 10x14
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 0.6} True 4.37
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_cede5b63.xml
+  Size   : 12x14
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 0.2} True 4.52
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_62ccbbff.xml
+  Size   : 12x13
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 0.5} True 4.53
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_e6068bb9.xml
+  Size   : 12x12
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 0.3} True 4.82
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_c4d2dec2.xml
+  Size   : 12x11
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 0.1} True 4.88
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_cc27c501.xml
+  Size   : 13x11
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 0.7} True 4.23
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_2c4e2aa7.xml
+  Size   : 14x11
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 0.8} True 4.43
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_0d40ab16.xml
+  Size   : 13x10
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 1.0} True 4.28
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_b7516bb4.xml
+  Size   : 14x10
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 0.9} True 4.43
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_ed849e23.xml
+  Size   : 15x10
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 1.1} True 4.32
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_2ce6d759.xml
+  Size   : 16x10
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 1.2} True 4.38
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_c8186c3e.xml
+  Size   : 15x9
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 1.3} True 4.32
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_95ecd140.xml
+  Size   : 15x9
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 1.4} True 4.22
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_2dbdf05b.xml
+  Size   : 16x9
+  DSPs   : []
+  BRAMs  : [(2, 1), (10, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 1.5} True 4.27
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_cf3e1b49.xml
+  Size   : 8x57
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 1.6} True 4.37
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_54fbbe36.xml
+  Size   : 8x34
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 1.7} True 4.37
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_f8548ff1.xml
+  Size   : 10x27
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 1.8} True 4.48
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_c729de83.xml
+  Size   : 11x24
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 1.9} True 4.27
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_89f8e1c4.xml
+  Size   : 12x22
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'usb_uart_core', 'aspect_ratio': 2.0} True 4.27
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_20d40df3.xml
+  Size   : 13x20
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 0.3} True 10.49
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_56c2d3a7.xml
+  Size   : 14x19
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 0.4} True 12.14
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_5c8cde90.xml
+  Size   : 15x18
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 0.2} True 14.09
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_457f1dc7.xml
+  Size   : 16x17
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 0.1} True 14.95
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_ee5dd101.xml
+  Size   : 16x16
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 0.6} True 11.09
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_2b0c109f.xml
+  Size   : 17x16
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 0.5} True 11.59
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_73893fe4.xml
+  Size   : 18x15
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 0.7} True 11.09
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_568264b1.xml
+  Size   : 18x14
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 0.8} True 10.29
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_dc2d6bd1.xml
+  Size   : 19x14
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 0.9} True 10.49
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_a4e48fbb.xml
+  Size   : 20x14
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 1.0} True 10.59
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_06efef6c.xml
+  Size   : 20x13
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 1.1} True 10.49
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_52396f82.xml
+  Size   : 21x13
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 1.2} True 11.34
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_68610e21.xml
+  Size   : 22x13
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 1.3} True 10.74
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_7fa26016.xml
+  Size   : 23x13
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 1.4} True 10.44
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_521902a8.xml
+  Size   : 22x12
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 1.5} True 10.59
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_8c340ef1.xml
+  Size   : 13x116
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 1.6} True 10.74
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_2dd628be.xml
+  Size   : 18x81
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 1.7} True 12.15
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_8c2e305d.xml
+  Size   : 22x67
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 1.8} True 11.24
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_aa25d2eb.xml
+  Size   : 25x59
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 1.9} True 11.38
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_c3fc222f.xml
+  Size   : 28x53
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'uriscv_core', 'aspect_ratio': 2.0} True 11.54
+sweep: 80 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_42314b7f.xml
+  Size   : 18x81
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_49163dd9.xml
+  Size   : 13x116
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_da26ad62.xml
+  Size   : 22x67
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_e2943281.xml
+  Size   : 25x59
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_36643914.xml
+  Size   : 28x53
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 0.3} False 565.08
+done sweep {'circuit': 'lenet', 'aspect_ratio': 0.2} False 565.09
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_e4def5fc.xml
+  Size   : 30x48
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 0.4} False 565.09
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_e3c91ada.xml
+  Size   : 32x45
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 0.1} False 565.1
+sweep: 76 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_632000e9.xml
+  Size   : 28x53
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_c0282d0d.xml
+  Size   : 30x48
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_60da5f16.xml
+  Size   : 32x45
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 0.5} True 1098.16
+done sweep {'circuit': 'lenet', 'aspect_ratio': 0.6} True 1099.64
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_329c803e.xml
+  Size   : 34x42
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 0.8} True 1068.02
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_5e70916e.xml
+  Size   : 36x40
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 0.7} True 1082.92
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_bf90a05c.xml
+  Size   : 38x38
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 0.9} True 1086.55
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_1b63c01e.xml
+  Size   : 39x36
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 1.0} True 1082.81
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_2395f4ac.xml
+  Size   : 42x35
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 1.1} True 1084.71
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_ff332710.xml
+  Size   : 44x34
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 1.2} True 1091.3
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_bbb06a1e.xml
+  Size   : 44x32
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 1.3} True 1062.79
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_3a89cae2.xml
+  Size   : 46x31
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 1.4} True 1071.43
+sweep: 66 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_e9dfd21a.xml
+  Size   : 47x30
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_be006a74.xml
+  Size   : 46x31
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 1.6} True 1094.33
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_604178b2.xml
+  Size   : 50x30
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 1.5} True 1094.78
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_c287e4dd.xml
+  Size   : 51x29
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 1.7} True 1089.54
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_41b3915d.xml
+  Size   : 51x28
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_e15f50eb.xml
+  Size   : 54x28
+  DSPs   : [(6, 1)]
+  BRAMs  : []
+done sweep {'circuit': 'lenet', 'aspect_ratio': 1.8} True 1094.46
+done sweep {'circuit': 'lenet', 'aspect_ratio': 1.9} True 1087.23
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_161e8d89.xml
+  Size   : 11x88
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'lenet', 'aspect_ratio': 2.0} True 1086.85
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_57e98f9b.xml
+  Size   : 15x65
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 0.2} True 43.18
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_9af01d31.xml
+  Size   : 17x53
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 0.1} True 72.63
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_d4239cdd.xml
+  Size   : 20x46
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 0.3} True 50.07
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_10fe56ef.xml
+  Size   : 22x41
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 0.4} True 42.56
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_7e625ac8.xml
+  Size   : 24x38
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 0.5} True 45.74
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_cf5600d2.xml
+  Size   : 25x35
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 0.6} True 41.88
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_346a2024.xml
+  Size   : 27x33
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 0.7} True 43.73
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_518fb2df.xml
+  Size   : 29x32
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 0.8} True 41.39
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_0266bd84.xml
+  Size   : 30x30
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_45eac676.xml
+  Size   : 32x29
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 0.9} True 41.28
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 1.0} True 42.25
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_96a07e1c.xml
+  Size   : 33x28
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 1.1} True 41.73
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_51bea2ab.xml
+  Size   : 34x27
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 1.2} True 44.43
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_31baca4f.xml
+  Size   : 36x26
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (2, 19)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 1.3} True 43.55
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_fcc96620.xml
+  Size   : 36x25
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (10, 1)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 1.4} True 45.65
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_3344d731.xml
+  Size   : 37x24
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (10, 1)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 1.5} True 42.84
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_4c90db19.xml
+  Size   : 38x23
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (10, 1)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_dd47ac05.xml
+  Size   : 40x23
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (10, 1)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 1.6} True 41.12
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 1.7} True 41.27
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_0f3a7879.xml
+  Size   : 40x22
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (10, 1)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 1.8} True 44.88
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_9e93e31b.xml
+  Size   : 42x22
+  DSPs   : []
+  BRAMs  : [(2, 1), (2, 7), (2, 13), (10, 1)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 1.9} True 45.14
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_997e5365.xml
+  Size   : 8x57
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': 'aes_inv_cipher', 'aspect_ratio': 2.0} True 41.2
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_70302c4d.xml
+  Size   : 9x35
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 0.1} True 16.4
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_2e1cec56.xml
+  Size   : 10x28
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 0.3} True 13.69
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_cc24d932.xml
+  Size   : 11x25
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 0.2} True 16.36
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_b7991f52.xml
+  Size   : 12x23
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_508d0c8c.xml
+  Size   : 13x21
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 0.4} True 12.63
+done sweep {'circuit': '8051', 'aspect_ratio': 0.5} True 12.53
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_0fa29325.xml
+  Size   : 14x19
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 0.6} True 12.28
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_043fdddc.xml
+  Size   : 15x18
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 0.7} True 12.59
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_92aa4581.xml
+  Size   : 16x17
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_93772cd1.xml
+  Size   : 17x17
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 0.8} True 12.38
+done sweep {'circuit': '8051', 'aspect_ratio': 0.9} True 12.84
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_99651a61.xml
+  Size   : 17x16
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 1.0} True 13.03
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_049e6043.xml
+  Size   : 18x15
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 1.1} True 13.15
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_7f029996.xml
+  Size   : 19x15
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 1.2} True 12.23
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_b1379b35.xml
+  Size   : 19x14
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 1.3} True 12.55
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_8f4b25a6.xml
+  Size   : 20x14
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 1.4} True 12.18
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_87068504.xml
+  Size   : 21x14
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 1.5} True 12.64
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_b88e630d.xml
+  Size   : 21x13
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 1.6} True 12.54
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_0923a8d4.xml
+  Size   : 22x13
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_d0484f09.xml
+  Size   : 23x13
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 1.7} True 12.73
+done sweep {'circuit': '8051', 'aspect_ratio': 1.8} True 12.64
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_d040151f.xml
+  Size   : 24x13
+  DSPs   : [(6, 1)]
+  BRAMs  : [(2, 1)]
+done sweep {'circuit': '8051', 'aspect_ratio': 1.9} True 11.88
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_42dd0915.xml
+  Size   : 16x137
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (6, 37), (6, 41), (6, 45), (6, 49), (6, 53), (6, 57), (6, 61), (6, 65), (6, 69), (6, 73), (6, 77), (6, 81), (6, 85), (6, 89), (6, 93), (6, 97), (6, 101), (6, 105), (6, 109), (6, 113), (6, 117), (6, 121), (6, 125), (6, 129), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (14, 37), (14, 41)]
+  BRAMs  : []
+done sweep {'circuit': '8051', 'aspect_ratio': 2.0} True 11.93
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_52953c92.xml
+  Size   : 20x90
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (6, 37), (6, 41), (6, 45), (6, 49), (6, 53), (6, 57), (6, 61), (6, 65), (6, 69), (6, 73), (6, 77), (6, 81), (6, 85), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (14, 37), (14, 41), (14, 45), (14, 49), (14, 53), (14, 57), (14, 61), (14, 65), (14, 69), (14, 73), (14, 77), (14, 81), (14, 85)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 0.1} True 64.67
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_779cda4c.xml
+  Size   : 24x74
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (6, 37), (6, 41), (6, 45), (6, 49), (6, 53), (6, 57), (6, 61), (6, 65), (6, 69), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (14, 37), (14, 41), (14, 45), (14, 49), (14, 53), (14, 57), (14, 61), (14, 65), (14, 69), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 0.2} True 58.11
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_194fd9ed.xml
+  Size   : 26x62
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (6, 37), (6, 41), (6, 45), (6, 49), (6, 53), (6, 57), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (14, 37), (14, 41), (14, 45), (14, 49), (14, 53), (14, 57), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (22, 33), (22, 37), (22, 41), (22, 45), (22, 49), (22, 53)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 0.4} True 63.17
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_866d00af.xml
+  Size   : 32x61
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (6, 37), (6, 41), (6, 45), (6, 49), (6, 53), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (14, 37), (14, 41), (14, 45), (14, 49), (14, 53), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (22, 33), (22, 37), (22, 41), (22, 45), (22, 49), (22, 53), (30, 1), (30, 5)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 0.3} True 74.48
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_a0751462.xml
+  Size   : 32x52
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (6, 37), (6, 41), (6, 45), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (14, 37), (14, 41), (14, 45), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (22, 33), (22, 37), (22, 41), (22, 45), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 0.6} True 62.5
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_df6e7ad1.xml
+  Size   : 33x46
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (6, 37), (6, 41), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (14, 37), (14, 41), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (22, 33), (22, 37), (22, 41), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29), (30, 33), (30, 37), (30, 41)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 0.5} True 78.4
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_16682f0b.xml
+  Size   : 37x46
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (6, 37), (6, 41), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (14, 37), (14, 41), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (22, 33), (22, 37), (22, 41), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29), (30, 33), (30, 37), (30, 41)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 0.7} True 58.64
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_0b960ac6.xml
+  Size   : 40x44
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (6, 37), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (14, 37), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (22, 33), (22, 37), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29), (30, 33), (30, 37), (38, 1), (38, 5), (38, 9), (38, 13)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 0.8} True 66.11
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_e9100e27.xml
+  Size   : 40x40
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (22, 33), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29), (30, 33), (38, 1), (38, 5), (38, 9), (38, 13), (38, 17), (38, 21), (38, 25), (38, 29)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 0.9} True 78.57
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_ee05280a.xml
+  Size   : 42x38
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (22, 33), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29), (30, 33), (38, 1), (38, 5), (38, 9), (38, 13), (38, 17), (38, 21), (38, 25), (38, 29)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 1.0} True 69.24
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_ef19b8cf.xml
+  Size   : 45x38
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (6, 33), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (14, 33), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (22, 33), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29), (30, 33), (38, 1), (38, 5), (38, 9), (38, 13), (38, 17), (38, 21), (38, 25), (38, 29)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 1.2} True 67.62
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_47a40421.xml
+  Size   : 48x37
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29), (38, 1), (38, 5), (38, 9), (38, 13), (38, 17), (38, 21), (38, 25), (38, 29), (46, 1), (46, 5), (46, 9), (46, 13)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 1.1} True 74.56
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_5b3e7831.xml
+  Size   : 48x35
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29), (38, 1), (38, 5), (38, 9), (38, 13), (38, 17), (38, 21), (38, 25), (38, 29), (46, 1), (46, 5), (46, 9), (46, 13)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 1.3} True 62.11
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_05302305.xml
+  Size   : 50x34
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29), (38, 1), (38, 5), (38, 9), (38, 13), (38, 17), (38, 21), (38, 25), (38, 29), (46, 1), (46, 5), (46, 9), (46, 13)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 1.4} True 63.95
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_63a60815.xml
+  Size   : 53x34
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29), (38, 1), (38, 5), (38, 9), (38, 13), (38, 17), (38, 21), (38, 25), (38, 29), (46, 1), (46, 5), (46, 9), (46, 13)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 1.5} True 63.75
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_96c7099d.xml
+  Size   : 56x34
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (6, 29), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (14, 29), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (22, 29), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (30, 29), (38, 1), (38, 5), (38, 9), (38, 13), (38, 17), (38, 21), (38, 25), (38, 29), (46, 1), (46, 5), (46, 9), (46, 13)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 1.6} True 65.46
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_a4c90788.xml
+  Size   : 56x32
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (38, 1), (38, 5), (38, 9), (38, 13), (38, 17), (38, 21), (38, 25), (46, 1), (46, 5), (46, 9), (46, 13), (46, 17), (46, 21), (46, 25), (54, 1), (54, 5)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 1.7} True 74.8
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_19277546.xml
+  Size   : 57x31
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (38, 1), (38, 5), (38, 9), (38, 13), (38, 17), (38, 21), (38, 25), (46, 1), (46, 5), (46, 9), (46, 13), (46, 17), (46, 21), (46, 25), (54, 1), (54, 5)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 1.8} True 72.32
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c2p_b99d0f45.xml
+  Size   : 58x30
+  DSPs   : [(6, 1), (6, 5), (6, 9), (6, 13), (6, 17), (6, 21), (6, 25), (14, 1), (14, 5), (14, 9), (14, 13), (14, 17), (14, 21), (14, 25), (22, 1), (22, 5), (22, 9), (22, 13), (22, 17), (22, 21), (22, 25), (30, 1), (30, 5), (30, 9), (30, 13), (30, 17), (30, 21), (30, 25), (38, 1), (38, 5), (38, 9), (38, 13), (38, 17), (38, 21), (38, 25), (46, 1), (46, 5), (46, 9), (46, 13), (46, 17), (46, 21), (46, 25), (54, 1), (54, 5)]
+  BRAMs  : []
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 1.9} True 62.46
+done sweep {'circuit': 'stereovision1', 'aspect_ratio': 2.0} True 61.37

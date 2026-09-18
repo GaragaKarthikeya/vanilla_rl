@@ -1,0 +1,16 @@
+=== sweep start 11:46:13
+WATCHDOG 11:47:28: MemAvailable 5 GB < 6 GB, killing stage sweep only
+=== sweep start 11:49:59
+--- relaunch 12:00:00 after manual stop (4 workers dipped memory to 4 GB) ---
+=== sweep start 12:00:00 workers=2
+--- relaunch 20:10:44 after power cut (16:36 reboot) ---
+=== sweep start 20:10:48 workers=2
+=== sweep end rc=0 21:26:19
+=== g1 start 21:26:19 workers=2
+=== g1 end rc=0 22:11:50
+=== g2 start 22:11:50 workers=2
+=== g2 end rc=0 00:15:13
+=== g3 start 00:15:13 workers=4
+=== g3 end rc=0 00:49:24
+ALL DONE 00:49:24
+run_g.sh exited rc=0 00:49:24; starting F3 fresh

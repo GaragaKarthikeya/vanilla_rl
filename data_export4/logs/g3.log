@@ -1,0 +1,703 @@
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+G3: 120 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_55d7aad6.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_aa733b57.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_74668813.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_55d7aad6.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_74668813.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_aa733b57.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_381d2c2f.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_381d2c2f.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.13
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f7a27161.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f7a27161.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.2
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 0.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_47df4e5d.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_47df4e5d.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 3.1
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_584b7d68.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_584b7d68.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 1.73
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6a5b7f7f.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (6, 4), (2, 6)]
+  BRAMs  : [(7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6a5b7f7f.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 4.25
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9dbdd27b.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (3, 6), (6, 4)]
+  BRAMs  : [(2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9dbdd27b.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.28
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dce3580f.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (6, 2), (3, 6)]
+  BRAMs  : [(2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dce3580f.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 1.48
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_bef1f5ef.xml
+  Size   : 14x14
+  DSPs   : [(2, 9), (6, 2), (7, 4)]
+  BRAMs  : [(2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_bef1f5ef.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 1.48
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1e22989f.xml
+  Size   : 14x14
+  DSPs   : [(2, 9), (6, 2), (10, 2)]
+  BRAMs  : [(2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1e22989f.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 1.83
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f1304279.xml
+  Size   : 14x14
+  DSPs   : [(2, 9), (2, 2), (10, 2)]
+  BRAMs  : [(11, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f1304279.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.03
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f853bce8.xml
+  Size   : 14x14
+  DSPs   : [(2, 9), (10, 2), (2, 2)]
+  BRAMs  : [(11, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f853bce8.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.08
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_fdfefda4.xml
+  Size   : 14x14
+  DSPs   : [(2, 9), (10, 2), (3, 8)]
+  BRAMs  : [(11, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_fdfefda4.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 1.93
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9c9d9b86.xml
+  Size   : 14x14
+  DSPs   : [(2, 9), (10, 2), (3, 8)]
+  BRAMs  : [(11, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9c9d9b86.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.13
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2aa4eeca.xml
+  Size   : 14x14
+  DSPs   : [(2, 9), (10, 2), (3, 8)]
+  BRAMs  : [(11, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2aa4eeca.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.18
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b7da45de.xml
+  Size   : 14x14
+  DSPs   : [(2, 9), (10, 2), (3, 8)]
+  BRAMs  : [(11, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b7da45de.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.33
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1e0331b1.xml
+  Size   : 14x14
+  DSPs   : [(2, 9), (10, 2), (3, 8)]
+  BRAMs  : [(11, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1e0331b1.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.83
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 0.0
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.92
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c98cb7ea.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(1, 9), (2, 6), (7, 2), (3, 2), (6, 4), (12, 20), (5, 6), (15, 14), (20, 18), (22, 3), (4, 5), (14, 21), (16, 18), (8, 19), (22, 11), (3, 17), (13, 15), (8, 4), (19, 3), (6, 18), (18, 15), (12, 14), (5, 18), (21, 3), (3, 8), (22, 17), (9, 14), (23, 3), (11, 14), (19, 10), (2, 15), (17, 17), (26, 2), (20, 10), (10, 19), (20, 2), (1, 21), (4, 14), (15, 8), (21, 15), (7, 14), (19, 16), (24, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c98cb7ea.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c7e5eda1.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(1, 9), (2, 6), (7, 2), (6, 2), (3, 2), (12, 20), (15, 14), (5, 6), (20, 18), (22, 3), (4, 5), (14, 21), (16, 18), (8, 19), (22, 11), (3, 17), (13, 15), (8, 4), (19, 3), (6, 18), (18, 15), (5, 14), (3, 8), (21, 3), (12, 14), (9, 14), (23, 3), (22, 17), (19, 10), (11, 14), (2, 15), (17, 17), (20, 10), (10, 19), (26, 2), (20, 2), (1, 21), (4, 14), (7, 14), (15, 8), (19, 16), (21, 15), (10, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c7e5eda1.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.99
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1209b367.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(1, 9), (6, 2), (2, 2), (15, 14), (3, 2), (20, 18), (12, 20), (7, 2), (5, 6), (22, 3), (16, 18), (8, 19), (4, 4), (14, 20), (8, 4), (3, 17), (19, 3), (5, 14), (3, 8), (18, 15), (6, 18), (22, 11), (21, 3), (19, 10), (13, 15), (2, 14), (11, 14), (17, 16), (12, 14), (9, 14), (7, 14), (23, 3), (10, 2), (22, 17), (10, 16), (21, 17), (20, 10), (12, 5), (1, 21), (20, 2), (9, 5), (4, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1209b367.xml
+done G3 {'circuit': 'custom_macbuf', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 2.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 3.13
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_807fcf51.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (8, 14), (10, 2), (6, 2), (15, 14), (2, 2), (1, 9), (11, 3), (12, 5), (3, 8), (20, 18), (7, 14), (21, 16), (16, 18), (12, 18), (2, 18), (19, 6), (8, 4), (7, 4), (10, 16), (5, 17), (13, 7), (18, 15), (17, 16), (19, 12), (3, 14), (4, 2), (22, 3), (5, 1), (6, 18), (9, 5), (1, 3), (3, 1), (5, 10), (14, 20), (14, 8), (21, 3), (10, 10), (20, 3), (4, 19), (11, 17), (9, 11), (7, 22)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_807fcf51.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 18.83
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8bc245a8.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (8, 14), (13, 7), (7, 14), (10, 2), (2, 18), (12, 4), (21, 16), (3, 8), (14, 8), (19, 6), (5, 17), (15, 14), (1, 3), (6, 2), (2, 2), (16, 18), (10, 16), (12, 17), (20, 16), (9, 6), (8, 4), (17, 16), (19, 12), (7, 4), (18, 15), (5, 1), (6, 14), (20, 3), (4, 2), (3, 14), (14, 1), (5, 10), (11, 17), (7, 22), (22, 8), (13, 1), (14, 19), (4, 17), (4, 10), (21, 3), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8bc245a8.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 18.76
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a90df66c.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (19, 6), (5, 17), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (6, 2), (17, 19), (2, 2), (19, 12), (20, 16), (8, 4), (7, 4), (20, 3), (18, 15), (6, 14), (5, 1), (14, 1), (4, 2), (3, 14), (5, 10), (7, 22), (11, 17), (13, 1), (22, 8), (4, 17), (4, 10), (14, 19), (21, 10), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a90df66c.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 27.29
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7ec768bf.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (4, 2), (5, 10), (3, 14), (7, 22), (13, 1), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7ec768bf.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 34.81
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9354c664.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9354c664.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 18.26
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 18.35
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_74e54cb9.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_74e54cb9.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3f8ec66d.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (4, 17), (22, 8), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3f8ec66d.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 17.2
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cd885bdd.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (4, 17), (22, 8), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cd885bdd.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 17.16
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_737e7eff.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (4, 17), (22, 8), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_737e7eff.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 17.21
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cff60a9c.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (4, 17), (22, 8), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cff60a9c.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 18.05
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c4b3da72.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (4, 17), (22, 8), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c4b3da72.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 17.42
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_074fdf2f.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (4, 17), (22, 8), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_074fdf2f.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 17.34
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_eced2f13.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (4, 17), (22, 8), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_eced2f13.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 17.25
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 18.23
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dd04f0e5.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (4, 17), (22, 8), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dd04f0e5.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_38b89063.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (4, 17), (22, 8), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_38b89063.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 18.18
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6421d5f0.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2), (5, 10), (3, 14), (13, 1), (7, 22), (11, 17), (4, 17), (22, 8), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6421d5f0.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 17.63
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_217eab40.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (3, 6), (2, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_217eab40.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 5.19
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_577cb635.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (3, 6), (2, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_577cb635.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 18.38
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 0.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1101532b.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (3, 6), (2, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1101532b.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 18.77
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ce53f2e4.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (3, 6), (2, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ce53f2e4.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.74
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2d315ce6.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (3, 6), (2, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2d315ce6.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 3.36
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_03dc9e51.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (3, 6), (6, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_03dc9e51.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.5
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_acdb9cad.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (2, 2), (6, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_acdb9cad.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.49
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f09aa13f.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f09aa13f.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.19
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_dc0c44f7.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (8, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_dc0c44f7.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.34
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ef59331b.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (10, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ef59331b.xml
+done G3 {'circuit': 'mkDelayWorker32B', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 2.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 18.81
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_21ebf9e9.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (10, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_21ebf9e9.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.19
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.09
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_640aa281.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (10, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_640aa281.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_90cbcdc1.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(10, 2), (2, 2), (6, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_90cbcdc1.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.25
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e47e51b2.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(11, 4), (10, 2), (6, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e47e51b2.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.1
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5c71c793.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(11, 4), (10, 2), (12, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5c71c793.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 1.99
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8f1b8c42.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(11, 4), (10, 2), (12, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8f1b8c42.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 1.99
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_36401025.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(11, 4), (10, 2), (12, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_36401025.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.44
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f8d22318.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(11, 4), (10, 2), (12, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f8d22318.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.64
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 2.62
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_15954b28.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(11, 4), (10, 2), (12, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_15954b28.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 3.19
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 3.39
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0e6bdf22.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(1, 9), (7, 2), (2, 6), (3, 6), (6, 4), (5, 6), (12, 20), (15, 14), (20, 18), (22, 4), (4, 5), (14, 21), (16, 18), (8, 19), (22, 11), (13, 15), (3, 17), (8, 4), (19, 3), (5, 18), (12, 14), (6, 18), (18, 15), (21, 3), (22, 17), (23, 3), (9, 14), (11, 14), (26, 2), (17, 17), (2, 15), (19, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0e6bdf22.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8d3c250f.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(1, 9), (7, 2), (2, 6), (3, 6), (6, 4), (5, 6), (12, 20), (15, 14), (20, 18), (22, 4), (4, 5), (14, 21), (16, 18), (8, 19), (22, 11), (3, 17), (13, 15), (8, 4), (19, 3), (5, 18), (12, 14), (6, 18), (18, 15), (21, 3), (22, 17), (23, 3), (9, 14), (11, 14), (2, 15), (26, 2), (17, 17), (19, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8d3c250f.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cb23822a.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(1, 9), (2, 6), (7, 2), (3, 2), (6, 4), (12, 20), (5, 6), (15, 14), (20, 18), (22, 3), (4, 5), (14, 21), (16, 18), (8, 19), (22, 11), (3, 17), (13, 15), (8, 4), (19, 3), (6, 18), (18, 15), (5, 14), (12, 14), (21, 3), (3, 8), (9, 14), (22, 17), (23, 3), (11, 14), (19, 10), (2, 15), (17, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cb23822a.xml
+done G3 {'circuit': 'lightweight_cipher', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 2.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 3.22
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_11f9a1ec.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(1, 9), (2, 6), (7, 2), (6, 2), (3, 2), (15, 14), (12, 20), (5, 6), (20, 18), (22, 3), (4, 4), (14, 21), (16, 18), (8, 19), (3, 17), (22, 11), (8, 4), (19, 3), (13, 15), (5, 14), (18, 15), (6, 18), (3, 8), (21, 3), (12, 14), (9, 14), (23, 3), (22, 17), (19, 10), (11, 14), (2, 15), (17, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_11f9a1ec.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 196.84
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e11bb073.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(1, 9), (6, 2), (2, 2), (15, 14), (20, 18), (12, 18), (16, 18), (7, 4), (8, 19), (3, 2), (22, 3), (2, 9), (8, 4), (3, 8), (14, 20), (5, 6), (10, 2), (4, 4), (5, 14), (19, 3), (3, 17), (18, 15), (19, 10), (6, 18), (7, 14), (21, 3), (17, 16), (12, 5), (22, 10), (11, 14), (13, 15), (10, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e11bb073.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 228.95
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 0.0
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 230.32
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_884a273e.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (8, 14), (13, 7), (7, 14), (10, 2), (2, 18), (12, 4), (21, 16), (3, 8), (14, 8), (19, 6), (5, 17), (15, 14), (1, 3), (6, 2), (2, 2), (16, 18), (10, 16), (12, 17), (20, 16), (9, 6), (8, 4), (17, 16), (19, 12), (7, 4), (18, 15), (5, 1), (6, 14), (20, 3), (4, 2), (3, 14)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_884a273e.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_352d7d2a.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (19, 6), (5, 17), (15, 14), (10, 16), (12, 17), (16, 18), (9, 6), (6, 2), (17, 19), (2, 2), (19, 12), (20, 16), (8, 4), (7, 4), (20, 3), (18, 15), (6, 14), (5, 1), (14, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_352d7d2a.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 270.16
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_83d155f2.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_83d155f2.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 73.85
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_82ebff6d.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_82ebff6d.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 99.4
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c1c97087.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c1c97087.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 140.07
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_884b075f.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_884b075f.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 69.87
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c21dce01.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c21dce01.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 108.56
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_00ba100c.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_00ba100c.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 75.12
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b4ce1042.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b4ce1042.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 110.07
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_bea7ccc7.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_bea7ccc7.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 107.63
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4b977cd0.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4b977cd0.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 130.01
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5ba5fa04.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5ba5fa04.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 127.07
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9d25a79a.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9d25a79a.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 127.88
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a445001a.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (5, 1), (18, 15), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a445001a.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 136.27
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_009f0b69.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(1, 9), (7, 2), (2, 6), (3, 6), (6, 4), (5, 6), (12, 20), (15, 14), (20, 18), (22, 4), (4, 5), (14, 21), (16, 18), (8, 19), (22, 11), (13, 15), (3, 17), (8, 4), (19, 3), (5, 18), (12, 14), (6, 18), (18, 15), (21, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_009f0b69.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 162.28
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7187dd3d.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(1, 9), (7, 2), (2, 6), (3, 6), (6, 4), (5, 6), (12, 20), (15, 14), (20, 18), (22, 4), (4, 5), (14, 21), (16, 18), (8, 19), (22, 11), (3, 17), (13, 15), (8, 4), (19, 3), (5, 18), (6, 18), (12, 14), (18, 15), (21, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7187dd3d.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 189.19
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b7a5cb9d.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(1, 9), (7, 2), (2, 6), (3, 6), (6, 4), (5, 6), (12, 20), (15, 14), (20, 18), (22, 3), (4, 5), (14, 21), (16, 18), (8, 19), (22, 11), (3, 17), (13, 15), (8, 4), (19, 3), (6, 18), (18, 15), (5, 14), (12, 14), (21, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b7a5cb9d.xml
+done G3 {'circuit': 'reduction_layer', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 2.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 143.92
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d7986ffd.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(1, 9), (2, 6), (7, 2), (6, 2), (3, 2), (15, 14), (12, 20), (5, 6), (20, 18), (22, 3), (4, 5), (14, 21), (16, 18), (8, 19), (22, 11), (3, 17), (8, 4), (19, 3), (13, 15), (5, 14), (3, 8), (18, 15), (6, 18), (21, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d7986ffd.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 143.21
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2dc503a2.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(1, 9), (6, 2), (2, 2), (15, 14), (20, 18), (12, 18), (16, 18), (7, 4), (8, 19), (3, 2), (22, 3), (2, 9), (5, 6), (14, 20), (8, 4), (4, 4), (10, 2), (3, 8), (12, 5), (5, 14), (19, 3), (18, 15), (3, 17), (7, 14)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2dc503a2.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 110.04
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4c733da6.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (8, 14), (11, 3), (10, 2), (7, 14), (15, 14), (6, 2), (2, 2), (3, 8), (21, 16), (12, 5), (2, 18), (16, 18), (20, 18), (12, 18), (19, 6), (13, 7), (5, 17), (14, 8), (1, 3), (10, 16), (8, 4), (7, 4), (17, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4c733da6.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 120.76
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0b61d452.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (7, 14), (10, 2), (12, 4), (2, 18), (21, 16), (3, 8), (14, 8), (19, 6), (5, 17), (1, 3), (15, 14), (6, 2), (16, 18), (10, 16), (2, 2), (12, 17), (9, 6), (20, 16), (19, 12), (17, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0b61d452.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 98.84
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_833567de.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (19, 6), (1, 3), (5, 17), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (6, 2), (17, 19), (19, 12), (2, 2), (20, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_833567de.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 97.03
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f9fdcd19.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f9fdcd19.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 99.34
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_24791c4b.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_24791c4b.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 109.61
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_016c2e36.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_016c2e36.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 108.24
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 0.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_588a80a7.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_588a80a7.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 104.55
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_08f0d7a9.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_08f0d7a9.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 98.06
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_85024419.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_85024419.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 101.5
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0dbc36b7.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0dbc36b7.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 101.93
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0c314152.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0c314152.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 98.76
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_933c2f49.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_933c2f49.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 89.15
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_29099f17.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_29099f17.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 96.56
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a65b8d7b.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a65b8d7b.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 91.26
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_78a214ca.xml
+  Size   : 43x43
+  DSPs   : [(7, 2), (1, 9), (2, 6), (2, 1), (3, 6), (6, 4), (3, 2), (7, 6)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_78a214ca.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 90.13
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ae531ecb.xml
+  Size   : 43x43
+  DSPs   : [(1, 9), (2, 6), (7, 2), (2, 1), (3, 2), (3, 6), (6, 4), (7, 6)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ae531ecb.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 97.11
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_29be7976.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (1, 9), (6, 2), (2, 2), (15, 14), (10, 2), (20, 18), (8, 14)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_29be7976.xml
+done G3 {'circuit': 'arm_core', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 2.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 98.53
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e55ee512.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (7, 14), (14, 8), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e55ee512.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 146.03
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_bec22980.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_bec22980.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 189.11
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6a377a10.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6a377a10.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 147.15
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f399514f.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f399514f.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 140.83
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4342f9a4.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4342f9a4.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 139.77
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f282fcf4.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f282fcf4.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 140.93
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3552d95e.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3552d95e.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 140.63
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f967e931.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f967e931.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 143.25
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5e35d6a0.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5e35d6a0.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 0.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 135.76
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ecf3a154.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ecf3a154.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 141.08
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.4, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 0.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_57d7dbb8.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_57d7dbb8.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.1, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 139.29
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_634fa8db.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_634fa8db.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.2, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 142.3
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e8f8c11f.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e8f8c11f.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.3, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 137.31
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8f83a92c.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8f83a92c.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.5, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 142.44
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_3e676d0e.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_3e676d0e.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.6, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 140.41
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_cef616ff.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_cef616ff.xml
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.7, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 140.32
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.8, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 135.09
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 1.9, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 133.81
+done G3 {'circuit': 'softmax', 'set': 'original', 'seed': 42, 'forced_aspect_ratio': 2.0, 'source': 'step 0 forced to this AR; seed-42 policy places H-blocks deterministically'} True 127.86
