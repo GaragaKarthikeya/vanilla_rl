@@ -1,0 +1,163 @@
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+stereovision1        s7 actions=45
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+stereovision1        s42 actions=45
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+stereovision1        s123 actions=45
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+lenet                s7 actions=2
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+lenet                s42 actions=2
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+lenet                s123 actions=2
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+8051                 s7 actions=3
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+8051                 s42 actions=3
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+8051                 s123 actions=3
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+uriscv_core          s7 actions=3
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+uriscv_core          s42 actions=3
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+uriscv_core          s123 actions=3
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+usb_uart_core        s7 actions=3
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+usb_uart_core        s42 actions=3
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+usb_uart_core        s123 actions=3
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+aes_inv_cipher       s7 actions=5
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+aes_inv_cipher       s42 actions=5
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+aes_inv_cipher       s123 actions=5
+F5eval: 18 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_84346b8e.xml
+  Size   : 18x18
+  DSPs   : [(4, 4)]
+  BRAMs  : [(6, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e2cc9719.xml
+  Size   : 19x19
+  DSPs   : [(11, 4)]
+  BRAMs  : [(2, 9)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ce671e92.xml
+  Size   : 19x19
+  DSPs   : [(13, 14)]
+  BRAMs  : [(1, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e2cc9719.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_84346b8e.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ce671e92.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_db6dd096.xml
+  Size   : 19x19
+  DSPs   : [(14, 14)]
+  BRAMs  : [(1, 9)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f5e5f4cd.xml
+  Size   : 18x18
+  DSPs   : [(11, 4)]
+  BRAMs  : [(2, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f5e5f4cd.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2af6b2d6.xml
+  Size   : 18x18
+  DSPs   : [(6, 3)]
+  BRAMs  : [(3, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_db6dd096.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2af6b2d6.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8618d57e.xml
+  Size   : 40x40
+  DSPs   : [(19, 12), (17, 15), (1, 9), (14, 14), (7, 16), (15, 11), (13, 14), (7, 11), (11, 17), (10, 14), (19, 8), (22, 17), (2, 18), (9, 18), (18, 19), (12, 5), (21, 6), (10, 9), (15, 7), (17, 1), (7, 5), (22, 5), (13, 3), (6, 18), (9, 4), (12, 14), (18, 14), (4, 12), (20, 4), (5, 15), (3, 2), (2, 7), (23, 18), (10, 19), (22, 10), (4, 6), (12, 1), (16, 11), (14, 19), (13, 8), (8, 18), (10, 5), (24, 13), (19, 17)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8618d57e.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_62ee840a.xml
+  Size   : 40x40
+  DSPs   : [(18, 13), (18, 2), (1, 11), (18, 7), (12, 5), (14, 11), (13, 2), (11, 4), (3, 10), (1, 4), (11, 10), (9, 10), (10, 9), (12, 10), (7, 16), (13, 9), (9, 15), (2, 10), (15, 5), (15, 12), (12, 19), (14, 3), (9, 3), (17, 13), (8, 13), (1, 19), (11, 17), (19, 16), (4, 1), (16, 6), (13, 14), (5, 12), (4, 12), (21, 2), (10, 14), (21, 7), (17, 6), (12, 1), (6, 9), (16, 11), (10, 3), (7, 12), (3, 18), (17, 1)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_62ee840a.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_30e6539f.xml
+  Size   : 40x40
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (14, 3), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (2, 14), (9, 6), (10, 16), (12, 17), (16, 18), (19, 10), (17, 19), (6, 2), (20, 16), (9, 11), (2, 2), (8, 4), (21, 12), (20, 3), (6, 14), (7, 4), (13, 3), (5, 1), (18, 15), (8, 19), (15, 19), (4, 2), (5, 10), (3, 14), (7, 22), (10, 7), (11, 17), (6, 18)]
+  BRAMs  : []
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0efb6acd.xml
+  Size   : 43x43
+  DSPs   : [(2, 9)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_30e6539f.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ab34dd96.xml
+  Size   : 43x43
+  DSPs   : [(18, 13)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0efb6acd.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ab34dd96.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d205bcd4.xml
+  Size   : 43x43
+  DSPs   : [(19, 12)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d205bcd4.xml
+done F5eval {'circuit': 'uriscv_core', 'split': 'heldout_extra', 'seed': 123, 'baseline_area_mwta': 1265100.0, 'baseline_delay_ns': 9.10939, 'baseline_power_w': 0.0148, 'baseline_adp': 170559.4814772, 'baseline_grid_w': 18, 'baseline_grid_h': 18, 'num_clbs_packed': '182', 'num_dsp': '1', 'num_bram': '1', 'num_io': '254', 'core_grid_w': '16', 'core_grid_h': '16', 'occupancy': '0.71875', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 13.29
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7ba0faa2.xml
+  Size   : 13x13
+  DSPs   : []
+  BRAMs  : [(6, 4), (2, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7ba0faa2.xml
+done F5eval {'circuit': 'uriscv_core', 'split': 'heldout_extra', 'seed': 7, 'baseline_area_mwta': 1265100.0, 'baseline_delay_ns': 9.10939, 'baseline_power_w': 0.0148, 'baseline_adp': 170559.4814772, 'baseline_grid_w': 18, 'baseline_grid_h': 18, 'num_clbs_packed': '182', 'num_dsp': '1', 'num_bram': '1', 'num_io': '254', 'core_grid_w': '16', 'core_grid_h': '16', 'occupancy': '0.71875', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 13.91
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5a60c23d.xml
+  Size   : 13x13
+  DSPs   : []
+  BRAMs  : [(7, 2), (3, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5a60c23d.xml
+done F5eval {'circuit': 'uriscv_core', 'split': 'heldout_extra', 'seed': 42, 'baseline_area_mwta': 1265100.0, 'baseline_delay_ns': 9.10939, 'baseline_power_w': 0.0148, 'baseline_adp': 170559.4814772, 'baseline_grid_w': 18, 'baseline_grid_h': 18, 'num_clbs_packed': '182', 'num_dsp': '1', 'num_bram': '1', 'num_io': '254', 'core_grid_w': '16', 'core_grid_h': '16', 'occupancy': '0.71875', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 13.98
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_96d10801.xml
+  Size   : 13x13
+  DSPs   : []
+  BRAMs  : [(5, 4), (2, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_96d10801.xml
+done F5eval {'circuit': '8051', 'split': 'heldout_extra', 'seed': 7, 'baseline_area_mwta': 1557310.0, 'baseline_delay_ns': 13.4425, 'baseline_power_w': 0.01228, 'baseline_adp': 257071.235209, 'baseline_grid_w': 19, 'baseline_grid_h': 19, 'num_clbs_packed': '193', 'num_dsp': '1', 'num_bram': '1', 'num_io': '161', 'core_grid_w': '17', 'core_grid_h': '17', 'occupancy': '0.6747404844290658', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 17.86
+done F5eval {'circuit': '8051', 'split': 'heldout_extra', 'seed': 42, 'baseline_area_mwta': 1557310.0, 'baseline_delay_ns': 13.4425, 'baseline_power_w': 0.01228, 'baseline_adp': 257071.235209, 'baseline_grid_w': 19, 'baseline_grid_h': 19, 'num_clbs_packed': '193', 'num_dsp': '1', 'num_bram': '1', 'num_io': '161', 'core_grid_w': '17', 'core_grid_h': '17', 'occupancy': '0.6747404844290658', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 19.2
+done F5eval {'circuit': 'usb_uart_core', 'split': 'heldout_extra', 'seed': 7, 'baseline_area_mwta': 384612.0, 'baseline_delay_ns': 4.40995, 'baseline_power_w': 0.01307, 'baseline_adp': 22168.284340458, 'baseline_grid_w': 13, 'baseline_grid_h': 13, 'num_clbs_packed': '75', 'num_dsp': '0', 'num_bram': '2', 'num_io': '23', 'core_grid_w': '11', 'core_grid_h': '11', 'occupancy': '0.6363636363636364', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 8.0
+done F5eval {'circuit': 'usb_uart_core', 'split': 'heldout_extra', 'seed': 123, 'baseline_area_mwta': 384612.0, 'baseline_delay_ns': 4.40995, 'baseline_power_w': 0.01307, 'baseline_adp': 22168.284340458, 'baseline_grid_w': 13, 'baseline_grid_h': 13, 'num_clbs_packed': '75', 'num_dsp': '0', 'num_bram': '2', 'num_io': '23', 'core_grid_w': '11', 'core_grid_h': '11', 'occupancy': '0.6363636363636364', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 9.3
+done F5eval {'circuit': '8051', 'split': 'heldout_extra', 'seed': 123, 'baseline_area_mwta': 1557310.0, 'baseline_delay_ns': 13.4425, 'baseline_power_w': 0.01228, 'baseline_adp': 257071.235209, 'baseline_grid_w': 19, 'baseline_grid_h': 19, 'num_clbs_packed': '193', 'num_dsp': '1', 'num_bram': '1', 'num_io': '161', 'core_grid_w': '17', 'core_grid_h': '17', 'occupancy': '0.6747404844290658', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 23.19
+done F5eval {'circuit': 'usb_uart_core', 'split': 'heldout_extra', 'seed': 42, 'baseline_area_mwta': 384612.0, 'baseline_delay_ns': 4.40995, 'baseline_power_w': 0.01307, 'baseline_adp': 22168.284340458, 'baseline_grid_w': 13, 'baseline_grid_h': 13, 'num_clbs_packed': '75', 'num_dsp': '0', 'num_bram': '2', 'num_io': '23', 'core_grid_w': '11', 'core_grid_h': '11', 'occupancy': '0.6363636363636364', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 9.66
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_18cd64c8.xml
+  Size   : 34x34
+  DSPs   : []
+  BRAMs  : [(19, 12), (17, 15), (1, 9), (14, 14)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_18cd64c8.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2a6af83d.xml
+  Size   : 34x34
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2a6af83d.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_56d35da7.xml
+  Size   : 34x34
+  DSPs   : []
+  BRAMs  : [(18, 2), (12, 5), (1, 9), (7, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_56d35da7.xml
+done F5eval {'circuit': 'aes_inv_cipher', 'split': 'heldout_extra', 'seed': 7, 'baseline_area_mwta': 4692090.0, 'baseline_delay_ns': 7.57117, 'baseline_power_w': 0.0807, 'baseline_adp': 2866836.11135571, 'baseline_grid_w': 34, 'baseline_grid_h': 34, 'num_clbs_packed': '732', 'num_dsp': '0', 'num_bram': '4', 'num_io': '389', 'core_grid_w': '32', 'core_grid_h': '32', 'occupancy': '0.71875', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 69.22
+done F5eval {'circuit': 'aes_inv_cipher', 'split': 'heldout_extra', 'seed': 123, 'baseline_area_mwta': 4692090.0, 'baseline_delay_ns': 7.57117, 'baseline_power_w': 0.0807, 'baseline_adp': 2866836.11135571, 'baseline_grid_w': 34, 'baseline_grid_h': 34, 'num_clbs_packed': '732', 'num_dsp': '0', 'num_bram': '4', 'num_io': '389', 'core_grid_w': '32', 'core_grid_h': '32', 'occupancy': '0.71875', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 70.15
+done F5eval {'circuit': 'aes_inv_cipher', 'split': 'heldout_extra', 'seed': 42, 'baseline_area_mwta': 4692090.0, 'baseline_delay_ns': 7.57117, 'baseline_power_w': 0.0807, 'baseline_adp': 2866836.11135571, 'baseline_grid_w': 34, 'baseline_grid_h': 34, 'num_clbs_packed': '732', 'num_dsp': '0', 'num_bram': '4', 'num_io': '389', 'core_grid_w': '32', 'core_grid_h': '32', 'occupancy': '0.71875', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 77.58
+done F5eval {'circuit': 'stereovision1', 'split': 'heldout_extra', 'seed': 7, 'baseline_area_mwta': 7772740.0, 'baseline_delay_ns': 5.59724, 'baseline_power_w': 0.0976, 'baseline_adp': 4246174.98478976, 'baseline_grid_w': 40, 'baseline_grid_h': 40, 'num_clbs_packed': '777', 'num_dsp': '44', 'num_bram': '0', 'num_io': '258', 'core_grid_w': '38', 'core_grid_h': '38', 'occupancy': '0.5685595567867036', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 115.34
+done F5eval {'circuit': 'stereovision1', 'split': 'heldout_extra', 'seed': 123, 'baseline_area_mwta': 7772740.0, 'baseline_delay_ns': 5.59724, 'baseline_power_w': 0.0976, 'baseline_adp': 4246174.98478976, 'baseline_grid_w': 40, 'baseline_grid_h': 40, 'num_clbs_packed': '777', 'num_dsp': '44', 'num_bram': '0', 'num_io': '258', 'core_grid_w': '38', 'core_grid_h': '38', 'occupancy': '0.5685595567867036', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 134.05
+done F5eval {'circuit': 'stereovision1', 'split': 'heldout_extra', 'seed': 42, 'baseline_area_mwta': 7772740.0, 'baseline_delay_ns': 5.59724, 'baseline_power_w': 0.0976, 'baseline_adp': 4246174.98478976, 'baseline_grid_w': 40, 'baseline_grid_h': 40, 'num_clbs_packed': '777', 'num_dsp': '44', 'num_bram': '0', 'num_io': '258', 'core_grid_w': '38', 'core_grid_h': '38', 'occupancy': '0.5685595567867036', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 142.22
+done F5eval {'circuit': 'lenet', 'split': 'heldout_extra', 'seed': 7, 'baseline_area_mwta': 12370400.0, 'baseline_delay_ns': 9.28646, 'baseline_power_w': 0.05862, 'baseline_adp': 6734102.91683808, 'baseline_grid_w': 43, 'baseline_grid_h': 43, 'num_clbs_packed': '1250', 'num_dsp': '1', 'num_bram': '0', 'num_io': '76', 'core_grid_w': '41', 'core_grid_h': '41', 'occupancy': '0.7441998810232004', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 1368.47
+done F5eval {'circuit': 'lenet', 'split': 'heldout_extra', 'seed': 42, 'baseline_area_mwta': 12370400.0, 'baseline_delay_ns': 9.28646, 'baseline_power_w': 0.05862, 'baseline_adp': 6734102.91683808, 'baseline_grid_w': 43, 'baseline_grid_h': 43, 'num_clbs_packed': '1250', 'num_dsp': '1', 'num_bram': '0', 'num_io': '76', 'core_grid_w': '41', 'core_grid_h': '41', 'occupancy': '0.7441998810232004', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 1375.62
+done F5eval {'circuit': 'lenet', 'split': 'heldout_extra', 'seed': 123, 'baseline_area_mwta': 12370400.0, 'baseline_delay_ns': 9.28646, 'baseline_power_w': 0.05862, 'baseline_adp': 6734102.91683808, 'baseline_grid_w': 43, 'baseline_grid_h': 43, 'num_clbs_packed': '1250', 'num_dsp': '1', 'num_bram': '0', 'num_io': '76', 'core_grid_w': '41', 'core_grid_h': '41', 'occupancy': '0.7441998810232004', 'how_obtained': 'final_checkpoint_deterministic', 'source': 'data_export3/tools/f5_eval.py; baseline from data_export3/tools/f5_build.py (traditional VTR flow, stock arch)'} True 1379.02

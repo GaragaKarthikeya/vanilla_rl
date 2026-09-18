@@ -1,0 +1,201 @@
+custom_macbuf        -> mkDelayWorker32B     AR=0.8 grid=48x48 transferred=4 random=39
+custom_macbuf        -> lightweight_cipher   AR=0.8 grid=12x12 transferred=3 random=0
+custom_macbuf        -> reduction_layer      AR=0.8 grid=42x42 transferred=4 random=28
+custom_macbuf        -> arm_core             AR=0.8 grid=35x35 transferred=4 random=20
+custom_macbuf        -> softmax              AR=0.8 grid=41x41 transferred=4 random=4
+mkDelayWorker32B     -> custom_macbuf        AR=0.9 grid=12x12 transferred=4 random=0
+mkDelayWorker32B     -> lightweight_cipher   AR=0.9 grid=12x12 transferred=3 random=0
+mkDelayWorker32B     -> reduction_layer      AR=0.9 grid=42x42 transferred=32 random=0
+mkDelayWorker32B     -> arm_core             AR=0.9 grid=35x35 transferred=24 random=0
+mkDelayWorker32B     -> softmax              AR=0.9 grid=41x41 transferred=8 random=0
+lightweight_cipher   -> custom_macbuf        AR=0.9 grid=12x12 transferred=3 random=1
+lightweight_cipher   -> mkDelayWorker32B     AR=0.9 grid=48x48 transferred=3 random=40
+lightweight_cipher   -> reduction_layer      AR=0.9 grid=42x42 transferred=3 random=29
+lightweight_cipher   -> arm_core             AR=0.9 grid=35x35 transferred=3 random=21
+lightweight_cipher   -> softmax              AR=0.9 grid=41x41 transferred=3 random=5
+reduction_layer      -> custom_macbuf        AR=0.9 grid=12x12 transferred=4 random=0
+reduction_layer      -> mkDelayWorker32B     AR=0.9 grid=48x48 transferred=32 random=11
+reduction_layer      -> lightweight_cipher   AR=0.9 grid=12x12 transferred=3 random=0
+reduction_layer      -> arm_core             AR=0.9 grid=35x35 transferred=24 random=0
+reduction_layer      -> softmax              AR=0.9 grid=41x41 transferred=8 random=0
+arm_core             -> custom_macbuf        AR=0.9 grid=12x12 transferred=4 random=0
+arm_core             -> mkDelayWorker32B     AR=0.9 grid=48x48 transferred=24 random=19
+arm_core             -> lightweight_cipher   AR=0.9 grid=12x12 transferred=3 random=0
+arm_core             -> reduction_layer      AR=0.9 grid=42x42 transferred=24 random=8
+arm_core             -> softmax              AR=0.9 grid=41x41 transferred=8 random=0
+softmax              -> custom_macbuf        AR=0.9 grid=12x12 transferred=4 random=0
+softmax              -> mkDelayWorker32B     AR=0.9 grid=48x48 transferred=8 random=35
+softmax              -> lightweight_cipher   AR=0.9 grid=12x12 transferred=3 random=0
+softmax              -> reduction_layer      AR=0.9 grid=42x42 transferred=8 random=24
+softmax              -> arm_core             AR=0.9 grid=35x35 transferred=8 random=16
+F1: 30 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7fa90422.xml
+  Size   : 14x14
+  DSPs   : [(3, 2), (4, 2), (5, 2)]
+  BRAMs  : [(1, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7fa90422.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2c20bf47.xml
+  Size   : 14x14
+  DSPs   : [(6, 2), (7, 2), (1, 9)]
+  BRAMs  : [(2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2c20bf47.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6db3343c.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (3, 6), (2, 6)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d2e22591.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(1, 3), (3, 2), (4, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_050fe4f2.xml
+  Size   : 14x14
+  DSPs   : [(4, 2), (3, 3), (5, 2)]
+  BRAMs  : [(1, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_050fe4f2.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6db3343c.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d2e22591.xml
+done F1 {'source_circuit': 'mkDelayWorker32B', 'target_circuit': 'custom_macbuf', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 12, 'target_grid_h': 12, 'n_blocks_transferred': 4, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 11.4
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c655b9b5.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(5, 5), (22, 5), (27, 5), (31, 38), (39, 13), (22, 22), (12, 30), (45, 13), (20, 5), (40, 27), (31, 11), (44, 15), (39, 42), (44, 37), (28, 9), (21, 39), (37, 16), (12, 41), (40, 21), (48, 32), (19, 39), (2, 34), (36, 10), (4, 41), (10, 18), (1, 34), (25, 1), (31, 5), (40, 11), (9, 19), (15, 12), (3, 9), (23, 24), (10, 43), (17, 18), (7, 7), (43, 37), (38, 24), (4, 11), (10, 28), (29, 19), (17, 3), (41, 27)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c655b9b5.xml
+done F1 {'source_circuit': 'lightweight_cipher', 'target_circuit': 'custom_macbuf', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 12, 'target_grid_h': 12, 'n_blocks_transferred': 3, 'n_blocks_random': 1, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 8.31
+done F1 {'source_circuit': 'reduction_layer', 'target_circuit': 'custom_macbuf', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 12, 'target_grid_h': 12, 'n_blocks_transferred': 4, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 8.49
+done F1 {'source_circuit': 'mkDelayWorker32B', 'target_circuit': 'lightweight_cipher', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 12, 'target_grid_h': 12, 'n_blocks_transferred': 3, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 7.18
+done F1 {'source_circuit': 'custom_macbuf', 'target_circuit': 'lightweight_cipher', 'seed': 42, 'source_aspect_ratio': 0.8, 'target_grid_w': 12, 'target_grid_h': 12, 'n_blocks_transferred': 3, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 9.49
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_215f7bcd.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(27, 5), (10, 22), (5, 22), (22, 14), (31, 43), (39, 14), (22, 31), (12, 40), (45, 14), (20, 12), (40, 29), (31, 19), (44, 16), (39, 43), (44, 38), (28, 18), (22, 4), (37, 18), (13, 7), (40, 22), (48, 32), (20, 6), (2, 34), (36, 11), (4, 40), (10, 30), (1, 34), (25, 7), (31, 12), (40, 11), (9, 20), (15, 20), (3, 9), (23, 27), (11, 8), (17, 29), (7, 7), (43, 38), (38, 26), (4, 10), (10, 36), (29, 25), (17, 11)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0f10fbd0.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(20, 4), (7, 16), (4, 16), (16, 10), (15, 6), (27, 19), (33, 6), (10, 8), (29, 1), (35, 18), (28, 23), (1, 3), (34, 19), (2, 4), (12, 11), (19, 28), (12, 28), (5, 29), (32, 10), (11, 18), (25, 24), (32, 17), (6, 15), (7, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_215f7bcd.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0f10fbd0.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ba3dbaa1.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(4, 4), (16, 4), (20, 4), (14, 29), (27, 15), (33, 4), (9, 30), (28, 28), (35, 18), (28, 18), (1, 3), (34, 18), (2, 5), (12, 2), (19, 16), (12, 16), (6, 1), (32, 10), (11, 7), (25, 18), (32, 17), (6, 17), (7, 12), (3, 13)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_93385005.xml
+  Size   : 14x14
+  DSPs   : [(4, 2), (5, 3), (3, 5)]
+  BRAMs  : [(1, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ba3dbaa1.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_93385005.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e2880849.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(1, 3), (4, 2), (3, 3)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d967982d.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 10), (12, 4), (15, 8), (14, 4), (9, 16), (16, 9), (11, 2), (8, 16), (2, 20), (24, 18), (3, 9), (1, 3), (6, 19), (22, 7), (17, 16), (11, 18), (10, 7), (14, 19), (18, 20), (19, 22), (7, 2), (22, 14), (23, 18), (2, 2), (9, 4), (23, 3), (16, 1), (8, 4), (7, 16), (20, 17), (6, 1), (4, 2), (34, 7), (40, 26), (26, 9), (15, 19), (45, 35), (24, 3), (41, 32), (33, 24), (44, 41), (41, 8), (45, 18)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ebb179d1.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 8), (10, 4), (11, 6), (12, 4), (7, 12), (13, 7), (9, 2), (6, 12), (2, 16), (18, 14), (1, 3), (3, 7), (4, 15), (17, 5), (12, 12), (8, 5), (9, 14), (11, 15), (14, 16), (15, 17), (17, 11), (5, 2), (19, 14), (2, 2), (7, 4), (18, 3), (13, 1), (5, 12), (6, 4), (16, 13), (4, 1), (4, 9)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e2880849.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_23e31201.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 7), (8, 3), (10, 5), (9, 3), (6, 10), (11, 6), (7, 2), (5, 10), (2, 13), (15, 12), (1, 2), (3, 6), (4, 13), (14, 5), (12, 10), (6, 4), (8, 12), (9, 13), (11, 13), (13, 14), (13, 8), (5, 2), (14, 12), (2, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ebb179d1.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d967982d.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_23e31201.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_678fbb77.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(5, 5), (20, 5), (23, 5), (33, 26), (10, 9), (28, 29), (24, 21), (23, 33), (37, 16), (31, 18), (26, 4), (30, 35), (36, 27), (26, 18), (19, 21), (6, 13), (17, 27), (3, 20), (27, 13), (42, 3), (14, 23), (40, 2), (40, 26), (38, 30), (27, 2), (29, 29), (6, 25), (33, 14), (31, 10), (30, 23), (35, 32), (37, 4)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_678fbb77.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9bc2fbf1.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(23, 5), (8, 20), (5, 20), (20, 12), (33, 29), (10, 18), (28, 34), (24, 28), (24, 3), (37, 18), (31, 20), (26, 9), (31, 1), (36, 28), (26, 25), (19, 28), (6, 13), (17, 35), (3, 19), (27, 19), (42, 4), (14, 32), (40, 2), (40, 25), (38, 30), (27, 8), (29, 34), (6, 25), (33, 15), (31, 11), (30, 27), (35, 33)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9bc2fbf1.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a1be4885.xml
+  Size   : 43x43
+  DSPs   : [(23, 5), (8, 19), (5, 19), (19, 12), (11, 34), (8, 8), (25, 36), (41, 6)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a1be4885.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_09696d78.xml
+  Size   : 43x43
+  DSPs   : [(2, 8), (10, 4), (11, 6), (9, 4), (7, 12), (12, 7), (8, 2), (6, 12)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_09696d78.xml
+done F1 {'source_circuit': 'arm_core', 'target_circuit': 'custom_macbuf', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 12, 'target_grid_h': 12, 'n_blocks_transferred': 4, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 6.98
+done F1 {'source_circuit': 'reduction_layer', 'target_circuit': 'lightweight_cipher', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 12, 'target_grid_h': 12, 'n_blocks_transferred': 3, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 8.47
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_879ced21.xml
+  Size   : 43x43
+  DSPs   : [(5, 5), (19, 5), (23, 5), (11, 29), (8, 9), (25, 33), (41, 6), (30, 7)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_879ced21.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5aaf8e66.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(1, 4), (4, 2), (5, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5aaf8e66.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6a3fbb04.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 8), (9, 3), (11, 6), (10, 3), (7, 12), (12, 7), (8, 2), (6, 12), (2, 15), (18, 13), (3, 7), (1, 3), (4, 14), (16, 5), (13, 12), (8, 13), (7, 5), (10, 14), (12, 15), (14, 16), (5, 2), (15, 10), (17, 13), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6a3fbb04.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8376b54d.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 12), (15, 5), (18, 9), (11, 19), (16, 5), (19, 11), (9, 19), (13, 2), (2, 24), (29, 22), (4, 11), (1, 4), (7, 23), (26, 8), (20, 19), (13, 22), (16, 23), (12, 8), (22, 24), (23, 26), (8, 2), (26, 16), (27, 22), (2, 2), (33, 30), (40, 14), (24, 23), (13, 41), (45, 30), (22, 2), (41, 21), (33, 2), (44, 35), (40, 36), (45, 12), (30, 11), (24, 2), (38, 17), (14, 5), (41, 13), (48, 33), (21, 35), (3, 19)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8376b54d.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7b4527c2.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7b4527c2.xml
+done F1 {'source_circuit': 'arm_core', 'target_circuit': 'lightweight_cipher', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 12, 'target_grid_h': 12, 'n_blocks_transferred': 3, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 5.51
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8017ce06.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 11), (13, 5), (15, 8), (9, 17), (14, 5), (17, 9), (8, 17), (12, 2), (2, 22), (25, 19), (3, 9), (1, 3), (6, 20), (23, 7), (18, 17), (12, 19), (14, 20), (11, 7), (19, 22), (20, 23), (7, 2), (23, 14), (24, 19), (2, 2), (34, 37), (11, 14), (30, 30), (27, 4), (26, 20), (38, 7), (33, 4), (28, 17)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8017ce06.xml
+done F1 {'source_circuit': 'reduction_layer', 'target_circuit': 'mkDelayWorker32B', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 48, 'target_grid_h': 48, 'n_blocks_transferred': 32, 'n_blocks_random': 11, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 43.77
+done F1 {'source_circuit': 'custom_macbuf', 'target_circuit': 'mkDelayWorker32B', 'seed': 42, 'source_aspect_ratio': 0.8, 'target_grid_w': 48, 'target_grid_h': 48, 'n_blocks_transferred': 4, 'n_blocks_random': 39, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 50.56
+done F1 {'source_circuit': 'softmax', 'target_circuit': 'custom_macbuf', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 12, 'target_grid_h': 12, 'n_blocks_transferred': 4, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 0.01
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f1064bad.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 10), (13, 5), (15, 8), (14, 5), (9, 16), (16, 9), (8, 16), (12, 2), (32, 14), (39, 23), (23, 17), (13, 14), (45, 17), (21, 12), (40, 36), (31, 30), (44, 20), (40, 8), (44, 42), (28, 31), (23, 1), (37, 27), (13, 24), (41, 1), (48, 32), (21, 5), (2, 43), (36, 20), (4, 43), (10, 27), (1, 33), (25, 30), (31, 20), (40, 23), (9, 27), (16, 20), (3, 13), (24, 6), (11, 6), (18, 27), (6, 37), (44, 4), (38, 36)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f1064bad.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0f050bd4.xml
+  Size   : 43x43
+  DSPs   : [(2, 10), (13, 5), (15, 8), (9, 16), (14, 5), (16, 9), (8, 16), (12, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0f050bd4.xml
+done F1 {'source_circuit': 'lightweight_cipher', 'target_circuit': 'mkDelayWorker32B', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 48, 'target_grid_h': 48, 'n_blocks_transferred': 3, 'n_blocks_random': 40, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 63.82
+done F1 {'source_circuit': 'softmax', 'target_circuit': 'lightweight_cipher', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 12, 'target_grid_h': 12, 'n_blocks_transferred': 3, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 0.0
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_727c9cff.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2), (33, 37), (10, 29), (29, 13), (25, 9), (24, 22), (37, 23), (31, 35), (26, 29), (31, 19), (36, 34), (27, 6), (20, 32), (6, 8), (19, 4), (3, 28), (27, 37), (42, 4), (16, 5), (40, 4), (40, 27), (38, 31), (27, 26), (30, 10), (6, 20)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_727c9cff.xml
+done F1 {'source_circuit': 'arm_core', 'target_circuit': 'mkDelayWorker32B', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 48, 'target_grid_h': 48, 'n_blocks_transferred': 24, 'n_blocks_random': 19, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 62.58
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_49130e01.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 8), (10, 4), (11, 6), (9, 4), (7, 12), (12, 7), (6, 12), (8, 2), (16, 18), (27, 29), (33, 9), (11, 16), (29, 8), (35, 18), (28, 25), (1, 3), (34, 20), (2, 14), (13, 24), (20, 22), (14, 10), (5, 21), (32, 14), (13, 3)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_49130e01.xml
+done F1 {'source_circuit': 'softmax', 'target_circuit': 'mkDelayWorker32B', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 48, 'target_grid_h': 48, 'n_blocks_transferred': 8, 'n_blocks_random': 35, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 75.99
+done F1 {'source_circuit': 'custom_macbuf', 'target_circuit': 'reduction_layer', 'seed': 42, 'source_aspect_ratio': 0.8, 'target_grid_w': 42, 'target_grid_h': 42, 'n_blocks_transferred': 4, 'n_blocks_random': 28, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 201.86
+done F1 {'source_circuit': 'mkDelayWorker32B', 'target_circuit': 'reduction_layer', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 42, 'target_grid_h': 42, 'n_blocks_transferred': 32, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 209.82
+done F1 {'source_circuit': 'reduction_layer', 'target_circuit': 'arm_core', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 35, 'target_grid_h': 35, 'n_blocks_transferred': 24, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 220.92
+done F1 {'source_circuit': 'mkDelayWorker32B', 'target_circuit': 'arm_core', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 35, 'target_grid_h': 35, 'n_blocks_transferred': 24, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 258.53
+done F1 {'source_circuit': 'mkDelayWorker32B', 'target_circuit': 'softmax', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 41, 'target_grid_h': 41, 'n_blocks_transferred': 8, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 261.25
+done F1 {'source_circuit': 'reduction_layer', 'target_circuit': 'softmax', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 41, 'target_grid_h': 41, 'n_blocks_transferred': 8, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 258.69
+done F1 {'source_circuit': 'lightweight_cipher', 'target_circuit': 'arm_core', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 35, 'target_grid_h': 35, 'n_blocks_transferred': 3, 'n_blocks_random': 21, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 273.08
+done F1 {'source_circuit': 'custom_macbuf', 'target_circuit': 'softmax', 'seed': 42, 'source_aspect_ratio': 0.8, 'target_grid_w': 41, 'target_grid_h': 41, 'n_blocks_transferred': 4, 'n_blocks_random': 4, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 271.7
+done F1 {'source_circuit': 'softmax', 'target_circuit': 'arm_core', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 35, 'target_grid_h': 35, 'n_blocks_transferred': 8, 'n_blocks_random': 16, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 211.57
+done F1 {'source_circuit': 'custom_macbuf', 'target_circuit': 'arm_core', 'seed': 42, 'source_aspect_ratio': 0.8, 'target_grid_w': 35, 'target_grid_h': 35, 'n_blocks_transferred': 4, 'n_blocks_random': 20, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 301.54
+done F1 {'source_circuit': 'lightweight_cipher', 'target_circuit': 'softmax', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 41, 'target_grid_h': 41, 'n_blocks_transferred': 3, 'n_blocks_random': 5, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 292.39
+done F1 {'source_circuit': 'arm_core', 'target_circuit': 'reduction_layer', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 42, 'target_grid_h': 42, 'n_blocks_transferred': 24, 'n_blocks_random': 8, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 287.07
+done F1 {'source_circuit': 'arm_core', 'target_circuit': 'softmax', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 41, 'target_grid_h': 41, 'n_blocks_transferred': 8, 'n_blocks_random': 0, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 265.71
+done F1 {'source_circuit': 'lightweight_cipher', 'target_circuit': 'reduction_layer', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 42, 'target_grid_h': 42, 'n_blocks_transferred': 3, 'n_blocks_random': 29, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 326.24
+done F1 {'source_circuit': 'softmax', 'target_circuit': 'reduction_layer', 'seed': 42, 'source_aspect_ratio': 0.9, 'target_grid_w': 42, 'target_grid_h': 42, 'n_blocks_transferred': 8, 'n_blocks_random': 24, 'source': 'data_export3/tools/f1.py transfer_actions(); source floorplan from data_export/logs/det_actions_and_timing.json'} True 286.85

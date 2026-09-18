@@ -1,0 +1,129 @@
+F5build: 13 jobs
+done F5build {'circuit': 'spmv', 'source_verilog': '/home/digital-2/workspace/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/koios/spmv.v', 'source': 'data_export3/tools/f5_build.py; traditional VTR flow on arch/k6_frac_N10_mem32K_40nm.xml'} None 163.42
+done F5build {'circuit': 'conv_layer_hls', 'source_verilog': '/home/digital-2/workspace/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/koios/conv_layer_hls.v', 'source': 'data_export3/tools/f5_build.py; traditional VTR flow on arch/k6_frac_N10_mem32K_40nm.xml'} None 133.61
+done F5build {'circuit': 'blob_merge', 'source_verilog': '/home/digital-2/workspace/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/blob_merge.v', 'source': 'data_export3/tools/f5_build.py; traditional VTR flow on arch/k6_frac_N10_mem32K_40nm.xml'} None 39.5
+done F5build {'circuit': 'sha', 'source_verilog': '/home/digital-2/workspace/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/sha.v', 'source': 'data_export3/tools/f5_build.py; traditional VTR flow on arch/k6_frac_N10_mem32K_40nm.xml'} None 7.88
+done F5build {'circuit': 'eltwise_layer', 'source_verilog': '/home/digital-2/workspace/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/koios/eltwise_layer.v', 'source': 'data_export3/tools/f5_build.py; traditional VTR flow on arch/k6_frac_N10_mem32K_40nm.xml'} None 267.77
+done F5build {'circuit': 'conv_layer', 'source_verilog': '/home/digital-2/workspace/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/koios/conv_layer.v', 'source': 'data_export3/tools/f5_build.py; traditional VTR flow on arch/k6_frac_N10_mem32K_40nm.xml'} None 275.14
+done F5build {'circuit': 'stereovision0', 'source_verilog': '/home/digital-2/workspace/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/stereovision0.v', 'source': 'data_export3/tools/f5_build.py; traditional VTR flow on arch/k6_frac_N10_mem32K_40nm.xml'} None 50.17
+done F5build {'circuit': 'bgm', 'source_verilog': '/home/digital-2/workspace/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/bgm.v', 'source': 'data_export3/tools/f5_build.py; traditional VTR flow on arch/k6_frac_N10_mem32K_40nm.xml'} None 29.79
+done F5build {'circuit': 'stereovision1', 'source_verilog': '/home/digital-2/workspace/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/stereovision1.v', 'source': 'data_export3/tools/f5_build.py; traditional VTR flow on arch/k6_frac_N10_mem32K_40nm.xml'} None 71.27
+[Warning] attention_layer: fabric edge weight 1334.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1342.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1342.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1342.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1342.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1342.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1342.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1342.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1342.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1342.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1341.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1322.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1322.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1322.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1322.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1322.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1323.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1322.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1321.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1318.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1318.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1318.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1318.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1318.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1317.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1324.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1329.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1322.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1323.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1310.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1310.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1310.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1310.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1310.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1311.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1310.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1310.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1310.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1310.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1310.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1310.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1311.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1311.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1316.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+[Warning] attention_layer: fabric edge weight 1316.0 exceeds ceiling 1300.0 — this edge will saturate to 1.0, losing resolution. Consider raising the ceiling.
+done F5build {'circuit': 'attention_layer', 'source_verilog': '/home/digital-2/workspace/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/koios/attention_layer.v', 'source': 'data_export3/tools/f5_build.py; traditional VTR flow on arch/k6_frac_N10_mem32K_40nm.xml'} None 321.27
+done F5build {'circuit': 'lenet', 'source_verilog': '/home/digital-2/workspace/vtr-verilog-to-routing/vtr_flow/benchmarks/verilog/koios/lenet.v', 'source': 'data_export3/tools/f5_build.py; traditional VTR flow on arch/k6_frac_N10_mem32K_40nm.xml'} None 1291.17

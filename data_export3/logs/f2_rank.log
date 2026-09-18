@@ -1,0 +1,379 @@
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+custom_macbuf        top5=[289, 101, 243, 53, 288] rnd=[432, 241, 342, 6, 534]
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+mkDelayWorker32B     top5=[56, 483, 582, 482, 531] rnd=[1466, 2119, 1826, 565, 1034]
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+lightweight_cipher   top5=[49, 241, 289, 339, 433] rnd=[482, 146, 530, 192, 99]
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+reduction_layer      top5=[56, 483, 582, 482, 531] rnd=[1552, 1119, 438, 1318, 1090]
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+arm_core             top5=[56, 483, 582, 482, 349] rnd=[1516, 1252, 673, 437, 1320]
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+softmax              top5=[56, 483, 582, 482, 531] rnd=[341, 1170, 1923, 1392, 507]
+F2: 60 jobs
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9eff50d2.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (2, 6), (6, 4)]
+  BRAMs  : [(3, 6)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9eff50d2.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_47d9cd41.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (3, 6), (2, 6)]
+  BRAMs  : [(6, 4)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_118dea4d.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (3, 6), (2, 6)]
+  BRAMs  : [(10, 1)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9031b6ae.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (3, 6), (6, 4)]
+  BRAMs  : [(2, 6)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ae5d8e32.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_118dea4d.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_47d9cd41.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ae5d8e32.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_eae86a6b.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (3, 6), (2, 6)]
+  BRAMs  : [(1, 7)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_34488dda.xml
+  Size   : 14x14
+  DSPs   : [(3, 6), (2, 6), (6, 4)]
+  BRAMs  : [(7, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7486428d.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (3, 6), (2, 6)]
+  BRAMs  : [(6, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_eae86a6b.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b1dc27d0.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (3, 6), (2, 6)]
+  BRAMs  : [(12, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7486428d.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b1dc27d0.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9031b6ae.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_577af61d.xml
+  Size   : 14x14
+  DSPs   : [(7, 2), (3, 6), (2, 6)]
+  BRAMs  : [(8, 7)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_34488dda.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_577af61d.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c572b731.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(11, 4), (2, 9), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c572b731.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a393e767.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(11, 3), (2, 9), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a393e767.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ef80e2de.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ef80e2de.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7d2ed733.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(12, 4), (2, 9), (11, 4), (13, 7), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a4779bce.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(13, 7), (2, 9), (11, 4), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19), (10, 10)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7d2ed733.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_03f50216.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(31, 27), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a4779bce.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_03f50216.xml
+done F2 {'circuit': 'custom_macbuf', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 5, 'action_prob': 0.04463983699679375, 'action': 288, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 2.53
+done F2 {'circuit': 'custom_macbuf', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 3.66167223546654e-05, 'action': 432, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 3.19
+done F2 {'circuit': 'custom_macbuf', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 3, 'action_prob': 0.05494347959756851, 'action': 243, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 3.11
+done F2 {'circuit': 'custom_macbuf', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.010100443847477436, 'action': 241, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 2.84
+done F2 {'circuit': 'custom_macbuf', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 2, 'action_prob': 0.16048066318035126, 'action': 101, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 4.49
+done F2 {'circuit': 'custom_macbuf', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 1, 'action_prob': 0.39597558975219727, 'action': 289, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 3.45
+done F2 {'circuit': 'custom_macbuf', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0005774835008196533, 'action': 6, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 2.75
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_fb161cf7.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(45, 8), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_fb161cf7.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5b00ec58.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(6, 2), (2, 2), (7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5b00ec58.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_e26c07e8.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(7, 2), (2, 2), (6, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b028e468.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(2, 2), (6, 2), (7, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b028e468.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_e26c07e8.xml
+done F2 {'circuit': 'custom_macbuf', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 1.2275796507310588e-05, 'action': 534, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 4.62
+done F2 {'circuit': 'custom_macbuf', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.00010417384328320622, 'action': 342, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 5.21
+done F2 {'circuit': 'custom_macbuf', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 4, 'action_prob': 0.05291992053389549, 'action': 53, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 5.58
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f61b21c4.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(8, 4), (2, 2), (6, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1ffb0796.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(10, 2), (2, 2), (6, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_efa84802.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(11, 3), (2, 2), (6, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_efa84802.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f61b21c4.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1ffb0796.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_64d7a151.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(12, 38), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_961e63b6.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(39, 3), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_64d7a151.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_9c0df113.xml
+  Size   : 50x50
+  DSPs   : []
+  BRAMs  : [(22, 27), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (1, 3), (3, 8), (5, 17), (19, 6), (15, 14), (9, 6), (10, 16), (12, 17), (16, 18), (17, 19), (19, 12), (6, 2), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (6, 14), (7, 4), (18, 15), (5, 1), (5, 10), (4, 2), (3, 14), (13, 1), (7, 22), (11, 17), (22, 8), (4, 17), (4, 10), (21, 10), (14, 19)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_961e63b6.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_9c0df113.xml
+done F2 {'circuit': 'lightweight_cipher', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 2, 'action_prob': 0.1662140190601349, 'action': 241, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 3.31
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_57f5108a.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(4, 3), (2, 2), (6, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_57f5108a.xml
+done F2 {'circuit': 'lightweight_cipher', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 1, 'action_prob': 0.21347463130950928, 'action': 49, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 4.99
+done F2 {'circuit': 'lightweight_cipher', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 4, 'action_prob': 0.057991743087768555, 'action': 339, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 4.24
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c84eb22e.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(12, 3), (2, 2), (6, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c84eb22e.xml
+done F2 {'circuit': 'lightweight_cipher', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 3, 'action_prob': 0.06722811609506607, 'action': 289, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 5.44
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_15d6e9f3.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(5, 1), (2, 2), (6, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_15d6e9f3.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c58c3154.xml
+  Size   : 14x14
+  DSPs   : []
+  BRAMs  : [(3, 4), (2, 2), (6, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c58c3154.xml
+done F2 {'circuit': 'lightweight_cipher', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 5, 'action_prob': 0.045894693583250046, 'action': 433, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 5.08
+done F2 {'circuit': 'lightweight_cipher', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.02080622687935829, 'action': 482, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 7.02
+done F2 {'circuit': 'lightweight_cipher', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.009029733948409557, 'action': 99, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 4.19
+done F2 {'circuit': 'lightweight_cipher', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.015307041816413403, 'action': 192, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 4.45
+done F2 {'circuit': 'lightweight_cipher', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0037763449363410473, 'action': 146, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 5.9
+done F2 {'circuit': 'lightweight_cipher', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0011126588797196746, 'action': 530, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 5.07
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_fd004cf0.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_fd004cf0.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_edc2c58f.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(11, 4), (2, 9), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_edc2c58f.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_17122955.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(11, 3), (2, 9), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_17122955.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_f26c5a04.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(13, 7), (2, 9), (11, 4), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_83c953c0.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(12, 4), (2, 9), (11, 4), (13, 7), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_f26c5a04.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_83c953c0.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b87d681b.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(33, 17), (2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b87d681b.xml
+done F2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 4, 'action_prob': 0.011152266524732113, 'action': 482, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 26.9
+done F2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0003613075823523104, 'action': 1466, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 28.03
+done F2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 2, 'action_prob': 0.017359618097543716, 'action': 483, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 28.1
+done F2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 3, 'action_prob': 0.01586882956326008, 'action': 582, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 28.06
+done F2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 5, 'action_prob': 0.010873902589082718, 'action': 531, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 28.1
+done F2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 1, 'action_prob': 0.020419741049408913, 'action': 56, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 28.32
+done F2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0003599374322220683, 'action': 1034, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 38.79
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_19cc2beb.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(24, 16), (2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1)]
+done F2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0003610210260376334, 'action': 565, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 42.38
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_19cc2beb.xml
+done F2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.00035984854912385345, 'action': 2119, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 45.99
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_d54ee5ab.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(23, 35), (2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0496ab63.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_d54ee5ab.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7b1bb75b.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(28, 23), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (10, 2), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0496ab63.xml
+done F2 {'circuit': 'mkDelayWorker32B', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0003613854933064431, 'action': 1826, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 43.75
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_83e47398.xml
+  Size   : 44x44
+  DSPs   : []
+  BRAMs  : [(10, 7), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (9, 6), (12, 17), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2), (8, 4), (20, 3), (14, 1), (7, 4), (6, 14), (18, 15), (5, 1), (4, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7b1bb75b.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_83e47398.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a495d6a1.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(11, 4), (2, 9), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a495d6a1.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_8b3f9d20.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(13, 7), (2, 9), (11, 4), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_8b3f9d20.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_ba3b78d5.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(11, 3), (2, 9), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_1b71bb81.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(8, 14), (2, 9), (11, 4), (13, 7), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_ba3b78d5.xml
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_1b71bb81.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_214c06ec.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(32, 29), (2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_214c06ec.xml
+done F2 {'circuit': 'reduction_layer', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 2, 'action_prob': 0.021343886852264404, 'action': 483, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 119.95
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_0ed99418.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(27, 5), (2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_0ed99418.xml
+done F2 {'circuit': 'reduction_layer', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 4, 'action_prob': 0.01375110074877739, 'action': 482, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 182.07
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_4e45561c.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(15, 2), (2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_4e45561c.xml
+done F2 {'circuit': 'reduction_layer', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.00044028274714946747, 'action': 1318, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 182.35
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_5fb19864.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(10, 6), (2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16), (2, 2)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_5fb19864.xml
+done F2 {'circuit': 'arm_core', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 3, 'action_prob': 0.02474861405789852, 'action': 582, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 201.41
+done F2 {'circuit': 'arm_core', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 4, 'action_prob': 0.017689285799860954, 'action': 482, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 202.03
+done F2 {'circuit': 'reduction_layer', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0016978164203464985, 'action': 438, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 212.45
+done F2 {'circuit': 'arm_core', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 2, 'action_prob': 0.02746070921421051, 'action': 483, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 211.66
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_2d524f72.xml
+  Size   : 37x37
+  DSPs   : []
+  BRAMs  : [(28, 25), (2, 9), (11, 4), (13, 7), (8, 14), (12, 4), (14, 8), (7, 14), (10, 2), (2, 18), (21, 16), (3, 8), (1, 3), (5, 17), (19, 6), (15, 14), (10, 16), (12, 17), (9, 6), (16, 18), (17, 19), (6, 2), (19, 12), (20, 16)]
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_2d524f72.xml
+done F2 {'circuit': 'reduction_layer', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 5, 'action_prob': 0.013325736857950687, 'action': 531, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 240.35
+done F2 {'circuit': 'arm_core', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 5, 'action_prob': 0.017507657408714294, 'action': 349, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 209.83
+done F2 {'circuit': 'reduction_layer', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 7.794431439833716e-05, 'action': 1119, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 226.16
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_6bd93582.xml
+  Size   : 43x43
+  DSPs   : [(2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_6bd93582.xml
+done F2 {'circuit': 'reduction_layer', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 1, 'action_prob': 0.0254839938133955, 'action': 56, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 261.1
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_830b74f2.xml
+  Size   : 43x43
+  DSPs   : [(11, 4), (2, 9), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_830b74f2.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_49f03c01.xml
+  Size   : 43x43
+  DSPs   : [(13, 7), (2, 9), (11, 4), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_49f03c01.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_64751b19.xml
+  Size   : 43x43
+  DSPs   : [(11, 3), (2, 9), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_64751b19.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_63a5b808.xml
+  Size   : 43x43
+  DSPs   : [(12, 4), (2, 9), (11, 4), (13, 7), (8, 14), (14, 8), (7, 14), (10, 2)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_63a5b808.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_831276f9.xml
+  Size   : 43x43
+  DSPs   : [(8, 6), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_831276f9.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_a7753b6e.xml
+  Size   : 43x43
+  DSPs   : [(25, 19), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_a7753b6e.xml
+done F2 {'circuit': 'arm_core', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 1, 'action_prob': 0.033320166170597076, 'action': 56, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 250.58
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_c0e9094a.xml
+  Size   : 43x43
+  DSPs   : [(41, 4), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_c0e9094a.xml
+done F2 {'circuit': 'reduction_layer', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.00043914257548749447, 'action': 1552, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 280.37
+done F2 {'circuit': 'reduction_layer', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 3, 'action_prob': 0.019409917294979095, 'action': 582, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 283.48
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_7dee9849.xml
+  Size   : 43x43
+  DSPs   : [(30, 1), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_7dee9849.xml
+Baked architecture → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_arch_b25ec428.xml
+  Size   : 43x43
+  DSPs   : [(11, 28), (2, 9), (11, 4), (13, 7), (12, 4), (8, 14), (14, 8), (7, 14)]
+  BRAMs  : []
+  Constraints → /home/digital-2/workspace/rl_gnn/vanilla_rl/temp_constraints_b25ec428.xml
+done F2 {'circuit': 'arm_core', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0005616644048132002, 'action': 1516, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 310.64
+done F2 {'circuit': 'arm_core', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.00012532917025964707, 'action': 673, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 156.93
+done F2 {'circuit': 'arm_core', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0005611664964817464, 'action': 1252, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 282.73
+done F2 {'circuit': 'arm_core', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0006275445921346545, 'action': 437, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 235.29
+done F2 {'circuit': 'reduction_layer', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.00043942619231529534, 'action': 1090, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 431.23
+done F2 {'circuit': 'arm_core', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0005604284815490246, 'action': 1320, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 244.49
+done F2 {'circuit': 'softmax', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 1, 'action_prob': 0.024390533566474915, 'action': 56, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 260.04
+done F2 {'circuit': 'softmax', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 2, 'action_prob': 0.021066738292574883, 'action': 483, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 271.25
+done F2 {'circuit': 'softmax', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0003370563790667802, 'action': 341, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 271.95
+done F2 {'circuit': 'softmax', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 3, 'action_prob': 0.018965499475598335, 'action': 582, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 279.22
+done F2 {'circuit': 'softmax', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 5, 'action_prob': 0.01299903355538845, 'action': 531, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 279.24
+done F2 {'circuit': 'softmax', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0004449657571967691, 'action': 1392, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 255.51
+done F2 {'circuit': 'softmax', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.00044561337563209236, 'action': 507, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 255.15
+done F2 {'circuit': 'softmax', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 5.416813655756414e-05, 'action': 1170, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 282.04
+done F2 {'circuit': 'softmax', 'seed': 42, 'candidate_kind': 'top_k', 'action_rank_if_topk': 4, 'action_prob': 0.013186950236558914, 'action': 482, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 288.98
+done F2 {'circuit': 'softmax', 'seed': 42, 'candidate_kind': 'random', 'action_rank_if_topk': '', 'action_prob': 0.0004464206867851317, 'action': 1923, 'source': 'data_export3/tools/f2.py; first placement step overridden, rest of the rollout deterministic'} True 294.75
